@@ -1,0 +1,585 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html, body{
+    width: 100%;
+    height: 100%;
+    font-family: 'MuseoSans',sans-serif;
+}
+/*---------------------------------------header SLIDER*/
+.home{
+    width: 100%;
+    height: 100%;
+}
+.contentMenu{
+    width: 100%;
+    height: 600px;
+    position: absolute;
+    right: -300px;
+    background: #fff;
+    top: 66px;
+    padding: 20px 20px 100px;
+    opacity: 0;
+    display: none;
+}
+.contentMenu ul li{
+    padding: 10px 40px;
+    text-align: left;
+}
+.menu-header{
+    position: fixed;
+    z-index: 2;
+    background: #fff;
+    width: 100%;
+    text-align: center;
+    padding: 22px;
+    font-size: 18px;
+    color: #fff;
+    background: #285CA4;
+    background: rgba(40, 92, 164, 1);
+    font-weight: 100;
+}
+.menu-header .logo{
+    position: absolute;
+    width: 100px;
+    left: 50px;
+    top: 11px;
+}
+.menu-header .menu img{
+    position: absolute;
+    width: 40px;
+    right: 50px;
+    top: 11px;
+}
+.menu-header .menu.close img{
+    position: absolute;
+    width: 40px;
+    right: 50px;
+    top: 11px;
+    display: none;
+    opacity: 0;
+}
+.menu-header p span{
+    font-weight: 900;
+    color: #4fa753;
+}
+.head{
+    width: 100%;
+    height: 75%;
+    background: url(../img/head/back3.jpg)no-repeat center fixed;
+    background-size: cover;
+    position: relative;
+}
+.head .imagenes{
+    width: 1000px;
+    margin: auto;
+    display: block;
+    padding-top: 100px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0px;
+}
+.head .imagenes img{
+    width: 200px;
+    display: block;
+    padding: 55px 0 0 455px;
+    opacity: 0;
+    display: none;
+}
+.head .imagenes p{
+    opacity: 0;
+    display: none; 
+}
+.head .imagenes .texto{
+    color: #fff;
+    font-size: 70px;
+    position: absolute;
+    text-align: center;
+    top: 85px;
+}
+.head .simular{
+    color: #fff;
+    text-decoration: none;
+    background: #4fa753;
+    padding: 20px;
+    font-size: 28px;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 8%;
+    left: 25%;
+    z-index: 1;
+}
+.head .oculto{
+    color: #fff;
+    padding: 10px 25px;
+    font-size: 20px;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 200px;
+    left: 25%;
+    font-weight: 100;
+    display: none;
+    opacity: 0;
+}
+/*---------------------------------------Home body*/
+/*ICONOS*/
+.sub-menu{
+    height: 25%;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background: #16193B;
+}
+.sub-menu a{
+    margin: 15px;
+    text-decoration: none;
+}
+.sub-menu a .asesor{
+    background: url(../img/body/asesor.png)no-repeat center;
+    height: 90px;
+    width: 200px;
+    position: relative;
+}
+.sub-menu a .inmobiliarias{
+    background: url(../img/body/inmobiliarias.png)no-repeat center;
+    height: 90px;
+    width: 200px;
+    position: relative;
+}
+.sub-menu a .prensa{
+    background: url(../img/body/prensa.png)no-repeat center;
+    height: 90px;
+    width: 200px;
+    position: relative;
+}
+.sub-menu a .franquicia{
+    background: url(../img/body/franquicia.png)no-repeat center;
+    height: 90px;
+    width: 200px;
+    position: relative;
+}
+.sub-menu a p{
+    text-align: center;
+    color: #9cc2f7;
+    padding-top: 95px;
+    font-size: 16px;
+    font-weight: 100;
+    width: 200px;
+}
+.sub-menu a p span{
+    color: #ddd;
+} 
+/*---------------------------------------simulador*/
+.simulador{
+    background: #3a5e94;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    background-size: contain;
+}
+.simulador .box{
+    padding: 50px 150px 0;
+}
+.simulador h1{
+    color: #fff;
+    border-left: 3px solid #4fa753;
+    padding-left: 10px;
+    font-size: 50px;
+    margin-top: 50px;
+    text-align: center;
+}
+.simulador .texto{
+    color: #fff;
+    font-size: 20px;
+    font-weight: 100;
+    text-align: center;
+    padding-bottom: 25px;
+}
+.simulador .form{
+    display: flex; 
+    width: 825px;
+    margin: auto;
+    padding-bottom: 25px;
+}
+.simulador .form form{
+    display: block;
+}
+.simulador .form form label{
+    display: block;
+    color: #4fa753;
+    font-weight: 100;
+    font-size: 17px;
+    padding: 10px 0 0 15px;
+}
+.simulador .form form input{
+    background: none;
+    border: none;
+    width: 300px;
+    padding: 10px;
+    color: #fff;
+    font-weight: 100;
+    margin: 10px;
+    border-bottom: 1px solid #4fa753;
+    font-size: 17px;
+}
+.simulador .form form select{
+    background: none;
+    border: none;
+    width: 300px;
+    padding: 10px;
+    color: #fff;
+    font-weight: 100;
+    margin: 10px;
+    border-bottom: 1px solid #4fa753;
+   font-size: 17px;
+}
+.simulador .form form .send{
+    background: #4fa753;
+}
+.simulador .aviso{
+    text-align: center;
+    color: #fff;
+}
+.simulador .aviso.check{
+    padding-right: 10px;
+}
+/*---------------------------------------comments*/
+.comments{
+    width: 100%;
+    height: 100%;
+    background: url(../img/head/back3.jpg)no-repeat center fixed;
+    background-size: cover;
+    position: relative;
+}
+.comments .cel{
+    position: absolute;
+    right: 100px;
+    top: 20px;
+    transform: rotate(20deg);
+}
+.comments .cel2{
+    position: absolute;
+    right: 350px;
+    top: 70px;
+    transform: rotate(20deg);
+}
+/*---------------------------------------comments slider*/
+.comments .content{
+    width: 500px;
+    height: 300px;
+    text-align: center;
+    font-size: 18px;
+    color: #fff;
+    font-weight: 100;
+    position: relative;
+}
+.title{
+    color: #fff;
+    border-left: 3px solid #4fa753;
+    padding-left: 10px;
+    font-size: 50px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.comments .content .post{
+    position: absolute;
+}
+.avuno{
+    display: block;
+    opacity: 1;
+}
+.avdos{
+    display: none;
+    opacity: 0;
+}
+.avtres{
+    display: none;
+    opacity: 0;
+}
+.avcuatro{
+    display: none;
+    opacity: 0;
+}
+.comments .content .post .name{
+    color: #4fa753;
+    font-size: 24px;
+    font-weight: 600;
+}
+.comments .content .post p{
+    padding-top: 20px;
+    font-size: 20px;
+    font-weight: 100;
+}
+/*---------------------------------------footer*/
+.footer{
+    width: 100%;
+    background: #16193B;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    padding: 40px 0;
+}
+.footer .condu{
+    padding-bottom: 15px; 
+}
+.footer .tel{
+    font-size: 20px;
+}
+.footer ul{
+    display: flex;
+    margin: auto;
+    width: 250px;
+    justify-content: space-around;
+}
+.footer ul li{
+    list-style: none;
+    padding: 10px;
+}
+
+
+/*---------------------------------------asesores*/
+.asesores{
+    width: 100%;
+    background: url(../img/head/back3.jpg)no-repeat center fixed;
+}
+.asesores .form{
+    height: 425px;
+    width: 800px;
+    margin: auto;
+    padding: 50px 50px;
+}
+.asesores .form form input{
+    background: none;
+    border: none;
+    width: 300px;
+    padding: 10px;
+    color: #fff;
+    font-weight: 100;
+    margin: 10px;
+    border-bottom: 1px solid #4fa753;
+    font-size: 17px;
+}
+.asesores .form form label{
+    color: #fff;
+    font-weight: 100;
+}
+.asesores .form form .check{
+    width: 20px;
+}
+button{
+    background: #4fa753;
+    border: none;
+    width: 300px;
+    padding: 10px;
+    color: #fff;
+    font-weight: 100;
+    margin: 10px;
+    border-bottom: 1px solid #4fa753;
+    font-size: 17px;
+}
+.app{
+    background: #3a5e94;
+    height: 500px;
+}
+/*---------------------*/
+/*---------------------*/
+/*---------------------*/
+/*---------------------home asesor*/
+.Menu-asesor ul{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+.Menu-asesor ul li{
+    padding: 0 25px;
+}
+.Menu-asesor ul li a{
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 2px solid #4fa753;
+    padding-bottom: 5px;
+}
+.Menu-asesor .close-sesion{
+    position: absolute;
+    right: 100px;
+    text-decoration: none;
+    color: #fff;
+    top: 20px;
+}
+.content-asesor{
+    background: #16193B;
+    width: 100%;
+    height: 100%;
+}
+.content-asesor .welcome{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: block;
+    width: 700px;
+    height: 100px;
+}
+.content-asesor .welcome div{
+    background: #4fa753;
+    padding: 10px;
+    text-align: center;
+    color: #41546e;
+    font-size: 16px;
+}
+.content-asesor .welcome div p{
+    margin: 0;
+}
+.content-asesor .welcome div .white{
+    color: #fff;
+}
+.content-asesor .welcome .homeback{
+    background: #fff;
+}
+/*---------------------*/
+/*---------------------*/
+/*---------------------*/
+/*---------------------micorsitios usuarios*/
+.content-usuario{
+    width: 100%;
+    height: 100%;
+    background: url(../img/head/back3.jpg)no-repeat center fixed;
+}
+.content-usuario div{
+    bottom: 100px;
+    right: 0;
+    margin: auto;
+    display: block;
+    width: 80%;
+    height: auto;
+    position: absolute;
+    left: 0;
+    top: 150px;
+}
+.content-usuario div table{
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+}
+.content-usuario div table td{
+    background: rgba(22, 25, 59, .5);
+    padding: 10px;
+    color: #fff;
+}
+.content-usuario div table .editInput{
+    width: 50px;
+}
+.content-usuario div table .editInput a{
+    color: #4fa753;
+    text-decoration: none;
+}
+.content-usuario div table .edit{
+    width: 50px;
+}
+.content-usuario div table thead .back-white td{
+    background: #4fa753;
+}
+/*---------------------agregar usuario*/
+.agregarUsuario{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.7);
+    top: 0;
+    opacity: 0;
+    display: none;
+}
+.agregarUsuario form{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    display: block;
+    width: 600px;
+    height: 325px;
+    opacity: 0;
+    display: none;
+    padding-top: 30px;
+    background: #285CA4;
+    border-radius: 10px;
+}
+.agregarUsuario form input{
+    display: block;
+    width: 400px;
+    border: none;
+    padding: 10px;
+    margin: 15px auto;
+    font-size: 16px;
+    font-weight: 100;
+    background: none;
+    border-bottom: 1px solid #4fa753;
+    color: #fff;
+}
+.agregarUsuario form textarea{
+    display: block;
+    width: 400px;
+    border: none;
+    padding: 10px;
+    margin: 15px auto;
+    font-size: 16px;
+    font-weight: 100;
+    background: none;
+    border-bottom: 1px solid #4fa753;
+    color: #fff;
+    height: 150px;
+}
+.agregarUsuario form .user{
+    margin: 35px auto;
+    display: block;
+}
+.agregarUsuario form a img{
+    position: absolute;
+    width: 20px;
+    right: 38px;
+    top: 10px;
+}
+.content-usuario div .search{
+    width: 300px;
+    height: 40px;
+    right: 0;
+    background: none;
+    border: none;
+    border-bottom: 1px solid #4fa753;
+    font-size: 16px;
+    font-weight: 100;
+    margin-left: 10px;
+    color: #fff;
+}
+.content-usuario div .plusUser{
+    position: absolute;
+    right: 40px;
+    top: 130px;
+    color: #fff;
+    text-decoration: none;
+}
+.titulo{
+    color: #fff;
+    border-left: 3px solid #4fa753;
+    padding-left: 10px;
+    font-size: 50px;
+    margin: 0px 15px 45px;
+}
+.footer a{
+    color: #285CA4;
+    text-decoration: none;
+}
+
+
+
+
+
+
