@@ -47,4 +47,16 @@
 		<button class="user">Agregar usuario</button>
 	</form>
 </div>
+<div class="editarUsuario">
+	<form class="datosUsuario">
+	<a href=""><img src="./img/body/close.png" class="close"></a>
+		<input type="text" placeholder="Nombre">
+		<input type="text" placeholder="Correo">
+		<input type="password" placeholder="Password actual">
+		<input type="password" placeholder="Nuevo password">
+		<input type="password" placeholder="Confirmar password">
+		<button class="user">Editar usuario</button>
+		<button class="user">Borrar</button>
+	</form>
+</div>
 <?php include("_footer.php") ?>

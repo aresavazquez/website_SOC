@@ -181,7 +181,16 @@ html, body{
     background-size: contain;
 }
 .simulador .box{
-    padding: 50px 150px 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    display: block;
+    width: 900px;
+    height: 655px;
+}
 }
 .simulador h1{
     color: #fff;
@@ -224,6 +233,7 @@ html, body{
     margin: 10px;
     border-bottom: 1px solid #4fa753;
     font-size: 17px;
+    letter-spacing: 1px;
 }
 .simulador .form form select{
     background: none;
@@ -231,6 +241,7 @@ html, body{
     width: 300px;
     padding: 10px;
     color: #fff;
+    letter-spacing: 1px;
     font-weight: 100;
     margin: 10px;
     border-bottom: 1px solid #4fa753;
@@ -242,6 +253,7 @@ html, body{
 .simulador .aviso{
     text-align: center;
     color: #fff;
+    font-size: 11px;
 }
 .simulador .aviso.check{
     padding-right: 10px;
@@ -253,28 +265,46 @@ html, body{
     background: url(../img/head/back3.jpg)no-repeat center fixed;
     background-size: cover;
     position: relative;
+    display: flex;
 }
 .comments .cel{
     position: absolute;
     right: 100px;
-    top: 20px;
+    top: 360px;
     transform: rotate(20deg);
 }
 .comments .cel2{
     position: absolute;
     right: 350px;
-    top: 70px;
+    top: 400px;
     transform: rotate(20deg);
+}
+.comments .contenido-comments{
+    width: 60%;
+    position: relative;
+}
+.comments .contenido-comments.iphone{
+    width: 40%;
+    position: relative;
 }
 /*---------------------------------------comments slider*/
 .comments .content{
-    width: 500px;
-    height: 300px;
     text-align: center;
     font-size: 18px;
     color: #fff;
     font-weight: 100;
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    display: block;
+    width: 500px;
+    height: 490px;
+}
+.comments .content.celular{
+    height: 690px;
 }
 .title{
     color: #fff;
@@ -325,10 +355,10 @@ html, body{
     padding: 40px 0;
 }
 .footer .condu{
-    padding-bottom: 15px; 
+    padding: 15px; 
 }
 .footer .tel{
-    font-size: 20px;
+    font-size: 16px;
 }
 .footer ul{
     display: flex;
@@ -418,7 +448,7 @@ button{
 }
 .content-asesor .welcome{
     position: absolute;
-    top: 0;
+    top: -150px;
     bottom: 0;
     left: 0;
     right: 0;
@@ -426,6 +456,8 @@ button{
     display: block;
     width: 700px;
     height: 100px;
+    opacity: 0;
+    display: none;
 }
 .content-asesor .welcome div{
     background: #4fa753;
@@ -495,6 +527,7 @@ button{
     top: 0;
     opacity: 0;
     display: none;
+    z-index: 1;
 }
 .agregarUsuario form{
     position: fixed;
@@ -505,37 +538,97 @@ button{
     margin: auto;
     display: block;
     width: 600px;
-    height: 325px;
+    height: 390px;
     opacity: 0;
-    display: none;
     padding-top: 30px;
     background: #285CA4;
     border-radius: 10px;
 }
 .agregarUsuario form input{
     display: block;
-    width: 400px;
     border: none;
     padding: 10px;
-    margin: 15px auto;
+    letter-spacing: 1px;
     font-size: 16px;
     font-weight: 100;
     background: none;
-    border-bottom: 1px solid #4fa753;
     color: #fff;
+    position: relative;
+    margin: 15px auto;
+    width: 70%;
+    border-bottom: 1px solid #4fa753;
 }
-.agregarUsuario form textarea{
+.agregarUsuario .datosUsuario.microsite{
+    width: 80%;
+    height: 700px;
+    padding: 50px;
+    overflow-y: scroll;
+    height: 650px;
+}
+.agregarUsuario .datosUsuario.microsite input{
     display: block;
-    width: 400px;
     border: none;
     padding: 10px;
-    margin: 15px auto;
+    letter-spacing: 1px;
+    font-size: 16px;
+    font-weight: 100;
+    background: none;
+    color: #fff;
+    position: relative;
+    margin: 15px 0;
+    width: 70%;
+}
+.agregarUsuario .datosUsuario.microsite .edit_input{
+    border-bottom: 1px solid #4fa753;
+}
+.agregarUsuario .datosUsuario.microsite label{
+    color: #fff;
+    font-weight: 100;
+    font-size: 20px;
+}
+.agregarUsuario .datosUsuario.microsite .img_slider{
+    background: #fff;
+    width: 500px;
+    height: 200px;
+    border-radius: 5px;
+}
+.agregarUsuario .datosUsuario.microsite textarea{
+    display: block;
+    width: 70%;
+    border: none;
+    padding: 10px;
+    margin: 15px 0;
+    letter-spacing: 1px;
     font-size: 16px;
     font-weight: 100;
     background: none;
     border-bottom: 1px solid #4fa753;
     color: #fff;
-    height: 150px;
+    height: 45px;
+}
+.agregarUsuario .datosUsuario.microsite .borrar{
+    background: #A4424B;
+    border-bottom: 0;
+}
+.agregarUsuario .datosUsuario.microsite .edit_photo input{
+    padding: 2px 30px;
+}
+.agregarUsuario .datosUsuario.microsite .edit_photo .foto{
+    float: left;
+}
+.agregarUsuario .datosUsuario.microsite p{
+    color: #4fa753;
+    font-weight: 100;
+    font-size: 17px;
+    margin-top: 45px;
+    font-style: italic;
+}
+.agregarUsuario .datosUsuario.microsite ul{
+    display: flex;
+    justify-content: space-around;
+}
+.agregarUsuario .datosUsuario.microsite ul li{
+    list-style: none;
 }
 .agregarUsuario form .user{
     margin: 35px auto;
@@ -577,9 +670,212 @@ button{
     color: #285CA4;
     text-decoration: none;
 }
+.footer a img{
+    width: 35px;
+}
+.footer .direccion{
+    font-size: 12px;
+    font-weight: 100;
+}
+.footer .terminos{
+    font-size: 10px;
+    font-weight: 100;
+}
+.footer .terminos a{
+    color: #fff;
+}
+.gradient{
+    background: url(../img/footer/content_separator.png)no-repeat;
+    width: 100%;
+    height: 8px;
+    background-size: cover;
+}
+/*---------------------agregar usuario*/
+.editarUsuario{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.7);
+    top: 0;
+    opacity: 0;
+    display: none;
+}
+.editarUsuario form{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    display: block;
+    width: 600px;
+    height: 535px;
+    opacity: 0;
+    display: none;
+    padding-top: 30px;
+    background: #285CA4;
+    border-radius: 10px;
+}
+.editarUsuario .datosUsuario.microsite{
+    width: 80%;
+    height: 700px;
+}
+.editarUsuario form input{
+    display: block;
+    width: 400px;
+    border: none;
+    padding: 10px;
+    letter-spacing: 1px;
+    margin: 15px auto;
+    font-size: 16px;
+    font-weight: 100;
+    background: none;
+    border-bottom: 1px solid #4fa753;
+    color: #fff;
+}
+.editarUsuario form textarea{
+    display: block;
+    width: 400px;
+    border: none;
+    padding: 10px;
+    margin: 15px auto;
+    letter-spacing: 1px;
+    font-size: 16px;
+    font-weight: 100;
+    background: none;
+    border-bottom: 1px solid #4fa753;
+    color: #fff;
+    height: 150px;
+}
 
+.editarUsuario form .user{
+    margin: 35px auto;
+    display: block;
+}
+.editarUsuario form a img{
+    position: absolute;
+    width: 20px;
+    right: 38px;
+    top: 10px;
+}
+/*estilos micorsitios brokers*/
+.head_micro{
+    background: rgba(40, 92, 164, .5);
+    background-size: contain;
+    margin-top: 70px;
+}
+center{
+    background: url(../img/head/back3.jpg)no-repeat center fixed;
+    padding-bottom: 70px;
+    background-size: cover;
+}
+center .text_simlador{
+    color: #fff;
+    font-size: 18px;
+    font-weight: 100;
+    padding-bottom: 40px;
+}
+.head_micrositio{
+    width: 100%;
+    background: #16193B;
+    color: #fff;
+    display: flex;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+}
+.head_micrositio h1{
+    font-weight: 100;
+    margin-top: 25px;
+    font-size: 20px;
+}
+.contenido_micrositio{
+    margin: auto;
+    padding: 50px;
+    width: 100%;
+    padding: 100px;
+}
+.contenido_micrositio p{
+    color: #fff;
+    font-size: 18px;
+    font-weight: 100;
+    width: 800px;
+    margin: auto;
+    text-align: justify;
+}
+.contenido_micrositio ul{
+    display: flex;
+    justify-content: space-around;
+    padding: 60px;
+    flex-wrap: wrap;
+}
+.contenido_micrositio li{
+    list-style: none;
+}
+.contenido_micrositio li img{
+    border-radius: 10px;
+    width: 300px;
+}
 
-
-
-
-
+.contenido_micrositio li p{
+    width: 300px;
+    text-align: center;
+    font-size: 15px;
+    padding-top: 13px;
+}
+.contenido_micrositio .titleMicrositio{
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 29px;
+    color: #4fa753;
+}
+.titleSimulador{
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 29px;
+    color: #4fa753;
+}
+.datos{
+    padding: 50px;
+    background: #285CA4;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.datos form{
+    width: 320px;
+}
+.datos form .send{
+    background: #4fa753;
+    border: none;
+    width: 300px;
+    padding: 10px;
+    color: #fff;
+    font-weight: 100;
+    margin: 10px;
+    border-bottom: 1px solid #4fa753;
+    font-size: 17px;
+}
+.datos form .inputBroker{
+    background: none;
+    border: none;
+    width: 300px;
+    padding: 10px;
+    color: #fff;
+    font-weight: 100;
+    margin: 10px;
+    border-bottom: 1px solid #4fa753;
+    font-size: 17px;
+}
+.datos form .contact{
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 29px;
+    color: #4fa753;
+}
+.footer.micro{
+    padding: 40px 0 0;
+}

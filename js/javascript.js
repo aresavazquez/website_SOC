@@ -1,4 +1,5 @@
 $(document).on('ready', function(){
+    TweenLite.to('.welcome', 1.5, {opacity: 1, display: "block", ease: Power2.easeOut, y: 150});
     var tl = new TimelineLite({onComplete: function(){
         this.restart();
     }});
@@ -41,14 +42,41 @@ $(document).on('ready', function(){
         e.preventDefault ();
         TweenLite.to('.agregarUsuario', .5, {opacity: 1, display: 'block', onComplete: function(){
             TweenLite.to('.datosUsuario', .5, { opacity: 1, display: 'block', ease: Power2.easeOut, y: 30});
-        }})
+        }});
     });
     $('.close').on('click', function (e){
         e.preventDefault ();
         TweenLite.to('.datosUsuario', .5, { opacity: 0, display: 'none', ease: Power2.easeOut, y: 0, onComplete: function(){
             TweenLite.to('.agregarUsuario', .5, {opacity: 0, display: 'none'});
-        }})
+        }});
     });
+    $('.editInput').on('click', function (e){
+        e.preventDefault ();
+        TweenLite.to('.editarUsuario', .5, {opacity: 1, display: 'block', onComplete: function(){
+            TweenLite.to('.datosUsuario', .5, { opacity: 1, display: 'block', ease: Power2.easeOut, y: 30});
+        }});
+    });
+    
+//efecto celulares
+    var section = $('.simulador' ).offset().top;
+    $(window).scroll(function(){
+        console.log($(window).scrollTop());
+        console.log($('.simulador' ).offset().top);
+        var scroll = $(window).scrollTop();
+        if(scroll > 550){
+            TweenLite.to('.cel2', 2, { ease: Power2.easeOut, y: -300});
+            TweenLite.to('.cel', 2, { ease: Power2.easeOut, y: -400});
+        };
+    });
+    var section = $('.head_micrositio' ).offset().top;
+    $(window).scroll(function(){
+        console.log($(window).scrollTop());
+        console.log($('.head_micrositio' ).offset().top);
+        var scroll = $(window).scrollTop();
+        if(scroll > 550){
+            TweenLite.to('.head_micrositio', 2, { ease: Power2.easeOut, y: -300});
+        };
+    });    
 });
 
 

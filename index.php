@@ -116,25 +116,31 @@
 	</div>
 </div>
 <div class="comments">
-	<div class="content">
-		<p class="title">Testimonios</p>
-		<div class="post avuno">
-			<img src="./img/body/avatar.png">
-			<p class="name">Alma Mejía</p>
-			<p>Recomiendo el servicio, mi experiencia fue muy buena, la atención es muy profesional.</p>
-		</div>
-		<div class="post avdos">
-			<img src="./img/body/avatar2.png">
-			<p class="name">Fidel Ruiz Chico</p>
-			<p>Empresa con gente extraordinaria haciendo cosas excepcionales para que concretes tus sueños</p>
-		</div>
-		<div class="post avtres">
-			<img src="./img/body/avatar3.png">
-			<p class="name">Ricardo Velázquez</p>
-			<p>Muy bien Albas...solo recomendar a tus seguidores y amigos que Banorte entiende a las familias mexicanas y ofrece excelentes condiciones para que cambie su hipoteca con nosotros. </p>
+	<div class="contenido-comments">
+		<div class="content">
+			<p class="title">Testimonios</p>
+			<div class="post avuno">
+				<img src="./img/body/avatar.png">
+				<p class="name">Alma Mejía</p>
+				<p>Recomiendo el servicio, mi experiencia fue muy buena, la atención es muy profesional.</p>
+			</div>
+			<div class="post avdos">
+				<img src="./img/body/avatar2.png">
+				<p class="name">Fidel Ruiz Chico</p>
+				<p>Empresa con gente extraordinaria haciendo cosas excepcionales para que concretes tus sueños</p>
+			</div>
+			<div class="post avtres">
+				<img src="./img/body/avatar3.png">
+				<p class="name">Ricardo Velázquez</p>
+				<p>Muy bien Albas...solo recomendar a tus seguidores y amigos que Banorte entiende a las familias mexicanas y ofrece excelentes condiciones para que cambie su hipoteca con nosotros. </p>
+			</div>
 		</div>
 	</div>
-	<img src="./img/body/cel.png" class="cel">
-	<img src="./img/body/cel2.png" class="cel2">
+	<div class="contenido-comments iphone">
+		<div class="content celular">
+			<img src="./img/body/cel.png" class="cel">
+			<img src="./img/body/cel2.png" class="cel2">
+		</div>
+	</div>
 </div>
 <?php include("_footer.php") ?>
