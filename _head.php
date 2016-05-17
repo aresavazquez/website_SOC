@@ -13,7 +13,10 @@
     <meta name="alexaVerifyID" content="M63bVzWUB51g0Np60Eu9G5KYdt0"/>
     <title>SOC | Asesores Hipotecarios</title>
     <link rel="stylesheet" href="./css/museo/museo.css">
+<<<<<<< HEAD
     <link rel="stylesheet" href="./css/bootstrap.css">
+=======
+>>>>>>> fb272e124798fa678c7695bab64fd340b9ad6003
     <link rel="stylesheet" href="./css/style.css">
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -43,7 +46,10 @@
     <!--script type="text/javascript" async="async" defer="defer" src="https://dattachat.com/chat/cargar/wid/55f2f4f6d5b0b297684484" ></script> <a href="javascript:;" onclick="dcJs.startSend()"> <img style="border:0px;" id="dc_ImgStatus" src="https://dattachat.com/chat/img/wid/55f2f4f6d5b0b297684484" /></a-->
     <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenMax.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<<<<<<< HEAD
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+=======
+>>>>>>> fb272e124798fa678c7695bab64fd340b9ad6003
     <script src="js/ScrollToPlugin.js"></script>
     <script type="text/javascript" src="./js/javascript.js"></script>
 </head>

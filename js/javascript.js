@@ -67,16 +67,7 @@ $(document).on('ready', function(){
             TweenLite.to('.cel2', 2, { ease: Power2.easeOut, y: -300});
             TweenLite.to('.cel', 2, { ease: Power2.easeOut, y: -400});
         };
-    });
-    var section = $('.head_micrositio' ).offset().top;
-    $(window).scroll(function(){
-        console.log($(window).scrollTop());
-        console.log($('.head_micrositio' ).offset().top);
-        var scroll = $(window).scrollTop();
-        if(scroll > 550){
-            TweenLite.to('.head_micrositio', 2, { ease: Power2.easeOut, y: -300});
-        };
-    });    
+    });   
 });
 
 
