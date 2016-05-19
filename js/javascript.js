@@ -50,6 +50,13 @@ $(document).on('ready', function(){
             TweenLite.to('.agregarUsuario', .5, {opacity: 0, display: 'none'});
         }});
     });
+    $('.editInput').on('click', function (e){
+        e.preventDefault ();
+        TweenLite.to('.editarUsuario', .5, {opacity: 1, display: 'block', onComplete: function(){
+            TweenLite.to('.datosUsuario', .5, { opacity: 1, display: 'block', ease: Power2.easeOut, y: 30});
+        }});
+    });
+    
 //efecto celulares
     var section = $('.simulador' ).offset().top;
     $(window).scroll(function(){
@@ -60,7 +67,7 @@ $(document).on('ready', function(){
             TweenLite.to('.cel2', 2, { ease: Power2.easeOut, y: -300});
             TweenLite.to('.cel', 2, { ease: Power2.easeOut, y: -400});
         };
-    });
+    });    
 });
 
 
