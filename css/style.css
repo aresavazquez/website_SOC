@@ -867,7 +867,7 @@ center .text_simlador{
 }
 /*contacto*/
 .head_contacto{
-    background: url(../img/body/head_contacto.jpg)no-repeat;
+    background: url(../img/body/head_contacto.jpg)no-repeat center;
     background-size: cover;
     height: 250px;
     width: 100%;
@@ -900,7 +900,8 @@ center .text_simlador{
 }
 .head_contacto div .title_section{
     text-align: center;
-    font-size: 35px;
+    font-weight: 600;
+    font-size: 50px;
     padding: 0;
 }
 .head_contacto div div{
@@ -965,7 +966,201 @@ center .text_simlador{
     font-size: 19px;
     margin-bottom: 70px;
 }
-
+/* soc tips*/
+.tips{
+    background: url(../img/body/tips.jpg)no-repeat center;
+    background-size: cover;
+    height: 250px;
+    width: 100%;
+    color: #fff;
+    position: relative;
+    transsition: all 0.3s linear;
+    transition: all 1s ease;
+    box-shadow: -7px -1px 21px #000;
+}
+.tips:hover{
+    height: 300px;
+    transform: scale(1.2);
+ 
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+}
+.tips div{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: block;
+    width: 600px;
+    height: 150px;
+}
+.tips div .title_section{
+    text-align: center;
+    font-weight: 600;
+    font-size: 50px;
+    padding: 0;
+}
+.tips div div{
+    width: 25px;
+    height: 5px;
+    background: #4fa753;
+    position: relative;
+}
+.tips div p{
+    font-size: 18px;
+    font-weight: 100;
+    text-align: center;
+    padding-top: 18px;
+}
+.container_tips{
+    background: url(../img/head/back3.jpg)no-repeat center fixed;
+    background-size: cover;
+    padding: 50px;
+}
+.container_tips .video{
+    color: #fff;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.container_tips h1{
+    color: #4fa753;
+    text-align: center;
+}
+.container_tips p{
+    font-size: 18px;
+    text-align: center;
+    color: #fff;
+    font-weight: 100;
+}
+.container_tips .video div .title_video{
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 100;
+    color: #9cc2f7;
+}
+/* directores soc */
+.directores{
+    background: url(../img/body/soc_.jpg)no-repeat center;
+    background-size: cover;
+    height: 250px;
+    width: 100%;
+    color: #fff;
+    position: relative;
+    transsition: all 0.3s linear;
+    transition: all 1s ease;
+    box-shadow: -7px -1px 21px #000;
+}
+.directores:hover{
+    height: 300px;
+    transform: scale(1.2);
+ 
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+}
+.directores div{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: block;
+    width: 600px;
+    height: 150px;
+}
+.directores div .title_section{
+    text-align: center;
+    font-weight: 600;
+    font-size: 50px;
+    padding: 0;
+}
+.directores div div{
+    width: 25px;
+    height: 5px;
+    background: #4fa753;
+    position: relative;
+}
+.directores div p{
+    font-size: 18px;
+    font-weight: 100;
+    text-align: center;
+    padding-top: 18px;
+}
+.demo-2 {
+    position:relative;
+    width: 200px;
+    height: 186px;
+    overflow:hidden;
+    float:left;
+    background-color:rgba(26,76,110,0.5)
+}
+.demo-2 p,.demo-2 h2 {
+    color:#fff;
+    padding:10px;
+    left:10px;
+    top:20px;
+    position:relative
+}
+.demo-2 p {
+    font-family:'Lato';
+    font-size:12px;
+    line-height:18px;
+    margin:0
+}
+.demo-2 h2 {
+    font-size:20px;
+    line-height:24px;
+    margin:0;
+    font-family:'Lato'
+}
+.effect img {
+    width: 200px;
+    position:absolute;
+    left:0;
+    bottom:0;
+    cursor:pointer;
+    margin:-12px 0;
+    -webkit-transition:bottom .3s ease-in-out;
+    -moz-transition:bottom .3s ease-in-out;
+    -o-transition:bottom .3s ease-in-out;
+    transition:bottom .3s ease-in-out
+}
+.effect img.top:hover {
+    bottom:-96px;
+    padding-top:100px;
+}
+h2.zero,p.zero {
+    margin:0;
+    padding:0;
+}
+.container_directores{
+    background: url(../img/head/back3.jpg)no-repeat center fixed;
+    background-size: cover;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 40px;
+}
+.container_directores div .ti{
+    color: #4fa753;
+    text-align: center;
+}
+.container_directores div .texto{
+    font-weight: 100;
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+}
 
 
 
