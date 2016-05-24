@@ -110,7 +110,7 @@ class Session
             //$query->execute(array(":user_id" => $userId));
             //
             //$result = $query->fetch();
-            $result = User::getSession($userId);
+            $result = User::get_instance()->getSession($userId);
             $userSessionId = !empty($result)? $result->session_id: null;
 
             return $session_id !== $userSessionId;

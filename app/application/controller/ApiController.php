@@ -7,28 +7,51 @@ class ApiController extends Controller{
      */
     public function __construct(){
         parent::__construct();
-        $this->user = new User();
+        //$this->user = new User();
+    }
+
+    public function index(){
+        $this->View->renderJSON(array('version'=>'2.0'));
     }
 
     public function login(){
-        if (!Csrf::isTokenValid()) {
-            User::logout();
-            Redirect::home();
-            exit();
-        }
+        //if (!Csrf::isTokenValid()) {
+        //    User::logout();
+        //}
         // perform the login method, put result (true or false) into $login_successful
-        $login_successful = Login::login(
-            Request::post('user_name'), Request::post('user_password'), Request::post('set_remember_me_cookie')
+        Session::set('feedback_negative', array());
+        $login_successful = Credentials::login(
+            Request::post('user_email'), Request::post('user_password'), Request::post('set_remember_me_cookie')
         );
         // check login status: if true, then redirect user to user/index, if false, then to login form again
         if ($login_successful) {
             if (Request::post('redirect')) {
-                Redirect::to(ltrim(urldecode(Request::post('redirect')), '/'));
+                $this->View->renderJSON($this->success_code(array('redirect_to'=>ltrim(urldecode(Request::post('redirect')), '/'))));
+                //Redirect::to(ltrim(urldecode(Request::post('redirect')), '/'));
             } else {
-                Redirect::to('user/index');
+                $this->View->renderJSON($this->success_code(array('redirect_to'=>$this->Routes['user_url'])));
+                //Redirect::to('user/index');
             }
         } else {
-            Redirect::to('login/index');
+            $this->View->renderJSON($this->error_code(Session::get('feedback_negative'), array('redirect_to'=>$this->Routes['root_url'])));
+            //Redirect::to('login/index');
         }
+    }
+
+    public function register(){
+        Session::set('feedback_negative', array());
+        $registration_successful = Credentials::registerNewUser();
+        if($registration_successful){
+            $this->View->renderJSON($this->success_code(array('redirect_to'=>$this->Routes['consultant_url'])));
+        }else{
+            $this->View->renderJSON($this->error_code(Session::get('feedback_negative'), array('redirect_to'=>$this->Routes['root_url'])));
+        }
+    }
+
+    private function success_code($data){
+        return array('status'=>200, 'data'=>$data);
+    }
+    private function error_code($errors, $data){
+        return array('status'=>500, 'errors'=>$errors, 'data'=>$data);
     }
 }

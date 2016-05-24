@@ -68,7 +68,7 @@ class Auth
     public static function checkSessionConcurrency(){
         if(Session::userIsLoggedIn()){
             if(Session::isConcurrentSessionExists()){
-                LoginModel::logout();
+                Credentials::logout();
                 Redirect::home();
                 exit();
             }

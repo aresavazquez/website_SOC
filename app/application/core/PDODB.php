@@ -1,18 +1,19 @@
 <?php
 class PDODB{
 	private $DBH;
-	protected $table;
-	protected function __construct(){
+	private $table;
+	public function __construct($table){
 		try{
 			$this->DBH = new PDO("mysql:host=".Config::get('DB_HOST').";dbname=".Config::get('DB_NAME'), Config::get('DB_USER'), Config::get('DB_PASS'));
 		}catch(Exception $e){
 			echo $e->getMessage();
 		}
+		$this->table = $table;
 	}
-	protected function _relationship( $q ){
+	public function _relationship( $q ){
 		$STH = $this->DBH->exec( $q );
 	}
-	protected function _query( $q ){
+	public function _query( $q ){
 		$result = array();
 		$STH = $this->DBH->query( $q );
 		$STH->setFetchMode(PDO::FETCH_OBJ);
@@ -21,18 +22,19 @@ class PDODB{
 		}
 		return new PDOResult( $result );
 	}
-	protected function _insert( $data ){
+	public function _insert( $data ){
 		$fields = array();
 		foreach($data as $key=>$value){
 			$fields[] = $key;
 		}
 		$fieldsstr = implode( ', ', $fields );
 		$fieldsval = ':' . implode( ', :', $fields );
+		//echo "INSERT INTO " . $this->table . " ( $fieldsstr, created_at ) value ( $fieldsval, NOW() )";
 		$STH = $this->DBH->prepare("INSERT INTO " . $this->table . " ( $fieldsstr, created_at ) value ( $fieldsval, NOW() )");
 		$STH->execute( $data );
 		return $this->DBH->lastInsertId();
 	}
-	protected function _all( $fields ){
+	public function _all( $fields ){
 		$result = array();
 		$STH = $this->DBH->query("SELECT $fields FROM " . $this->table);
 		$STH->setFetchMode(PDO::FETCH_OBJ);
@@ -41,7 +43,7 @@ class PDODB{
 		}
 		return new PDOResult( $result );
 	}
-	protected static function _where( $fields, $condition ){
+	public function _where( $fields, $condition ){
 		$result = array();
 		$STH = $this->DBH->query("SELECT $fields FROM " . $this->table . " WHERE $condition");
 		//echo "SELECT $fields FROM " . $this->table . " WHERE $condition";
@@ -55,7 +57,7 @@ class PDODB{
 			return new PDOResult( NULL );
 		}
 	}
-	protected function _where_in_join( $joins, $fields, $condition ){
+	public function _where_in_join( $joins, $fields, $condition ){
 		$result = array();
 		$query = "SELECT $fields FROM " . $this->table;
 		foreach ($joins as $join) {
@@ -83,11 +85,11 @@ class PDODB{
 			return new PDOResult( NULL );
 		}
 	}
-	protected function _delete( $condition ){
+	public function _delete( $condition ){
 		$this->DBH->exec("DELETE FROM " . $this->table . " WHERE $condition");
 		return true;  
 	}
-	protected function _update( $data, $condition ){
+	public function _update( $data, $condition ){
 		$fields = array();
 		foreach($data as $key=>$value){
 			$fields[] = $key . '=:' . $key;

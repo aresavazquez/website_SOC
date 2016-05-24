@@ -10,11 +10,12 @@ class ConsultantController extends Controller
     }
 
     public function index(){
-        if(Login::isUserLoggedIn()){
+        //var_dump(Credentials::isUserLoggedIn());
+        /*if(Credentials::isUserLoggedIn()){
             Redirect::to('consultant/byId');
         } else {
             Redirect::to('admin');
-        }
+        }*/
     }
 
     public function requestPasswordReset(){

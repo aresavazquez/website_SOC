@@ -12,6 +12,7 @@ class Routes{
 	private function __construct(){
 		self::$paths = array(
             'root_url' => $this->set_url(''),
+            'user_url' => $this->set_url('consultant'),
             'password_reset_url' => $this->set_url('consultant/requestPasswordReset'),
             'privacy_url' => $this->set_url('index/privacy'),
             'terms_url' => $this->set_url('index/terms')
