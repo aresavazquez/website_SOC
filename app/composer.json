@@ -1,0 +1,20 @@
+{
+    "name": "vampaynani/littlebit",
+    "type": "project",
+    "description": "",
+    "keywords": ["login", "auth", "user", "authentication", "mvc", "microsites"],
+    "homepage": "https://bitbucket.com/vampaynani/littlebit",
+    "license": "MIT",
+    "require-dev": {
+        "php": ">=5.5.0",
+        "phpmailer/phpmailer": "~5.2",
+        "gregwar/captcha": "~1.1",
+        "phpunit/phpunit": "~4.8"
+    },
+    "autoload": {
+        "psr-4": { "": ["application/core/", "application/model/"] }
+    },
+    "require": {
+        "twig/twig": "~1.0"
+    }
+}
