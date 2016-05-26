@@ -13,9 +13,11 @@ class AdminController extends Controller
         $csrf_token = Csrf::makeToken();
         $this->View->render('admin/login.html', array('csrf'=>$csrf_token));
     }
-
     public function sites(){
         $this->View->render('admin/sites.html');
+    }
+    public function consultant(){
+        $this->View->render('consultant/single.html');
     }
 
     public function users(){

@@ -1,32 +1,19 @@
 *{
     margin: 0;
     padding: 0;
-    outline: 0;
 }
 html, body{
     width: 100%;
     height: 100%;
     font-family: 'MuseoSans',sans-serif;
 }
+a,a:visited{
+    color:#428bca;
+}
 /*---------------------------------------header SLIDER*/
 .home{
     width: 100%;
     height: 100%;
-}
-.contentMenu{
-    width: 100%;
-    height: 600px;
-    position: absolute;
-    right: -300px;
-    background: #fff;
-    top: 66px;
-    padding: 20px 20px 100px;
-    opacity: 0;
-    display: none;
-}
-.contentMenu ul li{
-    padding: 10px 40px;
-    text-align: left;
 }
 .menu-header{
     position: fixed;
@@ -35,12 +22,12 @@ html, body{
     width: 100%;
     text-align: center;
     padding: 22px;
+    box-shadow: -7px -1px 21px #000;
     font-size: 18px;
     color: #fff;
     background: #285CA4;
     background: rgba(40, 92, 164, 1);
     font-weight: 100;
-    min-height: 25px;
 }
 .menu-header .logo{
     position: absolute;
@@ -375,17 +362,17 @@ html, body{
 
 
 /*---------------------------------------asesores*/
-.asesores-login{
+.asesores{
     width: 100%;
     background: url(../img/head/back3.jpg)no-repeat center fixed;
 }
-.asesores-login .form{
+.asesores .form{
     height: 425px;
     width: 800px;
     margin: auto;
     padding: 50px 50px;
 }
-.asesores-login .form form input{
+.asesores .form form input{
     background: none;
     border: none;
     width: 300px;
@@ -396,14 +383,14 @@ html, body{
     border-bottom: 1px solid #4fa753;
     font-size: 17px;
 }
-.asesores-login .form form label{
+.asesores .form form label{
     color: #fff;
     font-weight: 100;
 }
-.asesores-login .form form .check{
+.asesores .form form .check{
     width: 20px;
 }
-button{
+button, .login__button{
     background: #4fa753;
     border: none;
     width: 300px;
@@ -413,6 +400,8 @@ button{
     margin: 10px;
     border-bottom: 1px solid #4fa753;
     font-size: 17px;
+    text-align: center;
+    display: inline-block;
 }
 .app{
     background: #3a5e94;
@@ -529,6 +518,7 @@ button{
     top: 0;
     opacity: 0;
     display: none;
+    z-index: 1;
 }
 .agregarUsuario form{
     position: fixed;
@@ -539,43 +529,97 @@ button{
     margin: auto;
     display: block;
     width: 600px;
-    height: 325px;
+    height: 390px;
     opacity: 0;
-    display: none;
     padding-top: 30px;
     background: #285CA4;
     border-radius: 10px;
 }
+.agregarUsuario form input{
+    display: block;
+    border: none;
+    padding: 10px;
+    letter-spacing: 1px;
+    font-size: 16px;
+    font-weight: 100;
+    background: none;
+    color: #fff;
+    position: relative;
+    margin: 15px auto;
+    width: 70%;
+    border-bottom: 1px solid #4fa753;
+}
 .agregarUsuario .datosUsuario.microsite{
     width: 80%;
     height: 700px;
+    padding: 50px;
+    overflow-y: scroll;
+    height: 650px;
 }
-.agregarUsuario form input{
+.agregarUsuario .datosUsuario.microsite input{
     display: block;
-    width: 400px;
     border: none;
     padding: 10px;
     letter-spacing: 1px;
-    margin: 15px auto;
+    font-size: 16px;
+    font-weight: 100;
+    background: none;
+    color: #fff;
+    position: relative;
+    margin: 15px 0;
+    width: 70%;
+}
+.agregarUsuario .datosUsuario.microsite .edit_input{
+    border-bottom: 1px solid #4fa753;
+}
+.agregarUsuario .datosUsuario.microsite label{
+    color: #fff;
+    font-weight: 100;
+    font-size: 20px;
+}
+.agregarUsuario .datosUsuario.microsite .img_slider{
+    background: #fff;
+    width: 500px;
+    height: 200px;
+    border-radius: 5px;
+}
+.agregarUsuario .datosUsuario.microsite textarea{
+    display: block;
+    width: 70%;
+    border: none;
+    padding: 10px;
+    margin: 15px 0;
+    letter-spacing: 1px;
     font-size: 16px;
     font-weight: 100;
     background: none;
     border-bottom: 1px solid #4fa753;
     color: #fff;
+    height: 45px;
 }
-.agregarUsuario form textarea{
-    display: block;
-    width: 400px;
-    border: none;
-    padding: 10px;
-    margin: 15px auto;
-    letter-spacing: 1px;
-    font-size: 16px;
+.agregarUsuario .datosUsuario.microsite .borrar{
+    background: #A4424B;
+    border-bottom: 0;
+}
+.agregarUsuario .datosUsuario.microsite .edit_photo input{
+    padding: 2px 30px;
+}
+.agregarUsuario .datosUsuario.microsite .edit_photo .foto{
+    float: left;
+}
+.agregarUsuario .datosUsuario.microsite p{
+    color: #4fa753;
     font-weight: 100;
-    background: none;
-    border-bottom: 1px solid #4fa753;
-    color: #fff;
-    height: 150px;
+    font-size: 17px;
+    margin-top: 45px;
+    font-style: italic;
+}
+.agregarUsuario .datosUsuario.microsite ul{
+    display: flex;
+    justify-content: space-around;
+}
+.agregarUsuario .datosUsuario.microsite ul li{
+    list-style: none;
 }
 .agregarUsuario form .user{
     margin: 35px auto;
@@ -637,7 +681,491 @@ button{
     height: 8px;
     background-size: cover;
 }
+/*---------------------agregar usuario*/
+.editarUsuario{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.7);
+    top: 0;
+    opacity: 0;
+    display: none;
+}
+.editarUsuario form{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    display: block;
+    width: 600px;
+    height: 535px;
+    opacity: 0;
+    display: none;
+    padding-top: 30px;
+    background: #285CA4;
+    border-radius: 10px;
+}
+.editarUsuario .datosUsuario.microsite{
+    width: 80%;
+    height: 700px;
+}
+.editarUsuario form input{
+    display: block;
+    width: 400px;
+    border: none;
+    padding: 10px;
+    letter-spacing: 1px;
+    margin: 15px auto;
+    font-size: 16px;
+    font-weight: 100;
+    background: none;
+    border-bottom: 1px solid #4fa753;
+    color: #fff;
+}
+.editarUsuario form textarea{
+    display: block;
+    width: 400px;
+    border: none;
+    padding: 10px;
+    margin: 15px auto;
+    letter-spacing: 1px;
+    font-size: 16px;
+    font-weight: 100;
+    background: none;
+    border-bottom: 1px solid #4fa753;
+    color: #fff;
+    height: 150px;
+}
 
+.editarUsuario form .user{
+    margin: 35px auto;
+    display: block;
+}
+.editarUsuario form a img{
+    position: absolute;
+    width: 20px;
+    right: 38px;
+    top: 10px;
+}
+/*estilos micorsitios brokers*/
+.head_micro{
+    background: rgba(40, 92, 164, .5);
+    background-size: contain;
+    margin-top: 70px;
+}
+center{
+    background: url(../img/head/back3.jpg)no-repeat center fixed;
+    padding-bottom: 70px;
+    background-size: cover;
+}
+center .text_simlador{
+    color: #fff;
+    font-size: 18px;
+    font-weight: 100;
+    padding-bottom: 40px;
+}
+.head_micrositio{
+    width: 100%;
+    background: #16193B;
+    color: #fff;
+    display: flex;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+}
+.head_micrositio h1{
+    font-weight: 100;
+    margin-top: 25px;
+    font-size: 20px;
+}
+.contenido_micrositio{
+    margin: auto;
+    padding: 50px;
+    width: 100%;
+    padding: 100px;
+}
+.contenido_micrositio p{
+    color: #fff;
+    font-size: 18px;
+    font-weight: 100;
+    width: 800px;
+    margin: auto;
+    text-align: justify;
+}
+.contenido_micrositio ul{
+    display: flex;
+    justify-content: space-around;
+    padding: 60px;
+    flex-wrap: wrap;
+}
+.contenido_micrositio li{
+    list-style: none;
+}
+.contenido_micrositio li img{
+    border-radius: 10px;
+    width: 300px;
+}
+
+.contenido_micrositio li p{
+    width: 300px;
+    text-align: center;
+    font-size: 15px;
+    padding-top: 13px;
+}
+.contenido_micrositio .titleMicrositio{
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 29px;
+    color: #4fa753;
+}
+.titleSimulador{
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 29px;
+    color: #4fa753;
+}
+.datos{
+    padding: 50px;
+    background: #285CA4;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.datos form{
+    width: 320px;
+}
+.datos form .send{
+    background: #4fa753;
+    border: none;
+    width: 300px;
+    padding: 10px;
+    color: #fff;
+    font-weight: 100;
+    margin: 10px;
+    border-bottom: 1px solid #4fa753;
+    font-size: 17px;
+}
+.datos form .inputBroker{
+    background: none;
+    border: none;
+    width: 300px;
+    padding: 10px;
+    color: #fff;
+    font-weight: 100;
+    margin: 10px;
+    border-bottom: 1px solid #4fa753;
+    font-size: 17px;
+}
+.datos form .contact{
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 29px;
+    color: #4fa753;
+}
+.footer.micro{
+    padding: 40px 0 0;
+}
+/*contacto*/
+.head_contacto{
+    background: url(../img/body/head_contacto.jpg)no-repeat center;
+    background-size: cover;
+    height: 250px;
+    width: 100%;
+    color: #fff;
+    position: relative;
+    transsition: all 0.3s linear;
+    transition: all 1s ease;
+    box-shadow: -7px -1px 21px #000;
+}
+.head_contacto:hover{
+    height: 300px;
+    transform: scale(1.2);
+ 
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+}
+.head_contacto div{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: block;
+    width: 600px;
+    height: 150px;
+}
+.head_contacto div .title_section{
+    text-align: center;
+    font-weight: 600;
+    font-size: 50px;
+    padding: 0;
+}
+.head_contacto div div{
+    width: 25px;
+    height: 5px;
+    background: #4fa753;
+    position: relative;
+}
+.head_contacto div p{
+    font-size: 18px;
+    font-weight: 100;
+    text-align: center;
+    padding-top: 18px;
+}
+.container_contacto div{
+    background: url(../img/head/back3.jpg)no-repeat center fixed;
+    background-size: cover;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 50px;
+}
+.container_contacto div form {
+    width: 320px;
+}
+.container_contacto div form input{
+    background: none;
+    border: none;
+    width: 300px;
+    padding: 10px;
+    color: #fff;
+    font-weight: 100;
+    margin: 10px;
+    border-bottom: 1px solid #4fa753;
+    font-size: 17px;
+}
+.container_contacto div form textarea {
+    background: none;
+    border: none;
+    width: 300px;
+    padding: 10px;
+    color: #fff;
+    font-weight: 100;
+    margin: 10px;
+    border-bottom: 1px solid #4fa753;
+    font-size: 17px;
+}
+.container_contacto div form .enviar{
+    background: #4fa753;
+    border: none;
+    width: 300px;
+    padding: 10px;
+    color: #fff;
+    font-weight: 100;
+    margin: 10px 10px 30px;
+    border-bottom: 1px solid #4fa753;
+    font-size: 17px;
+}
+.container_contacto div form p{
+    text-align: center;
+    color: #fff;
+    font-size: 19px;
+    margin-bottom: 70px;
+}
+/* soc tips*/
+.tips{
+    background: url(../img/body/tips.jpg)no-repeat center;
+    background-size: cover;
+    height: 250px;
+    width: 100%;
+    color: #fff;
+    position: relative;
+    transsition: all 0.3s linear;
+    transition: all 1s ease;
+    box-shadow: -7px -1px 21px #000;
+}
+.tips:hover{
+    height: 300px;
+    transform: scale(1.2);
+ 
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+}
+.tips div{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: block;
+    width: 600px;
+    height: 150px;
+}
+.tips div .title_section{
+    text-align: center;
+    font-weight: 600;
+    font-size: 50px;
+    padding: 0;
+}
+.tips div div{
+    width: 25px;
+    height: 5px;
+    background: #4fa753;
+    position: relative;
+}
+.tips div p{
+    font-size: 18px;
+    font-weight: 100;
+    text-align: center;
+    padding-top: 18px;
+}
+.container_tips{
+    background: url(../img/head/back3.jpg)no-repeat center fixed;
+    background-size: cover;
+    padding: 50px;
+}
+.container_tips .video{
+    color: #fff;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.container_tips h1{
+    color: #4fa753;
+    text-align: center;
+}
+.container_tips p{
+    font-size: 18px;
+    text-align: center;
+    color: #fff;
+    font-weight: 100;
+}
+.container_tips .video div .title_video{
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 100;
+    color: #9cc2f7;
+}
+/* directores soc */
+.directores{
+    background: url(../img/body/soc_.jpg)no-repeat center;
+    background-size: cover;
+    height: 250px;
+    width: 100%;
+    color: #fff;
+    position: relative;
+    transsition: all 0.3s linear;
+    transition: all 1s ease;
+    box-shadow: -7px -1px 21px #000;
+}
+.directores:hover{
+    height: 300px;
+    transform: scale(1.2);
+ 
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+}
+.directores div{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: block;
+    width: 600px;
+    height: 150px;
+}
+.directores div .title_section{
+    text-align: center;
+    font-weight: 600;
+    font-size: 50px;
+    padding: 0;
+}
+.directores div div{
+    width: 25px;
+    height: 5px;
+    background: #4fa753;
+    position: relative;
+}
+.directores div p{
+    font-size: 18px;
+    font-weight: 100;
+    text-align: center;
+    padding-top: 18px;
+}
+.demo-2 {
+    position:relative;
+    width: 200px;
+    height: 186px;
+    overflow:hidden;
+    float:left;
+    background-color:rgba(26,76,110,0.5)
+}
+.demo-2 p,.demo-2 h2 {
+    color:#fff;
+    padding:10px;
+    left:10px;
+    top:20px;
+    position:relative
+}
+.demo-2 p {
+    font-family:'Lato';
+    font-size:12px;
+    line-height:18px;
+    margin:0
+}
+.demo-2 h2 {
+    font-size:20px;
+    line-height:24px;
+    margin:0;
+    font-family:'Lato'
+}
+.effect img {
+    width: 200px;
+    position:absolute;
+    left:0;
+    bottom:0;
+    cursor:pointer;
+    margin:-12px 0;
+    -webkit-transition:bottom .3s ease-in-out;
+    -moz-transition:bottom .3s ease-in-out;
+    -o-transition:bottom .3s ease-in-out;
+    transition:bottom .3s ease-in-out
+}
+.effect img.top:hover {
+    bottom:-96px;
+    padding-top:100px;
+}
+h2.zero,p.zero {
+    margin:0;
+    padding:0;
+}
+.container_directores{
+    background: url(../img/head/back3.jpg)no-repeat center fixed;
+    background-size: cover;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 40px;
+}
+.container_directores div .ti{
+    color: #4fa753;
+    text-align: center;
+}
+.container_directores div .texto{
+    font-weight: 100;
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+}
 
 
 
