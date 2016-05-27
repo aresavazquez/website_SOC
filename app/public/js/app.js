@@ -1,3 +1,6 @@
+var host_url = "http://soc.local/?url=";
+
+
 $(document).ready(function(){
 	login();
 	registerUser();
@@ -14,7 +17,7 @@ function login(){
 		var settings = {
 			"async": true,
 			"crossDomain": true,
-			"url": "http://soc.local/?url=api/login",
+			"url": host_url + "api/login",
 			"method": "POST",
 			"data": {
 				"user_email": username,
@@ -42,7 +45,7 @@ function registerUser(){
 		var settings = {
 			"async": true,
 			"crossDomain": true,
-			"url": "http://soc.local/?url=api/register",
+			"url": host_url + "api/register",
 			"method": "POST",
 			"data": {
 				"user_name": username,
