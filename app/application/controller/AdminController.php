@@ -19,7 +19,6 @@ class AdminController extends Controller
     public function consultant(){
         $this->View->render('consultant/single.html');
     }
-
     public function users(){
         $this->View->render('admin/users.html');
     }
