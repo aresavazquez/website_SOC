@@ -42,7 +42,7 @@ class ApiController extends Controller{
         Session::set('feedback_negative', array());
         $registration_successful = Credentials::registerNewUser();
         if($registration_successful){
-            $this->View->renderJSON($this->success_code(array('redirect_to'=>$this->Routes['consultant_url'])));
+            $this->View->renderJSON($this->success_code($registration_successful));
         }else{
             $this->View->renderJSON($this->error_code(Session::get('feedback_negative'), array('redirect_to'=>$this->Routes['root_url'])));
         }
