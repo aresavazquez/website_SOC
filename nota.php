@@ -1,4 +1,5 @@
 <?php include("_head.php") ?>
+<?php include("_menu.php") ?>
 <div class="nota">
 	<div class="nota-general">
 		<div class="contenido-nota">

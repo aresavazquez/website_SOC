@@ -1555,7 +1555,7 @@ h2.zero,p.zero {
     display: block;
     margin-top: 45px;
 }
-/*------- empresas */
+/*------- hipoteca */
 .hipoteca{
     background: url(../img/body/hipotecario.jpg)no-repeat center;
     background-size: cover;
@@ -1635,5 +1635,145 @@ h2.zero,p.zero {
     margin: auto;
     display: block;
 }
+/*------- empresas */
+.empresas{
+    background: url(../img/body/empresas.jpg)no-repeat center;
+    background-size: cover;
+    height: 250px;
+    width: 100%;
+    color: #fff;
+    position: relative;
+    transsition: all 0.3s linear;
+    transition: all 1s ease;
+}
+.empresas:hover{
+    transform: scale(1.2);
+ 
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+}
+.empresas div{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: block;
+    width: 700px;
+    height: 150px;
+}
+.empresas div .title_section{
+    text-align: center;
+    font-weight: 600;
+    font-size: 50px;
+    padding: 0;
+}
+.empresas div div{
+    width: 25px;
+    height: 5px;
+    background: #4fa753;
+    position: relative;
+}
+.empresas div p{
+    font-size: 18px;
+    font-weight: 100;
+    text-align: center;
+    padding-top: 18px;
+}
+.container_empresas{
+    background: url(../img/head/back3.jpg)no-repeat center fixed;
+    background-size: cover;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    color: #fff;
+    padding: 50px;
+}
+/*-------------------- directorio*/
+.directorios{
+    background: url(../img/body/directorio.jpg)no-repeat center;
+    background-size: cover;
+    height: 250px;
+    width: 100%;
+    color: #fff;
+    position: relative;
+    transsition: all 0.3s linear;
+    transition: all 1s ease;
+}
+.directorios:hover{
+    transform: scale(1.2);
+ 
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+}
+.directorios div{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: block;
+    width: 700px;
+    height: 150px;
+}
+.directorios div .title_section{
+    text-align: center;
+    font-weight: 600;
+    font-size: 50px;
+    padding: 0;
+}
+.directorios div div{
+    width: 25px;
+    height: 5px;
+    background: #4fa753;
+    position: relative;
+}
+.directorios div p{
+    font-size: 18px;
+    font-weight: 100;
+    text-align: center;
+    padding-top: 18px;
+}
+.container_directorio{
+    background: url(../img/head/back3.jpg)no-repeat center fixed;
+    background-size: cover;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    color: #fff;
+    padding: 50px;
+}
+.content-form h3 {
+    color: #4fa753;
+    font-size: 27px;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 0;
+}
+.container_directorio label {
+    display: block;
+    font-weight: 500;
+    text-align: center;
+    font-size: 16px;
+}
+.container_directorio select {
+    background: url(../img/footer/content_separator.png) top center repeat-y;
+    background-size: 100%;
+    width: 400px;
+    border: none;
+    height: 30px;
+    margin: auto;
+    display: block;
+    margin-top: 49px;
+}
+
 
 
