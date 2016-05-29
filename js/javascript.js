@@ -1,36 +1,36 @@
 $(document).on('ready', function(){
-    TweenLite.to('.welcome', 1.5, {opacity: 1, display: "block", ease: Power2.easeOut, y: 150});
-    var tl = new TimelineLite({onComplete: function(){
-        this.restart();
-    }});
-//imagen 1
-    tl.to('.img1', 1, {scale: 2, opacity: 1, display: "block"});
-    tl.to('.uno', .5, {opacity: 1, display: "block", ease: Power2.easeOut, y: 150});
-    tl.to('.uno', .5, {opacity: 0, display: "none", ease: Power2.easeOut, x: -200, delay: 5});
-    tl.to('.img1', .5, {opacity: 0, display: "none", ease: Power2.easeOut, x: -200}, '-=0.5');
-//imagen 2
-    tl.to('.img2', 1, {scale: 2, opacity: 1, display: "block"});
-    tl.to('.dos', .5, {opacity: 1, display: "block", ease: Power2.easeOut, y: 100});
-    tl.to('.dos', .5, {opacity: 0, display: "none", ease: Power2.easeOut, x: -200, delay: 5});
-    tl.to('.img2', .5, {opacity: 0, display: "none", ease: Power2.easeOut, x: -200}, '-=0.5');
-//imagen 3
-    tl.to('.img3', 1, {scale: 2, opacity: 1, display: "block"});
-    tl.to('.tres', .5, {opacity: 1, display: "block", ease: Power2.easeOut, y: 100});
-    tl.to('.tres', .5, {opacity: 0, display: "none", ease: Power2.easeOut, x: -200, delay: 5});
-    tl.to('.img3', .5, {opacity: 0, display: "none", ease: Power2.easeOut}, '-=0.5');
+//    TweenLite.to('.welcome', 1.5, {opacity: 1, display: "block", ease: Power2.easeOut, y: 150});
+//    var tl = new TimelineLite({onComplete: function(){
+//        this.restart();
+//    }});
+////imagen 1
+//    tl.to('.img1', 1, {scale: 2, opacity: 1, display: "block"});
+//    tl.to('.uno', .5, {opacity: 1, display: "block", ease: Power2.easeOut, y: 150});
+//    tl.to('.uno', .5, {opacity: 0, display: "none", ease: Power2.easeOut, x: -200, delay: 5});
+//    tl.to('.img1', .5, {opacity: 0, display: "none", ease: Power2.easeOut, x: -200}, '-=0.5');
+////imagen 2
+//    tl.to('.img2', 1, {scale: 2, opacity: 1, display: "block"});
+//    tl.to('.dos', .5, {opacity: 1, display: "block", ease: Power2.easeOut, y: 100});
+//    tl.to('.dos', .5, {opacity: 0, display: "none", ease: Power2.easeOut, x: -200, delay: 5});
+//    tl.to('.img2', .5, {opacity: 0, display: "none", ease: Power2.easeOut, x: -200}, '-=0.5');
+////imagen 3
+//    tl.to('.img3', 1, {scale: 2, opacity: 1, display: "block"});
+//    tl.to('.tres', .5, {opacity: 1, display: "block", ease: Power2.easeOut, y: 100});
+//    tl.to('.tres', .5, {opacity: 0, display: "none", ease: Power2.easeOut, x: -200, delay: 5});
+//    tl.to('.img3', .5, {opacity: 0, display: "none", ease: Power2.easeOut}, '-=0.5');
 
 //slider commments
-    var tx = new TimelineLite({onComplete: function(){
-        this.restart();
-    }});
-    tx.to('.avuno', .5, {opacity: 1, display: "block"});
-    tx.to('.avuno', .5, {opacity: 0, display: "none", delay: 4.5});
+    //var tx = new TimelineLite({onComplete: function(){
+    //    this.restart();
+    //}});
+    //tx.to('.avuno', .5, {opacity: 1, display: "block"});
+    //tx.to('.avuno', .5, {opacity: 0, display: "none", delay: 4.5});
 
-    tx.to('.avdos', 1, {opacity: 1, display: "block"});
-    tx.to('.avdos', .5, {opacity: 0, display: "none", delay: 4.5});
+    //tx.to('.avdos', 1, {opacity: 1, display: "block"});
+    //tx.to('.avdos', .5, {opacity: 0, display: "none", delay: 4.5});
 
-    tx.to('.avtres', 1, {opacity: 1, display: "block"});
-    tx.to('.avtres', .5, {opacity: 0, display: "none", delay: 4.5});
+    //tx.to('.avtres', 1, {opacity: 1, display: "block"});
+    //tx.to('.avtres', .5, {opacity: 0, display: "none", delay: 4.5});
 
     $('.menu').on('click', function (e){
         e.preventDefault ();
@@ -58,16 +58,20 @@ $(document).on('ready', function(){
     });
     
 //efecto celulares
-    var section = $('.simulador' ).offset().top;
-    $(window).scroll(function(){
-        console.log($(window).scrollTop());
-        console.log($('.simulador' ).offset().top);
-        var scroll = $(window).scrollTop();
-        if(scroll > 550){
-            TweenLite.to('.cel2', 2, { ease: Power2.easeOut, y: -300});
-            TweenLite.to('.cel', 2, { ease: Power2.easeOut, y: -400});
-        };
-    });    
+    //var section = $('.simulador' ).offset().top;
+    //$(window).scroll(function(){
+    //    console.log($(window).scrollTop());
+    //    console.log($('.simulador').offset().top);
+    //    var scroll = $(window).scrollTop();
+    //    if(scroll > 550){
+    //        TweenLite.to('.cel2', 2, { ease: Power2.easeOut, y: -300});
+    //        TweenLite.to('.cel', 2, { ease: Power2.easeOut, y: -400});
+    //    };
+    //}); 
+    $('.menu-general'). on('click', function(){
+        e.preventDefault ();
+        TweenLite.to('.container_menu', .5, {top: 100});
+    });   
 });
 
 

@@ -12,6 +12,67 @@ html, body{
     width: 100%;
     height: 100%;
 }
+/* ------------------------------ menu*/
+.container_menu ul{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top: 15px;
+}
+.container_menu img{
+    position: absolute;
+    width: 90px;
+    left: 20px;
+    top: 5px;
+}
+.container_menu{
+    background: #fff;
+    height: 50px;
+    z-index: 100;
+    position: relative;
+}
+.container_menu ul li{
+    list-style: none;
+}
+.container_menu ul li a{
+    color: #2a6496;
+    padding: 14px;
+    font-size: 16px;
+}
+.menu-general img{
+    width: 25px;
+    margin-left: 12px;
+}
+.menu-general:hover{
+    color: #fff;
+    border-bottom: 0;
+}
+/*------------------------------- head*/
+.carousel{
+    width: 100%;
+    height: 460px;
+    background: url(../img/head/back3.jpg)no-repeat center fixed;
+    background-size: cover;
+}
+.carousel .carousel-inner{
+    width: 900px;
+    margin: auto;
+    padding-top: 30px;
+    height: 420px;
+}
+.carousel .item img{
+    width: 300px;
+    float: right;
+}
+.carousel .item p{
+    position: absolute;
+    color: #fff;
+    font-size: 57px;
+    font-weight: 600;
+    left: 100px;
+    top: 55px;
+}
+/*------------------------------- */
 .menu-header{
     position: fixed;
     z-index: 2;
@@ -23,19 +84,12 @@ html, body{
     font-size: 18px;
     color: #fff;
     background: #285CA4;
-    background: rgba(40, 92, 164, 1);
     font-weight: 100;
 }
 .menu-header .logo{
     position: absolute;
     width: 100px;
     left: 50px;
-    top: 11px;
-}
-.menu-header .menu img{
-    position: absolute;
-    width: 40px;
-    right: 50px;
     top: 11px;
 }
 .menu-header .menu.close img{
@@ -50,7 +104,7 @@ html, body{
     font-weight: 900;
     color: #4fa753;
 }
-.head{
+/*.head{
     width: 100%;
     height: 75%;
     background: url(../img/head/back3.jpg)no-repeat center fixed;
@@ -84,8 +138,8 @@ html, body{
     position: absolute;
     text-align: center;
     top: 85px;
-}
-.head .simular{
+}*/
+.simular{
     color: #fff;
     text-decoration: none;
     background: #4fa753;
@@ -96,6 +150,10 @@ html, body{
     bottom: 8%;
     left: 25%;
     z-index: 1;
+}
+.simular:hover{
+    color: #fff;
+    text-decoration: none;
 }
 .head .oculto{
     color: #fff;
@@ -150,7 +208,7 @@ html, body{
 .sub-menu a p{
     text-align: center;
     color: #9cc2f7;
-    padding-top: 95px;
+    padding-top: 77px;
     font-size: 16px;
     font-weight: 100;
     width: 200px;
@@ -175,8 +233,6 @@ html, body{
     margin: auto;
     display: block;
     width: 900px;
-    height: 655px;
-}
 }
 .simulador h1{
     color: #fff;
@@ -1058,7 +1114,6 @@ center .text_simlador{
     box-shadow: -7px -1px 21px #000;
 }
 .directores:hover{
-    height: 300px;
     transform: scale(1.2);
  
     -webkit-transition: all 1s ease;
@@ -1163,7 +1218,7 @@ h2.zero,p.zero {
 }
 /*------- blog */
 .blog{
-    background: url(../img/body/tips.jpg)no-repeat center;
+    background: url(../img/body/blog.jpg)no-repeat center;
     background-size: cover;
     height: 250px;
     width: 100%;
@@ -1171,10 +1226,8 @@ h2.zero,p.zero {
     position: relative;
     transsition: all 0.3s linear;
     transition: all 1s ease;
-    box-shadow: -7px -1px 21px #000;
 }
 .blog:hover{
-    height: 300px;
     transform: scale(1.2);
  
     -webkit-transition: all 1s ease;

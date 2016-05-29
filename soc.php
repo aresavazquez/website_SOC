@@ -1,4 +1,5 @@
 <?php include("_head.php") ?>
+<?php include("_menu.php") ?>
 <div class="directores">
 	<div>
 		<p class="title_section">Conócenos</p>

@@ -1,7 +1,7 @@
 <?php include("_head.php") ?>
 <div class="home">
-	<?php include("_header.php") ?>
-	<div class="head">
+	<?php include("_menu.php") ?>
+	<!--div class="head">
 	    <div class="imagenes">
 	    	<p class="texto uno">"Sólo tienes que<br>hacer clic, mamá"</p>
 	    	<img src="./img/head/img_1.png" class="img1">
@@ -15,6 +15,43 @@
 	    	<img src="./img/head/img_3.png" class="img3">
 	    </div>
 	    <a href="" class="simular">Simula tu crédito ahora</a>
+	</div-->
+
+	<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  	<!-- Indicators -->
+  		<ol class="carousel-indicators">
+    		<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    		<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    		<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  		</ol>
+  		<div class="carousel-inner" role="listbox">
+    		<div class="item active">
+    			<p>"Sólo tienes que<br>hacer clic, mamá"</p>
+      			<img src="./img/head/img_1.png" alt="...">
+      			<!--div class="carousel-caption">
+        			...
+      			</div-->
+    		</div>
+    		<div class="item">
+    			<p>"Toma miel<br>con limón"</p>
+      			<img src="./img/head/img_2.png" alt="...">
+    		</div>
+    		<div class="item">
+    			<p>En el semáforo dé<br>vuelta a la derecha</p>
+      			<img src="./img/head/img_3.png" alt="...">
+    		</div>
+    		...
+    		<a href="" class="simular">Simula tu crédito ahora</a>
+  		</div>
+  		<!-- Controls -->
+  		<!--a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    		<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    		<span class="sr-only">Previous</span>
+  		</a>
+  		<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    		<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    		<span class="sr-only">Next</span>
+  		</a-->
 	</div>
 	<div class="sub-menu">
 		<a href="asesores.php">
