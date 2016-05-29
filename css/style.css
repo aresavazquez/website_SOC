@@ -49,10 +49,13 @@ html, body{
 }
 .soc div{
     border-bottom: 1px solid #4fa753;
-    width: 50%;
+    width: 495px;
+    margin: 40px;
+    padding-bottom: 20px;
 }
 .soc div .titleS{
-    font-size: 27px;
+    font-size: 30px;
+    color: #4fa753;
 }
 .soc div p{
     color: #fff;
@@ -395,6 +398,15 @@ html, body{
     -webkit-filter: grayscale(0);
 }
 .comments .contenido-comments .title{
+    color: #fff;
+    border-left: 3px solid #4fa753;
+    padding-left: 10px;
+    font-size: 50px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    text-align: center;
+}
+.title{
     color: #fff;
     border-left: 3px solid #4fa753;
     padding-left: 10px;
@@ -1138,7 +1150,6 @@ center .text_simlador{
     position: relative;
     transsition: all 0.3s linear;
     transition: all 1s ease;
-    box-shadow: -7px -1px 21px #000;
 }
 .directores:hover{
     transform: scale(1.2);
