@@ -77,7 +77,14 @@ $(document).on('ready', function(){
     $('.menu-general'). on('click', function(){
         e.preventDefault ();
         TweenLite.to('.container_menu', .5, {top: 100});
-    });   
+    });
+    $('.options').on('click', function (e){
+        e.preventDefault ();
+        TweenLite.to('.submenu', .2, {ease: Power2.easeOut, y: 30, display:'flex', opacity: 1});
+    });
+    $('.submenu').on('mouseleave', function (){
+        TweenLite.to('.submenu', .2, {ease: Power2.easeOut, y: 0, display:'none', opacity: 0});
+    }); 
 });
 
 

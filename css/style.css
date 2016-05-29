@@ -56,6 +56,7 @@ html, body{
 .soc div .titleS{
     font-size: 30px;
     color: #4fa753;
+    font-style: italic;
 }
 .soc div p{
     color: #fff;
@@ -84,6 +85,7 @@ html, body{
 }
 .container_menu ul li{
     list-style: none;
+    position: relative;
 }
 .container_menu ul li a{
     color: #2a6496;
@@ -97,6 +99,17 @@ html, body{
 .menu-general:hover{
     color: #fff;
     border-bottom: 0;
+}
+.container_menu ul .submenu{
+    position: absolute;
+    right: -105px;
+    background: #ddd;
+    padding: 10px;
+    width: 300px;
+    top: 5px;
+    margin: auto;
+    display: none;
+    opacity: 0;
 }
 /*------------------------------- head*/
 .carousel{
@@ -1542,6 +1555,85 @@ h2.zero,p.zero {
     display: block;
     margin-top: 45px;
 }
-
+/*------- empresas */
+.hipoteca{
+    background: url(../img/body/hipotecario.jpg)no-repeat center;
+    background-size: cover;
+    height: 250px;
+    width: 100%;
+    color: #fff;
+    position: relative;
+    transsition: all 0.3s linear;
+    transition: all 1s ease;
+}
+.hipoteca:hover{
+    transform: scale(1.2);
+ 
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+}
+.hipoteca div{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: block;
+    width: 600px;
+    height: 150px;
+}
+.hipoteca div .title_section{
+    text-align: center;
+    font-weight: 600;
+    font-size: 50px;
+    padding: 0;
+}
+.hipoteca div div{
+    width: 25px;
+    height: 5px;
+    background: #4fa753;
+    position: relative;
+}
+.hipoteca div p{
+    font-size: 18px;
+    font-weight: 100;
+    text-align: center;
+    padding-top: 18px;
+}
+.container_hipoteca{
+    background: url(../img/head/back3.jpg)no-repeat center fixed;
+    background-size: cover;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    color: #fff;
+    padding: 50px;
+}
+.content-home .container {
+    padding: 40px 40px;
+    color: #fff;
+    text-align: justify;
+}
+.container-productos h4 {
+    font-size: 30px;
+    color: #1dafec;
+    margin-bottom: 20px;
+    font-weight: 100;
+    text-align: center;
+}
+.container-productos h4 span {
+    font-weight: 600;
+}
+.content-home .container p {
+    font-size: 1.2em;
+}
+.content-home .container p img{
+    margin: auto;
+    display: block;
+}
 
 
