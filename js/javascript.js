@@ -20,17 +20,17 @@ $(document).on('ready', function(){
 //    tl.to('.img3', .5, {opacity: 0, display: "none", ease: Power2.easeOut}, '-=0.5');
 
 //slider commments
-    //var tx = new TimelineLite({onComplete: function(){
-    //    this.restart();
-    //}});
-    //tx.to('.avuno', .5, {opacity: 1, display: "block"});
-    //tx.to('.avuno', .5, {opacity: 0, display: "none", delay: 4.5});
+    var tx = new TimelineLite({onComplete: function(){
+        this.restart();
+    }});
+    tx.to('.avuno', .5, {opacity: 1, display: "block"});
+    tx.to('.avuno', .5, {opacity: 0, display: "none", delay: 4.5});
 
-    //tx.to('.avdos', 1, {opacity: 1, display: "block"});
-    //tx.to('.avdos', .5, {opacity: 0, display: "none", delay: 4.5});
+    tx.to('.avdos', 1, {opacity: 1, display: "block"});
+    tx.to('.avdos', .5, {opacity: 0, display: "none", delay: 4.5});
 
-    //tx.to('.avtres', 1, {opacity: 1, display: "block"});
-    //tx.to('.avtres', .5, {opacity: 0, display: "none", delay: 4.5});
+    tx.to('.avtres', 1, {opacity: 1, display: "block"});
+    tx.to('.avtres', .5, {opacity: 0, display: "none", delay: 4.5});
 
     $('.menu').on('click', function (e){
         e.preventDefault ();
@@ -68,6 +68,12 @@ $(document).on('ready', function(){
     //        TweenLite.to('.cel', 2, { ease: Power2.easeOut, y: -400});
     //    };
     //}); 
+    $('.simular').on('click', function(e){
+        e.preventDefault ();
+        var top = $('.simulador').offset().top;
+        TweenLite.to(window, 1, {scrollTo:{y: top}, ease:Power2.easeOut});
+    });
+
     $('.menu-general'). on('click', function(){
         e.preventDefault ();
         TweenLite.to('.container_menu', .5, {top: 100});

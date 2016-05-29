@@ -344,6 +344,7 @@ html, body{
     text-align: center;
     color: #fff;
     font-size: 11px;
+    margin: 0;
 }
 .simulador .aviso.check{
     padding-right: 10px;
@@ -357,46 +358,43 @@ html, body{
     position: relative;
     display: flex;
 }
-.comments .cel{
-    position: absolute;
-    right: 100px;
-    top: 360px;
-    transform: rotate(20deg);
-}
-.comments .cel2{
-    position: absolute;
-    right: 350px;
-    top: 400px;
-    transform: rotate(20deg);
-}
-.comments .contenido-comments{
-    width: 60%;
-    position: relative;
-}
-.comments .contenido-comments.iphone{
-    width: 40%;
-    position: relative;
-}
-/*---------------------------------------comments slider*/
-.comments .content{
-    text-align: center;
-    font-size: 18px;
-    color: #fff;
-    font-weight: 100;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
+.comments .contenido-comments .content .comentarios{
+    width: 500px;
     margin: auto;
     display: block;
-    width: 500px;
-    height: 490px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 100;
+    opacity: 0;
+    display: none;
 }
-.comments .content.celular{
-    height: 690px;
+.comments .contenido-comments .content .comentarios .name{
+    text-align: center;
+    color: #4fa753;
+    font-weight: 600;
 }
-.title{
+.comments .contenido-comments .content .comentarios p{
+    text-align: justify;
+}
+.comments .contenido-comments .content ul{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 800px;
+    margin: auto;
+    padding-bottom: 40px;
+}
+.comments .contenido-comments .content ul li{
+    padding: 15px;
+    list-style: none;
+}
+.comments .contenido-comments .content ul li img{
+    -webkit-filter: grayscale(1);
+}
+.comments .contenido-comments .content ul li .filter-img{
+    -webkit-filter: grayscale(0);
+}
+.comments .contenido-comments .title{
     color: #fff;
     border-left: 3px solid #4fa753;
     padding-left: 10px;
@@ -405,35 +403,16 @@ html, body{
     margin-top: 50px;
     text-align: center;
 }
-
-.comments .content .post{
+.comments .contenido-comments.iphone .cel{
+    width: 250px;
     position: absolute;
+    right: 20px;
+    top: 100px;
 }
-.avuno{
-    display: block;
-    opacity: 1;
-}
-.avdos{
-    display: none;
-    opacity: 0;
-}
-.avtres{
-    display: none;
-    opacity: 0;
-}
-.avcuatro{
-    display: none;
-    opacity: 0;
-}
-.comments .content .post .name{
-    color: #4fa753;
-    font-size: 24px;
-    font-weight: 600;
-}
-.comments .content .post p{
-    padding-top: 20px;
-    font-size: 20px;
-    font-weight: 100;
+.comments .contenido-comments.iphone .cel.two{
+    right: 150px;
+    top: 30px;
+    width: 300px;
 }
 /*---------------------------------------footer*/
 .footer{
