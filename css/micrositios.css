@@ -1,0 +1,166 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html, body{
+    width: 100%;
+    height: 100%;
+    font-family: 'MuseoSans',sans-serif;
+}
+/*---------------------------------------header SLIDER*/
+
+/*---------------------------------------footer*/
+.footer{
+    width: 100%;
+    background: #16193B;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    padding: 40px 0;
+}
+.footer .condu{
+    padding: 15px; 
+}
+.footer .tel{
+    font-size: 16px;
+}
+.footer ul{
+    display: flex;
+    margin: auto;
+    width: 250px;
+    justify-content: space-around;
+}
+.footer ul li{
+    list-style: none;
+    padding: 10px;
+}
+.gradient{
+    background: url(../img/footer/content_separator.png)no-repeat;
+    width: 100%;
+    height: 8px;
+    background-size: cover;
+}
+/*estilos micorsitios brokers*/
+.head_micro{
+    background: rgba(40, 92, 164, .5);
+    background-size: contain;
+    margin-top: 70px;
+}
+center{
+    background: url(../img/head/back3.jpg)no-repeat center fixed;
+    padding-bottom: 70px;
+    background-size: cover;
+}
+center .text_simlador{
+    color: #fff;
+    font-size: 18px;
+    font-weight: 100;
+    padding-bottom: 40px;
+}
+.head_micrositio{
+    width: 100%;
+    background: #16193B;
+    color: #fff;
+    display: flex;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+}
+.head_micrositio h1{
+    font-weight: 100;
+    margin-top: 25px;
+    font-size: 20px;
+}
+.contenido_micrositio{
+    margin: auto;
+    padding: 50px;
+    width: 100%;
+    padding: 100px;
+}
+.contenido_micrositio p{
+    color: #fff;
+    font-size: 18px;
+    font-weight: 100;
+    width: 800px;
+    margin: auto;
+    text-align: justify;
+}
+.contenido_micrositio ul{
+    display: flex;
+    justify-content: space-around;
+    padding: 60px;
+    flex-wrap: wrap;
+}
+.contenido_micrositio li{
+    list-style: none;
+}
+.contenido_micrositio li img{
+    border-radius: 10px;
+    width: 300px;
+}
+
+.contenido_micrositio li p{
+    width: 300px;
+    text-align: center;
+    font-size: 15px;
+    padding-top: 13px;
+}
+.contenido_micrositio .titleMicrositio{
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 29px;
+    color: #4fa753;
+}
+.titleSimulador{
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 29px;
+    color: #4fa753;
+}
+.datos{
+    padding: 50px;
+    background: #285CA4;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.datos form{
+    width: 320px;
+}
+.datos form .send{
+    background: #4fa753;
+    border: none;
+    width: 300px;
+    padding: 10px;
+    color: #fff;
+    font-weight: 100;
+    margin: 10px;
+    border-bottom: 1px solid #4fa753;
+    font-size: 17px;
+}
+.datos form .inputBroker{
+    background: none;
+    border: none;
+    width: 300px;
+    padding: 10px;
+    color: #fff;
+    font-weight: 100;
+    margin: 10px;
+    border-bottom: 1px solid #4fa753;
+    font-size: 17px;
+}
+.datos form .contact{
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 29px;
+    color: #4fa753;
+}
+.footer.micro{
+    padding: 40px 0 0;
+}
+
+
+
