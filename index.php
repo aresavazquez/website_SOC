@@ -28,9 +28,6 @@
     		<div class="item active">
     			<p>"Sólo tienes que<br>hacer clic, mamá"</p>
       			<img src="./img/head/img_1.png" alt="...">
-      			<!--div class="carousel-caption">
-        			...
-      			</div-->
     		</div>
     		<div class="item">
     			<p>"Toma miel<br>con limón"</p>
@@ -40,7 +37,6 @@
     			<p>En el semáforo dé<br>vuelta a la derecha</p>
       			<img src="./img/head/img_3.png" alt="...">
     		</div>
-    		...
     		<a href="" class="simular">Simula tu crédito ahora</a>
   		</div>
   		<!-- Controls -->
@@ -82,6 +78,16 @@
 				</p>
 			</div>
 		</a>
+	</div>
+</div>
+<div class="info">
+	<div class="borde">
+		<h1>Asesoría hipotecaria integral</h1>
+		<p>Recibirás asesoría de especialistas en los productos, procesos, políticas y requisitos de las opciones financieras más importantes del mercado. Analizaremos para ti las alternativas de crédito hipotecario disponibles en el mercado y te ayudaremos a elegir la que mejor se ajuste a tus características y necesidades.</p>
+	</div>
+	<div>
+		<h1>Servicio sin costo.</h1>
+		<p>Los mejores asesores hipotecarios trabajando para ti de manera gratuita.<br>En ningún momento del proceso pagarás por su servicio..</p>
 	</div>
 </div>
 <div class="simulador">
