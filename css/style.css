@@ -1756,7 +1756,7 @@ h2.zero,p.zero {
     font-size: 27px;
     font-weight: 700;
     text-align: center;
-    margin-top: 0;
+    margin-top: 50px;
 }
 .container_directorio label {
     display: block;
@@ -1774,6 +1774,23 @@ h2.zero,p.zero {
     display: block;
     margin-top: 49px;
 }
-
+/*------------------ directorio estado*/
+.directorio-estado .contenido{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    background: #fff;
+    color: #41546e;
+    border-radius: 10px; 
+    padding: 30px;
+}
+.directorio-estado .contenido div{
+    width: 400px;
+    border-bottom: 1px solid #4fa753;
+}
+.directorio-estado .contenido div h1{
+    font-size: 21px;
+}
 
 

@@ -1,7 +1,7 @@
 <?php include("_head.php") ?>
 <div class="head_micrositio">
     <img src="./img/micrositios/logo.png" alt="..." class="logo">
-    <h1>SOC Asesores</h1>
+    <h1>AFORO MAKER</h1>
 </div>
 <center>
     <div class="head_micro">
