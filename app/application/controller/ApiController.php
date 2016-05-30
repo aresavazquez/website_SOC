@@ -29,7 +29,7 @@ class ApiController extends Controller{
                 $this->View->renderJSON($this->success_code(array('redirect_to'=>ltrim(urldecode(Request::post('redirect')), '/'))));
                 //Redirect::to(ltrim(urldecode(Request::post('redirect')), '/'));
             } else {
-                $this->View->renderJSON($this->success_code(array('redirect_to'=>$this->Routes['user_url'])));
+                $this->View->renderJSON($this->success_code(Session::all()));
                 //Redirect::to('user/index');
             }
         } else {
@@ -48,10 +48,24 @@ class ApiController extends Controller{
         }
     }
 
+    public function users(){
+        Session::set('feedback_negative', array());
+        if(!Auth::checkAdminAuthentication()){
+            $this->View->renderJSON($this->error_code(Text::get('FEEDBACK_UNKNOWN_ADMIN'), array('redirect_to'=>$this->Routes['root_url'])));
+        }
+        $users = (array) User::get_instance()->all();
+        foreach ($users as $key => $user) {
+            $users[$key] = (array) $user;
+        }
+        $this->View->renderJSON($this->success_code(array('users'=> $users)));
+    }
+
     private function success_code($data){
         return array('status'=>200, 'data'=>$data);
     }
     private function error_code($errors, $data){
         return array('status'=>500, 'errors'=>$errors, 'data'=>$data);
     }
+
+
 }

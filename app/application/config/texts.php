@@ -6,6 +6,7 @@
  * Could be extended to i18n etc.
  */
 return array(
+	"FEEDBACK_UNKNOWN_ADMIN" => "This session does not belong to an admin account",
 	"FEEDBACK_UNKNOWN_ERROR" => "Unknown error occurred!",
 	"FEEDBACK_DELETED" => "Your account has been deleted.",
 	"FEEDBACK_ACCOUNT_SUSPENDED" => "Account Suspended for ",
@@ -52,8 +53,8 @@ return array(
 	"FEEDBACK_AVATAR_FOLDER_DOES_NOT_EXIST_OR_NOT_WRITABLE" => "Avatar folder does not exist or is not writable. Please change this via chmod 775 or 777.",
 	"FEEDBACK_AVATAR_IMAGE_UPLOAD_FAILED" => "Something went wrong with the image upload.",
 	"FEEDBACK_AVATAR_IMAGE_DELETE_SUCCESSFUL" => "You successfully deleted your avatar.",
-    "FEEDBACK_AVATAR_IMAGE_DELETE_NO_FILE" => "You don't have a custom avatar.",
-    "FEEDBACK_AVATAR_IMAGE_DELETE_FAILED" => "Something went wrong while deleting your avatar.",
+  "FEEDBACK_AVATAR_IMAGE_DELETE_NO_FILE" => "You don't have a custom avatar.",
+  "FEEDBACK_AVATAR_IMAGE_DELETE_FAILED" => "Something went wrong while deleting your avatar.",
 	"FEEDBACK_PASSWORD_RESET_TOKEN_FAIL" => "Could not write token to database.",
 	"FEEDBACK_PASSWORD_RESET_TOKEN_MISSING" => "No password reset token.",
 	"FEEDBACK_PASSWORD_RESET_MAIL_SENDING_ERROR" => "Password reset mail could not be sent due to: ",

@@ -18,6 +18,10 @@ class Session
         }
     }
 
+    public static function all(){
+        return $_SESSION;
+    }
+
     /**
      * sets a specific value to a specific key of the session
      *

@@ -14,6 +14,11 @@ class User {
         return self::$instance;
     }
 
+    public static function all(){
+        $result = self::$PDO->_all('*');
+        return $result->get();    
+    }
+
 	public static function getUserDataByEmail($user_email){
         $result = self::$PDO->_where("id, name, email, password, user_active, user_deleted, user_suspension_timestamp, user_last_failed_login, id_role", "email='$user_email'");
         return $result->first();
