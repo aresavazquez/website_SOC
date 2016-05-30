@@ -48,6 +48,16 @@ class ApiController extends Controller{
         }
     }
 
+    public function sitesNew(){
+        Session::set('feedback_negative', array());
+        $registration_successful = Site::save();
+        if($registration_successful){
+            $this->View->renderJSON($this->success_code($registration_successful));
+        }else{
+            $this->View->renderJSON($this->error_code(Session::get('feedback_negative'), array('redirect_to'=>$this->Routes['root_url'])));
+        }
+    }
+
     public function users(){
         Session::set('feedback_negative', array());
         if(!Auth::checkAdminAuthentication()){
@@ -60,12 +70,23 @@ class ApiController extends Controller{
         $this->View->renderJSON($this->success_code(array('users'=> $users)));
     }
 
+    public function sites(){
+        Session::set('feedback_negative', array());
+        //if(!Auth::checkAdminAuthentication()){
+        //    $this->View->renderJSON($this->error_code(Text::get('FEEDBACK_UNKNOWN_ADMIN'), array('redirect_to'=>$this->Routes['root_url'])));
+        //}
+        $sites = (array) Site::get_instance()->all();
+        foreach ($sites as $key => $site) {
+            $sites[$key] = (array) $site;
+        }
+        $this->View->renderJSON($this->success_code(array('sites'=> $sites)));
+    }
+
     private function success_code($data){
         return array('status'=>200, 'data'=>$data);
     }
+
     private function error_code($errors, $data){
         return array('status'=>500, 'errors'=>$errors, 'data'=>$data);
     }
-
-
 }
