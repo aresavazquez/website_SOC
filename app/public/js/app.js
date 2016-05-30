@@ -27,7 +27,7 @@ function login(){
 		$.ajax(settings).done(function (response) {
 			if(response.status == 200){
 				//window.location = response.data.redirect_to;
-				window.location = 'http://soc.local/?url=admin/consultant';
+				window.location = 'http://soc.local/?url=admin/users';
 			}else if(response.status == 500) {
 				alert(response.errors);
 			}
@@ -62,4 +62,16 @@ function registerUser(){
 			}
 		});
 	});
+}
+
+function showModal(modalName){
+	if( modalName == 'aviso' ){
+		$('#siteModal .modal-header .modal-title').text('Aviso de Privacidad');
+		$('#siteModal .modal-body').html('<h3>Texto prueba Aviso</h3><p>Aquí va el texto</p>');
+	}else if( modalName == 'termino'){
+		$('#siteModal .modal-header .modal-title').text('Términos y Condiciones');
+		$('#siteModal .modal-body').html('<h3>Texto prueba Términos</h3><p>Aquí va el texto</p>');
+	}
+
+	$('#siteModal').modal();
 }
