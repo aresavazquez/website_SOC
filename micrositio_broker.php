@@ -1,7 +1,55 @@
-<?php include("_head.php") ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description" content="Créditos Hipotecarios, te asesoramos, perfilamos, comparamos y trami
+    crédito ideal, los 7 días de la semana.">
+    <meta name="keywords" content="credito hipotecario, broker hipotecario, hipoteca, asesor hipotecario, s
+    crédito hipotecario, soc, credito infonavit, credito para casa">
+    <meta name="author" content="SOC Asesores Hipotecarios">
+    <meta property="og:image" content="http://www.socasesores.com/img/soc/soc_logo.png" />
+    <meta name="alexaVerifyID" content="M63bVzWUB51g0Np60Eu9G5KYdt0"/>
+    <title>SOC | Asesores Hipotecarios</title>
+    <link rel="stylesheet" href="./css/museo/museo.css">
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/micrositios.css">
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-45234464-2', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <script>(function() {
+        var _fbq = window._fbq || (window._fbq = []);
+        if (!_fbq.loaded) {
+        var fbds = document.createElement('script');
+        fbds.async = true;
+        fbds.src = '//connect.facebook.net/en_US/fbds.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(fbds, s);
+        _fbq.loaded = true;
+        }
+        })();
+        window._fbq = window._fbq || [];
+        window._fbq.push(['track', '6028114357559', {'value':'0.00','currency':'EUR'}]);
+    </script>
+    <noscript><img height="1" width="1" alt="siguenos en facebook" style="display:none" src="https://www.facebook.com/tr?ev=6028114357559&amp;cd[value]=0.00&amp;cd[currency]=EUR&amp;noscript=1" /></noscript>
+
+    <!--script type="text/javascript" async="async" defer="defer" src="https://dattachat.com/chat/cargar/wid/55f2f4f6d5b0b297684484" ></script> <a href="javascript:;" onclick="dcJs.startSend()"> <img style="border:0px;" id="dc_ImgStatus" src="https://dattachat.com/chat/img/wid/55f2f4f6d5b0b297684484" /></a-->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenMax.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="js/ScrollToPlugin.js"></script>
+    <script type="text/javascript" src="./js/javascript.js"></script>
+</head>
 <div class="head_micrositio">
     <img src="./img/micrositios/logo.png" alt="..." class="logo">
-    <h1>SOC Asesores</h1>
+    <h1>AFORO MAKER</h1>
 </div>
 <center>
     <div class="head_micro">
@@ -14,7 +62,7 @@
                 </ol>
 
             <!-- Wrapper for slides -->
-                <div class="carousel-inner" role="listbox">
+                <div class="carousel-inner micro" role="listbox">
                     <div class="item active">
                     <img src="./img/micrositios/chica.png" alt="...">
                 </div>

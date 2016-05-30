@@ -1,0 +1,129 @@
+<?php include("_head.php") ?>
+<?php include("_menu.php") ?>
+<div class="hipoteca">
+	<div>
+		<p class="title_section">Créditos hipotecarios</p>
+		<div></div>
+		<p>Líder en Asesoría Hipotecaria en México</p>
+	</div>
+</div>
+<div class="container_hipoteca">
+	<div class="container-fluid content-home">
+	    <div class="container container-productos">
+	        <div class="col-md-6 col-productos-icon">
+	            <h4>Crédito para <span>adquisición.</span></h4>
+	            <p><img src="./img/body/logo_adquisicion.png"></p>
+	        </div>
+	        <div class="col-md-6 col-productos-desc">
+	            <p>Es el préstamo que otorga un banco para la compra de un inmueble nuevo o usado.Este crédito no cubrirá el 100% del valor del inmueble, ya que el enganche deberá ser pagado directamente por el comprador de la vivienda..</p>
+
+	            <!--a href="http://directorio.socasesores.com" class="btn btn-default">+ Información</a-->
+	        </div>
+	    </div>
+	</div>
+
+	<div class="container-fluid content-home content-odd">
+	    <div class="container container-productos">
+	        <div class="col-md-6 col-productos-icon">
+	            <h4>Crédito para <span>construcción.</span></h4>
+	            <p><img src="./img/body/logo_construccion.png"></p>
+	        </div>
+	        <div class="col-md-6 col-productos-desc">
+	            <p>Estos créditos son utilizados para financiar la construcción de un inmueble, y para que puedan ser aprobados es necesario que la obra lleve un porcentaje de avance determinado por el banco; la cantidad financiada se va a otorgar por medio de ministraciones o emisiones.</p>
+
+	            <!--a href="http://directorio.socasesores.com" class="btn btn-default">+ Información</a-->
+	        </div>
+	    </div>
+	</div>
+
+	<div class="container-fluid content-home">
+	    <div class="container container-productos">
+	        <div class="col-md-6 col-productos-icon">
+	            <h4>Crédito para <span>mejora de hipoteca.</span></h4>
+	            <p><img src="./img/body/logo_sustitucion.png"></p>
+	        </div>
+	        <div class="col-md-6 col-productos-desc">
+	            <p>Este crédito está dirigido a quienes ya cuentan con una hipoteca pero desean cambiar las condiciones bajo las cuales la pactaron inicialmente al transferir su deuda a otra institución bancaria. Los beneficios que el cliente puede obtener mediante una sustitución de hipoteca son: reducción del plazo del crédito, reducción el monto de las mensualidades y reducción de la tasa de interés</p>
+
+	            <!--a href="http://directorio.socasesores.com" class="btn btn-default">+ Información</a-->
+	        </div>
+	    </div>
+	</div>
+
+	<div class="container-fluid content-home content-odd">
+	    <div class="container container-productos">
+	        <div class="col-md-6 col-productos-icon">
+	            <h4>Crédito para <span>liquidez.</span></h4>
+	            <p><img src="./img/body/logo_liquidez.png"></p>
+	        </div>
+	        <div class="col-md-6 col-productos-desc">
+	            <p>Estos créditos sirven para que quien los contrata pueda pagar una necesidad inmediata o algún imprevisto, como puede ser una emergencia médica o familiar, un viaje, una compra, etc.</p>
+
+	            <!--a href="http://directorio.socasesores.com" class="btn btn-default">+ Información</a-->
+	        </div>
+	    </div>
+	</div>
+
+	<div class="container-fluid content-home">
+	    <div class="container container-productos">
+	        <div class="col-md-6 col-productos-icon">
+	            <h4>Crédito para <span>pago a pasivos.</span></h4>
+	            <p><img src="./img/body/logo_pasivos.png"></p>
+	        </div>
+	        <div class="col-md-6 col-productos-desc">
+	            <p>Paga tus deudas con una mensualidad baja y mejor tasa de interés.</p>
+
+	            <!--a href="http://directorio.socasesores.com" class="btn btn-default">+ Información</a-->
+	        </div>
+	    </div>
+	</div>
+
+	<div class="container-fluid content-home content-odd">
+	    <div class="container container-productos">
+	        <div class="col-md-6 col-productos-icon">
+	            <h4>Crédito para <span>terreno.</span></h4>
+	            <p><img src="./img/body/logo_terreno.png"></p>
+	        </div>
+	        <div class="col-md-6 col-productos-desc">
+	            <p>En este caso el banco financia una parte del valor del terreno, según políticas de aforo, y el cliente pone la diferencia de su bolsa. Cabe mencionar que debido a que un terreno no soluciona el problema de vivienda de una persona las instituciones financieras son más estrictas para la autorización y otorgamiento de este tipo de financiamiento.</p>
+
+	            <!--a href="http://directorio.socasesores.com" class="btn btn-default">+ Información</a-->
+	        </div>
+	    </div>
+	</div>
+
+	<div class="container-fluid content-home">
+	    <div class="container container-productos">
+	        <div class="col-md-6 col-productos-icon">
+	            <h4>Crédito <span>infonavit total.</span></h4>
+	            <p><img src="./img/body/logo_infonavit.png"></p>
+	        </div>
+	        <div class="col-md-6 col-productos-desc">
+	            <p>Es una opción que permite a los derechohabientes del IMSS comprar una vivienda de cualquier monto, disponiendo de un crédito mayor y del total de la subcuenta de vivienda. Solo a través de Banamex</p>
+
+	            <!--a href="http://directorio.socasesores.com" class="btn btn-default">+ Información</a-->
+	        </div>
+	    </div>
+	</div>
+
+	<div class="container-fluid content-home content-odd">
+	    <div class="container container-productos">
+	        <div class="col-md-6 col-productos-icon">
+	            <h4>Crédito para <span>preventa.</span></h4>
+	            <p><img src="./img/body/logo_preventa.png"></p>
+	        </div>
+	        <div class="col-md-6 col-productos-desc">
+	            <p>Es el préstamo que se otorga para la compra de un inmueble que se encuentra en etapa de planeación o de construcción, y está diseñado para que los desarrolladores de vivienda nueva tengan liquidez para continuar con el proyecto.Para su otorgamiento es necesario que la desarrolladora o la constructora se encuentre debidamente acreditada frente al banco. Sólo con Scotiabank.</p>
+
+	            <!--a href="http://directorio.socasesores.com" class="btn btn-default">+ Información</a-->
+	        </div>
+	    </div>
+	</div>
+</div>
+<?php include("_footer.php") ?>
+
+
+
+
+
+

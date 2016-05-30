@@ -1,23 +1,23 @@
 $(document).on('ready', function(){
-    TweenLite.to('.welcome', 1.5, {opacity: 1, display: "block", ease: Power2.easeOut, y: 150});
-    var tl = new TimelineLite({onComplete: function(){
-        this.restart();
-    }});
-//imagen 1
-    tl.to('.img1', 1, {scale: 2, opacity: 1, display: "block"});
-    tl.to('.uno', .5, {opacity: 1, display: "block", ease: Power2.easeOut, y: 150});
-    tl.to('.uno', .5, {opacity: 0, display: "none", ease: Power2.easeOut, x: -200, delay: 5});
-    tl.to('.img1', .5, {opacity: 0, display: "none", ease: Power2.easeOut, x: -200}, '-=0.5');
-//imagen 2
-    tl.to('.img2', 1, {scale: 2, opacity: 1, display: "block"});
-    tl.to('.dos', .5, {opacity: 1, display: "block", ease: Power2.easeOut, y: 100});
-    tl.to('.dos', .5, {opacity: 0, display: "none", ease: Power2.easeOut, x: -200, delay: 5});
-    tl.to('.img2', .5, {opacity: 0, display: "none", ease: Power2.easeOut, x: -200}, '-=0.5');
-//imagen 3
-    tl.to('.img3', 1, {scale: 2, opacity: 1, display: "block"});
-    tl.to('.tres', .5, {opacity: 1, display: "block", ease: Power2.easeOut, y: 100});
-    tl.to('.tres', .5, {opacity: 0, display: "none", ease: Power2.easeOut, x: -200, delay: 5});
-    tl.to('.img3', .5, {opacity: 0, display: "none", ease: Power2.easeOut}, '-=0.5');
+//    TweenLite.to('.welcome', 1.5, {opacity: 1, display: "block", ease: Power2.easeOut, y: 150});
+//    var tl = new TimelineLite({onComplete: function(){
+//        this.restart();
+//    }});
+////imagen 1
+//    tl.to('.img1', 1, {scale: 2, opacity: 1, display: "block"});
+//    tl.to('.uno', .5, {opacity: 1, display: "block", ease: Power2.easeOut, y: 150});
+//    tl.to('.uno', .5, {opacity: 0, display: "none", ease: Power2.easeOut, x: -200, delay: 5});
+//    tl.to('.img1', .5, {opacity: 0, display: "none", ease: Power2.easeOut, x: -200}, '-=0.5');
+////imagen 2
+//    tl.to('.img2', 1, {scale: 2, opacity: 1, display: "block"});
+//    tl.to('.dos', .5, {opacity: 1, display: "block", ease: Power2.easeOut, y: 100});
+//    tl.to('.dos', .5, {opacity: 0, display: "none", ease: Power2.easeOut, x: -200, delay: 5});
+//    tl.to('.img2', .5, {opacity: 0, display: "none", ease: Power2.easeOut, x: -200}, '-=0.5');
+////imagen 3
+//    tl.to('.img3', 1, {scale: 2, opacity: 1, display: "block"});
+//    tl.to('.tres', .5, {opacity: 1, display: "block", ease: Power2.easeOut, y: 100});
+//    tl.to('.tres', .5, {opacity: 0, display: "none", ease: Power2.easeOut, x: -200, delay: 5});
+//    tl.to('.img3', .5, {opacity: 0, display: "none", ease: Power2.easeOut}, '-=0.5');
 
 //slider commments
     var tx = new TimelineLite({onComplete: function(){
@@ -58,16 +58,33 @@ $(document).on('ready', function(){
     });
     
 //efecto celulares
-    var section = $('.simulador' ).offset().top;
-    $(window).scroll(function(){
-        console.log($(window).scrollTop());
-        console.log($('.simulador' ).offset().top);
-        var scroll = $(window).scrollTop();
-        if(scroll > 550){
-            TweenLite.to('.cel2', 2, { ease: Power2.easeOut, y: -300});
-            TweenLite.to('.cel', 2, { ease: Power2.easeOut, y: -400});
-        };
-    });    
+    //var section = $('.simulador' ).offset().top;
+    //$(window).scroll(function(){
+    //    console.log($(window).scrollTop());
+    //    console.log($('.simulador').offset().top);
+    //    var scroll = $(window).scrollTop();
+    //    if(scroll > 550){
+    //        TweenLite.to('.cel2', 2, { ease: Power2.easeOut, y: -300});
+    //        TweenLite.to('.cel', 2, { ease: Power2.easeOut, y: -400});
+    //    };
+    //}); 
+    $('.simular').on('click', function(e){
+        e.preventDefault ();
+        var top = $('.simulador').offset().top;
+        TweenLite.to(window, 1, {scrollTo:{y: top}, ease:Power2.easeOut});
+    });
+
+    $('.menu-general'). on('click', function(){
+        e.preventDefault ();
+        TweenLite.to('.container_menu', .5, {top: 100});
+    });
+    $('.options').on('click', function (e){
+        e.preventDefault ();
+        TweenLite.to('.submenu', .2, {ease: Power2.easeOut, y: 30, display:'flex', opacity: 1});
+    });
+    $('.submenu').on('mouseleave', function (){
+        TweenLite.to('.submenu', .2, {ease: Power2.easeOut, y: 0, display:'none', opacity: 0});
+    }); 
 });
 
 

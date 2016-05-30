@@ -1,7 +1,7 @@
 <?php include("_head.php") ?>
 <div class="home">
-	<?php include("_header.php") ?>
-	<div class="head">
+	<?php include("_menu.php") ?>
+	<!--div class="head">
 	    <div class="imagenes">
 	    	<p class="texto uno">"Sólo tienes que<br>hacer clic, mamá"</p>
 	    	<img src="./img/head/img_1.png" class="img1">
@@ -15,6 +15,39 @@
 	    	<img src="./img/head/img_3.png" class="img3">
 	    </div>
 	    <a href="" class="simular">Simula tu crédito ahora</a>
+	</div-->
+
+	<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  	<!-- Indicators -->
+  		<ol class="carousel-indicators">
+    		<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    		<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    		<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  		</ol>
+  		<div class="carousel-inner" role="listbox">
+    		<div class="item active">
+    			<p>"Sólo tienes que<br>hacer clic, mamá"</p>
+      			<img src="./img/head/img_1.png" alt="...">
+    		</div>
+    		<div class="item">
+    			<p>"Toma miel<br>con limón"</p>
+      			<img src="./img/head/img_2.png" alt="...">
+    		</div>
+    		<div class="item">
+    			<p>En el semáforo dé<br>vuelta a la derecha</p>
+      			<img src="./img/head/img_3.png" alt="...">
+    		</div>
+    		<a href="" class="simular">Simula tu crédito ahora</a>
+  		</div>
+  		<!-- Controls -->
+  		<!--a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    		<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    		<span class="sr-only">Previous</span>
+  		</a>
+  		<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    		<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    		<span class="sr-only">Next</span>
+  		</a-->
 	</div>
 	<div class="sub-menu">
 		<a href="asesores.php">
@@ -24,27 +57,37 @@
 				</p>
 			</div>
 		</a>
-		<a href="">
+		<a href="inmobiliarias.php">
 			<div class="inmobiliarias">
 				<p>Inmobiliarias<br>
 					<span>Hagamos equipo</span>
 				</p>
 			</div>
 		</a>
-		<a href="">
-			<div class="franquicia">
+		<a href="franquicias.php">
+			<div class="franquicia-icon">
 				<p>Franquicia<br>
 					<span>Vende más con SOC</span>
 				</p>
 			</div>
 		</a>
-		<a href="">
+		<a href="prensa.php">
 			<div class="prensa">
 				<p>Prensa<br>
 					<span>SOC en los medios</span>
 				</p>
 			</div>
 		</a>
+	</div>
+</div>
+<div class="info">
+	<div class="borde">
+		<h1>Asesoría hipotecaria integral</h1>
+		<p>Recibirás asesoría de especialistas en los productos, procesos, políticas y requisitos de las opciones financieras más importantes del mercado. Analizaremos para ti las alternativas de crédito hipotecario disponibles en el mercado y te ayudaremos a elegir la que mejor se ajuste a tus características y necesidades.</p>
+	</div>
+	<div>
+		<h1>Servicio sin costo.</h1>
+		<p>Los mejores asesores hipotecarios trabajando para ti de manera gratuita.<br>En ningún momento del proceso pagarás por su servicio..</p>
 	</div>
 </div>
 <div class="simulador">
@@ -119,27 +162,35 @@
 	<div class="contenido-comments">
 		<div class="content">
 			<p class="title">Testimonios</p>
-			<div class="post avuno">
-				<img src="./img/body/avatar.png">
+			<ul>
+				<li>
+					<img src="./img/body/avatar.png" class="imgav1">
+				</li>
+				<li>
+					<img src="./img/body/avatar2.png" class="imgav2">
+				</li>
+				<li>
+					<img src="./img/body/avatar3.png" class="imgav3">
+				</li>
+			</ul>
+			<div class="comentarios avuno">
 				<p class="name">Alma Mejía</p>
-				<p>Recomiendo el servicio, mi experiencia fue muy buena, la atención es muy profesional.</p>
+				<p><span>"</span>Recomiendo el servicio, mi experiencia fue muy buena, la atención es muy profesional.</p>
 			</div>
-			<div class="post avdos">
-				<img src="./img/body/avatar2.png">
+			<div class="comentarios avdos">
 				<p class="name">Fidel Ruiz Chico</p>
-				<p>Empresa con gente extraordinaria haciendo cosas excepcionales para que concretes tus sueños</p>
+				<p><span>"</span>Empresa con gente extraordinaria haciendo cosas excepcionales para que concretes tus sueños</p>
 			</div>
-			<div class="post avtres">
-				<img src="./img/body/avatar3.png">
+			<div class="comentarios avtres">
 				<p class="name">Ricardo Velázquez</p>
-				<p>Muy bien Albas...solo recomendar a tus seguidores y amigos que Banorte entiende a las familias mexicanas y ofrece excelentes condiciones para que cambie su hipoteca con nosotros. </p>
+				<p><span>"</span>Muy bien Albas...solo recomendar a tus seguidores y amigos que Banorte entiende a las familias mexicanas y ofrece excelentes condiciones para que cambie su hipoteca con nosotros.</p>
 			</div>
 		</div>
 	</div>
 	<div class="contenido-comments iphone">
 		<div class="content celular">
 			<img src="./img/body/cel.png" class="cel">
-			<img src="./img/body/cel2.png" class="cel2">
+			<img src="./img/body/cel2.png" class="cel two">
 		</div>
 	</div>
 </div>

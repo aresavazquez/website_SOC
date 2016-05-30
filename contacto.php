@@ -1,4 +1,5 @@
 <?php include("_head.php") ?>
+<?php include("_menu.php") ?>
 <div class="head_contacto">
 	<div>
 		<p class="title_section">Contacto</p>
