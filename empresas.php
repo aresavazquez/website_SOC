@@ -16,10 +16,7 @@
 	        </div>
 	        <div class="col-md-6 col-productos-desc">
 	            <p class="frase">“Adquiere tu oficina, consultorio o nave industrial”.</p>
-	
 	            <p>Compra a crédito cualquier inmueble comercial o industrial para tu empresa. La tasa es fija y el plazo de hasta diez años. El inmueble puede ser nuevo o usado y la institución puede financiarte hasta el 75% de su valor. </p>
-	
-	
 	        </div>
 	    </div>
 	</div>
@@ -33,8 +30,6 @@
 	        <div class="col-md-6 col-productos-desc">
 	            <p class="frase">“¿Tu empresa requiere mayor liquidez en momentos estratégicos?”. </p>
 	            <p>Una línea de crédito revolvente te da posibilidad de contar con recursos en el momento en que los necesites. La institución financiera le otorga a tu empresa una línea abierta de la que puede disponer en cualquier momento. Al finalizar el mes le requerirá el pago de los intereses causados por el saldo pendiente. La operación de una línea de crédito revolvente es muy parecida a la de una tarjeta de crédito personal.<br><br>Ideal para aprovechar oportunidades de mercado o realizar pagos emergentes.</p>
-	
-	            
 	        </div>
 	    </div>
 	</div>

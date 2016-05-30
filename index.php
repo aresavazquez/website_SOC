@@ -57,21 +57,21 @@
 				</p>
 			</div>
 		</a>
-		<a href="">
+		<a href="inmobiliarias.php">
 			<div class="inmobiliarias">
 				<p>Inmobiliarias<br>
 					<span>Hagamos equipo</span>
 				</p>
 			</div>
 		</a>
-		<a href="">
-			<div class="franquicia">
+		<a href="franquicias.php">
+			<div class="franquicia-icon">
 				<p>Franquicia<br>
 					<span>Vende más con SOC</span>
 				</p>
 			</div>
 		</a>
-		<a href="">
+		<a href="prensa.php">
 			<div class="prensa">
 				<p>Prensa<br>
 					<span>SOC en los medios</span>

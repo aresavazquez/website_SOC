@@ -265,7 +265,7 @@ html, body{
     width: 200px;
     position: relative;
 }
-.sub-menu a .franquicia{
+.sub-menu a .franquicia-icon{
     background: url(../img/body/franquicia.png)no-repeat center;
     height: 90px;
     width: 200px;
@@ -1794,5 +1794,181 @@ h2.zero,p.zero {
 .directorio-estado .contenido div h1{
     font-size: 21px;
 }
+/*-----------------------------inmobiliarias*/
+.inmobiliaria{
+    background: url(../img/body/inmobiliarias.jpg)no-repeat center;
+    background-size: cover;
+    height: 250px;
+    width: 100%;
+    color: #fff;
+    position: relative;
+    transsition: all 0.3s linear;
+    transition: all 1s ease;
+}
+.inmobiliaria:hover{
+    transform: scale(1.2);
+ 
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+}
+.inmobiliaria div{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: block;
+    width: 700px;
+    height: 150px;
+}
+.inmobiliaria div .title_section{
+    text-align: center;
+    font-weight: 600;
+    font-size: 50px;
+    padding: 0;
+}
+.inmobiliaria div div{
+    width: 25px;
+    height: 5px;
+    background: #4fa753;
+    position: relative;
+}
+.inmobiliaria div p{
+    font-size: 18px;
+    font-weight: 100;
+    text-align: center;
+    padding-top: 18px;
+}
+.container_inmobiliaria{
+    background: url(../img/head/back3.jpg)no-repeat center fixed;
+    background-size: cover;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    color: #fff;
+    padding: 50px;
+}
+.container-inmobiliaria h4 {
+    font-size: 30px;
+    color: #1dafec;
+    margin-bottom: 20px;
+    font-weight: 100;
+    text-align: center;
+    border-right: 1px solid;
+    height: 70px;
+}
+.content-home .container p {
+    font-size: 1.2em;
+}
+.container-inmobiliaria .col-md-6 p{
+    font-size: 18px;
+}
+.container.container-inmobiliaria{
+    margin-bottom: 35px;
+}
+.container_inmobiliaria .magazine{
+    text-align: center;
+    font-size: 18px;
+    font-style: italic;
+    width: 315px;
+    margin: auto;
+    background: #4fa753;
+    padding: 15px;
+    border-radius: 5px;
+    color: #fff;
+}
+/*---------------franuicias*/
+
+.franquicia{
+    background: url(../img/body/franquicias.jpg)no-repeat center;
+    background-size: cover;
+    height: 250px;
+    width: 100%;
+    color: #fff;
+    position: relative;
+    transsition: all 0.3s linear;
+    transition: all 1s ease;
+}
+.franquicia:hover{
+    transform: scale(1.2);
+ 
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+}
+.franquicia div{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: block;
+    width: 700px;
+    height: 150px;
+}
+.franquicia div .title_section{
+    text-align: center;
+    font-weight: 600;
+    font-size: 50px;
+    padding: 0;
+}
+.franquicia div div{
+    width: 25px;
+    height: 5px;
+    background: #4fa753;
+    position: relative;
+}
+.franquicia div p{
+    font-size: 18px;
+    font-weight: 100;
+    text-align: center;
+    padding-top: 18px;
+}
+.container_franquicia{
+    background: url(../img/head/back3.jpg)no-repeat center fixed;
+    background-size: cover;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    color: #fff;
+    padding: 50px;
+}
+.container_franquicia h2 {
+    font-weight: 500;
+    margin: 30px auto;
+    text-align: center;
+    color: #1dafec;
+}
+.container_franquicia .row .col-md-6 p {
+    font-weight: 100;
+    font-size: 16px;
+    text-align: justify;
+}
+.container_franquicia .row .col-md-6 .titleFranquicia {
+    font-weight: bold;
+    font-size: 28px;
+    text-align: center;
+    color: #1dafec;
+}
+.container_franquicia .row .col-md-6 ul li {
+    text-align: left;
+    font-size: 16px;
+}
+.container_franquicia .row .col-md-6 .space {
+    padding: 0px 100px;
+}
+ .container_franquicia .row .col-md-6 .bold {
+    font-size: 20px;
+}
+
+
+
 
 
