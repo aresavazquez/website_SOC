@@ -1,10 +1,10 @@
 {% extends "admin.html" %}
-
 {% block title %}Admin{% endblock %}
 {% block head %}
     {{ parent() }}
 {% endblock %}
 {% block content %}
+	{% include "admin/menu-admin.html" %}
 	<div class="content-usuario">
 	<div>
 		<p class="titulo">Usuarios</p>

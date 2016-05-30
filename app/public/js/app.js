@@ -26,7 +26,6 @@ function login(){
 		}
 		$.ajax(settings).done(function (response) {
 			if(response.status == 200){
-				//window.location = response.data.redirect_to;
 				window.location = 'http://soc.local/?url=admin/users';
 			}else if(response.status == 500) {
 				alert(response.errors);
@@ -61,6 +60,18 @@ function registerUser(){
 				alert(response.errors);
 			}
 		});
+	});
+}
+
+function usersList(){
+	var settings = {
+		"async": true,
+		"crossDomain": true,
+		"url": host_url + "api/users",
+		"method": "POST"
+	}
+	$.ajax(settings).done(function (response) {
+		console.log(response);
 	});
 }
 
