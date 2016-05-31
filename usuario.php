@@ -56,7 +56,7 @@
 		<input type="password" placeholder="Nuevo password">
 		<input type="password" placeholder="Confirmar password">
 		<button class="user">Editar usuario</button>
-		<button class="user">Borrar</button>
+		<button class="user borra">Borrar</button>
 	</form>
 </div>
 <?php include("_footer.php") ?>

@@ -1,8 +1,8 @@
 $(document).on('ready', function(){
-//    TweenLite.to('.welcome', 1.5, {opacity: 1, display: "block", ease: Power2.easeOut, y: 150});
-//    var tl = new TimelineLite({onComplete: function(){
-//        this.restart();
-//    }});
+    TweenLite.to('.welcome', 1.5, {opacity: 1, display: "block", ease: Power2.easeOut, y: 150});
+    var tl = new TimelineLite({onComplete: function(){
+        this.restart();
+    }});
 ////imagen 1
 //    tl.to('.img1', 1, {scale: 2, opacity: 1, display: "block"});
 //    tl.to('.uno', .5, {opacity: 1, display: "block", ease: Power2.easeOut, y: 150});
