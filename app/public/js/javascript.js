@@ -68,24 +68,43 @@ $(document).on('ready', function(){
         var settings = {
             "async": true,
             "crossDomain": true,
-            "url": host_url + "api/users",
+            "url": host_url + "api/v1/users",
             "method": "POST"
         }
         $.ajax(settings).done(function (response) {
-            var users = response.data.users;
+            var users = response.data;
             var html = '';
             $.each(users, function (index, value) {
                 html += '<tr>';
                 html += '<td>'+value.name+'</td>';
                 html += '<td>'+value.email+'</td>';
                 html += '<td>'+value.created_at+'</td>';
-                html += '<td class="editInput">editar</td>';
+                html += '<td class="editInput" data-user="'+value.id+'">editar</td>';
                 html += '</tr>';
             });
             $('#usersList tbody').append(html);
-            //console.log(users);
         });
     }
+
+     var loadUserinfo = function(){
+        $('#usersList').on('click', '.editInput' ,function (e){
+            e.preventDefault ();
+            var userID = $(this).data('user');
+            var datauser = ''
+            var settings = {
+                "async": true,
+                "crossDomain": true,
+                "url": host_url + "api/v1/users/"+userID,
+                "method": "POST",
+            }
+            $.ajax(settings).done(function (response) {
+                var user = response.data;
+                console.log(user);
+                //$('.editarUsuario .datosUsuario #e_user_name').val(dataUser.name);
+                //$('.editarUsuario .datosUsuario #e_user_email').val(dataUser.email);
+            });
+        });
+     }
 
     var adminUsersListeners = function(){
         $('#usersList').on('click', '.editInput' ,function (e){
@@ -122,6 +141,7 @@ $(document).on('ready', function(){
         },
         "admin-users": function(){
             usersList();
+            loadUserinfo();
             adminUsersListeners();
         }
     }

@@ -18,7 +18,7 @@ function login(){
 		var settings = {
 			"async": true,
 			"crossDomain": true,
-			"url": host_url + "api/login",
+			"url": host_url + "api/v1/login",
 			"method": "POST",
 			"data": {
 				"user_email": username,
@@ -45,7 +45,7 @@ function registerUser(){
 		var settings = {
 			"async": true,
 			"crossDomain": true,
-			"url": host_url + "api/register",
+			"url": host_url + "api/v1/register",
 			"method": "POST",
 			"data": {
 				"user_name": username,
