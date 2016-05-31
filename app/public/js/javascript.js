@@ -147,6 +147,28 @@ $(document).on('ready', function(){
             }});
         });
     }
+    var adminSitesListeners = function(){
+        $('#sitesList').on('click', '.editInput' ,function (e){
+            e.preventDefault ();
+            TweenLite.to('.editarUsuario', .5, {opacity: 1, display: 'block', onComplete: function(){
+                TweenLite.to('.datosUsuario', .5, { opacity: 1, display: 'block', ease: Power2.easeOut, y: 30});
+            }});
+        });
+
+        $('.plusUser').on('click', function (e){
+            e.preventDefault ();
+            TweenLite.to('.agregarUsuario', .5, {opacity: 1, display: 'block', onComplete: function(){
+                TweenLite.to('.datosUsuario', .5, { opacity: 1, display: 'block', ease: Power2.easeOut, y: 30});
+            }});
+        });
+        $('.close').on('click', function (e){
+            e.preventDefault ();
+            TweenLite.to('.datosUsuario', .5, { opacity: 0, display: 'none', ease: Power2.easeOut, y: 0, onComplete: function(){
+                TweenLite.to('.agregarUsuario', .5, {opacity: 0, display: 'none'});
+                TweenLite.to('.editarUsuario', .5, {opacity:0, display: 'none'});
+            }});
+        });
+    }
 
     var site = {
         "home": function(){
@@ -165,6 +187,7 @@ $(document).on('ready', function(){
         },
         "admin-sites": function(){
             sitesList();
+            adminSitesListeners();
         }
     }
 
