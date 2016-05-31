@@ -27,10 +27,10 @@ class Routes{
     //- API
     self::$router->map( 'POST', '/api/v1/login', 'ApiController#login');
     self::$router->map( 'POST', '/api/v1/register', 'ApiController#register');
-    self::$router->map( 'GET', '/api/v1/users', 'ApiController#users');
-    self::$router->map( 'GET', '/api/v1/users/[i:id]', 'ApiController#get_user');
-    self::$router->map( 'GET', '/api/v1/sites', 'ApiController#sites');
-    self::$router->map( 'GET', '/api/v1/sites/[*:url]', 'ApiController#get_site');
+    self::$router->map( 'GET|POST', '/api/v1/users', 'ApiController#users');
+    self::$router->map( 'GET|POST', '/api/v1/users/[i:id]', 'ApiController#get_user');
+    self::$router->map( 'GET|POST', '/api/v1/sites', 'ApiController#sites');
+    self::$router->map( 'GET|POST', '/api/v1/sites/[*:url]', 'ApiController#get_site');
 
     self::$router->map( 'GET', '/world', function(){
     	echo 'hello world';

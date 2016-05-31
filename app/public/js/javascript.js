@@ -95,13 +95,12 @@ $(document).on('ready', function(){
                 "async": true,
                 "crossDomain": true,
                 "url": host_url + "api/v1/users/"+userID,
-                "method": "POST",
+                "method": "GET",
             }
             $.ajax(settings).done(function (response) {
                 var user = response.data;
-                console.log(user);
-                //$('.editarUsuario .datosUsuario #e_user_name').val(dataUser.name);
-                //$('.editarUsuario .datosUsuario #e_user_email').val(dataUser.email);
+                $('.editarUsuario .datosUsuario #e_user_name').val(user.name);
+                $('.editarUsuario .datosUsuario #e_user_email').val(user.email);
             });
         });
      }
