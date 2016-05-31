@@ -4,7 +4,6 @@ var host_url = "http://localhost:8000/";
 $(document).ready(function(){
 	login();
 	registerUser();
-	usersList();
 	//loadUserInfo();
 });
 
@@ -62,29 +61,6 @@ function registerUser(){
 				alert(response.errors);
 			}
 		});
-	});
-}
-
-function usersList(){
-	var settings = {
-		"async": true,
-		"crossDomain": true,
-		"url": host_url + "api/users",
-		"method": "POST"
-	}
-	$.ajax(settings).done(function (response) {
-		var users = response.data.users;
-		var html = '';
-		$.each(users, function (index, value) {
-			html += '<tr>';
-			html += '<td>'+value.name+'</td>';
-			html += '<td>'+value.email+'</td>';
-			html += '<td>'+value.created_at+'</td>';
-			html += '<td class="editInput"><span id="user'+value.id+'">edita</span></td>';
-			html += '</tr>';
-		});
-		$('#usersList tbody').append(html);
-		//console.log(users);
 	});
 }
 
