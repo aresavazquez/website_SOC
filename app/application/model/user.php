@@ -15,8 +15,13 @@ class User {
     }
 
     public static function all(){
-        $result = self::$PDO->_all('*');
+        $result = self::$PDO->_all("*");
         return $result->get();    
+    }
+
+    public static function by_id($id){
+        $result = self::$PDO->_where("id, name, email", "id='$id'");
+        return $result->first();
     }
 
 	public static function getUserDataByEmail($user_email){

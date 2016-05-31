@@ -67,7 +67,12 @@ class ApiController extends Controller{
         foreach ($users as $key => $user) {
             $users[$key] = (array) $user;
         }
-        $this->View->renderJSON($this->success_code(array('users'=> $users)));
+        $this->View->renderJSON($this->success_code($users));
+    }
+
+    public function get_user($params){
+        $user = User::get_instance()->by_id($params['id']);
+        $this->View->renderJSON($this->success_code($user));
     }
 
     public function sites(){
