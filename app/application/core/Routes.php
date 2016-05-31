@@ -23,6 +23,7 @@ class Routes{
     self::$router->map( 'GET', '/blog', 'BlogController#index', 'p_blog');
     self::$router->map( 'GET', '/admin', 'AdminController#index', 'p_admin');
     self::$router->map( 'GET', '/admin/users', 'AdminController#users', 'admin_users');
+    self::$router->map( 'GET', '/admin/sites', 'AdminController#sites', 'admin_sites');
     
     //- API
     self::$router->map( 'POST', '/api/v1/login', 'ApiController#login');
