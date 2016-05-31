@@ -24,17 +24,23 @@ class Site {
         return $result->first();
     }
 
-    public static function save($user_id, $url, $title, $content, $address, $contact) {
+    public static function set_data($url, $data){
+        $result = self::$PDO->_update($data, "url='$url'");
+        return $result;
+    }
+
+    public static function save($user_id, $state_id, $url, $title, $content, $address, $contact) {
 
         // clean the input
         $user_id = strip_tags(Request::post('user_id'));
+        $state_id = strip_tags(Request::post('state_id'));
         $url = strip_tags(Request::post('url'));
         $title = Request::post('title');
         $content = Request::post('content');
         $address = Request::post('address');
         $contact = Request::post('contact');
 
-        if (!self::writeNewSiteToDatabase($user_id, $url, $title, $content, $address, $contact)) {
+        if (!self::writeNewSiteToDatabase($user_id, $state_id, $url, $title, $content, $address, $contact)) {
             Session::add('feedback_negative', Text::get('FEEDBACK_SITE_CREATION_FAILED'));
             return false; // no reason not to return false here
         }

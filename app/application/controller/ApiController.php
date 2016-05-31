@@ -48,16 +48,6 @@ class ApiController extends Controller{
         }
     }
 
-    public function sitesNew(){
-        Session::set('feedback_negative', array());
-        $registration_successful = Site::save();
-        if($registration_successful){
-            $this->View->renderJSON($this->success_code($registration_successful));
-        }else{
-            $this->View->renderJSON($this->error_code(Session::get('feedback_negative'), array('redirect_to'=>$this->Routes['root_url'])));
-        }
-    }
-
     public function users(){
         Session::set('feedback_negative', array());
         //if(!Auth::checkAdminAuthentication()){
@@ -75,6 +65,15 @@ class ApiController extends Controller{
         $this->View->renderJSON($this->success_code($user));
     }
 
+    public function set_user($params){
+        $data = array();
+        if(Request::get('name')) $data['name'] = Request::get('name');
+        if(Request::get('email')) $data['email'] = Request::get('email');
+
+        $id = User::get_instance()->set_data($params['id'], $data);
+        $this->View->renderJSON($this->success_code($id));
+    }
+
     public function sites(){
         Session::set('feedback_negative', array());
         //if(!Auth::checkAdminAuthentication()){
@@ -89,11 +88,32 @@ class ApiController extends Controller{
         $this->View->renderJSON($this->success_code($sites));
     }
 
+    public function new_site(){
+        Session::set('feedback_negative', array());
+        $registration_successful = Site::save();
+        if($registration_successful){
+            $this->View->renderJSON($this->success_code($registration_successful));
+        }else{
+            $this->View->renderJSON($this->error_code(Session::get('feedback_negative'), array('redirect_to'=>$this->Routes['root_url'])));
+        }
+    }
+
     public function get_site($params){
         $site = Site::get_instance()->by_url($params['url']);
         $site->content = utf8_encode($site->content);
         $site->address = utf8_encode($site->address);
         $this->View->renderJSON($this->success_code($site));
+    }
+
+    public function set_site($params){
+        $data = array();
+        if(Request::get('title')) $data['title'] = Request::get('title');
+        if(Request::get('content')) $data['content'] = Request::get('content');
+        if(Request::get('address')) $data['address'] = Request::get('address');
+        if(Request::get('contact')) $data['contact'] = Request::get('contact');
+
+        $id = Site::get_instance()->set_data($params['url'], $data);
+        $this->View->renderJSON($this->success_code($id));
     }
 
     private function success_code($data){
