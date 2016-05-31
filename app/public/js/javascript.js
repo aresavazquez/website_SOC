@@ -115,7 +115,6 @@ $(document).on('ready', function(){
         $.ajax(settings).done(function (response) {
             var sites = response.data;
             var html = '';
-            console.log(sites)
             $.each(sites, function (index, value) {
                 html += '<tr>';
                 html += '<td>'+value.title+'</td>';
