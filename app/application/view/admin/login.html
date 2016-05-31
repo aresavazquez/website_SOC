@@ -1,0 +1,27 @@
+{% extends "admin.html" %}
+
+{% block title %}Admin{% endblock %}
+{% block head %}
+    {{ parent() }}
+{% endblock %}
+{% block content %}
+	{% include 'components/menu-header-admin.html' %}
+	<div class="asesores">
+		<div class="form">
+			<p class="title">Acceso a micrositios</p>
+			<form id="login-form">
+				<input id="user-name" name="user_name" type="text" placeholder="Usuario" required>
+				<input id="user-password" name="user_password" type="password" placeholder="Password" required>
+				<br>
+				<input name="set_remember_me_cookie" type="checkbox" class="check">
+				<label>Recordar contraseña</label>
+				<br>
+				<input type="hidden" name="csrf_token" value="{{ csrf }}" />
+				<div class="login__button">Iniciar</div>
+				<a href="{{ password_reset_url }}">¿Olvidó su password?</a>
+			</form>
+		</div>	
+	</div>
+	<div class="app">
+	</div>
+{% endblock %}

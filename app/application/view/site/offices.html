@@ -1,0 +1,36 @@
+{% extends "main.html" %}
+
+{% block title %}SOC{% endblock %}
+{% block head %}
+    {{ parent() }}
+{% endblock %}
+{% block content %}
+<div class="page p-offices">
+    {% include 'components/menu-header.html' %}
+    <div class="directorios">
+        <div>
+            <p class="title_section">Directorio</p>
+            <div></div>
+            <p>Encuentra un asesor SOC</p>
+        </div>
+    </div>
+    <div class="container_directorio">
+        <div class="container-fluid top-line" id="content">
+            <div class="container container-reflow">
+                <div class="row content-form content-form-directorio">
+                    <h3>Encuentra un asesor</h3>
+                    <div class="form-group">
+                        <label for="nombre">Selecciona tu estado</label>
+                        <select name="ddlEstados" id="ddlEstados" class="selectpicker">
+                            <option selected="selected" value="0">SELECCIONE UN ESTADO</option>
+                            {% for item in states %}
+                            <option value={{ item.id }}>{{ item.name | convert_encoding('UTF-8', 'iso-8859-1') }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
