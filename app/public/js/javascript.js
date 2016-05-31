@@ -105,6 +105,26 @@ $(document).on('ready', function(){
         });
      }
 
+     var sitesList = function(){
+        var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": host_url + "api/v1/sites",
+            "method": "POST"
+        }
+        $.ajax(settings).done(function (response) {
+            var sites = response.data;
+            var html = '';
+            $.each(sites, function (index, value) {
+                html += '<tr>';
+                html += '<td>'+value.title+'</td>';
+                html += '<td class="editInput" data-user="'+value.id+'">editar</td>';
+                html += '</tr>';
+            });
+            $('#sitesList tbody').append(html);
+        });
+    }
+
     var adminUsersListeners = function(){
         $('#usersList').on('click', '.editInput' ,function (e){
             e.preventDefault ();
@@ -142,6 +162,9 @@ $(document).on('ready', function(){
             usersList();
             loadUserinfo();
             adminUsersListeners();
+        },
+        "admin-sites": function(){
+            sitesList();
         }
     }
 
