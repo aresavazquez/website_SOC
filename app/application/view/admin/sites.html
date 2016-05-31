@@ -5,12 +5,12 @@
 {% endblock %}
 {% block content %}
 	{{ parent() }}
-	<div class="content-usuario">
+	<div class="page admin-sites content-usuario">
 		<div>
 			<p class="titulo">Micrositios</p>
 			<input type="search" placeholder="buscar" class="search">
 			<a href="" class="plusUser">+ Agregar micrositio</a>
-			<table>
+			<table id="sitesList">
 				<thead>
 					<tr class="back-white">
 						<td>Nombre de usuario</td>
@@ -18,22 +18,6 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td>J VEGA BROKERS</td>
-						<td class="editInput"><a href="">Editar</a></td>
-					</tr>
-					<tr>
-						<td>CRECE ASESORIA HIPOTECARIA Yucatan</td>
-						<td class="editInput"><a href="">Editar</a></td>
-					</tr>
-					<tr>
-						<td>UP CREDITS</td>
-						<td class="editInput"><a href="">Editar</a></td>
-					</tr>
-					<tr>
-						<td>EXCELENCIA EN ASESORIA HIPOTECARIA</td>
-						<td class="editInput"><a href="">Editar</a></td>
-					</tr>
 				</tbody>
 			</table>
 		</div>
