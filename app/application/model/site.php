@@ -15,8 +15,13 @@ class Site {
     }
 
     public static function all() {
-        $result = self::$PDO->_all('*');
+        $result = self::$PDO->_all("*");
         return $result->get();
+    }
+
+    public static function by_url($url) {
+        $result = self::$PDO->_where("*", "url='$url'");
+        return $result->first();
     }
 
     public static function save($user_id, $url, $title, $content, $address, $contact) {

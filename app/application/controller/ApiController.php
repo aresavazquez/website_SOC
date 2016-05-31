@@ -60,9 +60,9 @@ class ApiController extends Controller{
 
     public function users(){
         Session::set('feedback_negative', array());
-        /*if(!Auth::checkAdminAuthentication()){
-            $this->View->renderJSON($this->error_code(Text::get('FEEDBACK_UNKNOWN_ADMIN'), array('redirect_to'=>$this->Routes['root_url'])));
-        }*/
+        //if(!Auth::checkAdminAuthentication()){
+        //    $this->View->renderJSON($this->error_code(Text::get('FEEDBACK_UNKNOWN_ADMIN'), array('redirect_to'=>$this->Routes['root_url'])));
+        //}
         $users = (array) User::get_instance()->all();
         foreach ($users as $key => $user) {
             $users[$key] = (array) $user;
@@ -82,9 +82,18 @@ class ApiController extends Controller{
         //}
         $sites = (array) Site::get_instance()->all();
         foreach ($sites as $key => $site) {
+            $site->content = utf8_encode($site->content);
+            $site->address = utf8_encode($site->address);
             $sites[$key] = (array) $site;
         }
-        $this->View->renderJSON($this->success_code(array('sites'=> $sites)));
+        $this->View->renderJSON($this->success_code($sites));
+    }
+
+    public function get_site($params){
+        $site = Site::get_instance()->by_url($params['url']);
+        $site->content = utf8_encode($site->content);
+        $site->address = utf8_encode($site->address);
+        $this->View->renderJSON($this->success_code($site));
     }
 
     private function success_code($data){
