@@ -53,7 +53,7 @@ $(document).on('ready', function(){
     $('.editInput').on('click', function (e){
         e.preventDefault ();
         TweenLite.to('.editarUsuario', .5, {opacity: 1, display: 'block', onComplete: function(){
-            TweenLite.to('.datosUsuario', .5, { opacity: 1, display: 'block', ease: Power2.easeOut, y: 30});
+        TweenLite.to('.datosUsuario', .5, { opacity: 1, display: 'block', ease: Power2.easeOut, y: 30});
         }});
     });
     

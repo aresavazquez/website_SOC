@@ -20,6 +20,11 @@ class Application {
         $this->router->map( 'GET', '/soc_tips', 'IndexController#tips', 'p_tips');
         $this->router->map( 'GET', '/contacto', 'IndexController#contact', 'p_contact');
         $this->router->map( 'GET', '/blog', 'BlogController#index', 'p_blog');
+        $this->router->map( 'GET', '/admin', 'AdminController#index', 'p_admin');
+        $this->router->map( 'GET', '/admin/users', 'AdminController#users', 'p_adminusers');
+        $this->router->map( 'POST', '/api/login', 'ApiController#login', 'p_apilogin');
+        $this->router->map( 'POST', '/api/register', 'ApiController#register', 'p_apiregister');
+        $this->router->map( 'GET|POST', '/api/users', 'ApiController#users', 'p_apiusers');
 
         $this->router->map( 'GET', '/world', function(){
             echo 'hello world';

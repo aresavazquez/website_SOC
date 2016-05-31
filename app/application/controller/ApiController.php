@@ -60,9 +60,9 @@ class ApiController extends Controller{
 
     public function users(){
         Session::set('feedback_negative', array());
-        if(!Auth::checkAdminAuthentication()){
+        /*if(!Auth::checkAdminAuthentication()){
             $this->View->renderJSON($this->error_code(Text::get('FEEDBACK_UNKNOWN_ADMIN'), array('redirect_to'=>$this->Routes['root_url'])));
-        }
+        }*/
         $users = (array) User::get_instance()->all();
         foreach ($users as $key => $user) {
             $users[$key] = (array) $user;

@@ -1,9 +1,11 @@
-var host_url = "http://soc.local/?url=";
+var host_url = "http://localhost:8000/";
 
 
 $(document).ready(function(){
 	login();
 	registerUser();
+	usersList();
+	//loadUserInfo();
 });
 
 // The Magic
@@ -26,7 +28,7 @@ function login(){
 		}
 		$.ajax(settings).done(function (response) {
 			if(response.status == 200){
-				window.location = 'http://soc.local/?url=admin/users';
+				window.location = host_url+'admin/users';
 			}else if(response.status == 500) {
 				alert(response.errors);
 			}
@@ -71,7 +73,18 @@ function usersList(){
 		"method": "POST"
 	}
 	$.ajax(settings).done(function (response) {
-		console.log(response);
+		var users = response.data.users;
+		var html = '';
+		$.each(users, function (index, value) {
+			html += '<tr>';
+			html += '<td>'+value.name+'</td>';
+			html += '<td>'+value.email+'</td>';
+			html += '<td>'+value.created_at+'</td>';
+			html += '<td class="editInput"><span id="user'+value.id+'">edita</span></td>';
+			html += '</tr>';
+		});
+		$('#usersList tbody').append(html);
+		//console.log(users);
 	});
 }
 
