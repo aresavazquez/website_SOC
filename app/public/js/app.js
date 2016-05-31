@@ -54,9 +54,8 @@ function registerUser(){
 			}
 		}
 		$.ajax(settings).done(function (response) {
-			console.log(response);
 			if(response.status == 200){
-				console.log(response);
+				alert('Se ha creado el usuario correctamente');
 			}else if(response.status == 500) {
 				alert(response.errors);
 			}
