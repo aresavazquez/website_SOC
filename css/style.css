@@ -1505,6 +1505,8 @@ h2.zero,p.zero {
     display: flex;
     position: relative;
     justify-content: center;
+    flex-wrap: wrap;
+
 }
 .contenido-nota .interesante{
     display: flex;
@@ -2030,7 +2032,191 @@ h2.zero,p.zero {
     color: #fff;
     padding: 50px;
 }
+/*----------------------------responsive ipad*/
+@media screen and (max-width: 1024px){
+    .comments .contenido-comments.iphone .cel.two{
+        display: none;
+    }
+    .nota .notas-recientes {
+        background: #fff;
+        width: 100%;
+    }
+}
+@media screen and (max-width: 768px){
+    .carousel .item p {
+        font-size: 40px;
+    }
+    .simular {
+        left: 85px;
+    }
+    .carousel .item img{
+        padding-right: 40px;
+        right: 17px;
+        position: absolute;
+    }
+    .container_menu ul {
+        justify-content: flex-end;
+    }
+        
+    .info {
+        height: 530px;
+    }
+    .info div h1{
+        font-size: 27px;
+    }
+    .simulador .box {
+        width: 90%;
+    }
+    .simulador .form {
+        width: 100%;
+    }
+    .carousel .carousel-inner {
+        width: 100%;
+    }
+    .comments .contenido-comments.iphone .cel{
+        display: none;
+    }
+}
+@media screen and (max-width: 420px){
+    .simular{
+        display: none;
+    }
+    .carousel{
+        height: 500px;
+    }
+    .carousel .item img{
+        left: 0;
+        right: 0;
+        margin: auto;
+        top: 70px;
+        padding: 0;
+        width: 240px;
+    }
+    .carousel .item p{
+        font-size: 22px;
+        text-align: center;
+        position: absolute;
+        top: 0px;
+    }
+    .sub-menu{
+        display: block;
+        height: 685px;
+    }
+    .sub-menu a{
+        padding: 15px;
+    }
+    .sub-menu a .asesor {
+        margin: 15px auto;
+    }
+    .sub-menu a .inmobiliarias {
+        margin: 15px auto;
+    }
+    .sub-menu a .franquicia-icon {
+        margin: 15px auto;
+    }
+    .sub-menu a .prensa {
+        margin: 15px auto;
+    }
+    .info {
+        height: auto;
+        display: block;
+    }
+    .info div {
+        width: 98%;
+        padding: 50px;
+        margin: auto;
+    }
+    .info div p {
+        text-align: -webkit-auto;
+        font-size: 16px;
+    }
+    .simulador {
+        height: 1100px;
+    }
+    .simulador .texto {
+        font-size: 16px;
+        text-align: left;
+    }
+    .simulador .form{
+        display: block;
+    }
+    .simulador .box{
+        margin: 0 auto;
+    }
+    .comments .contenido-comments .content ul {
+        width: 98%;
+    }
+    .comments .contenido-comments .content ul li img{
+        width: 75px;
+    }
+    .comments .contenido-comments .content .comentarios{
+        width: 88%;
+    }
+    .directores div {
+        width: 90%;
+    }
+    .empresas div{
+        width: 90%;
+        height: 225px;
+    }
+    .empresas {
+        height: 350px;
+    }
+    .hipoteca div{
+        width: 90%;
+        height: 225px;
+    }
+    .hipoteca{
+        height: 350px;
+    }
+    .soc div p {
+        font-size: 16px;
+    }
+    .soc div .titleS {
+        font-size: 23px;
+    }
+    .container_empresas {
+        padding: 0;
+    }
+    .empresas div .title_section {
+        font-size: 35px;
+    }
+    .content-home .container {
+        padding: 40px 0px;
+        text-align: left;
+    }
+    .container-productos h4 {
+        font-size: 21px;
+    }
 
-
-
-
+    .container_hipoteca {
+        padding: 0;
+    }
+    .hipoteca div .title_section {
+        font-size: 35px;
+    }
+    .directorios div{
+        width: 90%;
+    }
+    .container_directorio {
+        padding: 50px 0px;
+    }
+    .container_directorio select {
+        width: 100%;
+    }
+    .tips div{
+        width: 90%;
+    }
+    .container_tips h1{
+        font-size: 21px
+    }
+    .container_tips .video div .title_video{
+        font-size: 16px;
+    }
+    .blog div{
+        width: 90%;
+    }
+    .head_contacto div{
+        width: 90%;
+    }
+}
