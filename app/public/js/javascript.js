@@ -110,7 +110,7 @@ $(document).on('ready', function(){
             "async": true,
             "crossDomain": true,
             "url": host_url + "api/v1/sites",
-            "method": "POST"
+            "method": "GET"
         }
         $.ajax(settings).done(function (response) {
             var sites = response.data;
