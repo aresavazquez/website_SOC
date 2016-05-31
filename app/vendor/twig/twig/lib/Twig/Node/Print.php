@@ -13,7 +13,8 @@
 /**
  * Represents a node that outputs an expression.
  *
- * @author Fabien Potencier <fabien@symfony.com>
+ * @package    twig
+ * @author     Fabien Potencier <fabien@symfony.com>
  */
 class Twig_Node_Print extends Twig_Node implements Twig_NodeOutputInterface
 {
@@ -22,6 +23,11 @@ class Twig_Node_Print extends Twig_Node implements Twig_NodeOutputInterface
         parent::__construct(array('expr' => $expr), array(), $lineno, $tag);
     }
 
+    /**
+     * Compiles the node to PHP.
+     *
+     * @param Twig_Compiler A Twig_Compiler instance
+     */
     public function compile(Twig_Compiler $compiler)
     {
         $compiler

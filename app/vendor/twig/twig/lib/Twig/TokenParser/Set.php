@@ -28,6 +28,13 @@
  */
 class Twig_TokenParser_Set extends Twig_TokenParser
 {
+    /**
+     * Parses a token and returns a node.
+     *
+     * @param Twig_Token $token A Twig_Token instance
+     *
+     * @return Twig_NodeInterface A Twig_NodeInterface instance
+     */
     public function parse(Twig_Token $token)
     {
         $lineno = $token->getLine();
@@ -35,19 +42,20 @@ class Twig_TokenParser_Set extends Twig_TokenParser
         $names = $this->parser->getExpressionParser()->parseAssignmentExpression();
 
         $capture = false;
-        if ($stream->nextIf(Twig_Token::OPERATOR_TYPE, '=')) {
+        if ($stream->test(Twig_Token::OPERATOR_TYPE, '=')) {
+            $stream->next();
             $values = $this->parser->getExpressionParser()->parseMultitargetExpression();
 
             $stream->expect(Twig_Token::BLOCK_END_TYPE);
 
             if (count($names) !== count($values)) {
-                throw new Twig_Error_Syntax('When using set, you must have the same number of variables and assignments.', $stream->getCurrent()->getLine(), $stream->getFilename());
+                throw new Twig_Error_Syntax("When using set, you must have the same number of variables and assignements.", $lineno);
             }
         } else {
             $capture = true;
 
             if (count($names) > 1) {
-                throw new Twig_Error_Syntax('When using set with a block, you cannot have a multi-target.', $stream->getCurrent()->getLine(), $stream->getFilename());
+                throw new Twig_Error_Syntax("When using set with a block, you cannot have a multi-target.", $lineno);
             }
 
             $stream->expect(Twig_Token::BLOCK_END_TYPE);
@@ -64,6 +72,11 @@ class Twig_TokenParser_Set extends Twig_TokenParser
         return $token->test('endset');
     }
 
+    /**
+     * Gets the tag name associated with this token parser.
+     *
+     * @return string The tag name
+     */
     public function getTag()
     {
         return 'set';

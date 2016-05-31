@@ -12,9 +12,10 @@
         "phpunit/phpunit": "~4.8"
     },
     "autoload": {
-        "psr-4": { "": ["application/core/", "application/model/"] }
+        "psr-4": { "": ["application/core/", "application/model/", "application/controller/"] }
     },
     "require": {
-        "twig/twig": "~1.0"
+        "twig/twig": "1.5",
+        "altorouter/altorouter": "1.1.0"
     }
 }

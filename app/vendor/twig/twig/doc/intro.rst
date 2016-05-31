@@ -21,47 +21,90 @@ The key-features are...
 * *Flexible*: Twig is powered by a flexible lexer and parser. This allows the
   developer to define its own custom tags and filters, and create its own DSL.
 
-Twig is used by many Open-Source projects like Symfony, Drupal8, eZPublish,
-phpBB, Piwik, OroCRM, and many frameworks have support for it as well like
-Slim, Yii, Laravel, Codeigniter, and Kohana, just to name a few.
-
 Prerequisites
 -------------
 
-Twig needs at least **PHP 5.2.7** to run.
+Twig needs at least **PHP 5.2.4** to run.
 
 Installation
 ------------
 
-The recommended way to install Twig is via Composer:
+You have multiple ways to install Twig. If you are unsure what to do, go with
+the tarball.
+
+Installing from the tarball release
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1. Download the most recent tarball from the `download page`_
+2. Unpack the tarball
+3. Move the files somewhere in your project
+
+Installing the development version
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1. Install Subversion or Git
+2. For Git: ``git clone git://github.com/fabpot/Twig.git``
+3. For Subversion: ``svn co http://svn.twig-project.org/trunk/ twig``
+
+Installing the PEAR package
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1. Install PEAR
+2. ``pear channel-discover pear.twig-project.org``
+3. ``pear install twig/Twig`` (or ``pear install twig/Twig-beta``)
+
+Installing the C extension
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. versionadded:: 1.4
+    The C extension was added in Twig 1.4.
+
+Twig comes with a C extension that enhances the performance of the Twig
+runtime engine. You can install it like any other PHP extension:
 
 .. code-block:: bash
 
-    composer require "twig/twig:~1.0"
+    $ cd ext/twig
+    $ phpize
+    $ ./configure
+    $ make
+    $ make install
 
-.. note::
+Finally, enable the extension in your ``php.ini`` configuration file:
 
-    To learn more about the other installation methods, read the
-    :doc:`installation<installation>` chapter; it also explains how to install
-    the Twig C extension.
+.. code-block:: ini
+
+    extension=twig.so
+
+And from now on, Twig will automatically compiles your templates to take
+advantage of the C extension.
 
 Basic API Usage
 ---------------
 
 This section gives you a brief introduction to the PHP API for Twig.
 
+The first step to use Twig is to register its autoloader::
+
+    require_once '/path/to/lib/Twig/Autoloader.php';
+    Twig_Autoloader::register();
+
+Replace the ``/path/to/lib/`` path with the path you used for Twig
+installation.
+
+.. note::
+
+    Twig follows the PEAR convention names for its classes, which means you
+    can easily integrate Twig classes loading in your own autoloader.
+
 .. code-block:: php
 
-    require_once '/path/to/vendor/autoload.php';
-
-    $loader = new Twig_Loader_Array(array(
-        'index' => 'Hello {{ name }}!',
-    ));
+    $loader = new Twig_Loader_String();
     $twig = new Twig_Environment($loader);
 
-    echo $twig->render('index', array('name' => 'Fabien'));
+    echo $twig->render('Hello {{ name }}!', array('name' => 'Fabien'));
 
-Twig uses a loader (``Twig_Loader_Array``) to locate templates, and an
+Twig uses a loader (``Twig_Loader_String``) to locate templates, and an
 environment (``Twig_Environment``) to store the configuration.
 
 The ``render()`` method loads the template passed as a first argument and
@@ -72,14 +115,9 @@ filesystem loader::
 
     $loader = new Twig_Loader_Filesystem('/path/to/templates');
     $twig = new Twig_Environment($loader, array(
-        'cache' => '/path/to/compilation_cache',
+      'cache' => '/path/to/compilation_cache',
     ));
 
     echo $twig->render('index.html', array('name' => 'Fabien'));
 
-.. tip::
-
-    If you are not using Composer, use the Twig built-in autoloader::
-
-        require_once '/path/to/lib/Twig/Autoloader.php';
-        Twig_Autoloader::register();
+.. _`download page`: https://github.com/fabpot/Twig/tags

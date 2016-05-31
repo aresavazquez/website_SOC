@@ -12,14 +12,13 @@
 /**
  * Interface implemented by all compiled templates.
  *
- * @author Fabien Potencier <fabien@symfony.com>
- *
- * @deprecated since 1.12 (to be removed in 3.0)
+ * @package twig
+ * @author  Fabien Potencier <fabien@symfony.com>
  */
 interface Twig_TemplateInterface
 {
-    const ANY_CALL = 'any';
-    const ARRAY_CALL = 'array';
+    const ANY_CALL    = 'any';
+    const ARRAY_CALL  = 'array';
     const METHOD_CALL = 'method';
 
     /**
@@ -29,7 +28,7 @@ interface Twig_TemplateInterface
      *
      * @return string The rendered template
      */
-    public function render(array $context);
+    function render(array $context);
 
     /**
      * Displays the template with the given context.
@@ -37,12 +36,12 @@ interface Twig_TemplateInterface
      * @param array $context An array of parameters to pass to the template
      * @param array $blocks  An array of blocks to pass to the template
      */
-    public function display(array $context, array $blocks = array());
+    function display(array $context, array $blocks = array());
 
     /**
      * Returns the bound environment for this template.
      *
      * @return Twig_Environment The current environment
      */
-    public function getEnvironment();
+    function getEnvironment();
 }

@@ -13,7 +13,8 @@
 /**
  * Represents a text node.
  *
- * @author Fabien Potencier <fabien@symfony.com>
+ * @package    twig
+ * @author     Fabien Potencier <fabien@symfony.com>
  */
 class Twig_Node_Text extends Twig_Node implements Twig_NodeOutputInterface
 {
@@ -22,6 +23,11 @@ class Twig_Node_Text extends Twig_Node implements Twig_NodeOutputInterface
         parent::__construct(array(), array('data' => $data), $lineno);
     }
 
+    /**
+     * Compiles the node to PHP.
+     *
+     * @param Twig_Compiler A Twig_Compiler instance
+     */
     public function compile(Twig_Compiler $compiler)
     {
         $compiler

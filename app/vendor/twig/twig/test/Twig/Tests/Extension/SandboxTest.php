@@ -11,14 +11,14 @@
 
 class Twig_Tests_Extension_SandboxTest extends PHPUnit_Framework_TestCase
 {
-    protected static $params, $templates;
+    static protected $params, $templates;
 
-    protected function setUp()
+    public function setUp()
     {
         self::$params = array(
             'name' => 'Fabien',
-            'obj' => new FooObject(),
-            'arr' => array('obj' => new FooObject()),
+            'obj'  => new FooObject(),
+            'arr'  => array('obj' => new FooObject()),
         );
 
         self::$templates = array(
@@ -30,21 +30,8 @@ class Twig_Tests_Extension_SandboxTest extends PHPUnit_Framework_TestCase
             '1_basic6' => '{{ arr.obj }}',
             '1_basic7' => '{{ cycle(["foo","bar"], 1) }}',
             '1_basic8' => '{{ obj.getfoobar }}{{ obj.getFooBar }}',
-            '1_basic9' => '{{ obj.foobar }}{{ obj.fooBar }}',
-            '1_basic' => '{% if obj.foo %}{{ obj.foo|upper }}{% endif %}',
-            '1_layout' => '{% block content %}{% endblock %}',
-            '1_child' => "{% extends \"1_layout\" %}\n{% block content %}\n{{ \"a\"|json_encode }}\n{% endblock %}",
+            '1_basic'  => '{% if obj.foo %}{{ obj.foo|upper }}{% endif %}',
         );
-    }
-
-    /**
-     * @expectedException        Twig_Sandbox_SecurityError
-     * @expectedExceptionMessage Filter "json_encode" is not allowed in "1_child" at line 3.
-     */
-    public function testSandboxWithInheritance()
-    {
-        $twig = $this->getEnvironment(true, array(), self::$templates, array('block'));
-        $twig->loadTemplate('1_child')->render(array());
     }
 
     public function testSandboxGloballySet()
@@ -111,11 +98,6 @@ class Twig_Tests_Extension_SandboxTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('foo', $twig->loadTemplate('1_basic5')->render(self::$params), 'Sandbox allow some methods');
         $this->assertEquals(1, FooObject::$called['__toString'], 'Sandbox only calls method once');
 
-        $twig = $this->getEnvironment(false, array(), self::$templates);
-        FooObject::reset();
-        $this->assertEquals('foo', $twig->loadTemplate('1_basic5')->render(self::$params), 'Sandbox allows __toString when sandbox disabled');
-        $this->assertEquals(1, FooObject::$called['__toString'], 'Sandbox only calls method once');
-
         $twig = $this->getEnvironment(true, array(), self::$templates, array(), array('upper'));
         $this->assertEquals('FABIEN', $twig->loadTemplate('1_basic2')->render(self::$params), 'Sandbox allow some filters');
 
@@ -133,15 +115,13 @@ class Twig_Tests_Extension_SandboxTest extends PHPUnit_Framework_TestCase
             FooObject::reset();
             $this->assertEquals('foobarfoobar', $twig->loadTemplate('1_basic8')->render(self::$params), 'Sandbox allow methods in a case-insensitive way');
             $this->assertEquals(2, FooObject::$called['getFooBar'], 'Sandbox only calls method once');
-
-            $this->assertEquals('foobarfoobar', $twig->loadTemplate('1_basic9')->render(self::$params), 'Sandbox allow methods via shortcut names (ie. without get/set)');
         }
     }
 
     public function testSandboxLocallySetForAnInclude()
     {
         self::$templates = array(
-            '2_basic' => '{{ obj.foo }}{% include "2_included" %}{{ obj.foo }}',
+            '2_basic'    => '{{ obj.foo }}{% include "2_included" %}{{ obj.foo }}',
             '2_included' => '{% if obj.foo %}{{ obj.foo|upper }}{% endif %}',
         );
 
@@ -149,7 +129,7 @@ class Twig_Tests_Extension_SandboxTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('fooFOOfoo', $twig->loadTemplate('2_basic')->render(self::$params), 'Sandbox does nothing if disabled globally and sandboxed not used for the include');
 
         self::$templates = array(
-            '3_basic' => '{{ obj.foo }}{% sandbox %}{% include "3_included" %}{% endsandbox %}{{ obj.foo }}',
+            '3_basic'    => '{{ obj.foo }}{% sandbox %}{% include "3_included" %}{% endsandbox %}{{ obj.foo }}',
             '3_included' => '{% if obj.foo %}{{ obj.foo|upper }}{% endif %}',
         );
 
@@ -163,14 +143,11 @@ class Twig_Tests_Extension_SandboxTest extends PHPUnit_Framework_TestCase
 
     public function testMacrosInASandbox()
     {
-        $twig = $this->getEnvironment(true, array('autoescape' => 'html'), array('index' => <<<EOF
-{%- import _self as macros %}
-
-{%- macro test(text) %}<p>{{ text }}</p>{% endmacro %}
-
-{{- macros.test('username') }}
+        $twig = $this->getEnvironment(true, array('autoescape' => true), array('index' => <<<EOF
+{% macro test(text) %}<p>{{ text }}</p>{% endmacro %}
+{{ _self.test('username') }}
 EOF
-        ), array('macro', 'import'), array('escape'));
+        ), array('macro'), array('escape'));
 
         $this->assertEquals('<p>username</p>', $twig->loadTemplate('index')->render(array()));
     }
@@ -188,11 +165,11 @@ EOF
 
 class FooObject
 {
-    public static $called = array('__toString' => 0, 'foo' => 0, 'getFooBar' => 0);
+    static public $called = array('__toString' => 0, 'foo' => 0, 'getFooBar' => 0);
 
     public $bar = 'bar';
 
-    public static function reset()
+    static public function reset()
     {
         self::$called = array('__toString' => 0, 'foo' => 0, 'getFooBar' => 0);
     }

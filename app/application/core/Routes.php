@@ -14,6 +14,12 @@ class Routes{
             'root_url' => $this->set_url(''),
             'user_url' => $this->set_url('consultant'),
             'password_reset_url' => $this->set_url('consultant/requestPasswordReset'),
+            'soc_url' => $this->set_url('index/soc'),
+            'soc_url' => $this->set_url('index/products'),
+            'soc_url' => $this->set_url('index/offices'),
+            'soc_url' => $this->set_url('index/tips'),
+            'soc_url' => $this->set_url('index/blog'),
+            'soc_url' => $this->set_url('index/contact'),
             'privacy_url' => $this->set_url('index/privacy'),
             'terms_url' => $this->set_url('index/terms')
         );

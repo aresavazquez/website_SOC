@@ -65,7 +65,7 @@ html, body{
     text-align: center;
 }
 /* ------------------------------ menu*/
-.container_menu ul{
+.container_menu > ul{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -92,6 +92,9 @@ html, body{
     padding: 14px;
     font-size: 16px;
 }
+.container_menu ul li a:hover{
+    color: #3a74a6;
+}
 .menu-general img{
     width: 25px;
     margin-left: 12px;
@@ -100,16 +103,20 @@ html, body{
     color: #fff;
     border-bottom: 0;
 }
-.container_menu ul .submenu{
+.container_menu ul .submenu {
     position: absolute;
-    right: -105px;
-    background: #ddd;
+    left: 0;
+    background: #eee;
     padding: 10px;
-    width: 300px;
-    top: 5px;
-    margin: auto;
+    width: 150px;
+    top: 35px;
     display: none;
     opacity: 0;
+}
+.container_menu > ul li:hover .submenu {
+    display: block;
+    opacity: 1;
+    transition: .5s opacity ease-out;
 }
 /*----------------------------------micorsitios carrousel img*/
 

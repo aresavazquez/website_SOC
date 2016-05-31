@@ -12,7 +12,8 @@
 /**
  * Internal node used by the for node.
  *
- * @author Fabien Potencier <fabien@symfony.com>
+ * @package    twig
+ * @author     Fabien Potencier <fabien@symfony.com>
  */
 class Twig_Node_ForLoop extends Twig_Node
 {
@@ -21,6 +22,11 @@ class Twig_Node_ForLoop extends Twig_Node
         parent::__construct(array(), array('with_loop' => false, 'ifexpr' => false, 'else' => false), $lineno, $tag);
     }
 
+    /**
+     * Compiles the node to PHP.
+     *
+     * @param Twig_Compiler A Twig_Compiler instance
+     */
     public function compile(Twig_Compiler $compiler)
     {
         if ($this->getAttribute('else')) {

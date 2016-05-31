@@ -12,9 +12,10 @@
 /**
  * Twig_NodeVisitor_Sandbox implements sandboxing.
  *
- * @author Fabien Potencier <fabien@symfony.com>
+ * @package    twig
+ * @author     Fabien Potencier <fabien@symfony.com>
  */
-class Twig_NodeVisitor_Sandbox extends Twig_BaseNodeVisitor
+class Twig_NodeVisitor_Sandbox implements Twig_NodeVisitorInterface
 {
     protected $inAModule = false;
     protected $tags;
@@ -22,9 +23,14 @@ class Twig_NodeVisitor_Sandbox extends Twig_BaseNodeVisitor
     protected $functions;
 
     /**
-     * {@inheritdoc}
+     * Called before child nodes are visited.
+     *
+     * @param Twig_NodeInterface $node The node to visit
+     * @param Twig_Environment   $env  The Twig environment instance
+     *
+     * @param Twig_NodeInterface The modified node
      */
-    protected function doEnterNode(Twig_Node $node, Twig_Environment $env)
+    public function enterNode(Twig_NodeInterface $node, Twig_Environment $env)
     {
         if ($node instanceof Twig_Node_Module) {
             $this->inAModule = true;
@@ -35,18 +41,18 @@ class Twig_NodeVisitor_Sandbox extends Twig_BaseNodeVisitor
             return $node;
         } elseif ($this->inAModule) {
             // look for tags
-            if ($node->getNodeTag() && !isset($this->tags[$node->getNodeTag()])) {
-                $this->tags[$node->getNodeTag()] = $node;
+            if ($node->getNodeTag()) {
+                $this->tags[] = $node->getNodeTag();
             }
 
             // look for filters
-            if ($node instanceof Twig_Node_Expression_Filter && !isset($this->filters[$node->getNode('filter')->getAttribute('value')])) {
-                $this->filters[$node->getNode('filter')->getAttribute('value')] = $node;
+            if ($node instanceof Twig_Node_Expression_Filter) {
+                $this->filters[] = $node->getNode('filter')->getAttribute('value');
             }
 
             // look for functions
-            if ($node instanceof Twig_Node_Expression_Function && !isset($this->functions[$node->getAttribute('name')])) {
-                $this->functions[$node->getAttribute('name')] = $node;
+            if ($node instanceof Twig_Node_Expression_Function) {
+                $this->functions[] = $node->getAttribute('name');
             }
 
             // wrap print to check __toString() calls
@@ -59,14 +65,19 @@ class Twig_NodeVisitor_Sandbox extends Twig_BaseNodeVisitor
     }
 
     /**
-     * {@inheritdoc}
+     * Called after child nodes are visited.
+     *
+     * @param Twig_NodeInterface $node The node to visit
+     * @param Twig_Environment   $env  The Twig environment instance
+     *
+     * @param Twig_NodeInterface The modified node
      */
-    protected function doLeaveNode(Twig_Node $node, Twig_Environment $env)
+    public function leaveNode(Twig_NodeInterface $node, Twig_Environment $env)
     {
         if ($node instanceof Twig_Node_Module) {
             $this->inAModule = false;
 
-            $node->setNode('display_start', new Twig_Node(array(new Twig_Node_CheckSecurity($this->filters, $this->tags, $this->functions), $node->getNode('display_start'))));
+            return new Twig_Node_SandboxedModule($node, array_unique($this->filters), array_unique($this->tags), array_unique($this->functions));
         }
 
         return $node;

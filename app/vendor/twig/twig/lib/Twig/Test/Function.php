@@ -9,25 +9,18 @@
  * file that was distributed with this source code.
  */
 
-@trigger_error('The Twig_Test_Function class is deprecated since version 1.12 and will be removed in 2.0. Use Twig_SimpleTest instead.', E_USER_DEPRECATED);
-
 /**
  * Represents a function template test.
  *
- * @author Fabien Potencier <fabien@symfony.com>
- *
- * @deprecated since 1.12 (to be removed in 2.0)
+ * @package    twig
+ * @author     Fabien Potencier <fabien@symfony.com>
  */
-class Twig_Test_Function extends Twig_Test
+class Twig_Test_Function implements Twig_TestInterface
 {
     protected $function;
 
-    public function __construct($function, array $options = array())
+    public function __construct($function)
     {
-        $options['callable'] = $function;
-
-        parent::__construct($options);
-
         $this->function = $function;
     }
 

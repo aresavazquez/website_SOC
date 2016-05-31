@@ -11,7 +11,10 @@ class View
 
     public function __construct(){
         $loader = new Twig_Loader_Filesystem(Config::get('PATH_VIEW'));
-        $this->twig = new Twig_Environment($loader);
+        $this->twig = new Twig_Environment($loader, array(
+            'debug' => true
+        ));
+        $this->twig->addExtension(new Twig_Extension_Debug());
     }
     /**
      * simply includes (=shows) the view. this is done from the controller. In the controller, you usually say
