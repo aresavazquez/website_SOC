@@ -30,10 +30,5 @@ class Controller
 
         // create a view object to be able to use it inside a controller, like $this->View->render();
         $this->View = new View();
-        $this->Routes = Routes::get_instance()->all();
-    }
-    function setData($new_array){
-        if(empty($new_array)) return $this->Routes;
-        return array_merge($this->Routes, $new_array);
     }
 }

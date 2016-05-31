@@ -7,22 +7,29 @@
  */
 class Routes{
 	private static $instance = false;
-	private static $paths;
+	private static $router;
 
 	private function __construct(){
-		self::$paths = array(
-            'root_url' => $this->set_url(''),
-            'user_url' => $this->set_url('consultant'),
-            'password_reset_url' => $this->set_url('consultant/requestPasswordReset'),
-            'soc_url' => $this->set_url('index/soc'),
-            'soc_url' => $this->set_url('index/products'),
-            'soc_url' => $this->set_url('index/offices'),
-            'soc_url' => $this->set_url('index/tips'),
-            'soc_url' => $this->set_url('index/blog'),
-            'soc_url' => $this->set_url('index/contact'),
-            'privacy_url' => $this->set_url('index/privacy'),
-            'terms_url' => $this->set_url('index/terms')
-        );
+		self::$router = new AltoRouter();
+		self::$router->setBasePath('');
+        
+    self::$router->map( 'GET', '/', 'IndexController#home', 'p_home');
+    self::$router->map( 'GET', '/soc', 'IndexController#soc', 'p_soc');
+    self::$router->map( 'GET', '/productos/hipotecarios', 'IndexController#products_mortgage', 'p_products_mortgage');
+    self::$router->map( 'GET', '/productos/empresas', 'IndexController#products_enterprise', 'p_products_enterprise');
+    self::$router->map( 'GET', '/oficinas', 'IndexController#offices', 'p_offices');
+    self::$router->map( 'GET', '/soc_tips', 'IndexController#tips', 'p_tips');
+    self::$router->map( 'GET', '/contacto', 'IndexController#contact', 'p_contact');
+    self::$router->map( 'GET', '/blog', 'BlogController#index', 'p_blog');
+    self::$router->map( 'GET', '/admin', 'AdminController#index', 'p_admin');
+    self::$router->map( 'GET', '/admin/users', 'AdminController#users', 'p_adminusers');
+    self::$router->map( 'POST', '/api/login', 'ApiController#login', 'p_apilogin');
+    self::$router->map( 'POST', '/api/register', 'ApiController#register', 'p_apiregister');
+    self::$router->map( 'GET|POST', '/api/users', 'ApiController#users', 'p_apiusers');
+
+    self::$router->map( 'GET', '/world', function(){
+    	echo 'hello world';
+    });
 	}
 
 	/**
@@ -33,11 +40,7 @@ class Routes{
 		return self::$instance;
 	}
 
-	public static function all(){
-		return self::$paths;
-	}
-
-	private function set_url($path){
-		return Config::get('URL') . $path;
+	public static function get_router(){
+		return self::$router;
 	}
 }

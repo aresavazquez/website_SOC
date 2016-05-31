@@ -2,7 +2,9 @@
 <html lang="es">
 {% include 'components/head.html' %}
     <body>
-        {% block content %}{% endblock %}
+        {% block content %}
+        	{% include "admin/menu.html" %}
+        {% endblock %}
         {% include 'components/footer.html' %}
     </body>
 </html>
