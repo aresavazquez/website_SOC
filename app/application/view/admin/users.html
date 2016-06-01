@@ -6,41 +6,42 @@
 {% block content %}
 	{{ parent() }}
 	<div class="page admin-users content-usuario">
-	<div>
-		<p class="titulo">Usuarios</p>
-		<input type="search" placeholder="buscar" class="search">
-		<a href="" class="plusUser"><span></span>+ Agregar usuario</a>
-		<table id="usersList">
-			<thead>
-				<tr class="back-white">
-					<td>Nombre de usuario</td>
-					<td>Email</td>
-					<td>Fecha de creación</td>
-					<td></td>
-				</tr>
-			</thead>
-			<tbody>
-			</tbody>
-		</table>
+		<div>
+			<p class="titulo">Usuarios</p>
+			<input type="search" placeholder="buscar" class="search">
+			<a href="" class="plusUser"><span></span>+ Agregar usuario</a>
+			<table id="usersList">
+				<thead>
+					<tr class="back-white">
+						<td>Nombre de usuario</td>
+						<td>Email</td>
+						<td>Fecha de creación</td>
+						<td></td>
+					</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+		</div>
 	</div>
-</div>
-<div class="agregarUsuario">
-	<form class="datosUsuario">
-	<a href=""><img src="{{ base_path }}img/body/close.png" class="close"></a>
-		<input type="text" placeholder="Nombre" id="user_name">
-		<input type="text" placeholder="Correo" id="user_email">
-		<input type="password" placeholder="Password" id="user_password">
-		<input type="password" placeholder="Confirmar password" id="">
-		<div class="user">Agregar usuario</div>
-	</form>
-</div>
-<div class="editarUsuario">
-	<form class="datosUsuario">
-		<a href=""><img src="./img/body/close.png" class="close"></a>
-		<input type="text" placeholder="Nombre" id="e_user_name">
-		<input type="text" placeholder="Correo" id="e_user_email">
-		<button class="user">Editar usuario</button>
-		<button class="user">Borrar</button>
-	</form>
-</div>
+	<div class="agregarUsuario">
+		<form class="datosUsuario">
+		<a href=""><img src="{{ base_path }}img/body/close.png" class="close"></a>
+			<input type="text" placeholder="Nombre" id="user_name">
+			<input type="text" placeholder="Correo" id="user_email">
+			<input type="password" placeholder="Password" id="user_password">
+			<input type="password" placeholder="Confirmar password" id="">
+			<div class="user registerUserform">Agregar usuario</div>
+		</form>
+	</div>
+	<div class="editarUsuario">
+		<form class="datosUsuario">
+			<a href=""><img src="./img/body/close.png" class="close"></a>
+			<input type="text" placeholder="Nombre" id="e_user_name">
+			<input type="text" placeholder="Correo" id="e_user_email">
+			<input type="hidden" id="e_user_id">
+			<div class="update-user user">Editar usuario</div>
+			<div class="user">Borrar</div>
+		</form>
+	</div>
 {% endblock %}

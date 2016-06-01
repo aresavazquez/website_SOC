@@ -4,7 +4,7 @@ var host_url = "http://localhost:8000/";
 $(document).ready(function(){
 	login();
 	registerUser();
-	//loadUserInfo();
+	registerSite();
 });
 
 // The Magic
@@ -36,7 +36,7 @@ function login(){
 }
 
 function registerUser(){
-	$('.datosUsuario .user').on('click', function(){
+	$('.agregarUsuario .datosUsuario .registerUserform').on('click', function(){
 
 		var username = $('.datosUsuario #user_name').val();
 		var useremail = $('.datosUsuario #user_email').val();
@@ -56,6 +56,30 @@ function registerUser(){
 		$.ajax(settings).done(function (response) {
 			if(response.status == 200){
 				alert('Se ha creado el usuario correctamente');
+			}else if(response.status == 500) {
+				alert(response.errors);
+			}
+		});
+	});
+}
+
+function registerSite(){
+	$('#newSiteForm .addSite').on('click', function(){
+		var settings = {
+			"async": true,
+			"crossDomain": true,
+			"url": host_url + "api/v1/sites",
+			"method": "POST",
+			"data": {
+				//"user_name": username,
+				//"user_email": useremail,
+				//"user_password": userpassword
+			}
+		}
+		$.ajax(settings).done(function (response) {
+			console.log(response);
+			if(response.status == 200){
+				alert('Se ha creado el sitio correctamente');
 			}else if(response.status == 500) {
 				alert(response.errors);
 			}
