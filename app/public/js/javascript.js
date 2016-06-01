@@ -167,7 +167,7 @@ $(document).on('ready', function(){
             $.each(sites, function (index, value) {
                 html += '<tr>';
                 html += '<td>'+value.title+'</td>';
-                html += '<td class="editInput" data-user="'+value.id+'">editar</td>';
+                html += '<td class="editInput" data-site="'+value.url+'">editar</td>';
                 html += '</tr>';
             });
             $('#sitesList tbody').append(html);
@@ -175,7 +175,24 @@ $(document).on('ready', function(){
     }
 
     var loadSiteinfo = function(){
-
+        $('#sitesList').on('click', '.editInput' ,function (e){
+            e.preventDefault ();
+            var siteURL = $(this).data('site');
+            var datauser = ''
+            var settings = {
+                "async": true,
+                "crossDomain": true,
+                "url": host_url + "api/v1/sites/"+siteURL,
+                "method": "GET",
+            }
+            $.ajax(settings).done(function (response) {
+                var site = response.data;
+                console.log(site);
+                //$('.editarUsuario .datosUsuario #e_user_name').val(user.name);
+                //$('.editarUsuario .datosUsuario #e_user_email').val(user.email);
+                //$('.editarUsuario .datosUsuario #e_user_id').val(user.id);
+            });
+        });
     }
 
     var adminUsersListeners = function(){
@@ -242,6 +259,7 @@ $(document).on('ready', function(){
         "admin-sites": function(){
             sitesList();
             adminSitesListeners();
+            loadSiteinfo();
         }
     }
 
