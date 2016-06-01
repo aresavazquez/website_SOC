@@ -36,7 +36,7 @@ function login(){
 }
 
 function registerUser(){
-	$('.datosUsuario .user').on('click', function(){
+	$('.agregarUsuario .datosUsuario .user').on('click', function(){
 
 		var username = $('.datosUsuario #user_name').val();
 		var useremail = $('.datosUsuario #user_email').val();

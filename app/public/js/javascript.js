@@ -1,4 +1,33 @@
 $(document).on('ready', function(){
+
+    $.put = function(url, data, callback, type){
+        if ( $.isFunction(data) ){
+            type = type || callback,
+            callback = data,
+            data = {}
+        }
+        return $.ajax({
+            url: url,
+            type: 'PUT',
+            success: callback,
+            data: data,
+            contentType: type
+        });
+    }
+    $.delete = function(url, data, callback, type){
+        if ( $.isFunction(data) ){
+            type = type || callback,
+            callback = data,
+            data = {}
+        }
+        return $.ajax({
+            url: url,
+            type: 'DELETE',
+            success: callback,
+            data: data,
+            contentType: type
+        });
+    }
     var animateHomeIntro = function(){
         //TweenLite.to('.welcome', 1.5, {opacity: 1, display: "block", ease: Power2.easeOut, y: 150});
         var tl = new TimelineLite({onComplete: function(){ this.restart(); }});
@@ -101,6 +130,26 @@ $(document).on('ready', function(){
                 var user = response.data;
                 $('.editarUsuario .datosUsuario #e_user_name').val(user.name);
                 $('.editarUsuario .datosUsuario #e_user_email').val(user.email);
+                $('.editarUsuario .datosUsuario #e_user_id').val(user.id);
+            });
+        });
+     }
+
+     var updateUserinfo = function(){
+        $('.editarUsuario .datosUsuario .update-user').on('click', function(){
+
+            var useridU = $('.editarUsuario .datosUsuario #e_user_id').val();
+            var usernameU = $('.editarUsuario .datosUsuario #e_user_name').val();
+            var mailU = $('.editarUsuario .datosUsuario #e_user_email').val();
+
+            var settings = {
+                "async": true,
+                "crossDomain": true,
+                "url": host_url + "api/v1/users/"+useridU+'?name='+usernameU+'&email='+mailU,
+                "method": "PUT"
+            }
+            $.ajax(settings).done(function (response) {
+               console.log(response);
             });
         });
      }
@@ -123,6 +172,10 @@ $(document).on('ready', function(){
             });
             $('#sitesList tbody').append(html);
         });
+    }
+
+    var loadSiteinfo = function(){
+
     }
 
     var adminUsersListeners = function(){
@@ -184,6 +237,7 @@ $(document).on('ready', function(){
             usersList();
             loadUserinfo();
             adminUsersListeners();
+            updateUserinfo();
         },
         "admin-sites": function(){
             sitesList();
