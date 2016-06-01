@@ -26,6 +26,7 @@ class Routes{
     self::$router->map( 'GET', '/admin/sites', 'AdminController#sites', 'admin_sites');
     
     //- API
+    self::$router->map( 'GET', '/api/v1', 'ApiController#index');
     self::$router->map( 'POST', '/api/v1/login', 'ApiController#login');
     self::$router->map( 'POST', '/api/v1/register', 'ApiController#register');
     self::$router->map( 'GET|POST', '/api/v1/users', 'ApiController#users');

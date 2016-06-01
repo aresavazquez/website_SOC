@@ -11,7 +11,7 @@ class ApiController extends Controller{
     }
 
     public function index(){
-        $this->View->renderJSON(array('version'=>'2.0'));
+        $this->View->renderJSON(array('version'=>'1.0'));
     }
 
     public function login(){

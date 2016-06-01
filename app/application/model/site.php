@@ -29,10 +29,10 @@ class Site {
         return $result;
     }
 
-    public static function save($user_id, $state_id, $url, $title, $content, $address, $contact) {
+    public static function save() {
 
         // clean the input
-        $user_id = strip_tags(Request::post('user_id'));
+        $user_email = strip_tags(Request::post('user_email'));
         $state_id = strip_tags(Request::post('state_id'));
         $url = strip_tags(Request::post('url'));
         $title = Request::post('title');
@@ -40,12 +40,17 @@ class Site {
         $address = Request::post('address');
         $contact = Request::post('contact');
 
-        if (!self::writeNewSiteToDatabase($user_id, $state_id, $url, $title, $content, $address, $contact)) {
-            Session::add('feedback_negative', Text::get('FEEDBACK_SITE_CREATION_FAILED'));
-            return false; // no reason not to return false here
+        $user = User::get_instance()->getUserDataByEmail($user_email);
+        if($user){
+            $user_id = $user->id;
+            if (!self::writeNewSiteToDatabase($user_id, $state_id, $url, $title, $content, $address, $contact)) {
+                Session::add('feedback_negative', Text::get('FEEDBACK_SITE_CREATION_FAILED'));
+                return false; // no reason not to return false here
+            }   
+            return true;
+        }else{
+            return false;
         }
-
-        return true;
     }
 
     public static function writeNewSiteToDatabase($user_id, $url, $title, $content, $address, $contact) {
