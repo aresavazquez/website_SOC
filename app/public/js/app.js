@@ -65,15 +65,27 @@ function registerUser(){
 
 function registerSite(){
 	$('#newSiteForm .addSite').on('click', function(){
+		var siteUserEmail = $('#newSiteForm #siteUserEmail').val();
+		var siteURL = $('#newSiteForm #siteUrl').val();
+		var siteName = $('#newSiteForm #siteName').val();
+		var siteState = $('#newSiteForm #siteState').val();
+		var siteContent = $('#newSiteForm #siteContent').val();
+		var siteAddress = $('#newSiteForm #siteAddress').val();
+		var siteTelephone = $('#newSiteForm #siteTelephone').val();
+
 		var settings = {
 			"async": true,
 			"crossDomain": true,
 			"url": host_url + "api/v1/sites",
 			"method": "POST",
 			"data": {
-				//"user_name": username,
-				//"user_email": useremail,
-				//"user_password": userpassword
+				"user_email": siteUserEmail,
+				"state_id": siteState,
+				"url": siteURL,
+				"title": siteName,
+				"content": siteContent,
+				"address": siteAddress,
+				"contact": siteTelephone
 			}
 		}
 		$.ajax(settings).done(function (response) {

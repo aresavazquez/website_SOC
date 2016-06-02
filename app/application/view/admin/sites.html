@@ -25,51 +25,53 @@
 	<div class="agregarUsuario">
 		<form class="datosUsuario microsite" id="newSiteForm">
 			<a href=""><img src="./img/body/close.png" class="close"></a>
+			<label>Correo del Usuario</label>
+			<input id="siteUserEmail" type="mail" placeholder="Correo del usuario" class="edit_input">
 			<label>Encabezado</label>
-			<input type="text" placeholder="Nombre del sitio" class="edit_input">
-			<label>Imágenes Slider</label>
-			<div class="img_slider"></div>
-			<input type="text" placeholder="1er título" class="edit_input">
-			<textarea placeholder="Descripción" class="edit_input"></textarea>
-			<label>Imágenes</label>
-			<ul>
-				<li>
-					<input type="radio">
-					<img src="./img/micrositios/img1.jpg">
-				</li>
-				<li>
-					<input type="radio">
-					<img src="./img/micrositios/img2.jpg">
-				</li>
-				<li>
-					<input type="radio">
-					<img src="./img/micrositios/img3.jpg">
-				</li>
-			</ul>
-			<p>Las fotos deben ser en formato JPG o PNG. Tamaño 320 x 165px</p>
-			<br>
-			<div class="edit_photo">
-				<label class="foto">Foto 1</label>
-				<input type="file">
-				<textarea placeholder="Descripción foto 1"></textarea>
-				<label class="foto">Foto 2</label>
-				<input type="file">
-				<textarea placeholder="Descripción foto 2"></textarea>
-				<label class="foto">Foto 3</label>
-				<input type="file">
-				<textarea placeholder="Descripción foto 3"></textarea>
-			</div>
-			<br>
-			<label>Scción Simulador</label>
-			<input type="text" placeholder="2do título" class="edit_input">
-			<textarea placeholder="Descripción" class="edit_input"></textarea>
-			<input type="text" placeholder="Ingresa tu widget" class="edit_input">
-			<label>Ingresa las coordenadas de tu ubicación</label>
-			<input type="text" placeholder="Coordenadas Del Mapa" class="edit_input">
+			<input id="siteName" type="text" placeholder="Nombre del sitio" class="edit_input">
+			<label>URl para el sitio</label>
+			<input id="siteUrl" type="text" placeholder="Nombre del sitio" class="edit_input">
+			<label>Descripción</label>
+			<textarea id="siteContent" placeholder="Descripción" class="edit_input"></textarea>
 			<label>Localidad</label>
-			<input type="text" placeholder="Localidad" class="edit_input">
-			<input type="number" placeholder="Teléfono" class="edit_input">
-			<input type="text" placeholder="Dirección" class="edit_input">
+			<select name="" id="siteState" placeholder="Selecciona un Estado" class="edit_input">
+				<option value="1">Aguascalientes</option>
+				<option value="2">Baja California</option>
+				<option value="3">Baja California Sur</option>
+				<option value="4">Aguascalientes</option>
+				<option value="5">Aguascalientes</option>
+				<option value="6">Aguascalientes</option>
+				<option value="7">Aguascalientes</option>
+				<option value="8">Aguascalientes</option>
+				<option value="9">Aguascalientes</option>
+				<option value="10">Aguascalientes</option>
+				<option value="11">Aguascalientes</option>
+				<option value="12">Aguascalientes</option>
+				<option value="13">Aguascalientes</option>
+				<option value="14">Aguascalientes</option>
+				<option value="15">Aguascalientes</option>
+				<option value="16">Aguascalientes</option>
+				<option value="17">Aguascalientes</option>
+				<option value="18">Aguascalientes</option>
+				<option value="19">Aguascalientes</option>
+				<option value="20">Aguascalientes</option>
+				<option value="21">Aguascalientes</option>
+				<option value="22">Aguascalientes</option>
+				<option value="23">Aguascalientes</option>
+				<option value="24">Aguascalientes</option>
+				<option value="25">Aguascalientes</option>
+				<option value="26">Aguascalientes</option>
+				<option value="27">Aguascalientes</option>
+				<option value="28">Aguascalientes</option>
+				<option value="29">Aguascalientes</option>
+				<option value="30">Aguascalientes</option>
+				<option value="31">Aguascalientes</option>
+				<option value="32">Aguascalientes</option>
+			</select>
+			<label>Dirección</label>
+			<input id="siteAddress" type="text" placeholder="Dirección" class="edit_input">
+			<label>Teléfono</label>
+			<input id="siteTelephone" type="number" placeholder="Teléfono" class="edit_input">
 			<div class="user addSite">Crear Micrositio</div>
 		</form>
 	</div>
