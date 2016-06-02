@@ -49,6 +49,7 @@ class Site {
             }   
             return true;
         }else{
+            Session::add('feedback_negative', Text::get('FEEDBACK_USER_DOES_NOT_EXIST'));
             return false;
         }
     }
