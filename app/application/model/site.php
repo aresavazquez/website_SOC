@@ -43,7 +43,7 @@ class Site {
         $user = User::get_instance()->getUserDataByEmail($user_email);
         if($user){
             $user_id = $user->id;
-            if (!self::writeNewSiteToDatabase($user_id, $state_id, $url, $title, $content, $address, $contact)) {
+            if (!self::get_instance()->writeNewSiteToDatabase($user_id, $state_id, $url, $title, $content, $address, $contact)) {
                 Session::add('feedback_negative', Text::get('FEEDBACK_SITE_CREATION_FAILED'));
                 return false; // no reason not to return false here
             }   
@@ -53,8 +53,8 @@ class Site {
         }
     }
 
-    public static function writeNewSiteToDatabase($user_id, $url, $title, $content, $address, $contact) {
-        $data = array('user_id'=>$user_id, 'url'=>$url, 'title'=>$title, 'content'=>$content, 'address'=>$address, 'contact'=>$contact);
+    public static function writeNewSiteToDatabase($user_id, $state_id, $url, $title, $content, $address, $contact) {
+        $data = array('user_id'=>$user_id, 'state_id'=>$state_id, 'url'=>$url, 'title'=>$title, 'content'=>$content, 'address'=>$address, 'contact'=>$contact);
         return $result = self::$PDO->_insert($data);
     }
 }
