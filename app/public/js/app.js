@@ -89,7 +89,6 @@ function registerSite(){
 			}
 		}
 		$.ajax(settings).done(function (response) {
-			console.log(response);
 			if(response.status == 200){
 				alert('Se ha creado el sitio correctamente');
 			}else if(response.status == 500) {
