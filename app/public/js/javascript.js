@@ -197,6 +197,27 @@ $(document).on('ready', function(){
         });
     }
 
+    var updateSiteinfo = function(){
+        $('.update-site .updateSite').on('click', function(){
+
+            var esiteName = $('.update-site #e_siteName').val();
+            var esiteUrl = $('.update-site #e_siteUrl').val();
+            var esiteContent = $('.update-site #e_siteContent').val();
+            var esiteAddress = $('.update-site #e_siteAddress').val();
+            var esiteTelephone = $('.update-site #e_siteTelephone').val();
+
+            var settings = {
+                "async": true,
+                "crossDomain": true,
+                "url": host_url + "api/v1/sites/"+esiteUrl+"?title="+esiteName+"&content="+esiteContent+"&address="+esiteAddress+"&contact="+esiteTelephone,
+                "method": "PUT"
+            }
+            $.ajax(settings).done(function (response) {
+               console.log(response);
+            });
+        });
+     }
+
     var adminUsersListeners = function(){
         $('#usersList').on('click', '.editInput' ,function (e){
             e.preventDefault ();
@@ -262,6 +283,7 @@ $(document).on('ready', function(){
             sitesList();
             adminSitesListeners();
             loadSiteinfo();
+            updateSiteinfo();
         }
     }
 
