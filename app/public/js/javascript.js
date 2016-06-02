@@ -188,9 +188,11 @@ $(document).on('ready', function(){
             $.ajax(settings).done(function (response) {
                 var site = response.data;
                 console.log(site);
-                //$('.editarUsuario .datosUsuario #e_user_name').val(user.name);
-                //$('.editarUsuario .datosUsuario #e_user_email').val(user.email);
-                //$('.editarUsuario .datosUsuario #e_user_id').val(user.id);
+                $('.update-site #e_siteName').val(site.title);
+                $('.update-site #e_siteUrl').val(site.url);
+                $('.update-site #e_siteContent').val(site.content);
+                $('.update-site #e_siteAddress').val(site.address);
+                $('.update-site #e_siteTelephone').val(site.contact);
             });
         });
     }
