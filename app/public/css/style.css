@@ -625,7 +625,6 @@ a,a:visited{
     background: url(../img/head/back3.jpg)no-repeat center fixed;
 }
 .asesores .form{
-    height: 425px;
     width: 800px;
     margin: auto;
     padding: 50px 50px;
@@ -2212,6 +2211,18 @@ h2.zero,p.zero {
     flex-wrap: wrap;
     color: #fff;
     padding: 50px;
+}
+/*Responses*/
+.responses{
+    width: 100%;
+    clear: both;
+    margin:10px auto;
+    padding:10px;
+    text-align: center;
+    color:#fff;
+    background: #4fa753;
+    border: 2px solid #fff;
+    display: none;
 }
 
 

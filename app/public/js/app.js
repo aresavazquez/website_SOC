@@ -27,9 +27,11 @@ function login(){
 		}
 		$.ajax(settings).done(function (response) {
 			if(response.status == 200){
+				$('#login-form .login__button').text('Entrando...');
 				window.location = host_url+'admin/users';
 			}else if(response.status == 500) {
-				alert(response.errors);
+				$('.responses').text(response.errors);
+				$('.responses').show();
 			}
 		});
 	});
