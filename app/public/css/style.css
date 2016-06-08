@@ -2214,15 +2214,16 @@ h2.zero,p.zero {
 }
 /*Responses*/
 .responses{
-    width: 100%;
+    width: 100% !important;
     clear: both;
-    margin:10px auto;
-    padding:10px;
+    margin:10px auto !important;
+    padding:10px !important;
     text-align: center;
     color:#fff;
     background: #4fa753;
     border: 2px solid #fff;
     display: none;
+    position: inherit !important;
 }
 
 
