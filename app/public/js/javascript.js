@@ -194,7 +194,6 @@ $(document).on('ready', function(){
             }
             $.ajax(settings).done(function (response) {
                 var site = response.data;
-                console.log(site);
                 $('.update-site #e_siteName').val(site.title);
                 $('.update-site #e_siteUrl').val(site.url);
                 $('.update-site #e_siteContent').val(site.content);
