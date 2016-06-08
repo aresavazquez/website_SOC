@@ -95,9 +95,12 @@ function registerSite(){
 		}
 		$.ajax(settings).done(function (response) {
 			if(response.status == 200){
-				alert('Se ha creado el sitio correctamente');
+				$('.close').trigger( "click" );
+				$('.responses').text('Se ha creado el sitio correctamente');
+				$('.responses').show();
 			}else if(response.status == 500) {
-				alert(response.errors);
+				$('.responses').text(response.errors);
+				$('.responses').show();
 			}
 		});
 	});

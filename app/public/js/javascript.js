@@ -220,7 +220,14 @@ $(document).on('ready', function(){
                 "method": "PUT"
             }
             $.ajax(settings).done(function (response) {
-               console.log(response);
+               if(response.status == 200){
+                    $('.close').trigger( "click" );
+                    $('.responses').text('El sitio se ha actualizado correctamente');
+                    $('.responses').show();
+                }else if(response.status == 500) {
+                    $('.responses').text(response.errors);
+                    $('.responses').show();
+                }
             });
         });
      }
