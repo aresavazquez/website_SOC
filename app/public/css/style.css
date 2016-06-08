@@ -661,6 +661,9 @@ button, .login__button, form .user{
     text-align: center;
     display: inline-block;
 }
+button:hover, .login__button:hover, form .user:hover{
+    cursor: pointer;
+}
 button.close{
     width: inherit;
     margin:inherit;
