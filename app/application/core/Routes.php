@@ -23,14 +23,19 @@ class Routes{
     self::$router->map( 'GET', '/blog', 'BlogController#index', 'p_blog');
     self::$router->map( 'GET', '/admin', 'AdminController#index', 'p_admin');
     self::$router->map( 'GET', '/admin/users', 'AdminController#users', 'admin_users');
+    self::$router->map( 'GET', '/admin/sites', 'AdminController#sites', 'admin_sites');
     
     //- API
+    self::$router->map( 'GET', '/api/v1', 'ApiController#index');
     self::$router->map( 'POST', '/api/v1/login', 'ApiController#login');
     self::$router->map( 'POST', '/api/v1/register', 'ApiController#register');
     self::$router->map( 'GET|POST', '/api/v1/users', 'ApiController#users');
     self::$router->map( 'GET|POST', '/api/v1/users/[i:id]', 'ApiController#get_user');
-    self::$router->map( 'GET|POST', '/api/v1/sites', 'ApiController#sites');
+    self::$router->map( 'PUT', '/api/v1/users/[i:id]', 'ApiController#set_user');
+    self::$router->map( 'GET', '/api/v1/sites', 'ApiController#sites');
+    self::$router->map( 'POST', '/api/v1/sites', 'ApiController#new_site');
     self::$router->map( 'GET|POST', '/api/v1/sites/[*:url]', 'ApiController#get_site');
+    self::$router->map( 'PUT', '/api/v1/sites/[*:url]', 'ApiController#set_site');
 
     self::$router->map( 'GET', '/world', function(){
     	echo 'hello world';

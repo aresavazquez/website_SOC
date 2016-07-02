@@ -4,7 +4,6 @@
 }
 html, body{
     width: 100%;
-    height: 100%;
     font-family: 'MuseoSans',sans-serif;
 }
 a,a:visited{
@@ -626,7 +625,6 @@ a,a:visited{
     background: url(../img/head/back3.jpg)no-repeat center fixed;
 }
 .asesores .form{
-    height: 425px;
     width: 800px;
     margin: auto;
     padding: 50px 50px;
@@ -649,7 +647,7 @@ a,a:visited{
 .asesores .form form .check{
     width: 20px;
 }
-button, .login__button{
+button, .login__button, form .user{
     background: #4fa753;
     border: none;
     width: 300px;
@@ -661,6 +659,9 @@ button, .login__button{
     font-size: 17px;
     text-align: center;
     display: inline-block;
+}
+button:hover, .login__button:hover, form .user:hover{
+    cursor: pointer;
 }
 button.close{
     width: inherit;
@@ -735,10 +736,10 @@ button.close{
 /*---------------------micorsitios usuarios*/
 .content-usuario{
     width: 100%;
-    height: 100%;
     background: url(../img/head/back3.jpg)no-repeat center fixed;
+    padding-bottom: 20px;
 }
-.content-usuario div{
+/*.content-usuario div{
     bottom: 100px;
     right: 0;
     margin: auto;
@@ -748,6 +749,13 @@ button.close{
     position: absolute;
     left: 0;
     top: 150px;
+}*/
+.content-usuario div{
+    margin: auto;
+    width: 80%;
+    height: auto;
+    position: relative;
+    padding-top: 100px;
 }
 .content-usuario div table{
     width: 100%;
@@ -761,6 +769,11 @@ button.close{
 }
 .content-usuario div table .editInput{
     width: 50px;
+    color: #4fa753;
+}
+.content-usuario div table .editInput:hover{
+    text-decoration: underline;
+    cursor: pointer;
 }
 .content-usuario div table .editInput a{
     color: #4fa753;
@@ -776,12 +789,13 @@ button.close{
 .agregarUsuario{
     width: 100%;
     height: 100%;
-    position: absolute;
+    position: fixed;
     background: rgba(0, 0, 0, 0.7);
     top: 0;
     opacity: 0;
     display: none;
-    z-index: 1;
+    z-index: 1000;
+    overflow: scroll;
 }
 .agregarUsuario form{
     position: fixed;
@@ -812,6 +826,7 @@ button.close{
     width: 70%;
     border-bottom: 1px solid #4fa753;
 }
+.editarUsuario .datosUsuario.microsite,
 .agregarUsuario .datosUsuario.microsite{
     width: 80%;
     height: 700px;
@@ -819,6 +834,7 @@ button.close{
     overflow-y: scroll;
     height: 650px;
 }
+.editarUsuario .datosUsuario.microsite input,
 .agregarUsuario .datosUsuario.microsite input{
     display: block;
     border: none;
@@ -832,9 +848,16 @@ button.close{
     margin: 15px 0;
     width: 70%;
 }
+.editarUsuario .datosUsuario.microsite select,
+.agregarUsuario .datosUsuario.microsite select{
+    display: block;
+    margin: 15px 0;
+}
+.editarUsuario .datosUsuario.microsite .edit_input,
 .agregarUsuario .datosUsuario.microsite .edit_input{
     border-bottom: 1px solid #4fa753;
 }
+.editarUsuario .datosUsuario.microsite label,
 .agregarUsuario .datosUsuario.microsite label{
     color: #fff;
     font-weight: 100;
@@ -846,19 +869,20 @@ button.close{
     height: 200px;
     border-radius: 5px;
 }
+.editarUsuario .datosUsuario.microsite textarea,
 .agregarUsuario .datosUsuario.microsite textarea{
     display: block;
-    width: 70%;
+    width: 100%;
     border: none;
     padding: 10px;
     margin: 15px 0;
     letter-spacing: 1px;
     font-size: 16px;
     font-weight: 100;
-    background: none;
+    background: #fff;
     border-bottom: 1px solid #4fa753;
-    color: #fff;
-    height: 45px;
+    color: #000;
+    height: 250px;
 }
 .agregarUsuario .datosUsuario.microsite .borrar{
     background: #A4424B;
@@ -948,14 +972,16 @@ button.close{
 .editarUsuario{
     width: 100%;
     height: 100%;
-    position: absolute;
+    position: fixed;
     background: rgba(0, 0, 0, 0.7);
     top: 0;
     opacity: 0;
     display: none;
+    z-index: 1000;
+    overflow: scroll;
 }
 .editarUsuario form{
-    position: fixed;
+    //position: fixed;
     top: 0;
     bottom: 0;
     right: 0;
@@ -963,16 +989,16 @@ button.close{
     margin: auto;
     display: block;
     width: 600px;
-    height: 535px;
     opacity: 0;
     display: none;
     padding-top: 30px;
     background: #285CA4;
     border-radius: 10px;
+    padding-bottom: 30px;
 }
 .editarUsuario .datosUsuario.microsite{
     width: 80%;
-    height: 700px;
+    //height: 700px;
 }
 .editarUsuario form input{
     display: block;
@@ -2185,6 +2211,19 @@ h2.zero,p.zero {
     flex-wrap: wrap;
     color: #fff;
     padding: 50px;
+}
+/*Responses*/
+.responses{
+    width: 100% !important;
+    clear: both;
+    margin:10px auto !important;
+    padding:10px !important;
+    text-align: center;
+    color:#fff;
+    background: #4fa753;
+    border: 2px solid #fff;
+    display: none;
+    position: inherit !important;
 }
 
 

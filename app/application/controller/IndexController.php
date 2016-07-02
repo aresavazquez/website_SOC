@@ -9,27 +9,27 @@ class IndexController extends Controller
         parent::__construct();
     }
 
-    public function home($links, $params){
-        $this->View->render('site/index.html', array('links'=>$links));
+    public function home(){
+        $this->View->render('site/index.html');
     }
-    public function soc($links, $params){
-        $this->View->render('site/soc.html', array('links'=>$links));   
+    public function soc(){
+        $this->View->render('site/soc.html');   
     }
-    public function products_mortgage($links, $params){
-        $this->View->render('site/products_mortgage.html', array('links'=>$links)); 
+    public function products_mortgage(){
+        $this->View->render('site/products_mortgage.html'); 
     }
-    public function products_enterprise($links, $params){
-        $this->View->render('site/products_enterprise.html', array('links'=>$links)); 
+    public function products_enterprise(){
+        $this->View->render('site/products_enterprise.html'); 
     }
-    public function offices($links, $params){
+    public function offices(){
         $states = State::get_instance()->all();
-        $this->View->render('site/offices.html', array('links'=>$links, 'states'=>$states)); 
+        $this->View->render('site/offices.html', array('states'=>$states)); 
     }
-    public function tips($links, $params){
-        $this->View->render('site/tips.html', array('links'=>$links)); 
+    public function tips(){
+        $this->View->render('site/tips.html'); 
     }
-    public function contact($links, $params){
-        $this->View->render('site/contact.html', array('links'=>$links)); 
+    public function contact(){
+        $this->View->render('site/contact.html'); 
     }
     public function privacy(){
 

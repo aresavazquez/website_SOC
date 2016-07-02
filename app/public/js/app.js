@@ -4,7 +4,7 @@ var host_url = "http://localhost:8000/";
 $(document).ready(function(){
 	login();
 	registerUser();
-	//loadUserInfo();
+	registerSite();
 });
 
 // The Magic
@@ -27,16 +27,18 @@ function login(){
 		}
 		$.ajax(settings).done(function (response) {
 			if(response.status == 200){
+				$('#login-form .login__button').text('Entrando...');
 				window.location = host_url+'admin/users';
 			}else if(response.status == 500) {
-				alert(response.errors);
+				$('.responses').text(response.errors);
+				$('.responses').show();
 			}
 		});
 	});
 }
 
 function registerUser(){
-	$('.datosUsuario .user').on('click', function(){
+	$('.agregarUsuario .datosUsuario .registerUserform').on('click', function(){
 
 		var username = $('.datosUsuario #user_name').val();
 		var useremail = $('.datosUsuario #user_email').val();
@@ -54,11 +56,51 @@ function registerUser(){
 			}
 		}
 		$.ajax(settings).done(function (response) {
-			console.log(response);
 			if(response.status == 200){
-				console.log(response);
+				$('.close').trigger( "click" );
+				$('.responses').text('Se ha creado el usuario correctamente');
+				$('.responses').show();
 			}else if(response.status == 500) {
-				alert(response.errors);
+				$('.responses').text(response.errors);
+				$('.responses').show();
+			}
+		});
+	});
+}
+
+function registerSite(){
+	$('#newSiteForm .addSite').on('click', function(){
+		var siteUserEmail = $('#newSiteForm #siteUserEmail').val();
+		var siteURL = $('#newSiteForm #siteUrl').val();
+		var siteName = $('#newSiteForm #siteName').val();
+		var siteState = $('#newSiteForm #siteState').val();
+		var siteContent = $('#newSiteForm #siteContent').val();
+		var siteAddress = $('#newSiteForm #siteAddress').val();
+		var siteTelephone = $('#newSiteForm #siteTelephone').val();
+
+		var settings = {
+			"async": true,
+			"crossDomain": true,
+			"url": host_url + "api/v1/sites",
+			"method": "POST",
+			"data": {
+				"user_email": siteUserEmail,
+				"state_id": siteState,
+				"url": siteURL,
+				"title": siteName,
+				"content": siteContent,
+				"address": siteAddress,
+				"contact": siteTelephone
+			}
+		}
+		$.ajax(settings).done(function (response) {
+			if(response.status == 200){
+				$('.close').trigger( "click" );
+				$('.responses').text('Se ha creado el sitio correctamente');
+				$('.responses').show();
+			}else if(response.status == 500) {
+				$('.responses').text(response.errors);
+				$('.responses').show();
 			}
 		});
 	});
