@@ -129,6 +129,7 @@ function loadTheSite(){
   $.ajax(settings).done(function (response) {
       var site = response.data;
       $('.head_micrositio h1').text(site.title);
+			$('.contenido_micrositio p.thecontent').text(site.content);
       console.log(site);
   });
 }
