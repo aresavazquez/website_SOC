@@ -117,3 +117,18 @@ function showModal(modalName){
 
 	$('#siteModal').modal();
 }
+
+function loadTheSite(){
+	var thesite = window.location.href.split( 'site=' );
+  var settings = {
+      "async": true,
+      "crossDomain": true,
+      "url": host_url + "api/v1/sites/"+thesite[1],
+      "method": "GET",
+  }
+  $.ajax(settings).done(function (response) {
+      var site = response.data;
+      $('.head_micrositio h1').text(site.title);
+      console.log(site);
+  });
+}
