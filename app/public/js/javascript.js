@@ -173,7 +173,7 @@ $(document).on('ready', function(){
             var html = '';
             $.each(sites, function (index, value) {
                 html += '<tr>';
-                html += '<td>'+value.title+'</td>';
+                html += '<td class="viewsite" data-site="'+value.url+'">'+value.title+'</td>';
                 html += '<td class="editInput" data-site="'+value.url+'">editar</td>';
                 html += '</tr>';
             });
@@ -199,6 +199,24 @@ $(document).on('ready', function(){
                 $('.update-site #e_siteContent').val(site.content);
                 $('.update-site #e_siteAddress').val(site.address);
                 $('.update-site #e_siteTelephone').val(site.contact);
+            });
+        });
+    }
+
+    var viewSite = function(){
+        $('#sitesList').on('click', '.viewsite' ,function (e){
+            e.preventDefault ();
+            var siteURL = $(this).data('site');
+            var datauser = ''
+            var settings = {
+                "async": true,
+                "crossDomain": true,
+                "url": host_url + "api/v1/sites/"+siteURL,
+                "method": "GET",
+            }
+            $.ajax(settings).done(function (response) {
+                var site = response.data;
+                console.log(site);
             });
         });
     }
@@ -297,6 +315,7 @@ $(document).on('ready', function(){
             adminSitesListeners();
             loadSiteinfo();
             updateSiteinfo();
+            viewSite();
         }
     }
 

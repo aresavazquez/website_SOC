@@ -18,6 +18,7 @@ class Routes{
     self::$router->map( 'GET', '/productos/hipotecarios', 'IndexController#products_mortgage', 'p_products_mortgage');
     self::$router->map( 'GET', '/productos/empresas', 'IndexController#products_enterprise', 'p_products_enterprise');
     self::$router->map( 'GET', '/oficinas', 'IndexController#offices', 'p_offices');
+    self::$router->map( 'GET', '/detalle', 'IndexController#detalle', 'p_detalle');
     self::$router->map( 'GET', '/soc_tips', 'IndexController#tips', 'p_tips');
     self::$router->map( 'GET', '/contacto', 'IndexController#contact', 'p_contact');
     self::$router->map( 'GET', '/blog', 'BlogController#index', 'p_blog');
