@@ -59,18 +59,18 @@ $(document).on('ready', function(){
         tx.to('.avtres', 1, {opacity: 1, display: "block"});
         tx.to('.avtres', .5, {opacity: 0, display: "none", delay: 4.5});
     }
-    var animateHomePhones = function(){
-        var section = $('.simulador' ).offset().top;
-        $(window).scroll(function(){
-            console.log($(window).scrollTop());
-            console.log($('.simulador' ).offset().top);
-            var scroll = $(window).scrollTop();
-            if(scroll > 550){
-                TweenLite.to('.cel2', 2, { ease: Power2.easeOut, y: -300});
-                TweenLite.to('.cel', 2, { ease: Power2.easeOut, y: -400});
-            };
-        });
-    }
+    //var animateHomePhones = function(){
+    //    var section = $('.simulador' ).offset().top;
+    //    $(window).scroll(function(){
+    //        console.log($(window).scrollTop());
+    //        console.log($('.simulador' ).offset().top);
+    //        var scroll = $(window).scrollTop();
+    //        if(scroll > 550){
+    //            TweenLite.to('.cel2', 2, { ease: Power2.easeOut, y: -300});
+    //            TweenLite.to('.cel', 2, { ease: Power2.easeOut, y: -400});
+    //        };
+    //    });
+    //}
     var menuBehaviors = function(){
         $('.menu').on('click', function (e){
             e.preventDefault ();
