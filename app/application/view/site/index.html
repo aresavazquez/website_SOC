@@ -5,7 +5,7 @@
     {{ parent() }}
 {% endblock %}
 {% block content %}
-<!-- Twitter -->
+    <!-- Twitter -->
     <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 	<div class="page p-home">
     	{% include 'components/menu-header.html' %}
@@ -180,19 +180,26 @@
     			</div>
     		</div>
     	</div>
-    	<div class="contenido-comments iphone">
+    	<!--div class="contenido-comments iphone">
     		<div class="content celular">
     			<img src="./img/body/cel.png" class="cel">
     			<img src="./img/body/cel2.png" class="cel two">
     		</div>
-    	</div>
+    	</div-->
     </div>
-    <!--div class="social">
+    <div class="social">
         <div class="facebook">
+            <img src="./img/body/fb2.png">
             <div class="fb-page fb_iframe_widget" data-href="https://www.facebook.com/SOCAsesores" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="true" fb-xfbml-state="rendered" fb-iframe-plugin-query="adapt_container_width=true&amp;app_id=&amp;container_width=300&amp;hide_cover=false&amp;href=https%3A%2F%2Fwww.facebook.com%2FSOCAsesores&amp;locale=es_LA&amp;sdk=joey&amp;show_facepile=true&amp;show_posts=true&amp;small_header=false"><span style="vertical-align: bottom; width: 300px; height: 500px;"><iframe name="f2a8fbcc16e007c" width="1000px" height="1000px" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" title="fb:page Facebook Social Plugin" src="https://www.facebook.com/v2.4/plugins/page.php?adapt_container_width=true&amp;app_id=&amp;channel=http%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter.php%3Fversion%3D42%23cb%3Df30f0de0d2fca5c%26domain%3Dwww.socasesores.com%26origin%3Dhttp%253A%252F%252Fwww.socasesores.com%252Ffe29ef20307abc%26relation%3Dparent.parent&amp;container_width=300&amp;hide_cover=false&amp;href=https%3A%2F%2Fwww.facebook.com%2FSOCAsesores&amp;locale=es_LA&amp;sdk=joey&amp;show_facepile=true&amp;show_posts=true&amp;small_header=false" style="border: none; visibility: visible; width: 300px; height: 500px;" class=""></iframe></span></div>
         </div>
         <div class="twitter">
-
+            <img src="./img/body/twitter2.png">
+            <a class="twitter-timeline" href="https://twitter.com/SOCAsesores" data-widget-id="635268119288647680">Tweets por el @SOCcreditoenti.</a>
         </div>
-    </div-->
+        <div class="instagram">
+            <img src="./img/body/instagram2.png">
+            <!-- SnapWidget -->
+            <iframe src="https://snapwidget.com/embed/214069" class="snapwidget-widget" allowTransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:390px; height:390px"></iframe>
+        </div>
+    </div>
 {% endblock %}
