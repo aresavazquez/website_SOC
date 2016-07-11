@@ -1,5 +1,6 @@
-$(document).on('ready', function(){
+var host_url = "http://localhost:8000/";
 
+$(document).on('ready', function(){
     $.put = function(url, data, callback, type){
         if ( $.isFunction(data) ){
             type = type || callback,
@@ -85,11 +86,31 @@ $(document).on('ready', function(){
         $('.login__button').on('click', function(e){
             e.preventDefault();
             var data = {
-                
+
             }
             var usr = $('input[name="user_name"]').val();
             var pwd = $('input[name="user_password"]').val();
             console.log(usr,pwd);
+        });
+    }
+
+    var passwordResetForm = function(){
+        $('.login__button').on('click', function(e){
+            e.preventDefault();
+            var email = $('input[name="user_email"]').val();
+
+            $.post(host_url + "api/v1/password_reset", {email: email}, function(response){
+              if(response.status == 200){
+        				$('#login-form .login__button').text('Entrando...');
+        				window.location = host_url+'admin/users';
+        			}else if(response.status == 500) {
+        				$('.responses').text(response.errors);
+        				$('.responses').show();
+        			}
+            }).fail(function(){
+              $('.responses').text('Falló la comunicación con el servidor, inténtalo nuevamente');
+              $('.responses').show();
+            });
         });
     }
 
@@ -294,6 +315,16 @@ $(document).on('ready', function(){
         });
     }
 
+    var loadTheSite = function(){
+    	var thesite = window.location.href.split( 'site=' );
+      $.get(host_url + "api/v1/sites/"+thesite[1], function(response){
+        var site = response.data;
+        $('.head_micrositio h1').text(site.title);
+        $('.contenido_micrositio p.thecontent').text(site.content);
+        console.log(site);
+      });
+    }
+
     var site = {
         "home": function(){
             animateHomeIntro();
@@ -301,8 +332,14 @@ $(document).on('ready', function(){
             animateHomePhones();
             menuBehaviors();
         },
-        "asesores-login": function(){
+        "p-detalle": function(){
+          loadTheSite();
+        },
+        "asesores": function(){
             loginForm();
+        },
+        "password-reset": function(){
+            passwordResetForm();
         },
         "admin-users": function(){
             usersList();
@@ -324,15 +361,3 @@ $(document).on('ready', function(){
     // - Do the behaviors that correspond to the current page
     if(site[currentPage]) site[currentPage]();
 });
-
-
-
-
-
-
-
-
-
-
-
-

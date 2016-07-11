@@ -1,0 +1,22 @@
+{% extends "admin.html" %}
+
+{% block title %}Admin{% endblock %}
+{% block head %}
+    {{ parent() }}
+{% endblock %}
+{% block content %}
+	{% include 'admin/menu.html' %}
+	<div class="page password-reset">
+		<div class="form">
+			<p class="title">Recuperar contraseña</p>
+			<div class="responses">
+
+			</div>
+			<form id="login-form">
+				<input id="user-email" name="user_email" type="text" placeholder="Correo" required>
+				<input type="hidden" name="csrf_token" value="{{ csrf }}" />
+				<div class="login__button">Recuperar</div>
+			</form>
+		</div>
+	</div>
+{% endblock %}

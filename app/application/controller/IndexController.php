@@ -2,42 +2,55 @@
 
 class IndexController extends Controller
 {
-    /**
-     * Construct this object by extending the basic Controller class
-     */
-    public function __construct(){
-        parent::__construct();
-    }
+  /**
+  * Construct this object by extending the basic Controller class
+  */
+  public function __construct(){
+    parent::__construct();
+  }
 
-    public function home(){
-        $this->View->render('site/index.html');
-    }
-    public function detalle(){
-        $this->View->render('site/detalle.html');
-    }
-    public function soc(){
-        $this->View->render('site/soc.html');   
-    }
-    public function products_mortgage(){
-        $this->View->render('site/products_mortgage.html'); 
-    }
-    public function products_enterprise(){
-        $this->View->render('site/products_enterprise.html'); 
-    }
-    public function offices(){
-        $states = State::get_instance()->all();
-        $this->View->render('site/offices.html', array('states'=>$states)); 
-    }
-    public function tips(){
-        $this->View->render('site/tips.html'); 
-    }
-    public function contact(){
-        $this->View->render('site/contact.html'); 
-    }
-    public function privacy(){
+  public function home(){
+    $this->View->render('site/index.html');
+  }
+  public function detalle(){
+      $this->View->render('site/detalle.html');
+  }
+  public function soc(){
+    $this->View->render('site/soc.html');
+  }
+  public function products_mortgage(){
+    $this->View->render('site/products_mortgage.html');
+  }
+  public function products_enterprise(){
+    $this->View->render('site/products_enterprise.html');
+  }
+  public function offices(){
+    $states = State::get_instance()->all();
+    $this->View->render('site/offices.html', array('states'=>$states));
+  }
+  public function tips(){
+    $this->View->render('site/tips.html');
+  }
+  public function contact(){
+    $this->View->render('site/contact.html');
+  }
+  public function post_contact(){
+    $name = strip_tags(Request::post('contact_name'));
+    $email = strip_tags(Request::post('contact_email'));
+    $phone = strip_tags(Request::post('contact_phone'));
+    $message = strip_tags(Request::post('contact_message'));
+    $body = "Nombre: " . $name . "\r\nCorreo: " . $email . "\r\nTeléfono: " . $phone . "\r\nComentario: " . $message;
 
+    $mail = new Mail;
+    $mail_sent = $mail->sendMail(Config::get('EMAIL_CONTACT_RECEIVER'), $email, $name, 'Comentario de /contacto', $body);
+
+    if ($mail_sent) {
+        Session::add('feedback_positive', Text::get('FEEDBACK_VERIFICATION_MAIL_SENDING_SUCCESSFUL'));
+    } else {
+        Session::add('feedback_negative', Text::get('FEEDBACK_VERIFICATION_MAIL_SENDING_ERROR') . $mail->getError() );
     }
-    public function terms(){
-    	
-    }
+    Redirect::to('contacto');
+  }
+  public function privacy(){}
+  public function terms(){}
 }

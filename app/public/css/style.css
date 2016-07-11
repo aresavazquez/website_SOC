@@ -671,6 +671,34 @@ button.close{
     background: #3a5e94;
     height: 500px;
 }
+/*---------------------------------------password reset*/
+.password-reset{
+    width: 100%;
+    background: url(../img/head/back3.jpg)no-repeat center fixed;
+}
+.password-reset .form{
+    width: 800px;
+    margin: auto;
+    padding: 50px 50px;
+}
+.password-reset .form form input{
+    background: none;
+    border: none;
+    width: 300px;
+    padding: 10px;
+    color: #fff;
+    font-weight: 100;
+    margin: 10px;
+    border-bottom: 1px solid #4fa753;
+    font-size: 17px;
+}
+.password-reset .form form label{
+    color: #fff;
+    font-weight: 100;
+}
+.password-reset .form form .check{
+    width: 20px;
+}
 /*---------------------*/
 /*---------------------*/
 /*---------------------*/
@@ -2222,7 +2250,7 @@ h2.zero,p.zero {
     text-align: center;
     color:#fff;
     background: #4fa753;
-    border: 2px solid #fff;
+    /*border: 2px solid rgba(255,255,255,0.3);*/
     display: none;
     position: inherit !important;
 }

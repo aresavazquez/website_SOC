@@ -7,7 +7,6 @@ class ApiController extends Controller{
      */
     public function __construct(){
         parent::__construct();
-        //$this->user = new User();
     }
 
     public function index(){
@@ -15,37 +14,43 @@ class ApiController extends Controller{
     }
 
     public function login(){
-        //if (!Csrf::isTokenValid()) {
-        //    User::logout();
-        //}
-        // perform the login method, put result (true or false) into $login_successful
         Session::set('feedback_negative', array());
         $login_successful = Credentials::login(
             Request::post('user_email'), Request::post('user_password'), Request::post('set_remember_me_cookie')
         );
-        // check login status: if true, then redirect user to user/index, if false, then to login form again
         if ($login_successful) {
             if (Request::post('redirect')) {
                 $this->View->renderJSON($this->success_code(array('redirect_to'=>ltrim(urldecode(Request::post('redirect')), '/'))));
-                //Redirect::to(ltrim(urldecode(Request::post('redirect')), '/'));
             } else {
                 $this->View->renderJSON($this->success_code(Session::all()));
-                //Redirect::to('user/index');
             }
         } else {
             $this->View->renderJSON($this->error_code(Session::get('feedback_negative'), array('redirect_to'=>$this->Routes['root_url'])));
-            //Redirect::to('login/index');
         }
     }
 
     public function register(){
-        Session::set('feedback_negative', array());
-        $registration_successful = Credentials::registerNewUser();
-        if($registration_successful){
-            $this->View->renderJSON($this->success_code($registration_successful));
-        }else{
-            $this->View->renderJSON($this->error_code(Session::get('feedback_negative'), array('redirect_to'=>$this->Routes['root_url'])));
-        }
+      $user_name = strip_tags(Request::post('user_name'));
+      $user_email = strip_tags(Request::post('user_email'));
+      $user_password_new = strip_tags(Request::post('user_password'));
+
+      Session::set('feedback_negative', array());
+      $registration_successful = Credentials::registerNewUser($user_name, $user_email, $user_password_new);
+      if($registration_successful){
+        $this->View->renderJSON($this->success_code($registration_successful));
+      }else{
+        $this->View->renderJSON($this->error_code(Session::get('feedback_negative'), array('redirect_to'=>$this->Routes['root_url'])));
+      }
+    }
+
+    public function password_reset(){
+      Session::set('feedback_negative', array());
+      $password_reset = Credentials::passwordReset();
+      if($password_reset){
+        $this->View->renderJSON($this->success_code($password_reset));
+      }else{
+        $this->View->renderJSON($this->error_code(Session::get('feedback_negative'), array('redirect_to'=>$this->Routes['root_url'])));
+      }
     }
 
     public function users(){
