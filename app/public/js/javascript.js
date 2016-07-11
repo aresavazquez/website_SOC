@@ -193,9 +193,9 @@ $(document).on('ready', function(){
                 "url": host_url + "api/v1/users/"+useridU+'?name='+usernameU+'&email='+mailU,
                 "method": "PUT"
             }
+            $('.close').trigger( "click" );
             $.ajax(settings).done(function (response) {
                if(response.status == 200){
-                    $('.close').trigger( "click" );
                     $('.responses').text('El usuario se ha actualizado correctamente');
                     $('.responses').show();
                 }else if(response.status == 500) {
@@ -237,8 +237,10 @@ $(document).on('ready', function(){
             }
             $.ajax(settings).done(function (response) {
                 var site = response.data;
+                console.log(site);
                 $('.update-site #e_siteName').val(site.title);
                 $('.update-site #e_siteUrl').val(site.url);
+                $('.update-site #siteState').val(site.state_id);
                 $('.update-site #e_siteContent').val(site.content);
                 $('.update-site #e_siteAddress').val(site.address);
                 $('.update-site #e_siteTelephone').val(site.contact);
@@ -276,9 +278,9 @@ $(document).on('ready', function(){
                 "url": host_url + "api/v1/sites/"+esiteUrl+"?title="+esiteName+"&content="+esiteContent+"&address="+esiteAddress+"&contact="+esiteTelephone,
                 "method": "PUT"
             }
+            $('.close').trigger( "click" );
             $.ajax(settings).done(function (response) {
                if(response.status == 200){
-                    $('.close').trigger( "click" );
                     $('.responses').text('El sitio se ha actualizado correctamente');
                     $('.responses').show();
                 }else if(response.status == 500) {
@@ -357,9 +359,9 @@ $(document).on('ready', function(){
                     "user_password": userpassword
                 }
             }
+            $('.close').trigger( "click" );
     	      $.ajax(settings).done(function (response) {
     		        if(response.status == 200){
-    			          $('.close').trigger( "click" );
     			          $('.responses').text('Se ha creado el usuario correctamente');
     			          $('.responses').show();
     		        }else if(response.status == 500) {
@@ -368,6 +370,43 @@ $(document).on('ready', function(){
     		        }
     	      });
         });
+    }
+    var registerSite = function(){
+    	$('#newSiteForm .addSite').on('click', function(){
+    		var userID = $('#newSiteForm #userID').val();
+    		var siteURL = $('#newSiteForm #siteUrl').val();
+    		var siteName = $('#newSiteForm #siteName').val();
+    		var siteState = $('#newSiteForm #siteState').val();
+    		var siteContent = $('#newSiteForm #siteContent').val();
+    		var siteAddress = $('#newSiteForm #siteAddress').val();
+    		var siteTelephone = $('#newSiteForm #siteTelephone').val();
+
+    		var settings = {
+    			"async": true,
+    			"crossDomain": true,
+    			"url": host_url + "api/v1/sites",
+    			"method": "POST",
+    			"data": {
+    				"user_id": userID,
+    				"state_id": siteState,
+    				"url": siteURL,
+    				"title": siteName,
+    				"content": siteContent,
+    				"address": siteAddress,
+    				"contact": siteTelephone
+    			}
+    		}
+        $('.close').trigger( "click" );
+    		$.ajax(settings).done(function (response) {
+    			if(response.status == 200){
+    				$('.responses').text('Se ha creado el sitio correctamente');
+    				$('.responses').show();
+    			}else if(response.status == 500) {
+    				$('.responses').text(response.errors);
+    				$('.responses').show();
+    			}
+    		});
+    	});
     }
     var site = {
         "home": function(){
@@ -398,6 +437,7 @@ $(document).on('ready', function(){
             loadSiteinfo();
             updateSiteinfo();
             viewSite();
+            registerSite();
         }
     }
 

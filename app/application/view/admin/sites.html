@@ -16,7 +16,7 @@
 			<table id="sitesList">
 				<thead>
 					<tr class="back-white">
-						<td>Nombre de usuario</td>
+						<td>Nombre de sitio</td>
 						<td></td>
 					</tr>
 				</thead>
@@ -29,13 +29,11 @@
 		<form class="datosUsuario microsite" id="newSiteForm">
 			<a href=""><img src="{{ base_path }}img/body/close.png" class="close"></a>
 			<label>Usuario</label>
-      <select id="siteUser" placeholder="Selecciona un Usuario" class="edit_input">
+      <select id="userID" placeholder="Selecciona un Usuario" class="edit_input">
 			{% for key,value in users %}
           <option value="{{ value.id }}">{{ value.name }}</option>
       {% endfor %}
 			</select>
-			<input id="siteUserEmail" type="mail" placeholder="Correo del usuario" class="edit_input">
-			<label>Encabezado</label>
 			<input id="siteName" type="text" placeholder="Nombre del sitio" class="edit_input">
 			<label>URl para el sitio</label>
 			<input id="siteUrl" type="text" placeholder="Nombre del sitio" class="edit_input">

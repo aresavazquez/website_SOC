@@ -86,6 +86,7 @@ class ApiController extends Controller{
         //}
         $sites = (array) Site::getInstance()->all();
         foreach ($sites as $key => $site) {
+            $site->title = utf8_encode($site->title);
             $site->content = utf8_encode($site->content);
             $site->address = utf8_encode($site->address);
             $sites[$key] = (array) $site;
@@ -111,7 +112,8 @@ class ApiController extends Controller{
     }
 
     public function get_site($params){
-        $site = Site::get_instance()->by_url($params['url']);
+        $site = Site::getInstance()->byUrl($params['url']);
+        $site->title = utf8_encode($site->title);
         $site->content = utf8_encode($site->content);
         $site->address = utf8_encode($site->address);
         $this->View->renderJSON($this->success_code($site));
@@ -119,12 +121,12 @@ class ApiController extends Controller{
 
     public function set_site($params){
         $data = array();
-        if(Request::get('title')) $data['title'] = Request::get('title');
-        if(Request::get('content')) $data['content'] = Request::get('content');
-        if(Request::get('address')) $data['address'] = Request::get('address');
-        if(Request::get('contact')) $data['contact'] = Request::get('contact');
+        if(Request::get('title')) $data['title'] = utf8_decode(Request::get('title'));
+        if(Request::get('content')) $data['content'] = utf8_decode(Request::get('content'));
+        if(Request::get('address')) $data['address'] = utf8_decode(Request::get('address'));
+        if(Request::get('contact')) $data['contact'] = utf8_decode(Request::get('contact'));
 
-        $id = Site::get_instance()->set_data($params['url'], $data);
+        $id = Site::getInstance()->setData($params['url'], $data);
         $this->View->renderJSON($this->success_code($id));
     }
 

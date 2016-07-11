@@ -2186,7 +2186,7 @@ h2.zero,p.zero {
     text-align: center;
     color:#fff;
     background: #4fa753;
-    border: 2px solid #fff;
+    border: 2px solid rgba(255,255,255,0.3);
     display: none;
     position: inherit !important;
 }
