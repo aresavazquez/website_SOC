@@ -84,8 +84,9 @@ class ApiController extends Controller{
         //if(!Auth::checkAdminAuthentication()){
         //    $this->View->renderJSON($this->error_code(Text::get('FEEDBACK_UNKNOWN_ADMIN'), array('redirect_to'=>$this->Routes['root_url'])));
         //}
-        $sites = (array) Site::get_instance()->all();
+        $sites = (array) Site::getInstance()->all();
         foreach ($sites as $key => $site) {
+            $site->title = utf8_encode($site->title);
             $site->content = utf8_encode($site->content);
             $site->address = utf8_encode($site->address);
             $sites[$key] = (array) $site;
@@ -95,7 +96,14 @@ class ApiController extends Controller{
 
     public function new_site(){
         Session::set('feedback_negative', array());
-        $registration_successful = Site::save();
+        $user_id = strip_tags(Request::post('user_id'));
+        $state_id = strip_tags(Request::post('state_id'));
+        $url = strip_tags(Request::post('url'));
+        $title = strip_tags(Request::post('title'));
+        $content = strip_tags(Request::post('content'));
+        $address = strip_tags(Request::post('address'));
+        $contact = strip_tags(Request::post('contact'));
+        $registration_successful = Site::save($user_id, $state_id, $url, $title, $content, $address, $contact);
         if($registration_successful){
             $this->View->renderJSON($this->success_code($registration_successful));
         }else{
@@ -104,7 +112,8 @@ class ApiController extends Controller{
     }
 
     public function get_site($params){
-        $site = Site::get_instance()->by_url($params['url']);
+        $site = Site::getInstance()->byUrl($params['url']);
+        $site->title = utf8_encode($site->title);
         $site->content = utf8_encode($site->content);
         $site->address = utf8_encode($site->address);
         $this->View->renderJSON($this->success_code($site));
@@ -112,12 +121,12 @@ class ApiController extends Controller{
 
     public function set_site($params){
         $data = array();
-        if(Request::get('title')) $data['title'] = Request::get('title');
-        if(Request::get('content')) $data['content'] = Request::get('content');
-        if(Request::get('address')) $data['address'] = Request::get('address');
-        if(Request::get('contact')) $data['contact'] = Request::get('contact');
+        if(Request::get('title')) $data['title'] = utf8_decode(Request::get('title'));
+        if(Request::get('content')) $data['content'] = utf8_decode(Request::get('content'));
+        if(Request::get('address')) $data['address'] = utf8_decode(Request::get('address'));
+        if(Request::get('contact')) $data['contact'] = utf8_decode(Request::get('contact'));
 
-        $id = Site::get_instance()->set_data($params['url'], $data);
+        $id = Site::getInstance()->setData($params['url'], $data);
         $this->View->renderJSON($this->success_code($id));
     }
 

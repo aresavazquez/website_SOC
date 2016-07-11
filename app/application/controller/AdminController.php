@@ -15,7 +15,15 @@ class AdminController extends Controller
         $this->View->render('admin/login.html', array('csrf'=>$csrf_token, 'logged_in'=>$logged_in));
     }
     public function sites(){
-        $this->View->render('admin/sites.html');
+        $states = State::getInstance()->all();
+        $users = User::getInstance()->all();
+        foreach ($states as $key => $state) {
+          $state->name = utf8_encode($state->name);
+        }
+        foreach ($users as $key => $user) {
+          $user->name = utf8_encode($user->name);
+        }
+        $this->View->render('admin/sites.html', array('states'=>$states, 'users'=>$users));
     }
     public function consultant(){
         $this->View->render('consultant/single.html');
