@@ -12,6 +12,9 @@ class IndexController extends Controller
   public function home(){
     $this->View->render('site/index.html');
   }
+  public function detalle(){
+      $this->View->render('site/detalle.html');
+  }
   public function soc(){
     $this->View->render('site/soc.html');
   }
@@ -36,7 +39,6 @@ class IndexController extends Controller
     $email = strip_tags(Request::post('contact_email'));
     $phone = strip_tags(Request::post('contact_phone'));
     $message = strip_tags(Request::post('contact_message'));
-
     $body = "Nombre: " . $name . "\r\nCorreo: " . $email . "\r\nTeléfono: " . $phone . "\r\nComentario: " . $message;
 
     $mail = new Mail;
