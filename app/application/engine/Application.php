@@ -9,7 +9,7 @@ class Application {
     private $match;
 
     public function __construct() {
-        $this->router = Routes::get_instance()->get_router();
+        $this->router = Routes::getInstance()->get_router();
         $this->computeMatch();
     }
 

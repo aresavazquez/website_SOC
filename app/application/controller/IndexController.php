@@ -18,6 +18,15 @@ class IndexController extends Controller
   public function soc(){
     $this->View->render('site/soc.html');
   }
+  public function real_state(){
+    $this->View->render('site/real_state.html');
+  }
+  public function franchise(){
+    $this->View->render('site/franchise.html');
+  }
+  public function news(){
+    $this->View->render('site/news.html');
+  }
   public function products_mortgage(){
     $this->View->render('site/products_mortgage.html');
   }

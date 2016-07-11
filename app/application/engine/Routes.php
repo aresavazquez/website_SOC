@@ -15,6 +15,9 @@ class Routes{
 
     self::$router->map( 'GET', '/', 'IndexController#home', 'p_home');
     self::$router->map( 'GET', '/soc', 'IndexController#soc', 'p_soc');
+		self::$router->map( 'GET', '/inmobiliarias', 'IndexController#real_state', 'p_real_state');
+		self::$router->map( 'GET', '/franquicia', 'IndexController#franchise', 'p_franchise');
+		self::$router->map( 'GET', '/prensa', 'IndexController#news', 'p_news');
     self::$router->map( 'GET', '/productos/hipotecarios', 'IndexController#products_mortgage', 'p_products_mortgage');
     self::$router->map( 'GET', '/productos/empresas', 'IndexController#products_enterprise', 'p_products_enterprise');
     self::$router->map( 'GET', '/oficinas', 'IndexController#offices', 'p_offices');
@@ -45,7 +48,7 @@ class Routes{
 	/**
 	* Singleton pattern
 	*/
-	public static function get_instance(){
+	public static function getInstance(){
 		if( !self::$instance ) self::$instance = new self();
 		return self::$instance;
 	}

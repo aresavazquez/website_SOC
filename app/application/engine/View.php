@@ -27,7 +27,7 @@ class View
         $links = $this->generateRoutes();
         if(!$scope_data) $scope_data = array();
         $data =array_merge(
-            $scope_data, 
+            $scope_data,
             array(
                 'links'=>$links,
                 'base_path'=>Config::get('URL')
@@ -46,13 +46,13 @@ class View
     }
 
     private function generateRoutes() {
-        $router = Routes::get_instance()->get_router();
+        $router = Routes::getInstance()->get_router();
         $routes = $router->getRoutes();
         $links = array();
         foreach ($routes as $key => $value) {
             $index = $value[3];
             if($index){
-                $links[$index] = $router->generate($index);    
+                $links[$index] = $router->generate($index);
             }
         }
         return $links;
