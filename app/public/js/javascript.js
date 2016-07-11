@@ -109,12 +109,11 @@ $(document).on('ready', function(){
           $('#login-form .login__button').text('Entrando...');
       	  $.ajax(settings).done(function (response) {
       		    if(response.status == 200){
-                  console.log(response);
-                  //if(response.isAdmin) {
-                  //  window.location = host_url+'admin/users';
-                  //}else{
-                  //  window.location = host_url+'admin/microsite';
-                  //}
+                  if(response.data.user_role >= 2){
+                    window.location = host_url+'admin/microsite';
+                  }else{
+                    window.location = host_url+'admin/users';
+                  }
       		    }else if(response.status == 500) {
       			      $('.responses').text(response.errors);
       			      $('.responses').show();
