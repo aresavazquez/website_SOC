@@ -2,14 +2,14 @@
 class State {
     private static $instance = false;
     private static $PDO;
-	
+
     protected function __construct() {
         self::$PDO = new PDODB('states');
     }
     /**
     * Singleton pattern
     */
-    public static function get_instance() {
+    public static function getInstance() {
         if( !self::$instance ) self::$instance = new self();
         return self::$instance;
     }

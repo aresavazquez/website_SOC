@@ -84,7 +84,7 @@ class ApiController extends Controller{
         //if(!Auth::checkAdminAuthentication()){
         //    $this->View->renderJSON($this->error_code(Text::get('FEEDBACK_UNKNOWN_ADMIN'), array('redirect_to'=>$this->Routes['root_url'])));
         //}
-        $sites = (array) Site::get_instance()->all();
+        $sites = (array) Site::getInstance()->all();
         foreach ($sites as $key => $site) {
             $site->content = utf8_encode($site->content);
             $site->address = utf8_encode($site->address);
@@ -95,7 +95,14 @@ class ApiController extends Controller{
 
     public function new_site(){
         Session::set('feedback_negative', array());
-        $registration_successful = Site::save();
+        $user_id = strip_tags(Request::post('user_id'));
+        $state_id = strip_tags(Request::post('state_id'));
+        $url = strip_tags(Request::post('url'));
+        $title = strip_tags(Request::post('title'));
+        $content = strip_tags(Request::post('content'));
+        $address = strip_tags(Request::post('address'));
+        $contact = strip_tags(Request::post('contact'));
+        $registration_successful = Site::save($user_id, $state_id, $url, $title, $content, $address, $contact);
         if($registration_successful){
             $this->View->renderJSON($this->success_code($registration_successful));
         }else{

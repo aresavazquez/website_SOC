@@ -25,7 +25,7 @@ class IndexController extends Controller
     $this->View->render('site/products_enterprise.html');
   }
   public function offices(){
-    $states = State::get_instance()->all();
+    $states = State::getInstance()->all();
     $this->View->render('site/offices.html', array('states'=>$states));
   }
   public function tips(){

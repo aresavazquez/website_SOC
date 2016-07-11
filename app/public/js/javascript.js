@@ -1,5 +1,16 @@
 var host_url = "http://localhost:8000/";
 
+function showModal(modalName){
+    if( modalName == 'aviso' ){
+        $('#siteModal .modal-header .modal-title').text('Aviso de Privacidad');
+        $('#siteModal .modal-body').html('<h3>Texto prueba Aviso</h3><p>Aquí va el texto</p>');
+    }else if( modalName == 'termino'){
+        $('#siteModal .modal-header .modal-title').text('Términos y Condiciones');
+        $('#siteModal .modal-body').html('<h3>Texto prueba Términos</h3><p>Aquí va el texto</p>');
+    }
+    $('#siteModal').modal();
+}
+
 $(document).on('ready', function(){
     $.put = function(url, data, callback, type){
         if ( $.isFunction(data) ){
@@ -95,10 +106,15 @@ $(document).on('ready', function(){
       			       "user_password": password
       		    }
       	  }
+          $('#login-form .login__button').text('Entrando...');
       	  $.ajax(settings).done(function (response) {
       		    if(response.status == 200){
-      			      $('#login-form .login__button').text('Entrando...');
-      			      window.location = host_url+'admin/users';
+                  console.log(response);
+                  //if(response.isAdmin) {
+                  //  window.location = host_url+'admin/users';
+                  //}else{
+                  //  window.location = host_url+'admin/microsite';
+                  //}
       		    }else if(response.status == 500) {
       			      $('.responses').text(response.errors);
       			      $('.responses').show();

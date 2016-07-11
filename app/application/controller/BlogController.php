@@ -9,7 +9,7 @@ class BlogController extends Controller
         parent::__construct();
     }
 
-    public function index($links, $params){
-        $this->View->render('blog/index.html', array('links'=>$links));
+    public function index(){
+        $this->View->render('blog/index.html');
     }
 }
