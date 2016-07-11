@@ -84,7 +84,7 @@ class Credentials{
             Session::add('feedback_negative', Text::get('FEEDBACK_LOGIN_FAILED_3_TIMES'));
             return false;
         }
-        
+
         // get all data of that user (to later check if password and password_hash fit)
         $result = User::get_instance()->getUserDataByEmail($user_email);//getUserDataByUsername($user_name);
         // check if that user exists. We don't give back a cause in the feedback to avoid giving an attacker details.
@@ -106,7 +106,7 @@ class Credentials{
         // if hash of provided password does NOT match the hash in the database: +1 failed-login counter
         if (!password_verify($user_password, $result->password)) {
             self::incrementFailedLoginCounterOfUser($result->name);
-            Session::add('feedback_negative', Text::get('FEEDBACK_USERNAME_OR_PASSWORD_WRONG')); 
+            Session::add('feedback_negative', Text::get('FEEDBACK_USERNAME_OR_PASSWORD_WRONG'));
             return false;
         }
 
@@ -121,6 +121,13 @@ class Credentials{
 
         return $result;
     }
+
+    /**
+     * Reset User Password
+     */
+     private static function passwordReset(){
+
+     }
 
     /**
      * Increment the failed-login-count by 1.
@@ -321,7 +328,7 @@ class Credentials{
         $cookie_string_first_part = Encryption::encrypt($user_id) . ':' . $random_token_string;
         $cookie_string_hash       = hash('sha256', $user_id . ':' . $random_token_string);
         $cookie_string            = $cookie_string_first_part . ':' . $cookie_string_hash;
-        
+
         // set cookie, and make it available only for the domain created on (to avoid XSS attacks, where the
         // attacker could steal your remember-me cookie string and would login itself).
         // If you are using HTTPS, then you should set the "secure" flag (the second one from right) to true, too.
@@ -371,44 +378,35 @@ class Credentials{
      *
      * @return boolean Gives back the success status of the registration
      */
-    public static function registerNewUser()
-    {
-        // clean the input
-        $user_name = strip_tags(Request::post('user_name'));
-        $user_email = strip_tags(Request::post('user_email'));
-        $user_password_new = Request::post('user_password');
-
+    public static function registerNewUser($user_name, $user_email, $user_password_new){
         // stop registration flow if registrationInputValidation() returns false (= anything breaks the input check rules)
         $validation_result = self::registrationInputValidation($user_name, $user_password_new, $user_email);
-        if (!$validation_result) {
-            return false;
-        }
+        if (!$validation_result) return false;
+
         // crypt the password with the PHP 5.5's password_hash() function, results in a 60 character hash string.
         // @see php.net/manual/en/function.password-hash.php for more, especially for potential options
         $user_password_hash = password_hash($user_password_new, PASSWORD_DEFAULT);
-        // make return a bool variable, so both errors can come up at once if needed
         $return = true;
-        // check if username already exists
-        //if (User::doesUsernameAlreadyExist($user_name)) {
-        //    Session::add('feedback_negative', Text::get('FEEDBACK_USERNAME_ALREADY_TAKEN'));
-        //    $return = false;
-        //}
+
         // check if email already exists
-        if (User::get_instance()->doesEmailAlreadyExist($user_email)) {
+        if (User::getInstance()->doesEmailAlreadyExist($user_email)) {
             Session::add('feedback_negative', Text::get('FEEDBACK_USER_EMAIL_ALREADY_TAKEN'));
             $return = false;
         }
+
         // if Username or Email were false, return false
         if (!$return) return false;
+
         // generate random hash for email verification (40 char string)
         $user_activation_hash = sha1(uniqid(mt_rand(), true));
+
         // write user data to database
         if (!self::writeNewUserToDatabase($user_name, $user_password_hash, $user_email, time(), $user_activation_hash)) {
             Session::add('feedback_negative', Text::get('FEEDBACK_ACCOUNT_CREATION_FAILED'));
             return false; // no reason not to return false here
         }
         // get user_id of the user that has been created, to keep things clean we DON'T use lastInsertId() here
-        $user_id = User::get_instance()->getUserIdByUsername($user_name);
+        $user_id = User::getInstance()->getUserIdByUsername($user_name);
         if (!$user_id) {
             Session::add('feedback_negative', Text::get('FEEDBACK_UNKNOWN_ERROR'));
             return false;
@@ -436,45 +434,15 @@ class Credentials{
      *
      * @return bool
      */
-    public static function registrationInputValidation($user_name, $user_password_new, $user_email)
-    {
+    public static function registrationInputValidation($user_name, $user_password_new, $user_email){
         $return = true;
-
-        // perform all necessary checks
-        //if (!CaptchaModel::checkCaptcha($captcha)) {
-        //    Session::add('feedback_negative', Text::get('FEEDBACK_CAPTCHA_WRONG'));
-        //    $return = false;
-        //}
-
         // if username, email and password are all correctly validated, but make sure they all run on first sumbit
-        if (/*self::validateUserName($user_name) AND*/ self::validateUserEmail($user_email) AND self::validateUserPassword($user_password_new) AND $return) {
+        if (self::validateUserEmail($user_email) AND self::validateUserPassword($user_password_new) AND $return) {
             return true;
         }
 
         // otherwise, return false
         return false;
-    }
-
-    /**
-     * Validates the username
-     *
-     * @param $user_name
-     * @return bool
-     */
-    public static function validateUserName($user_name)
-    {
-        if (empty($user_name)) {
-            Session::add('feedback_negative', Text::get('FEEDBACK_USERNAME_FIELD_EMPTY'));
-            return false;
-        }
-
-        // if username is too short (2), too long (64) or does not fit the pattern (aZ09)
-        if (!preg_match('/^[a-zA-Z0-9]{2,64}$/', $user_name)) {
-            Session::add('feedback_negative', Text::get('FEEDBACK_USERNAME_DOES_NOT_FIT_PATTERN'));
-            return false;
-        }
-
-        return true;
     }
 
     /**
@@ -484,8 +452,7 @@ class Credentials{
      * @param $user_email_repeat
      * @return bool
      */
-    public static function validateUserEmail($user_email)
-    {
+    public static function validateUserEmail($user_email){
         if (empty($user_email)) {
             Session::add('feedback_negative', Text::get('FEEDBACK_EMAIL_FIELD_EMPTY'));
             return false;
@@ -509,8 +476,7 @@ class Credentials{
      * @param $user_password_repeat
      * @return bool
      */
-    public static function validateUserPassword($user_password_new)
-    {
+    public static function validateUserPassword($user_password_new) {
         if (empty($user_password_new)) {
             Session::add('feedback_negative', Text::get('FEEDBACK_PASSWORD_FIELD_EMPTY'));
             return false;
@@ -535,27 +501,8 @@ class Credentials{
      *
      * @return bool
      */
-    public static function writeNewUserToDatabase($user_name, $user_password_hash, $user_email, $user_creation_timestamp, $user_activation_hash)
-    {
-        return User::get_instance()->save($user_name, $user_password_hash, $user_email, $user_creation_timestamp, $user_activation_hash);
-        //$database = DatabaseFactory::getFactory()->getConnection();
-        //
-        //// write new users data into database
-        //$sql = "INSERT INTO users (user_name, user_password_hash, user_email, user_creation_timestamp, user_activation_hash, user_provider_type)
-        //            VALUES (:user_name, :user_password_hash, :user_email, :user_creation_timestamp, :user_activation_hash, :user_provider_type)";
-        //$query = $database->prepare($sql);
-        //$query->execute(array(':user_name' => $user_name,
-        //                      ':user_password_hash' => $user_password_hash,
-        //                      ':user_email' => $user_email,
-        //                      ':user_creation_timestamp' => $user_creation_timestamp,
-        //                      ':user_activation_hash' => $user_activation_hash,
-        //                      ':user_provider_type' => 'DEFAULT'));
-        //$count =  $query->rowCount();
-        //if ($count == 1) {
-        //    return true;
-        //}
-        //
-        //return false;
+    public static function writeNewUserToDatabase($user_name, $user_password_hash, $user_email, $user_creation_timestamp, $user_activation_hash){
+        return User::getInstance()->save($user_name, $user_password_hash, $user_email, $user_creation_timestamp, $user_activation_hash);
     }
 
     /**
@@ -564,12 +511,8 @@ class Credentials{
      *
      * @param $user_id
      */
-    public static function rollbackRegistrationByUserId($user_id)
-    {
-        $database = DatabaseFactory::getFactory()->getConnection();
-
-        $query = $database->prepare("DELETE FROM users WHERE user_id = :user_id");
-        $query->execute(array(':user_id' => $user_id));
+    public static function rollbackRegistrationByUserId($user_id){
+        User::getInstance()->delete($user_id);
     }
 
     /**

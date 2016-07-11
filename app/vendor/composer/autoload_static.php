@@ -37,7 +37,7 @@ class ComposerStaticInitaebafe678e9f2f9baafa152cbeb7d8c3
     );
 
     public static $fallbackDirsPsr4 = array (
-        0 => __DIR__ . '/../..' . '/application/core',
+        0 => __DIR__ . '/../..' . '/application/engine',
         1 => __DIR__ . '/../..' . '/application/model',
         2 => __DIR__ . '/../..' . '/application/controller',
     );

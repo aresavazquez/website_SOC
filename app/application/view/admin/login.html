@@ -10,7 +10,7 @@
 		<div class="form">
 			<p class="title">Acceso a micrositios</p>
 			<div class="responses">
-				
+
 			</div>
 			<form id="login-form">
 				<input id="user-name" name="user_name" type="text" placeholder="Usuario" required>
@@ -21,9 +21,9 @@
 				<br>
 				<input type="hidden" name="csrf_token" value="{{ csrf }}" />
 				<div class="login__button">Iniciar</div>
-				<a href="{{ password_reset_url }}">¿Olvidó su password?</a>
+				<a href="{{ links.p_password_reset }}">¿Olvidó su password?</a>
 			</form>
-		</div>	
+		</div>
 	</div>
 	<div class="app">
 	</div>

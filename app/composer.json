@@ -12,7 +12,7 @@
         "phpunit/phpunit": "~4.8"
     },
     "autoload": {
-        "psr-4": { "": ["application/core/", "application/model/", "application/controller/"] }
+        "psr-4": { "": ["application/engine/", "application/model/", "application/controller/"] }
     },
     "require": {
         "twig/twig": "1.5",

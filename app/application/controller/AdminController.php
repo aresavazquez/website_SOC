@@ -11,7 +11,8 @@ class AdminController extends Controller
 
     public function index(){
         $csrf_token = Csrf::makeToken();
-        $this->View->render('admin/login.html', array('csrf'=>$csrf_token));
+        $logged_in = Session::userIsLoggedIn();
+        $this->View->render('admin/login.html', array('csrf'=>$csrf_token, 'logged_in'=>$logged_in));
     }
     public function sites(){
         $this->View->render('admin/sites.html');
