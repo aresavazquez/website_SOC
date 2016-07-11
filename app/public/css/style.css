@@ -642,6 +642,7 @@ a,a:visited{
 .asesores{
     width: 100%;
     background: url(../img/head/back3.jpg)no-repeat center fixed;
+    height: 100%;
 }
 .asesores .form{
     width: 800px;
@@ -1183,23 +1184,11 @@ center .text_simlador{
 .head_contacto{
     background: url(../img/body/head_contacto.jpg)no-repeat center;
     background-size: cover;
-    height: 250px;
+    height: 350px;
     width: 100%;
     color: #fff;
     position: relative;
-    transsition: all 0.3s linear;
-    transition: all 1s ease;
     box-shadow: -7px -1px 21px #000;
-}
-.head_contacto:hover{
-    height: 300px;
-    transform: scale(1.2);
-
-    -webkit-transition: all 1s ease;
-    -moz-transition: all 1s ease;
-    -o-transition: all 1s ease;
-    -ms-transition: all 1s ease;
-    transition: all 1s ease;
 }
 .head_contacto div{
     position: absolute;
@@ -1210,7 +1199,7 @@ center .text_simlador{
     margin: auto;
     display: block;
     width: 600px;
-    height: 150px;
+    height: 80px;
 }
 .head_contacto div .title_section{
     text-align: center;
@@ -1282,25 +1271,13 @@ center .text_simlador{
 }
 /* soc tips*/
 .tips{
-    background: url(../img/body/tips.jpg)no-repeat center;
+    background: url(../img/body/tips.jpg)no-repeat top;
     background-size: cover;
-    height: 250px;
+    height: 350px;
     width: 100%;
     color: #fff;
     position: relative;
-    transsition: all 0.3s linear;
-    transition: all 1s ease;
     box-shadow: -7px -1px 21px #000;
-}
-.tips:hover{
-    height: 300px;
-    transform: scale(1.2);
-
-    -webkit-transition: all 1s ease;
-    -moz-transition: all 1s ease;
-    -o-transition: all 1s ease;
-    -ms-transition: all 1s ease;
-    transition: all 1s ease;
 }
 .tips div{
     position: absolute;
@@ -1311,7 +1288,7 @@ center .text_simlador{
     margin: auto;
     display: block;
     width: 600px;
-    height: 150px;
+    height: 80px;
 }
 .tips div .title_section{
     text-align: center;
@@ -1363,23 +1340,11 @@ center .text_simlador{
 .directores{
     background: url(../img/body/soc_.jpg)no-repeat center;
     background-size: cover;
-    height: 250px;
+    height: 350px;
     width: 100%;
     color: #fff;
     position: relative;
-    transsition: all 0.3s linear;
-    transition: all 1s ease;
     box-shadow: -7px -1px 21px #000;
-}
-.directores:hover{
-    height: 300px;
-    transform: scale(1.2);
-
-    -webkit-transition: all 1s ease;
-    -moz-transition: all 1s ease;
-    -o-transition: all 1s ease;
-    -ms-transition: all 1s ease;
-    transition: all 1s ease;
 }
 .directores div{
     position: absolute;
@@ -1390,7 +1355,7 @@ center .text_simlador{
     margin: auto;
     display: block;
     width: 600px;
-    height: 150px;
+    height: 80px;
 }
 .directores div .title_section{
     text-align: center;
@@ -1477,23 +1442,13 @@ h2.zero,p.zero {
 }
 /*------- blog */
 .blog{
-    background: url(../img/body/blog.jpg)no-repeat center;
+    background: url(../img/body/blog.jpg)no-repeat top;
     background-size: cover;
-    height: 250px;
+    height: 350px;
     width: 100%;
     color: #fff;
     position: relative;
-    transsition: all 0.3s linear;
-    transition: all 1s ease;
-}
-.blog:hover{
-    transform: scale(1.2);
-
-    -webkit-transition: all 1s ease;
-    -moz-transition: all 1s ease;
-    -o-transition: all 1s ease;
-    -ms-transition: all 1s ease;
-    transition: all 1s ease;
+    box-shadow: -7px -1px 21px #000;
 }
 .blog div{
     position: absolute;
@@ -1504,7 +1459,7 @@ h2.zero,p.zero {
     margin: auto;
     display: block;
     width: 600px;
-    height: 150px;
+    height: 80px;
 }
 .blog div .title_section{
     text-align: center;
@@ -1765,23 +1720,13 @@ h2.zero,p.zero {
 }
 /*------- hipoteca */
 .hipoteca{
-    background: url(../img/body/hipotecario.jpg)no-repeat center;
+    background: url(../img/body/hipotecario.jpg)no-repeat top;
     background-size: cover;
-    height: 250px;
+    height: 350px;
     width: 100%;
     color: #fff;
     position: relative;
-    transsition: all 0.3s linear;
-    transition: all 1s ease;
-}
-.hipoteca:hover{
-    transform: scale(1.2);
-
-    -webkit-transition: all 1s ease;
-    -moz-transition: all 1s ease;
-    -o-transition: all 1s ease;
-    -ms-transition: all 1s ease;
-    transition: all 1s ease;
+    box-shadow: -7px -1px 21px #000;
 }
 .hipoteca div{
     position: absolute;
@@ -1792,7 +1737,7 @@ h2.zero,p.zero {
     margin: auto;
     display: block;
     width: 600px;
-    height: 150px;
+    height: 80px;
 }
 .hipoteca div .title_section{
     text-align: center;
@@ -1847,21 +1792,11 @@ h2.zero,p.zero {
 .empresas{
     background: url(../img/body/empresas.jpg)no-repeat center;
     background-size: cover;
-    height: 250px;
+    height: 350px;
     width: 100%;
     color: #fff;
     position: relative;
-    transsition: all 0.3s linear;
-    transition: all 1s ease;
-}
-.empresas:hover{
-    transform: scale(1.2);
-
-    -webkit-transition: all 1s ease;
-    -moz-transition: all 1s ease;
-    -o-transition: all 1s ease;
-    -ms-transition: all 1s ease;
-    transition: all 1s ease;
+    box-shadow: -7px -1px 21px #000;
 }
 .empresas div{
     position: absolute;
@@ -1872,7 +1807,7 @@ h2.zero,p.zero {
     margin: auto;
     display: block;
     width: 700px;
-    height: 150px;
+    height: 80px;
 }
 .empresas div .title_section{
     text-align: center;
@@ -1905,21 +1840,11 @@ h2.zero,p.zero {
 .directorios{
     background: url(../img/body/directorio.jpg)no-repeat center;
     background-size: cover;
-    height: 250px;
+    height: 350px;
     width: 100%;
     color: #fff;
     position: relative;
-    transsition: all 0.3s linear;
-    transition: all 1s ease;
-}
-.directorios:hover{
-    transform: scale(1.2);
-
-    -webkit-transition: all 1s ease;
-    -moz-transition: all 1s ease;
-    -o-transition: all 1s ease;
-    -ms-transition: all 1s ease;
-    transition: all 1s ease;
+    box-shadow: -7px -1px 21px #000;
 }
 .directorios div{
     position: absolute;
@@ -1930,7 +1855,7 @@ h2.zero,p.zero {
     margin: auto;
     display: block;
     width: 700px;
-    height: 150px;
+    height: 80px;
 }
 .directorios div .title_section{
     text-align: center;
