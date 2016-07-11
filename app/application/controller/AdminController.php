@@ -12,6 +12,8 @@ class AdminController extends Controller
     public function index(){
         $csrf_token = Csrf::makeToken();
         $logged_in = Session::userIsLoggedIn();
+        if($logged_in && Session::get('user_role') >= 2) Redirect::to('admin/microsite');
+        if($logged_in && Session::get('user_role') == 1) Redirect::to('admin/users');
         $this->View->render('admin/login.html', array('csrf'=>$csrf_token, 'logged_in'=>$logged_in));
     }
     public function sites(){

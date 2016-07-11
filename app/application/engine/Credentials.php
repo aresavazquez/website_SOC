@@ -223,7 +223,7 @@ class Credentials{
      * @param $user_email
      * @param $user_account_type
      */
-    public static function setSuccessfulLoginIntoSession($user_id, $user_name, $user_email, $user_account_type){
+    public static function setSuccessfulLoginIntoSession($user_id, $user_name, $user_email, $user_role){
         Session::init();
 
         // remove old and regenerate session ID.
@@ -236,7 +236,7 @@ class Credentials{
         Session::set('user_id', $user_id);
         Session::set('user_name', $user_name);
         Session::set('user_email', $user_email);
-        Session::set('user_account_type', $user_account_type);
+        Session::set('user_role', $user_role);
         Session::set('user_provider_type', 'DEFAULT');
 
         // get and set avatars
