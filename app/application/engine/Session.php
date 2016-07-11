@@ -74,7 +74,7 @@ class Session
      * @return string
      */
     public static function updateSessionId($userId, $sessionId = null){
-        
+
         //$database = DatabaseFactory::getFactory()->getConnection();
        //$sql = "UPDATE users SET session_id = :session_id WHERE user_id = :user_id";
 
@@ -114,7 +114,7 @@ class Session
             //$query->execute(array(":user_id" => $userId));
             //
             //$result = $query->fetch();
-            $result = User::get_instance()->getSession($userId);
+            $result = User::getInstance()->getSession($userId);
             $userSessionId = !empty($result)? $result->session_id: null;
 
             return $session_id !== $userSessionId;
