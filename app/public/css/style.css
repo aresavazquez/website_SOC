@@ -79,7 +79,7 @@ a,a:visited{
 }
 .head .imagenes p{
     opacity: 0;
-    display: none; 
+    display: none;
 }
 .head .imagenes .texto{
     color: #fff;
@@ -284,7 +284,7 @@ a,a:visited{
 }
 .head .imagenes p{
     opacity: 0;
-    display: none; 
+    display: none;
 }
 .head .imagenes .texto{
     color: #fff;
@@ -369,7 +369,7 @@ a,a:visited{
 }
 .sub-menu a p span{
     color: #ddd;
-} 
+}
 /*---------------------------------------Home body*/
 /*ICONOS*/
 .sub-menu{
@@ -418,7 +418,7 @@ a,a:visited{
 }
 .sub-menu a p span{
     color: #ddd;
-} 
+}
 /*---------------------------------------simulador*/
 .simulador{
     background: #3a5e94;
@@ -455,7 +455,7 @@ a,a:visited{
     padding-bottom: 25px;
 }
 .simulador .form{
-    display: flex; 
+    display: flex;
     width: 825px;
     margin: auto;
     padding-bottom: 25px;
@@ -602,7 +602,7 @@ a,a:visited{
     padding: 40px 0;
 }
 .footer .condu{
-    padding: 15px; 
+    padding: 15px;
 }
 .footer .tel{
     font-size: 16px;
@@ -670,6 +670,34 @@ button.close{
 .app{
     background: #3a5e94;
     height: 500px;
+}
+/*---------------------------------------password reset*/
+.password-reset{
+    width: 100%;
+    background: url(../img/head/back3.jpg)no-repeat center fixed;
+}
+.password-reset .form{
+    width: 800px;
+    margin: auto;
+    padding: 50px 50px;
+}
+.password-reset .form form input{
+    background: none;
+    border: none;
+    width: 300px;
+    padding: 10px;
+    color: #fff;
+    font-weight: 100;
+    margin: 10px;
+    border-bottom: 1px solid #4fa753;
+    font-size: 17px;
+}
+.password-reset .form form label{
+    color: #fff;
+    font-weight: 100;
+}
+.password-reset .form form .check{
+    width: 20px;
 }
 /*---------------------*/
 /*---------------------*/
@@ -1174,7 +1202,7 @@ center .text_simlador{
 .head_contacto:hover{
     height: 300px;
     transform: scale(1.2);
- 
+
     -webkit-transition: all 1s ease;
     -moz-transition: all 1s ease;
     -o-transition: all 1s ease;
@@ -1275,7 +1303,7 @@ center .text_simlador{
 .tips:hover{
     height: 300px;
     transform: scale(1.2);
- 
+
     -webkit-transition: all 1s ease;
     -moz-transition: all 1s ease;
     -o-transition: all 1s ease;
@@ -1354,7 +1382,7 @@ center .text_simlador{
 .directores:hover{
     height: 300px;
     transform: scale(1.2);
- 
+
     -webkit-transition: all 1s ease;
     -moz-transition: all 1s ease;
     -o-transition: all 1s ease;
@@ -1468,7 +1496,7 @@ h2.zero,p.zero {
 }
 .blog:hover{
     transform: scale(1.2);
- 
+
     -webkit-transition: all 1s ease;
     -moz-transition: all 1s ease;
     -o-transition: all 1s ease;
@@ -1537,7 +1565,7 @@ h2.zero,p.zero {
 .container_blog div a{
     padding: 10px;
 }
-.container_blog div .date{    
+.container_blog div .date{
     color: #4fa753;
     font-size: 10px;
     padding-bottom: 0;
@@ -1756,7 +1784,7 @@ h2.zero,p.zero {
 }
 .hipoteca:hover{
     transform: scale(1.2);
- 
+
     -webkit-transition: all 1s ease;
     -moz-transition: all 1s ease;
     -o-transition: all 1s ease;
@@ -1836,7 +1864,7 @@ h2.zero,p.zero {
 }
 .empresas:hover{
     transform: scale(1.2);
- 
+
     -webkit-transition: all 1s ease;
     -moz-transition: all 1s ease;
     -o-transition: all 1s ease;
@@ -1894,7 +1922,7 @@ h2.zero,p.zero {
 }
 .directorios:hover{
     transform: scale(1.2);
- 
+
     -webkit-transition: all 1s ease;
     -moz-transition: all 1s ease;
     -o-transition: all 1s ease;
@@ -1970,7 +1998,7 @@ h2.zero,p.zero {
     flex-wrap: wrap;
     background: #fff;
     color: #41546e;
-    border-radius: 10px; 
+    border-radius: 10px;
     padding: 30px;
 }
 .directorio-estado .contenido div{
@@ -1993,7 +2021,7 @@ h2.zero,p.zero {
 }
 .inmobiliaria:hover{
     transform: scale(1.2);
- 
+
     -webkit-transition: all 1s ease;
     -moz-transition: all 1s ease;
     -o-transition: all 1s ease;
@@ -2081,7 +2109,7 @@ h2.zero,p.zero {
 }
 .franquicia:hover{
     transform: scale(1.2);
- 
+
     -webkit-transition: all 1s ease;
     -moz-transition: all 1s ease;
     -o-transition: all 1s ease;
@@ -2167,7 +2195,7 @@ h2.zero,p.zero {
 }
 .prensa:hover{
     transform: scale(1.2);
- 
+
     -webkit-transition: all 1s ease;
     -moz-transition: all 1s ease;
     -o-transition: all 1s ease;
@@ -2221,10 +2249,7 @@ h2.zero,p.zero {
     text-align: center;
     color:#fff;
     background: #4fa753;
-    border: 2px solid #fff;
+    /*border: 2px solid rgba(255,255,255,0.3);*/
     display: none;
     position: inherit !important;
 }
-
-
-

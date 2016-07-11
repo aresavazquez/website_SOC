@@ -93,6 +93,7 @@ return array(
 	/**
 	 * Configuration for: Email content data
 	 */
+	'EMAIL_CONTACT_RECEIVER' => 'vampay@digitaldealers.mx',
 	'EMAIL_PASSWORD_RESET_URL' => 'login/verifypasswordreset',
 	'EMAIL_PASSWORD_RESET_FROM_EMAIL' => 'no-reply@example.com',
 	'EMAIL_PASSWORD_RESET_FROM_NAME' => 'My Project',

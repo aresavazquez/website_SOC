@@ -2,34 +2,34 @@
 class User {
     private static $instance = false;
     private static $PDO;
-	
+
     protected function __construct(){
         self::$PDO = new PDODB('users');
     }
     /**
     * Singleton pattern
     */
-    public static function get_instance(){
+    public static function getInstance(){
         if( !self::$instance ) self::$instance = new self();
         return self::$instance;
     }
 
     public static function all(){
         $result = self::$PDO->_all("*");
-        return $result->get();    
+        return $result->get();
     }
 
-    public static function by_id($id){
+    public static function byId($id){
         $result = self::$PDO->_where("id, name, email", "id='$id'");
         return $result->first();
     }
 
-    public static function set_data($id, $data){
+    public static function setData($id, $data){
         $result = self::$PDO->_update($data, "id='$id'");
         return $result;
     }
 
-	public static function getUserDataByEmail($user_email){
+	public static function getDataByEmail($user_email){
         $result = self::$PDO->_where("id, name, email, password, user_active, user_deleted, user_suspension_timestamp, user_last_failed_login, id_role", "email='$user_email'");
         return $result->first();
     }
@@ -39,7 +39,7 @@ class User {
         $result = self::$PDO->_update($data, "name= '$user_name'");
     }
 
-    public static function login_timestamp($user_name){
+    public static function loginTimestamp($user_name){
         $data = array('updated_at'=>'NOW()');
         $result = self::$PDO->_update($data, "name = '$user_name'");
     }
@@ -71,9 +71,7 @@ class User {
      */
     public static function doesEmailAlreadyExist($user_email){
         $result = self::$PDO->_where("id", "email='$user_email'");
-        if($result->count() == 0){
-            return false;
-        }
+        if($result->count() == 0) return false;
         return true;
     }
 
@@ -84,6 +82,10 @@ class User {
     public static function save($user_name, $user_password_hash, $user_email, $user_creation_timestamp, $user_activation_hash){
         $data = array('name'=>$user_name, 'email'=>$user_email, 'password'=>$user_password_hash, 'remember_token'=>$user_activation_hash);
         return $result = self::$PDO->_insert($data);
+    }
+
+    public static function delete($user_id){
+      return self::$PDO->_delete("id=$user_id");
     }
 
     public static function getSession($user_id = null){
