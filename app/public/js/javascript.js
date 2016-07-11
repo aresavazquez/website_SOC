@@ -59,7 +59,6 @@ $(document).on('ready', function(){
         tx.to('.avtres', 1, {opacity: 1, display: "block"});
         tx.to('.avtres', .5, {opacity: 0, display: "none", delay: 4.5});
     }
-
     var animateHomePhones = function(){
         var section = $('.simulador' ).offset().top;
         $(window).scroll(function(){
@@ -72,48 +71,60 @@ $(document).on('ready', function(){
             };
         });
     }
-
     var menuBehaviors = function(){
         $('.menu').on('click', function (e){
-                e.preventDefault ();
-                TweenLite.to('.contentMenu', 1, { opacity: 1, display: 'block', ease: Power2.easeOut, x: -300, onComplete: function(){
-                        TweenLite.to('.menu', .5, { opacity: 0, display: 'none', ease: Power2.easeOut, x: -200});
-                }});
+            e.preventDefault ();
+            TweenLite.to('.contentMenu', 1, { opacity: 1, display: 'block', ease: Power2.easeOut, x: -300, onComplete: function(){
+                TweenLite.to('.menu', .5, { opacity: 0, display: 'none', ease: Power2.easeOut, x: -200});
+            }});
         });
     }
-
     var loginForm = function(){
-        $('.login__button').on('click', function(e){
-            e.preventDefault();
-            var data = {
+      $('.login__button').on('click', function(e){
+          e.preventDefault();
+      	  var username = $('#login-form #user-name').val();
+      	  var password = $('#login-form #user-password').val();
 
-            }
-            var usr = $('input[name="user_name"]').val();
-            var pwd = $('input[name="user_password"]').val();
-            console.log(usr,pwd);
-        });
+          var settings = {
+      		    "async": true,
+      		    "crossDomain": true,
+      		    "url": host_url + "api/v1/login",
+      		    "method": "POST",
+      		    "data": {
+      			       "user_email": username,
+      			       "user_password": password
+      		    }
+      	  }
+      	  $.ajax(settings).done(function (response) {
+      		    if(response.status == 200){
+      			      $('#login-form .login__button').text('Entrando...');
+      			      window.location = host_url+'admin/users';
+      		    }else if(response.status == 500) {
+      			      $('.responses').text(response.errors);
+      			      $('.responses').show();
+      		    }
+      	  });
+      });
     }
-
     var passwordResetForm = function(){
         $('.login__button').on('click', function(e){
             e.preventDefault();
             var email = $('input[name="user_email"]').val();
 
             $.post(host_url + "api/v1/password_reset", {email: email}, function(response){
-              if(response.status == 200){
-        				$('#login-form .login__button').text('Entrando...');
-        				window.location = host_url+'admin/users';
-        			}else if(response.status == 500) {
-        				$('.responses').text(response.errors);
-        				$('.responses').show();
-        			}
+                if(response.status == 200){
+        				    $('#login-form .login__button').text('Entrando...');
+        				    window.location = host_url+'admin/users';
+        			  }else if(response.status == 500) {
+        				    $('.responses').text(response.errors);
+        				    $('.responses').show();
+        			  }
             }).fail(function(){
-              $('.responses').text('Falló la comunicación con el servidor, inténtalo nuevamente');
-              $('.responses').show();
+                $('.responses').text('Falló la comunicación con el servidor, inténtalo nuevamente');
+                $('.responses').show();
             });
         });
     }
-
     var usersList = function(){
         var settings = {
             "async": true,
@@ -135,8 +146,7 @@ $(document).on('ready', function(){
             $('#usersList tbody').append(html);
         });
     }
-
-     var loadUserinfo = function(){
+    var loadUserinfo = function(){
         $('#usersList').on('click', '.editInput' ,function (e){
             e.preventDefault ();
             var userID = $(this).data('user');
@@ -154,11 +164,9 @@ $(document).on('ready', function(){
                 $('.editarUsuario .datosUsuario #e_user_id').val(user.id);
             });
         });
-     }
-
-     var updateUserinfo = function(){
+    }
+    var updateUserinfo = function(){
         $('.editarUsuario .datosUsuario .update-user').on('click', function(){
-
             var useridU = $('.editarUsuario .datosUsuario #e_user_id').val();
             var usernameU = $('.editarUsuario .datosUsuario #e_user_name').val();
             var mailU = $('.editarUsuario .datosUsuario #e_user_email').val();
@@ -180,9 +188,8 @@ $(document).on('ready', function(){
                 }
             });
         });
-     }
-
-     var sitesList = function(){
+    }
+    var sitesList = function(){
         var settings = {
             "async": true,
             "crossDomain": true,
@@ -201,7 +208,6 @@ $(document).on('ready', function(){
             $('#sitesList tbody').append(html);
         });
     }
-
     var loadSiteinfo = function(){
         $('#sitesList').on('click', '.editInput' ,function (e){
             e.preventDefault ();
@@ -223,7 +229,6 @@ $(document).on('ready', function(){
             });
         });
     }
-
     var viewSite = function(){
         $('#sitesList').on('click', '.viewsite' ,function (e){
             e.preventDefault ();
@@ -241,10 +246,8 @@ $(document).on('ready', function(){
             });
         });
     }
-
     var updateSiteinfo = function(){
         $('.update-site .updateSite').on('click', function(){
-
             var esiteName = $('.update-site #e_siteName').val();
             var esiteUrl = $('.update-site #e_siteUrl').val();
             var esiteContent = $('.update-site #e_siteContent').val();
@@ -268,8 +271,7 @@ $(document).on('ready', function(){
                 }
             });
         });
-     }
-
+    }
     var adminUsersListeners = function(){
         $('#usersList').on('click', '.editInput' ,function (e){
             e.preventDefault ();
@@ -277,7 +279,6 @@ $(document).on('ready', function(){
                 TweenLite.to('.datosUsuario', .5, { opacity: 1, display: 'block', ease: Power2.easeOut, y: 30});
             }});
         });
-
         $('.plusUser').on('click', function (e){
             e.preventDefault ();
             TweenLite.to('.agregarUsuario', .5, {opacity: 1, display: 'block', onComplete: function(){
@@ -314,17 +315,44 @@ $(document).on('ready', function(){
             }});
         });
     }
-
     var loadTheSite = function(){
-    	var thesite = window.location.href.split( 'site=' );
-      $.get(host_url + "api/v1/sites/"+thesite[1], function(response){
-        var site = response.data;
-        $('.head_micrositio h1').text(site.title);
-        $('.contenido_micrositio p.thecontent').text(site.content);
-        console.log(site);
-      });
+        var thesite = window.location.href.split( 'site=' );
+        $.get(host_url + "api/v1/sites/"+thesite[1], function(response){
+            var site = response.data;
+            $('.head_micrositio h1').text(site.title);
+            $('.contenido_micrositio p.thecontent').text(site.content);
+            console.log(site);
+        });
     }
+    var registerUser = function(){
+        $('.agregarUsuario .datosUsuario .registerUserform').on('click', function(){
+            var username = $('.datosUsuario #user_name').val();
+            var useremail = $('.datosUsuario #user_email').val();
+            var userpassword = $('.datosUsuario #user_password').val();
 
+            var settings = {
+                "async": true,
+                "crossDomain": true,
+                "url": host_url + "api/v1/register",
+                "method": "POST",
+                "data": {
+                    "user_name": username,
+                    "user_email": useremail,
+                    "user_password": userpassword
+                }
+            }
+    	      $.ajax(settings).done(function (response) {
+    		        if(response.status == 200){
+    			          $('.close').trigger( "click" );
+    			          $('.responses').text('Se ha creado el usuario correctamente');
+    			          $('.responses').show();
+    		        }else if(response.status == 500) {
+    			          $('.responses').text(response.errors);
+    			          $('.responses').show();
+    		        }
+    	      });
+        });
+    }
     var site = {
         "home": function(){
             animateHomeIntro();
@@ -346,6 +374,7 @@ $(document).on('ready', function(){
             loadUserinfo();
             adminUsersListeners();
             updateUserinfo();
+            registerUser();
         },
         "admin-sites": function(){
             sitesList();

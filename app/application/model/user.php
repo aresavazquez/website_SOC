@@ -80,7 +80,7 @@ class User {
     }
 
     public static function save($user_name, $user_password_hash, $user_email, $user_creation_timestamp, $user_activation_hash){
-        $data = array('name'=>$user_name, 'email'=>$user_email, 'password'=>$user_password_hash, 'remember_token'=>$user_activation_hash);
+        $data = array('name'=>$user_name, 'email'=>$user_email, 'password'=>$user_password_hash, 'remember_token'=>$user_activation_hash, 'id_role'=>2);
         return $result = self::$PDO->_insert($data);
     }
 

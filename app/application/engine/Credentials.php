@@ -86,7 +86,7 @@ class Credentials{
         }
 
         // get all data of that user (to later check if password and password_hash fit)
-        $result = User::get_instance()->getUserDataByEmail($user_email);//getUserDataByUsername($user_name);
+        $result = User::getInstance()->getDataByEmail($user_email);//getUserDataByUsername($user_name);
         // check if that user exists. We don't give back a cause in the feedback to avoid giving an attacker details.
         // brute force attack mitigation: reset failed login counter because of found user
         if (!$result){
@@ -297,13 +297,7 @@ class Credentials{
      * @param $user_name
      */
     public static function saveTimestampOfLoginOfUser($user_name){
-        User::get_instance()->login_timestamp($user_name);
-        //$database = DatabaseFactory::getFactory()->getConnection();
-        //
-        //$sql = "UPDATE users SET user_last_login_timestamp = :user_last_login_timestamp
-        //        WHERE user_name = :user_name LIMIT 1";
-        //$sth = $database->prepare($sql);
-        //$sth->execute(array(':user_name' => $user_name, ':user_last_login_timestamp' => time()));
+        User::getInstance()->loginTimestamp($user_name);
     }
 
     /**
@@ -347,18 +341,11 @@ class Credentials{
      */
     public static function deleteCookie($user_id = null){
         // is $user_id was set, then clear remember_me token in database
-        if(isset($user_id)){
-            User::get_instance()->deleteCookie();
-            //$database = DatabaseFactory::getFactory()->getConnection();
-//
-            //$sql = "UPDATE users SET user_remember_me_token = :user_remember_me_token WHERE user_id = :user_id LIMIT 1";
-            //$sth = $database->prepare($sql);
-            //$sth->execute(array(':user_remember_me_token' => NULL, ':user_id' => $user_id));
-        }
+        if(isset($user_id)) User::getInstance()->deleteCookie();
 
         // delete remember_me cookie in browser
         setcookie('remember_me', false, time() - (3600 * 24 * 3650), Config::get('COOKIE_PATH'),
-            Config::get('COOKIE_DOMAIN'), Config::get('COOKIE_SECURE'), Config::get('COOKIE_HTTP'));
+        Config::get('COOKIE_DOMAIN'), Config::get('COOKIE_SECURE'), Config::get('COOKIE_HTTP'));
     }
 
     /**

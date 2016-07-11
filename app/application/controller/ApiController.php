@@ -58,7 +58,7 @@ class ApiController extends Controller{
         //if(!Auth::checkAdminAuthentication()){
         //    $this->View->renderJSON($this->error_code(Text::get('FEEDBACK_UNKNOWN_ADMIN'), array('redirect_to'=>$this->Routes['root_url'])));
         //}
-        $users = (array) User::get_instance()->all();
+        $users = (array) User::getInstance()->all();
         foreach ($users as $key => $user) {
             $users[$key] = (array) $user;
         }
@@ -66,7 +66,7 @@ class ApiController extends Controller{
     }
 
     public function get_user($params){
-        $user = User::get_instance()->by_id($params['id']);
+        $user = User::getInstance()->byId($params['id']);
         $this->View->renderJSON($this->success_code($user));
     }
 
@@ -75,7 +75,7 @@ class ApiController extends Controller{
         if(Request::get('name')) $data['name'] = Request::get('name');
         if(Request::get('email')) $data['email'] = Request::get('email');
 
-        $id = User::get_instance()->set_data($params['id'], $data);
+        $id = User::getInstance()->setData($params['id'], $data);
         $this->View->renderJSON($this->success_code($id));
     }
 
