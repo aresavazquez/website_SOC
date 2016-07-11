@@ -162,7 +162,7 @@ a,a:visited{
 }
 .container_menu ul li a{
     color: #2a6496;
-    padding: 18px 14px;
+    padding: 23px 14px;
     font-size: 16px;
 }
 .container_menu ul li a:hover{
@@ -183,7 +183,7 @@ a,a:visited{
     background: #eee;
     padding: 0;
     width: 150px;
-    top: 35px;
+    top: 43px;
     display: none;
     opacity: 0;
 }
@@ -565,7 +565,8 @@ a,a:visited{
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    background: #3a5e94;
+    background: url(../img/body/unnamed.jpg)no-repeat top fixed;
+    background-size: cover;
     padding: 50px;
 }
 .social .twitter, .facebook, .instagram{
