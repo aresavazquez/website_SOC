@@ -157,6 +157,30 @@ $(document).on('ready', function(){
             });
         });
     }
+    var simulador = function(){
+        $('#simulador-form .send').on('click', function(){
+          var nameS = $('#simulador-form #name').val();
+          var phoneS = $('#simulador-form #number').val();
+          var mailS = $('#simulador-form #mail').val();
+          var stateS = $('#simulador-form #state').val();
+          var valueS = $('#simulador-form #value').val();
+          var hitchS = $('#simulador-form #hitch').val();
+          var paytypeS = $('#simulador-form #paytype').val();
+          var paytimeS = $('#simulador-form #paytime').val();
+            /*var settings = {
+                "async": true,
+                "crossDomain": true,
+                "url": host_url + "api/v1/sites/"+esiteUrl+"?title="+esiteName+"&content="+esiteContent+"&address="+esiteAddress+"&contact="+esiteTelephone,
+                "method": "PUT"
+            }
+            $.ajax(settings).done(function (response) {
+               if(response.status == 200){
+
+                }else if(response.status == 500) {
+                }
+            });*/
+        });
+    }
     var usersList = function(){
         var settings = {
             "async": true,
@@ -430,6 +454,9 @@ $(document).on('ready', function(){
             animateHomeSlider();
             animateHomePhones();
             menuBehaviors();
+        },
+        "p-home": function(){
+            simulador();
         },
         "p-detalle": function(){
           loadTheSite();

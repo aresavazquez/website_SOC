@@ -127,61 +127,34 @@
     			<p class="texto">Nuestro simulador te mostrará el panorama con tus diferentes opciones de crédito.<br>Para calcular tu crédito hipotecario ingresa la información solicitada en los siguientes campos.</p>
     		</div>
     		<div class="form">
-    			<form action="" method="">
-    				<input type="text" placeholder="Nombre" id="name">
-    				<input type="number" placeholder="Número" id="number">
-    				<input type="text" placeholder="Correo" id="mail">
-    				<label>Estados</label>
-    				<select>
-    					<option>Aguascalientes</option>
-    					<option>Baja California</option>
-    					<option>Baja California Sur</option>
-    					<option>Campeche</option>
-    					<option>Coahuila</option>
-    					<option>Colima</option>
-    					<option>Chiapas</option>
-    					<option>Chihuahua</option>
-    					<option>Distrito Federal</option>
-    					<option>Durango</option>
-    					<option>Guanajuato</option>
-    					<option>Guerrero</option>
-    					<option>Hidalgo</option>
-    					<option>Jalisco</option>
-    					<option>México</option>
-    					<option>Michoacan</option>
-    					<option>Morelos</option>
-    					<option>Nayarit</option>
-    					<option>Nuevo León</option>
-    					<option>Oaxaca</option>
-    					<option>Puebla</option>
-    					<option>Queretaro</option>
-    					<option>Quintana Roo</option>
-    					<option>San Luis Potosí</option>
-    					<option>Sinaloa</option>
-    					<option>Sonora</option>
-    					<option>Tabasco</option>
-    					<option>Tamaulipas</option>
-    					<option>Tlaxcala</option>
-    					<option>Veracruz</option>
-    					<option>Yucatan</option>
-    					<option>Zacatecas</option>
-    				</select>
-    			</form>
-    			<form action="" method="">
-    				<input type="number" placeholder="Valor del Inmueble" id="value">
-    				<input type="number" placeholder="Enganche" id="">
-    				<label>Tipo de Mensualidad</label>
-    				<select>
-    					<option>Seleccione una opción</option>
-    					<option>Fija</option>
-    					<option>Creciente</option>
-    				</select>
-    				<label>Plazo</label>
-    				<select>
-    					<option>20 años</option>
-    					<option>15 años</option>
-    				</select>
-    				<input type="submit" class="send">
+    			<form id="simulador-form" action="" method="">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+      				<input type="text" placeholder="Nombre" id="name">
+      				<input type="number" placeholder="Número" id="number">
+      				<input type="text" placeholder="Correo" id="mail">
+      				<label>Estados</label>
+      				<select id="state">
+                {% for key,value in states %}
+                    <option value="{{ value.id }}">{{ value.name }}</option>
+                {% endfor %}
+      				</select>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+      				<input type="number" placeholder="Valor del Inmueble" id="value">
+      				<input type="number" placeholder="Enganche" id="hitch">
+      				<label>Tipo de Mensualidad</label>
+      				<select id="paytype">
+      					<option value="-1">Seleccione una opción</option>
+      					<option value="fija">Fija</option>
+      					<option value="creciente">Creciente</option>
+      				</select>
+      				<label>Plazo</label>
+      				<select id="paytime">
+      					<option value="20">20 años</option>
+      					<option value="15">15 años</option>
+      				</select>
+      				<div class="send">Enviar</div>
+              </div>
     			</form>
     		</div>
     		<p class="aviso">Respecto al manejo de sus datos personales favor de revisar el Aviso de Privacidad, así como los Términos y Condiciones incluidos en la presente página.</p>
