@@ -45,7 +45,6 @@ $(document).on('ready', function(){
     //imagenes home
     var section = $('.sub-menu' ).offset().top;
     $(window).scroll(function(){
-        console.log($(window).scrollTop());
         var scroll = $(window).scrollTop();
         if(scroll > 550){
             TweenLite.to('.backDiv1', 1.5, { opacity: 1});
