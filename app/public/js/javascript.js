@@ -147,7 +147,14 @@ $(document).on('ready', function(){
     }
     var simulador = function(){
         $('#simulador-form .send').on('click', function(){
-          console.log('Simulador')
+          var nameS = $('#simulador-form #name').val();
+          var phoneS = $('#simulador-form #number').val();
+          var mailS = $('#simulador-form #mail').val();
+          var stateS = $('#simulador-form #state').val();
+          var valueS = $('#simulador-form #value').val();
+          var hitchS = $('#simulador-form #hitch').val();
+          var paytypeS = $('#simulador-form #paytype').val();
+          var paytimeS = $('#simulador-form #paytime').val();
             /*var settings = {
                 "async": true,
                 "crossDomain": true,
