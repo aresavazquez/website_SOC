@@ -145,6 +145,23 @@ $(document).on('ready', function(){
             });
         });
     }
+    var simulador = function(){
+        $('#simulador-form .send').on('click', function(){
+          console.log('Simulador')
+            /*var settings = {
+                "async": true,
+                "crossDomain": true,
+                "url": host_url + "api/v1/sites/"+esiteUrl+"?title="+esiteName+"&content="+esiteContent+"&address="+esiteAddress+"&contact="+esiteTelephone,
+                "method": "PUT"
+            }
+            $.ajax(settings).done(function (response) {
+               if(response.status == 200){
+
+                }else if(response.status == 500) {
+                }
+            });*/
+        });
+    }
     var usersList = function(){
         var settings = {
             "async": true,
@@ -418,6 +435,9 @@ $(document).on('ready', function(){
             animateHomeSlider();
             animateHomePhones();
             menuBehaviors();
+        },
+        "p-home": function(){
+            simulador();
         },
         "p-detalle": function(){
           loadTheSite();

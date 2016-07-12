@@ -614,11 +614,11 @@ a,a:visited{
 }
 .social .twitter iframe{
     width: 300px !important;
-    height: 500px !important; 
+    height: 500px !important;
 }
 .social .instagram iframe{
     width: 300px !important;
-    height: 500px !important; 
+    height: 500px !important;
 }
 /*---------------------------------------footer*/
 .footer{
@@ -683,7 +683,7 @@ a,a:visited{
 .asesores .form form .check{
     width: 20px;
 }
-button, .login__button, form .user{
+button, .login__button, form .user, form .send{
     background: #4fa753;
     border: none;
     width: 300px;
