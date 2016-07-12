@@ -12,6 +12,7 @@ function showModal(modalName){
 }
 
 $(document).on('ready', function(){
+    //entrada iconos submenú
     TweenLite.to('.iconSubMenu', 2, { opacity: 1, display: 'block', ease: Power2.easeOut, y: -300});
     $.put = function(url, data, callback, type){
         if ( $.isFunction(data) ){
@@ -41,6 +42,16 @@ $(document).on('ready', function(){
             contentType: type
         });
     }
+    //imagenes home
+    var section = $('.sub-menu' ).offset().top;
+    $(window).scroll(function(){
+        console.log($(window).scrollTop());
+        var scroll = $(window).scrollTop();
+        if(scroll > 550){
+            TweenLite.to('.backDiv1', 1.5, { opacity: 1});
+            TweenLite.to('.backDiv', .5, { opacity: 1, delay: .5});
+        };
+    });
     var animateHomeIntro = function(){
         //TweenLite.to('.welcome', 1.5, {opacity: 1, display: "block", ease: Power2.easeOut, y: 150});
         var tl = new TimelineLite({onComplete: function(){ this.restart(); }});

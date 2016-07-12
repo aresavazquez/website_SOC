@@ -408,6 +408,7 @@ a,a:visited{
     background: url(../img/body/asesoria1.jpg)no-repeat center;
     background-size: cover;
     position: relative;
+    opacity: 0;
 }
 .info .asesoria .backDiv{
     width: 50%;
@@ -415,6 +416,7 @@ a,a:visited{
     background: url(../img/body/sinCosto.jpg)no-repeat top;
     background-size: cover;
     position: relative;
+    opacity: 0;
 }
 .info .asesoria .textoAsesoria{
     width: 50%;
