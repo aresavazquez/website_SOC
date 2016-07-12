@@ -371,6 +371,12 @@ a,a:visited{
     width: 200px;
     position: relative;
 }
+.sub-menu a .propiedades{
+    background: url(../img/body/propiedades.png)no-repeat center;
+    height: 90px;
+    width: 200px;
+    position: relative;
+}
 .sub-menu a .franquicia-icon{
     background: url(../img/body/franquicia.png)no-repeat center;
     height: 90px;
@@ -2207,3 +2213,4 @@ h2.zero,p.zero {
     display: none;
     position: inherit !important;
 }
+
