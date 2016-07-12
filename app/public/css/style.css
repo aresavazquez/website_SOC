@@ -218,9 +218,12 @@ a,a:visited{
     //padding-top: 30px;
     //height: 420px;
 }
-.carousel .item img{
+.carousel .item .sliderImg{
     width: 300px;
     float: right;
+}
+.carousel .item .mejora{
+    width: 800px;
 }
 .carousel .item p{
     position: absolute;
@@ -229,6 +232,11 @@ a,a:visited{
     font-weight: 600;
     left: 100px;
     top: 55px;
+}
+.carousel .item p span{
+    font-weight: 100;
+    font-size: 42px;
+    font-style: italic;
 }
 /*------------------------------- */
 .menu-header{
@@ -336,8 +344,9 @@ a,a:visited{
     background: #16193B;
 }
 .sub-menu a{
-    margin: 15px;
+    margin: 15px auto;
     text-decoration: none;
+    width: 145px;
 }
 .sub-menu a .asesor{
     background: url(../img/body/asesor.png)no-repeat center;
@@ -618,10 +627,10 @@ a,a:visited{
     color: #fff;
     text-align: center;
     position: relative;
-    padding: 40px 0;
+    padding: 10px 0 20px;
 }
 .footer .condu{
-    padding: 15px;
+    padding: 0;
 }
 .footer .tel{
     font-size: 16px;
@@ -635,6 +644,7 @@ a,a:visited{
 .footer ul li{
     list-style: none;
     padding: 10px;
+    height: 60px;
 }
 
 
@@ -1016,6 +1026,7 @@ button.close{
 .footer .terminos{
     font-size: 10px;
     font-weight: 100;
+    margin: 0;
 }
 .footer .terminos a{
     color: #fff;

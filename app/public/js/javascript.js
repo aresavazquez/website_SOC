@@ -6,7 +6,7 @@ function showModal(modalName){
         $('#siteModal .modal-body').html('<h3>Texto prueba Aviso</h3><p>Aquí va el texto</p>');
     }else if( modalName == 'termino'){
         $('#siteModal .modal-header .modal-title').text('Términos y Condiciones');
-        $('#siteModal .modal-body').html('<h3>Texto prueba Términos</h3><p>Aquí va el texto</p>');
+        $('#siteModal .modal-body').html('<h3>1. INTRODUCCIÓN AL SERVICIO Y ACEPTACIÓN DE LAS CONDICIONES DE USO</h3><p>Aquí va el texto</p>');
     }
     $('#siteModal').modal();
 }
@@ -70,6 +70,11 @@ $(document).on('ready', function(){
         tx.to('.avtres', 1, {opacity: 1, display: "block"});
         tx.to('.avtres', .5, {opacity: 0, display: "none", delay: 4.5});
     }
+    $('.simular').on('click', function(e){
+        e.preventDefault ();
+        var top = $('.simulador').offset().top;
+        TweenLite.to(window, 1, {scrollTo:{y: top}, ease:Power2.easeOut});
+    });
     //var animateHomePhones = function(){
     //    var section = $('.simulador' ).offset().top;
     //    $(window).scroll(function(){
