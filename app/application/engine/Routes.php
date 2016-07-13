@@ -26,7 +26,6 @@ class Routes{
 		self::$router->map( 'POST', '/contacto', 'IndexController#post_contact', 'p_contact_post');
     	self::$router->map( 'GET', '/blog', 'BlogController#index', 'p_blog');
 		self::$router->map( 'GET', '/password_reset', 'PasswordsController#index', 'p_password_reset');
-		self::$router->map( 'GET', '/site/[*:url]', 'BrokerController#show', 'broker_show');
 		self::$router->map( 'GET', '/admin/microsite', 'BrokerController#edit', 'broker_microsite');
 		self::$router->map( 'GET', '/admin', 'AdminController#index', 'p_admin');
     	self::$router->map( 'GET', '/admin/users', 'AdminController#users', 'admin_users');
@@ -46,6 +45,9 @@ class Routes{
     	self::$router->map( 'POST', '/api/v1/sites', 'ApiController#new_site');
     	self::$router->map( 'GET|POST', '/api/v1/sites/[*:url]', 'ApiController#get_site');
     	self::$router->map( 'PUT', '/api/v1/sites/[*:url]', 'ApiController#set_site');
+
+    	//- Microsites
+    	self::$router->map( 'GET', '/[*:url]', 'BrokerController#show', 'broker_show');
 	}
 
 	/**

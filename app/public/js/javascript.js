@@ -415,7 +415,7 @@ $(document).on('ready', function(){
         });
     }
     var loadTheSite = function(){
-        var thesite = window.location.href.split( 'site=' );
+        var thesite = window.location.href.split( host_url );
         $.get(host_url + "api/v1/sites/"+thesite[1], function(response){
             var site = response.data;
             $('.head_micrositio h1').text(site.title);
