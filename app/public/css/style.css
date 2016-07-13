@@ -1580,11 +1580,13 @@ h2.zero,p.zero {
     font-size: 17px;
     color: #41546e;
     font-weight: 600;
-    margin-bottom: 0;
+    margin-bottom: 20px;
     padding-bottom: 0;
 }
-.container_blog .itemBlog div a{
+.container_blog .itemBlog div .vnota{
     padding: 10px;
+    color: #41546e;
+    font-style: italic;
 }
 .container_blog .itemBlog div .date{
     color: #4fa753;
@@ -2271,6 +2273,9 @@ h2.zero,p.zero {
     }
     .social {
         height: auto;
+    }
+    .container_blog .itemBlog {
+        width: 100%;
     }
 }
 @media screen and (max-width: 420px){
