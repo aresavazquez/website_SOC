@@ -383,6 +383,12 @@ a,a:visited{
     width: 200px;
     position: relative;
 }
+.sub-menu a .soc-premia{
+    background: url(../img/body/1socPremia.png)no-repeat center;
+    height: 90px;
+    width: 200px;
+    position: relative;
+}
 .sub-menu a p{
     text-align: center;
     color: #9cc2f7;
@@ -428,7 +434,7 @@ a,a:visited{
     width: 50%;
     height: 100%;
     position: relative;
-    padding: 30px;
+    padding: 70px;
 }
 .info .asesoria .textoAsesoria div{
     font-size: 20px;
@@ -1543,28 +1549,33 @@ h2.zero,p.zero {
     padding-top: 18px;
 }
 .container_blog{
-    background: url(../img/head/back3.jpg)no-repeat center fixed;
+    background: url(../img/body/back-white.jpg)no-repeat center fixed;
     background-size: cover;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
     padding: 40px 0 150px;
     position: relative;
 }
-.container_blog div{
+.container_blog .itemBlog{
+    width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.container_blog .itemBlog div{
     background: #fff;
     border-radius: 10px;
-    margin: 5px;
+    margin: 20px;
     width: 300px;
     overflow: hidden;
 }
-.container_blog div img{
+.container_blog .itemBlog div img{
     width: 100%;
+    padding-bottom: 0;
 }
-.container_blog div p{
+.container_blog .itemBlog div p{
     padding: 10px;
 }
-.container_blog div h1{
+.container_blog .itemBlog div h1{
     padding: 10px;
     font-size: 17px;
     color: #41546e;
@@ -1572,10 +1583,10 @@ h2.zero,p.zero {
     margin-bottom: 0;
     padding-bottom: 0;
 }
-.container_blog div a{
+.container_blog .itemBlog div a{
     padding: 10px;
 }
-.container_blog div .date{
+.container_blog .itemBlog div .date{
     color: #4fa753;
     font-size: 10px;
     padding-bottom: 0;
@@ -2213,4 +2224,135 @@ h2.zero,p.zero {
     display: none;
     position: inherit !important;
 }
+@media screen and (max-width: 768px){
+    .sub-menu{
+        justify-content: space-between;
+        align-items: center;
+        overflow-x: scroll;
+    }
+    .carousel .item p {
+        font-size: 40px;
+        z-index: 1;
+    }
+    .simular {
+        left: 85px;
+    }
+    .carousel .item img{
+        padding-right: 40px;
+        right: 17px;
+        position: absolute;
+    }
+    .container_menu ul {
+        justify-content: flex-end;
+    }
+    .simulador .form form {
+        text-align: center;
+    }
+    .simulador {
+        height: 1200px;
+    }   
+    .info {
+        height: 100%;
+    }
+    .info div h1{
+        font-size: 27px;
+    }
+    .simulador .box {
+        width: 90%;
+    }
+    .simulador .form {
+        width: 100%;
+    }
+    .carousel .carousel-inner {
+        width: 100%;
+    }
+    .comments .contenido-comments.iphone .cel{
+        display: none;
+    }
+    .social {
+        height: auto;
+    }
+}
+@media screen and (max-width: 420px){
+    .simular{
+        display: none;
+    }
+    .carousel{
+        height: 80%;
+    }
+    .carousel .item img{
+        left: 0;
+        right: 0;
+        margin: auto;
+        top: 70px;
+        padding: 0;
+        width: 240px;
+    }
+    .carousel .item p{
+        font-size: 22px;
+        text-align: center;
+        position: absolute;
+        top: 0px;
+    }
+    .carousel .item p span {
+        font-size: 16px;
+    }
+    .info .asesoria .textoAsesoria {
+        padding: 9px;
+        width: 100%;
+        height: 100%;
+    }
+    .info{
+        height: auto;
+    }
+    .simulador {
+        padding: 15px;
+    }
+    .simulador .texto {
+        font-size: 15px;
+    }
+    .simulador .form form input {
+        width: 265px;
+    }
+    .simulador .form form {
+        text-align: -webkit-auto;
+    }
+    .comments .contenido-comments .content ul {
+        width: 98%;
+    }
+    .comments .contenido-comments .content ul li img{
+        width: 75px;
+    }
+    .comments .contenido-comments .content .comentarios{
+        width: 88%;
+    }
+    .comments .contenido-comments .content ul li {
+        padding: 5px;
+    }
+    .comments .contenido-comments .content .comentarios p {
+        text-align: -webkit-center;
+        font-size: 16px;
+    }
+    .blog div{
+        width: 90%;
+    }
+    .head_contacto div{
+        width: 90%;
+    }
+    .tips div{
+        width: 90%;
+    }
+    .directorios div{
+        width: 90%;
+    }
+    .hipoteca div{
+        width: 90%;
+    }
+    .empresas div{
+        width: 90%;
+    }
+}
+
+
+
 
