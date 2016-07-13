@@ -295,10 +295,13 @@ $(document).on('ready', function(){
                 console.log(site);
                 $('.update-site #e_siteName').val(site.title);
                 $('.update-site #e_siteUrl').val(site.url);
-                $('.update-site #siteState').val(site.state_id);
                 $('.update-site #e_siteContent').val(site.content);
+                $('.update-site #e_siteState').val(site.state_id);
+                $('.update-site #e_siteCity').val(site.city);
+                $('.update-site #e_siteSettlement').val(site.settlement);
                 $('.update-site #e_siteAddress').val(site.address);
-                $('.update-site #e_siteTelephone').val(site.contact);
+                $('.update-site #e_siteMails').val(site.emails);
+                $('.update-site #e_siteTelephone').val(site.phones);
             });
         });
     }
@@ -324,10 +327,33 @@ $(document).on('ready', function(){
             var esiteName = $('.update-site #e_siteName').val();
             var esiteUrl = $('.update-site #e_siteUrl').val();
             var esiteContent = $('.update-site #e_siteContent').val();
+            var esiteState = $('.update-site #e_siteState').val();
+            var esiteCity = $('.update-site #e_siteCity').val();
+            var esiteSettlement = $('.update-site #e_siteSettlement').val();
             var esiteAddress = $('.update-site #e_siteAddress').val();
-            var esiteTelephone = $('.update-site #e_siteTelephone').val();
+            var esiteMails = $('.update-site #e_siteMails').val();
+            var esitePhones = $('.update-site #e_siteTelephone').val();
 
-            var settings = {
+            $('.close').trigger( "click" );
+            $.put(host_url + 'api/v1/sites/'+esiteUrl, 
+                {title: esiteName,
+                content: esiteContent,
+                state: esiteState,
+                city: esiteCity,
+                settlement: esiteSettlement,
+                address: esiteAddress,
+                emails: esiteMails,
+                phones: esitePhones
+                }, function(response){
+                    if(response.status == 200){
+                        $('.responses').text('El sitio se ha actualizado correctamente');
+                        $('.responses').show();
+                    }else if(response.status == 500) {
+                        $('.responses').text(response.errors);
+                        $('.responses').show();
+                    }
+                })
+            /*var settings = {
                 "async": true,
                 "crossDomain": true,
                 "url": host_url + "api/v1/sites/"+esiteUrl+"?title="+esiteName+"&content="+esiteContent+"&address="+esiteAddress+"&contact="+esiteTelephone,
@@ -342,7 +368,7 @@ $(document).on('ready', function(){
                     $('.responses').text(response.errors);
                     $('.responses').show();
                 }
-            });
+            });*/
         });
     }
     var adminUsersListeners = function(){
@@ -477,8 +503,8 @@ $(document).on('ready', function(){
                 var brokers = response.data;
                 $('.contenido').empty();
                 $.each(brokers, function(index, value){
-                    var phones = value.phones.split('|');
-                    var emails = value.emails.split('|');
+                    var phones = value.phones.split(',');
+                    var emails = value.emails.split(',');
                     var brokerDiv = $('<div>', {class: 'broker'});
                     
                     brokerDiv.append($('<h1>', {text: value.title}));

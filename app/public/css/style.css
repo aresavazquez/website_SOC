@@ -1983,6 +1983,9 @@ h2.zero,p.zero {
     display: block;
     margin-top: 49px;
 }
+.container_directorio .directorio-estado{
+    width: 100%;
+}
 /*------------------ directorio estado*/
 .directorio-estado .contenido{
     display: none;
