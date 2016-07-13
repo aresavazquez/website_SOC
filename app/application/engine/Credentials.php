@@ -230,8 +230,8 @@ class Credentials{
         // It's important to regenerate session on sensitive actions,
         // and to avoid fixated session.
         // e.g. when a user logs in
-        session_regenerate_id(true);
-        $_SESSION = array();
+        //session_regenerate_id(true);
+        //$_SESSION = array();
 
         Session::set('user_id', $user_id);
         Session::set('user_name', $user_name);
@@ -247,13 +247,13 @@ class Credentials{
         Session::set('user_logged_in', true);
 
         // update session id in database
-        Session::updateSessionId($user_id, session_id());
+        //Session::updateSessionId($user_id, session_id());
 
         // set session cookie setting manually,
         // Why? because you need to explicitly set session expiry, path, domain, secure, and HTTP.
         // @see https://www.owasp.org/index.php/PHP_Security_Cheat_Sheet#Cookies
-        setcookie(session_name(), session_id(), time() + Config::get('SESSION_RUNTIME'), Config::get('COOKIE_PATH'),
-            Config::get('COOKIE_DOMAIN'), Config::get('COOKIE_SECURE'), Config::get('COOKIE_HTTP'));
+        //setcookie(session_name(), session_id(), time() + Config::get('SESSION_RUNTIME'), Config::get('COOKIE_PATH'),
+        //    Config::get('COOKIE_DOMAIN'), Config::get('COOKIE_SECURE'), Config::get('COOKIE_HTTP'));
 
     }
 

@@ -2,9 +2,11 @@
 <div class="container_menu">
     <a href="{{ links.p_home }}"><img src="{{ base_path }}img/head/logo2.png"></a>
     <ul>
+    	{% if is_admin == true %}
         <li><a href="{{ links.admin_users }}">Usuarios</a></li>
         <li><a href="{{ links.admin_sites }}">Micrositios</a></li>
-        <li><a href="{{ links.logout }}" class="close-sesion">Cerrar Sesión</a></li>
+        {% endif %}
+        <li><a href="{{ links.p_logout }}" class="close-sesion">Cerrar Sesión</a></li>
     </ul>
 </div>
 {% endif %}

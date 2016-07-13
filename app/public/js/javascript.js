@@ -12,8 +12,6 @@ function showModal(modalName){
 }
 
 $(document).on('ready', function(){
-    //entrada iconos submenú
-    TweenLite.to('.iconSubMenu', 2, { opacity: 1, display: 'block', ease: Power2.easeOut, y: -300});
     $.put = function(url, data, callback, type){
         if ( $.isFunction(data) ){
             type = type || callback,
@@ -42,16 +40,21 @@ $(document).on('ready', function(){
             contentType: type
         });
     }
-    //imagenes home
-    var section = $('.sub-menu' ).offset().top;
-    $(window).scroll(function(){
-        var scroll = $(window).scrollTop();
-        if(scroll > 550){
-            TweenLite.to('.backDiv1', 1.5, { opacity: 1});
-            TweenLite.to('.backDiv', .5, { opacity: 1, delay: .5});
-        };
-    });
+    
     var animateHomeIntro = function(){
+        //entrada iconos submenú
+        TweenLite.to('.iconSubMenu', 2, { opacity: 1, display: 'block', ease: Power2.easeOut, y: -300});
+
+        //imagenes home
+        var section = $('.sub-menu' ).offset().top;
+        $(window).scroll(function(){
+            var scroll = $(window).scrollTop();
+            if(scroll > 550){
+                TweenLite.to('.backDiv1', 1.5, { opacity: 1});
+                TweenLite.to('.backDiv', .5, { opacity: 1, delay: .5});
+            };
+        });
+        
         //TweenLite.to('.welcome', 1.5, {opacity: 1, display: "block", ease: Power2.easeOut, y: 150});
         var tl = new TimelineLite({onComplete: function(){ this.restart(); }});
         //imagen 1
@@ -109,6 +112,7 @@ $(document).on('ready', function(){
     //        };
     //    });
     //}
+
     var menuBehaviors = function(){
         $('.menu').on('click', function (e){
             e.preventDefault ();
@@ -459,18 +463,61 @@ $(document).on('ready', function(){
     		});
     	});
     }
+    var findBroker = function(){
+        $('#ddlEstados').on('change', function(){
+            var state_id = $(this).val();
+            $.post(host_url + "api/v1/brokers", {state: state_id}, function(response){
+                if(response.status == 500){
+                    $('.responses').text(response.errors[0]);
+                    TweenLite.set('.contenido', {display: 'none'});
+                    TweenLite.set('.responses', {display: 'block', opacity: 0});
+                    TweenLite.to('.responses', 0.3, {opacity: 1});
+                    return;
+                }
+                var brokers = response.data;
+                $('.contenido').empty();
+                $.each(brokers, function(index, value){
+                    var phones = value.phones.split('|');
+                    var emails = value.emails.split('|');
+                    var brokerDiv = $('<div>', {class: 'broker'});
+                    
+                    brokerDiv.append($('<h1>', {text: value.title}));
+                    brokerDiv.append($('<a>', {text: 'Micrositio', href: host_url + value.url}));
+                    brokerDiv.append($('<p>', {text: value.city}));
+                    brokerDiv.append($('<p>', {text: value.settlement}));
+                    
+                    for (var i = value.phones.length - 1; i >= 0; i--) {
+                        brokerDiv.append($('<a>', {text: phones[i], href: 'tel:'+phones[i]}));
+                    }
+                    
+                    for (var i = value.emails.length - 1; i >= 0; i--) {
+                        brokerDiv.append($('<a>', {text: emails[i], href: 'mailto:'+emails[i]}));
+                    }
+                    
+                    brokerDiv.append($('<address>', {text: value.address}));
+                    brokerDiv.append($('<a>', {text: 'Ver mapa', href: value.coordinates}));
+                    
+                    brokerDiv.appendTo('.contenido');
+                });
+                TweenLite.set('.contenido', {display: 'flex'});
+                TweenLite.set('.responses', {display: 'none'});
+                TweenMax.staggerFrom('.broker', 0.3, {alpha: 0, y: -10, delay: .1}, .2);
+            });
+        });
+    }
     var site = {
-        "home": function(){
-            animateHomeIntro();
-            animateHomeSlider();
-            animateHomePhones();
-            menuBehaviors();
-        },
         "p-home": function(){
             simulador();
+            animateHomeIntro();
+            //animateHomeSlider();
+            //animateHomePhones();
+            menuBehaviors();
         },
         "p-detalle": function(){
           loadTheSite();
+        },
+        "p-offices": function(){
+            findBroker();
         },
         "asesores": function(){
             loginForm();

@@ -74,5 +74,6 @@ return array(
 	"FEEDBACK_COOKIE_INVALID" => "Your remember-me-cookie is invalid.",
 	"FEEDBACK_COOKIE_LOGIN_SUCCESSFUL" => "You were successfully logged in via the remember-me-cookie.",
 	"FEEDBACK_USER_HAS_SITE" => "El usuario ya tiene un sitio registrado.",
-	"FEEDBACK_SITE_CREATION_FAILED" => "Ha fallado la creación del sitio, inténtalo nuevamente."
+	"FEEDBACK_SITE_CREATION_FAILED" => "Ha fallado la creación del sitio, inténtalo nuevamente.",
+	"BROKERS_NOT_FOUND" => "No se han encontrado brokers que pertenezcan a este estado."
 );

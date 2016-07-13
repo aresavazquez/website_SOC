@@ -30,7 +30,8 @@ class View
             $scope_data,
             array(
                 'links'=>$links,
-                'base_path'=>Config::get('URL')
+                'base_path'=>Config::get('URL'),
+                'logged_in'=>Session::userIsLoggedIn()
             )
         );
         echo $this->twig->render($filename, $data);

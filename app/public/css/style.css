@@ -1985,7 +1985,7 @@ h2.zero,p.zero {
 }
 /*------------------ directorio estado*/
 .directorio-estado .contenido{
-    display: flex;
+    display: none;
     width: 100%;
     justify-content: center;
     flex-wrap: wrap;
@@ -2000,6 +2000,10 @@ h2.zero,p.zero {
 }
 .directorio-estado .contenido div h1{
     font-size: 21px;
+}
+.directorio-estado .contenido a{
+    color: #428bca;
+    display: block;
 }
 /*-----------------------------inmobiliarias*/
 .inmobiliaria{
@@ -2224,7 +2228,6 @@ h2.zero,p.zero {
     background: #4fa753;
     border: 2px solid rgba(255,255,255,0.3);
     display: none;
-    position: inherit !important;
 }
 @media screen and (max-width: 768px){
     .sub-menu{

@@ -12,9 +12,6 @@ class IndexController extends Controller
   public function home(){
     $this->View->render('site/index.html');
   }
-  public function detalle(){
-      $this->View->render('site/detalle.html');
-  }
   public function soc(){
     $this->View->render('site/soc.html');
   }

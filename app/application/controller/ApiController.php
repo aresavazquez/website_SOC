@@ -53,6 +53,23 @@ class ApiController extends Controller{
       }
     }
 
+    public function brokers(){
+         Session::set('feedback_negative', array());
+         $brokers = (array) Site::getInstance()->byState(Request::post('state'));
+         if(count($brokers) > 0){
+            foreach ($brokers as $key => $broker) {
+                $broker->title = utf8_encode($broker->title);
+                $broker->content = utf8_encode($broker->content);
+                $broker->address = utf8_encode($broker->address);
+            }
+            $this->View->renderJSON($this->success_code($brokers));
+        }else{
+            Session::add('feedback_negative', Text::get('BROKERS_NOT_FOUND'));
+            $this->View->renderJSON($this->error_code(Session::get('feedback_negative'), array()));
+        }
+         
+    }
+
     public function users(){
         Session::set('feedback_negative', array());
         //if(!Auth::checkAdminAuthentication()){
@@ -60,7 +77,7 @@ class ApiController extends Controller{
         //}
         $users = (array) User::getInstance()->all();
         foreach ($users as $key => $user) {
-            $users[$key] = (array) $user;
+            $user->name = utf8_encode($user->name);
         }
         $this->View->renderJSON($this->success_code($users));
     }

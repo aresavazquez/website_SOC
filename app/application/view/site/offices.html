@@ -21,6 +21,7 @@
                     <h3>Encuentra un asesor</h3>
                     <div class="form-group">
                         <label for="nombre">Selecciona tu estado</label>
+                        <div class="responses"></div>
                         <select name="ddlEstados" id="ddlEstados" class="selectpicker">
                             <option selected="selected" value="0">SELECCIONE UN ESTADO</option>
                             {% for item in states %}
@@ -30,6 +31,9 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="directorio-estado">
+            <div class="contenido"></div>
         </div>
     </div>
 </div>

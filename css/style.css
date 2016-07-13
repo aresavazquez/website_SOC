@@ -1809,6 +1809,10 @@ h2.zero,p.zero {
     font-size: 21px;
     padding-top: 15px;
 }
+.directorio-estado .contenido a{
+    color: #428bca;
+    display: block;
+}
 /*-----------------------------inmobiliarias*/
 .inmobiliaria{
     background: url(../img/body/inmobiliarias.jpg)no-repeat center;
