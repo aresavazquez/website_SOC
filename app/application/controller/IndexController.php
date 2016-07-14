@@ -58,20 +58,31 @@ class IndexController extends Controller
     Redirect::to('contacto');
   }
   public function simulator(){
-    $amount = 1000000;
-    //$afirme =   $this->fixed20($amount, 0.8, 9.9858, 10.55, 12.25, 0.8, 0.06931, 0.98, 98, 199, 70.62, 2.5, true, 0.0035728, 0.0116, 0.06);
-    //$banamex =  $this->fixed20($amount, 0.6, 8.68, 8.5, 14.50, 0.5, 0.24, 0, 0, 0, 0, 2.61, false, 0.0003, 0.01, 0.06, 200000, 200000);
-    //$banorte = $this->fixed20($amount, 0.7, 8.73722, 8.48, 12.90, 0.52, 0.31931, 0, 0, 499, 0, 2, false, 0.0029, 0.01, 0.06, 360000, 180000);
-    //$hsbc = $this->fixed20($amount, 0.75, 8.647, 8.45, 9.70, 0.255, 0.228, 0, 0, 0, 0, 2.5, false, 'hsbc', 0, 0.06, 266600, 66650);
-    //$santander = $this->fixed20($amount, 0.9, 9.39, 9.6, 11.70, 31.54, 0.3376, 0, 0, 350, 56, 2.5, true, 0.00319, 0.01, 0.06, 0, 0, true);
-    //$scotiabank = $this->fixed20($amount, 0.65, 8.64, 10, 11.60, 0.5, 0.3016, 0, 0, 0, 0, 2.5703573901, false, 'scotiabank', 0, 0.06, 300000, 225000);
+    $amount = Request::get('valor') ? Request::get('valor') : 1000000;
+    if(Request::get('tipo') == 'fija'){
+      if(Request::get('anios') == 15){
+        $afirme =   $this->fixed15($amount, 0.6999, 10.53, 9.8, 10.6, 0.8, 0.06931, 0.98, 98, 199, 70.17, 2.5, true, 0.003596, 0.01, 0.06);
+        $banamex =  $this->fixed15($amount, 0.6, 9.85, 8.5, 11, 0.5, 0.24, 0, 0, 0, 0, 2.5, false, 0.003, 0.01, 0.06, 200000, 200000);
+        $banorte = $this->fixed15($amount, 0.7, 9.9, 8.74, 11.60, 0.52, 0.31931, 0, 0, 499, 0, 2, false, 0.00348, 0.01, 0.06, 360000, 540000);
+        $hsbc = $this->fixed15($amount, 0.75, 9.818, 10.10, 11.70, 0.255, 0.228, 0, 0, 0, 0, 2, true, 'hsbc', 0, 0.06, 266600, 66650);
+        $santander = $this->fixed15($amount, 0.9, 10.5, 9.6, 11.80, 31.54, 0.3376, 0, 0, 406, 0, 2.5, true, 0.00275, 0.01, 0.06, 0, 0, true);
+        $scotiabank = $this->fixed15($amount, 0.65, 9.75, 8.2, 11.60, 0.5, 0.3016, 0, 0, 0, 0, 2.6, false, 'scotiabank', 0, 0.06, 350000);
+      }else{
+        $afirme =   $this->fixed20($amount, 0.8, 9.9858, 10.55, 12.25, 0.8, 0.06931, 0.98, 98, 199, 70.62, 2.5, true, 0.0035728, 0.0116, 0.06);
+        $banamex =  $this->fixed20($amount, 0.6, 8.68, 8.5, 14.50, 0.5, 0.24, 0, 0, 0, 0, 2.61, false, 0.0003, 0.01, 0.06, 200000, 200000);
+        $banorte = $this->fixed20($amount, 0.7, 8.73722, 8.48, 12.90, 0.52, 0.31931, 0, 0, 499, 0, 2, false, 0.0029, 0.01, 0.06, 360000, 180000);
+        $hsbc = $this->fixed20($amount, 0.75, 8.647, 8.45, 9.70, 0.255, 0.228, 0, 0, 0, 0, 2.5, false, 'hsbc', 0, 0.06, 266600, 66650);
+        $santander = $this->fixed20($amount, 0.9, 9.39, 9.6, 11.70, 31.54, 0.3376, 0, 0, 406, 0, 2.5, true, 0.00319, 0.01, 0.06, 0, 0, true);
+        $scotiabank = $this->fixed20($amount, 0.65, 8.64, 10, 11.60, 0.5, 0.3016, 0, 0, 0, 0, 2.5703573901, false, 'scotiabank', 0, 0.06, 300000, 225000);
+      }
+    }else{
+      if(Request::get('anios') == 15){
+      }else{
 
-    $afirme =   $this->fixed15($amount, 0.6999, 10.53, 9.8, 10.6, 0.8, 0.06931, 0.98, 98, 199, 70.17, 2.5, true, 0.003596, 0.01, 0.06);
-    $banamex =  $this->fixed15($amount, 0.6, 9.85, 8.5, 11, 0.5, 0.24, 0, 0, 0, 0, 2.5, false, 0.0003, 0.01, 0.06, 200000, 200000);
-    $banorte = $this->fixed15($amount, 0.7, 9.9, 8.74, 11.60, 0.52, 0.31931, 0, 0, 499, 0, 2, false, 0.0029, 0.01, 0.06, 360000, 540000);
-    $hsbc = $this->fixed15($amount, 0.75, 8.647, 8.45, 9.70, 0.255, 0.228, 0, 0, 0, 0, 2.5, false, 'hsbc', 0, 0.06, 266600, 66650);
-    $santander = $this->fixed15($amount, 0.9, 9.39, 9.6, 11.70, 31.54, 0.3376, 0, 0, 350, 56, 2.5, true, 0.00319, 0.01, 0.06, 0, 0, true);
-    $scotiabank = $this->fixed15($amount, 0.65, 8.64, 10, 11.60, 0.5, 0.3016, 0, 0, 0, 0, 2.5703573901, false, 'scotiabank', 0, 0.06, 300000, 225000);
+      }
+    }
+
+    
     $banks = array(
       'afirme' => $afirme,
       'banamex' => $banamex,
@@ -140,24 +151,27 @@ class IndexController extends Controller
       default:
       $avaluo = $factor_avaluo * $valor;
     }
-    
-    $apertura = $monto * $factor_apertura;
+    if($prima_unica){
+      $apertura = $prima_unica * $factor_apertura;
+    }else{
+      $apertura = $monto * $factor_apertura;  
+    }
     $gastos_notario = $valor * $factor_gastos_notario;
     $total = $enganche + $avaluo + $apertura + $gastos_notario;
     return array(
-      'comision' => $comision,
-      'mensualidad' => $mensualidad,
-      'monto' => $monto, 
-      'prima_unica' => $prima_unica,
-      'tasa_interes' => $interes, 
-      'ingreso_requerido' => $ingreso,
-      'cat' => $cat,
-      'enganche' => $enganche,
-      'enganche_adicional' => $enganche_adicional,
-      'avaluo' => $avaluo,
-      'comision_apertura' => $apertura,
-      'gastos_notario' => $gastos_notario,
-      'total' => $total
+      'comision' => $comision > 0 ? '$'.number_format($comision, 2) : 'N/A',
+      'mensualidad' => '$'.number_format($mensualidad, 2),
+      'monto' => '$'.number_format($monto, 2), 
+      'prima_unica' => $prima_unica ? '$'.number_format($prima_unica, 2) : 'N/A',
+      'tasa_interes' => number_format($interes, 2).'%', 
+      'ingreso_requerido' => '$'.number_format($ingreso, 2),
+      'cat' => number_format($cat, 2).'%',
+      'enganche' => '$'.number_format($enganche, 2),
+      'enganche_adicional' => '$'.number_format($enganche_adicional, 2),
+      'avaluo' => '$'.number_format($avaluo, 2),
+      'comision_apertura' => '$'.number_format($apertura, 2),
+      'gastos_notario' => '$'.number_format($gastos_notario, 2),
+      'total' => '$'.number_format($total, 2)
     );
   }
 
@@ -223,19 +237,19 @@ class IndexController extends Controller
     $gastos_notario = $valor * $factor_gastos_notario;
     $total = $enganche + $avaluo + $apertura + $gastos_notario;
     return array(
-      'comision' => $comision,
-      'mensualidad' => $mensualidad,
-      'monto' => $monto, 
-      'prima_unica' => $prima_unica,
-      'tasa_interes' => $interes, 
-      'ingreso_requerido' => $ingreso,
-      'cat' => $cat,
-      'enganche' => $enganche,
-      'enganche_adicional' => $enganche_adicional,
-      'avaluo' => $avaluo,
-      'comision_apertura' => $apertura,
-      'gastos_notario' => $gastos_notario,
-      'total' => $total
+      'comision' => $comision > 0 ? '$'.number_format($comision, 2) : 'N/A',
+      'mensualidad' => '$'.number_format($mensualidad, 2),
+      'monto' => '$'.number_format($monto, 2), 
+      'prima_unica' => $prima_unica ? '$'.number_format($prima_unica, 2) : 'N/A',
+      'tasa_interes' => number_format($interes, 2).'%', 
+      'ingreso_requerido' => '$'.number_format($ingreso, 2),
+      'cat' => number_format($cat, 2).'%',
+      'enganche' => '$'.number_format($enganche, 2),
+      'enganche_adicional' => '$'.number_format($enganche_adicional, 2),
+      'avaluo' => '$'.number_format($avaluo, 2),
+      'comision_apertura' => '$'.number_format($apertura, 2),
+      'gastos_notario' => '$'.number_format($gastos_notario, 2),
+      'total' => '$'.number_format($total, 2)
     );
   }
 
