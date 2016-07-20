@@ -587,6 +587,7 @@ $(document).on('ready', function(){
         },
         "admin-blog":function(){
             postsList();
+            adminSitesListeners();
         }
     }
 

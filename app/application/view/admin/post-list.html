@@ -11,7 +11,7 @@
 			<div class="responses">
 
 			</div>
-			<input type="search" placeholder="buscar" class="search">
+			<!--input type="search" placeholder="buscar" class="search"-->
 			<a href="" class="plusUser">+ Agregar artículo</a>
 			<table id="postList">
 				<thead>
@@ -26,30 +26,16 @@
 		</div>
 	</div>
 	<div class="agregarUsuario">
-		<form class="datosUsuario microsite" id="newSiteForm">
+		<form class="datosUsuario microsite" id="newPostForm">
 			<a href=""><img src="{{ base_path }}img/body/close.png" class="close"></a>
-			<label>Usuario</label>
-      		<select id="userID" placeholder="Selecciona un Usuario" class="edit_input">
-			{% for key,value in users %}
-          		<option value="{{ value.id }}">{{ value.name }}</option>
-      		{% endfor %}
-			</select>
-			<input id="siteName" type="text" placeholder="Nombre del sitio" class="edit_input">
-			<label>URl para el sitio</label>
-			<input id="siteUrl" type="text" placeholder="Nombre del sitio" class="edit_input">
-			<label>Descripción</label>
-			<textarea id="siteContent" placeholder="Descripción" class=""></textarea>
-			<label>Localidad</label>
-			<select id="siteState" placeholder="Selecciona un Estado" class="edit_input">
-			{% for key,value in states %}
-          		<option value="{{ value.id }}">{{ value.name }}</option>
-      		{% endfor %}
-			</select>
-			<label>Dirección</label>
-			<input id="siteAddress" type="text" placeholder="Dirección" class="edit_input">
-			<label>Teléfono</label>
-			<input id="siteTelephone" type="tel" placeholder="Teléfono" class="edit_input">
-			<div class="user addSite">Crear Micrositio</div>
+      <label>Título del artículo</label>
+			<input id="postTitle" type="text" placeholder="Título del artículo" class="edit_input">
+      <label>Imagen del artículo</label>
+      <input type="file">
+			<label>Contenido del artículo</label>
+			<textarea id="postContent" placeholder="Descripción" class=""></textarea>
+      <div class="user addSite">Guardar como borrador</div>
+			<div class="user addSite">Publicar</div>
 		</form>
 	</div>
 	<div class="editarUsuario">
