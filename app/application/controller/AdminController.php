@@ -36,4 +36,7 @@ class AdminController extends Controller
         Session::destroy();
         Redirect::to('admin');
     }
+    public function blog(){
+        $this->View->render('admin/post-list.html',array('is_admin'=>true));      
+    }
 }

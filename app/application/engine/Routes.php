@@ -32,6 +32,7 @@ class Routes{
     	self::$router->map( 'GET', '/admin/users', 'AdminController#users', 'admin_users');
     	self::$router->map( 'GET', '/admin/sites', 'AdminController#sites', 'admin_sites');
     	self::$router->map( 'GET', '/logout', 'AdminController#logout', 'p_logout');
+			self::$router->map( 'GET', '/admin/blog', 'AdminController#blog', 'admin_blog');
 
     	//- API
     	self::$router->map( 'GET', '/api/v1', 'ApiController#index');
