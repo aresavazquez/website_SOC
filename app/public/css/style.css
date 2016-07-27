@@ -2246,12 +2246,16 @@ h2.zero,p.zero {
 }
 .broker-edit form input,
 .broker-edit form textarea,
-.broker-edit form label,
 .broker-edit form select{
     width: 80%;
     margin: 10px auto;
     display: block;
     padding:10px;
+}
+.broker-edit form label{
+    width: 80%;
+    margin: 10px auto;
+    display: block;
 }
 .broker-edit form textarea{
     height: 250px;

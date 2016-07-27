@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="afb39ced-c756-4c0d-848f-1b757576ff50" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/view/broker/edit.html" afterPath="$PROJECT_DIR$/application/view/broker/edit.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/style.css" afterPath="$PROJECT_DIR$/public/css/style.css" />
     </list>
     <ignored path="app.iws" />
@@ -65,7 +64,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edit.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="edit.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/view/broker/edit.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="360">
@@ -85,11 +84,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="557">
-              <caret line="2260" column="19" selection-start-line="2260" selection-start-column="19" selection-end-line="2260" selection-end-column="19" />
+            <state relative-caret-position="482">
+              <caret line="2257" column="19" selection-start-line="2257" selection-start-column="19" selection-end-line="2257" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -115,8 +114,8 @@
       <list>
         <option value="$PROJECT_DIR$/application/controller/IndexController.php" />
         <option value="$PROJECT_DIR$/application/view/components/head.html" />
-        <option value="$PROJECT_DIR$/public/css/style.css" />
         <option value="$PROJECT_DIR$/application/view/broker/edit.html" />
+        <option value="$PROJECT_DIR$/public/css/style.css" />
       </list>
     </option>
   </component>
@@ -354,12 +353,12 @@
       <workItem from="1469127916146" duration="497000" />
       <workItem from="1469130040124" duration="290000" />
       <workItem from="1469131292456" duration="329000" />
-      <workItem from="1469570724298" duration="2716000" />
+      <workItem from="1469570724298" duration="2875000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3832000" />
+    <option name="totallyTimeSpent" value="3991000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="740" extended-state="0" />
@@ -456,14 +455,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="557">
-          <caret line="2260" column="19" selection-start-line="2260" selection-start-column="19" selection-end-line="2260" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/view/components/head.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6">
@@ -476,6 +467,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="24" column="54" selection-start-line="24" selection-start-column="54" selection-end-line="24" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="482">
+          <caret line="2257" column="19" selection-start-line="2257" selection-start-column="19" selection-end-line="2257" selection-end-column="19" />
           <folding />
         </state>
       </provider>
