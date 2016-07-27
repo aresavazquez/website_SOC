@@ -5,56 +5,24 @@
 {% endblock %}
 {% block content %}
 	{{ parent() }}
-	<div class="page microsite content-usuario">
-		<form class="datosUsuario microsite">
-		<a href=""><img src="./img/body/close.png" class="close"></a>
-			<label>Encabezado</label>
-			<input type="text" placeholder="Nombre del sitio" class="edit_input">
-			<label>Imágenes Slider</label>
-			<div class="img_slider"></div>
-			<input type="text" placeholder="1er título" class="edit_input">
-			<textarea placeholder="Descripción" class="edit_input"></textarea>
-			<label>Imágenes</label>
-			<ul>
-				<li>
-					<input type="radio">
-					<img src="./img/micrositios/img1.jpg">
-				</li>
-				<li>
-					<input type="radio">
-					<img src="./img/micrositios/img2.jpg">
-				</li>
-				<li>
-					<input type="radio">
-					<img src="./img/micrositios/img3.jpg">
-				</li>
-			</ul>
-			<p>Las fotos deben ser en formato JPG o PNG. Tamaño 320 x 165px</p>
-			<br>
-			<div class="edit_photo">
-				<label class="foto">Foto 1</label>
-				<input type="file">
-				<textarea placeholder="Descripción foto 1"></textarea>
-				<label class="foto">Foto 2</label>
-				<input type="file">
-				<textarea placeholder="Descripción foto 2"></textarea>
-				<label class="foto">Foto 3</label>
-				<input type="file">
-				<textarea placeholder="Descripción foto 3"></textarea>
-			</div>
-			<br>
-			<label>Scción Simulador</label>
-			<input type="text" placeholder="2do título" class="edit_input">
-			<textarea placeholder="Descripción" class="edit_input"></textarea>
-			<input type="text" placeholder="Ingresa tu widget" class="edit_input">
-			<label>Ingresa las coordenadas de tu ubicación</label>
-			<input type="text" placeholder="Coordenadas Del Mapa" class="edit_input">
+	<div class="page microsite content-usuario broker-edit">
+		<form class="datosUsuario microsite" id="newSiteForm">
+			<input id="siteName" type="text" placeholder="Nombre del sitio" class="edit_input">
+			<label>URl para el sitio</label>
+			<input id="siteUrl" type="text" placeholder="URL del sitio" class="edit_input">
+			<label>Descripción</label>
+			<textarea id="siteContent" placeholder="Descripción" class=""></textarea>
 			<label>Localidad</label>
-			<input type="text" placeholder="Localidad" class="edit_input">
-			<input type="number" placeholder="Teléfono" class="edit_input">
-			<input type="text" placeholder="Dirección" class="edit_input">
-			<button>Guardar</button>
-			<button class="borrar">Borrar</button>
+			<select id="siteState" placeholder="Selecciona un Estado" class="edit_input">
+				{% for key,value in states %}
+				<option value="{{ value.id }}">{{ value.name }}</option>
+				{% endfor %}
+			</select>
+			<label>Dirección</label>
+			<input id="siteAddress" type="text" placeholder="Dirección" class="edit_input">
+			<label>Teléfono</label>
+			<input id="siteTelephone" type="tel" placeholder="Teléfono" class="edit_input">
+			<div class="user addSite">Guardar Cambios</div>
 		</form>
 	</div>
 {% endblock %}

@@ -706,8 +706,8 @@ a,a:visited{
 button, .login__button, form .user, form .send{
     background: #4fa753;
     border: none;
-    width: 300px;
-    padding: 10px;
+    width: 300px !important;
+    padding: 10px !important;
     color: #fff;
     font-weight: 100;
     margin: 10px;
@@ -2231,6 +2231,34 @@ h2.zero,p.zero {
     background: #4fa753;
     border: 2px solid rgba(255,255,255,0.3);
     display: none;
+}
+/*Brocker Edit View*/
+.broker-edit{
+    background-size: cover;
+    padding-top: 80px;
+}
+.broker-edit form{
+    width: 100%;
+    max-width: 960px;
+    margin: 10px auto;
+    background: #fff;
+    padding: 10px;
+}
+.broker-edit form input,
+.broker-edit form textarea,
+.broker-edit form label,
+.broker-edit form select{
+    width: 80%;
+    margin: 10px auto;
+    display: block;
+    padding:10px;
+}
+.broker-edit form textarea{
+    height: 250px;
+}
+.broker-edit form .user{
+    margin:10px auto;
+    display: block;
 }
 @media screen and (max-width: 768px){
     .sub-menu{
