@@ -10,6 +10,7 @@ class BlogController extends Controller
     }
 
     public function index(){
-        $this->View->render('blog/index.html');
+    	$posts = Post::getInstance()->all();
+        $this->View->render('blog/index.html', array('posts'=>$posts));
     }
 }

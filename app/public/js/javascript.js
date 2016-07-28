@@ -40,7 +40,7 @@ $(document).on('ready', function(){
             contentType: type
         });
     }
-    
+
     var animateHomeIntro = function(){
         //entrada iconos submenú
         TweenLite.to('.iconSubMenu', 2, { opacity: 1, display: 'block', ease: Power2.easeOut, y: -300});
@@ -54,7 +54,7 @@ $(document).on('ready', function(){
                 TweenLite.to('.backDiv', .5, { opacity: 1, delay: .5});
             };
         });
-        
+
         //TweenLite.to('.welcome', 1.5, {opacity: 1, display: "block", ease: Power2.easeOut, y: 150});
         var tl = new TimelineLite({onComplete: function(){ this.restart(); }});
         //imagen 1
@@ -260,6 +260,25 @@ $(document).on('ready', function(){
             });
         });
     }
+    var postsList = function(){
+        var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": host_url + "api/v1/sites",
+            "method": "GET"
+        }
+        $.ajax(settings).done(function (response) {
+            var sites = response.data;
+            var html = '';
+            $.each(sites, function (index, value) {
+                html += '<tr>';
+                html += '<td class="viewsite" data-site="'+value.url+'">'+value.title+'</td>';
+                html += '<td class="editInput" data-site="'+value.url+'">editar</td>';
+                html += '</tr>';
+            });
+            $('#postList tbody').append(html);
+        });
+    }
     var sitesList = function(){
         var settings = {
             "async": true,
@@ -335,7 +354,7 @@ $(document).on('ready', function(){
             var esitePhones = $('.update-site #e_siteTelephone').val();
 
             $('.close').trigger( "click" );
-            $.put(host_url + 'api/v1/sites/'+esiteUrl, 
+            $.put(host_url + 'api/v1/sites/'+esiteUrl,
                 {title: esiteName,
                 content: esiteContent,
                 state: esiteState,
@@ -506,23 +525,23 @@ $(document).on('ready', function(){
                     var phones = value.phones.split(',');
                     var emails = value.emails.split(',');
                     var brokerDiv = $('<div>', {class: 'broker'});
-                    
+
                     brokerDiv.append($('<h1>', {text: value.title}));
                     brokerDiv.append($('<a>', {text: 'Micrositio', href: host_url + value.url}));
                     brokerDiv.append($('<p>', {text: value.city}));
                     brokerDiv.append($('<p>', {text: value.settlement}));
-                    
+
                     for (var i = value.phones.length - 1; i >= 0; i--) {
                         brokerDiv.append($('<a>', {text: phones[i], href: 'tel:'+phones[i]}));
                     }
-                    
+
                     for (var i = value.emails.length - 1; i >= 0; i--) {
                         brokerDiv.append($('<a>', {text: emails[i], href: 'mailto:'+emails[i]}));
                     }
-                    
+
                     brokerDiv.append($('<address>', {text: value.address}));
                     brokerDiv.append($('<a>', {text: 'Ver mapa', href: value.coordinates}));
-                    
+
                     brokerDiv.appendTo('.contenido');
                 });
                 TweenLite.set('.contenido', {display: 'flex'});
@@ -565,6 +584,10 @@ $(document).on('ready', function(){
             updateSiteinfo();
             viewSite();
             registerSite();
+        },
+        "admin-blog":function(){
+            postsList();
+            adminSitesListeners();
         }
     }
 
