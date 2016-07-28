@@ -13,4 +13,8 @@ class PasswordsController extends Controller
         $csrf_token = Csrf::makeToken();
         $this->View->render('password/index.html', array('csrf'=>$csrf_token));
     }
+
+    public function encode($params){
+        echo password_hash($params['password'], PASSWORD_DEFAULT);
+    }
 }

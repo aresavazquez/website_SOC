@@ -24,6 +24,11 @@ class Site {
         return $result->get();
     }
 
+    public static function byUser($id){
+        $result = self::$PDO->_where("*", "user_id=$id");
+        return $result->first();
+    }
+
     public static function byUrl($url) {
         $result = self::$PDO->_where("*", "url='$url'");
         return $result->first();

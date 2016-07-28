@@ -33,6 +33,7 @@ class Routes{
     	self::$router->map( 'GET', '/admin/sites', 'AdminController#sites', 'admin_sites');
     	self::$router->map( 'GET', '/admin/blog', 'AdminController#blog', 'admin_blog');
     	self::$router->map( 'GET', '/logout', 'AdminController#logout', 'p_logout');
+        self::$router->map( 'GET', '/password_encode/[*:password]', 'PasswordsController#encode');
 
     	//- API
     	self::$router->map( 'GET', '/api/v1', 'ApiController#index');

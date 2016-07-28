@@ -123,10 +123,30 @@ class Credentials{
     }
 
     /**
+     * Random Password Generator
+     */
+    private static function randomPassword( $length = 8 ) {
+        $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_-=+;:,.?";
+        $password = substr( str_shuffle( $chars ), 0, $length );
+        return $password;
+    }
+    /**
      * Reset User Password
      */
-     private static function passwordReset(){
+     public static function passwordReset($user_email){
+        $new_password = self::randomPassword();
+        $user_password_hash = password_hash($new_password, PASSWORD_DEFAULT);
+        
+        $user_data = User::getInstance()->getDataByEmail($user_email);
 
+        User::getInstance()->setData($user_data->id, array('password'=>$user_password_hash));
+
+        if (self::sendPasswordEmail($user_data->id, $user_email, $new_password)) {
+            //Session::add('feedback_positive', $new_password);
+            return true;
+        }else{
+            return false;
+        }
      }
 
     /**
@@ -263,7 +283,7 @@ class Credentials{
      * @param $user_name
      */
     public static function incrementFailedLoginCounterOfUser($user_name){
-        User::get_instance()->incrementFails($user_name);
+        User::getInstance()->incrementFails($user_name);
         //$database = DatabaseFactory::getFactory()->getConnection();
         //
         //$sql = "UPDATE users
@@ -530,6 +550,25 @@ class Credentials{
             return false;
         }
     }
+
+    public static function sendPasswordEmail($user_id, $user_email, $password)
+    {
+        $body = Config::get('EMAIL_PASSWORD_RESET_CONTENT') . $password;
+
+        $mail = new Mail;
+        $mail_sent = $mail->sendMail($user_email, Config::get('EMAIL_PASSWORD_RESET_FROM_EMAIL'),
+            Config::get('EMAIL_PASSWORD_RESET_FROM_NAME'), Config::get('EMAIL_PASSWORD_RESET_SUBJECT'), $body
+        );
+
+        if ($mail_sent) {
+            Session::add('feedback_positive', Text::get('FEEDBACK_PASSWORD_RESET_MAIL_SENDING_SUCCESSFUL'));
+            return true;
+        } else {
+            Session::add('feedback_negative', Text::get('FEEDBACK_PASSWORD_RESET_MAIL_SENDING_ERROR') . $mail->getError() );
+            return false;
+        }
+    }
+
 
     /**
      * checks the email/verification code combination and set the user's activation status to true in the database
