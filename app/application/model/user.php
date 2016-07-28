@@ -35,7 +35,7 @@ class User {
     }
 
     public static function incrementFails($user_name){
-        $data = array('failed_logins', 'failed_logins+1');
+        $data = array('failed_logins'=>'failed_logins+1');
         $result = self::$PDO->_update($data, "name= '$user_name'");
     }
 

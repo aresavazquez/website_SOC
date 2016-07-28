@@ -44,10 +44,12 @@ class ApiController extends Controller{
     }
 
     public function password_reset(){
+      Session::set('feedback_positive', array());
       Session::set('feedback_negative', array());
-      $password_reset = Credentials::passwordReset();
+      $user_email = strip_tags(Request::post('email'));
+      $password_reset = Credentials::passwordReset($user_email);
       if($password_reset){
-        $this->View->renderJSON($this->success_code($password_reset));
+        $this->View->renderJSON($this->success_code(Session::get('feedback_positive')));
       }else{
         $this->View->renderJSON($this->error_code(Session::get('feedback_negative'), array('redirect_to'=>$this->Routes['root_url'])));
       }
