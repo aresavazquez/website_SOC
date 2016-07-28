@@ -7,21 +7,29 @@
 	{{ parent() }}
 	<div class="page microsite content-usuario broker-edit">
 		<form class="datosUsuario microsite" id="newSiteForm">
-			<input id="siteName" type="text" placeholder="Nombre del sitio" class="edit_input">
-			<label>URl para el sitio</label>
-			<input id="siteUrl" type="text" placeholder="URL del sitio" class="edit_input">
+			<label>Nombre del sitio</label>
+			<input id="siteName" type="text" value="{{ site.title }}" placeholder="Nombre del sitio" class="edit_input">
+			<label>URL para el sitio</label>
+			<input id="siteUrl" type="text" value="{{ site.url }}" placeholder="URL del sitio" class="edit_input">
 			<label>Descripción</label>
-			<textarea id="siteContent" placeholder="Descripción" class=""></textarea>
+			<textarea id="siteContent" placeholder="Descripción" class="">
+				{{ site.content }}
+			</textarea>
 			<label>Localidad</label>
 			<select id="siteState" placeholder="Selecciona un Estado" class="edit_input">
+				<option value="-1">Selecciona una opción</option>
 				{% for key,value in states %}
-				<option value="{{ value.id }}">{{ value.name }}</option>
+					{% if value.id == site.state_id %}
+					<option selected value="{{ value.id }}">{{ value.name }}</option>
+					{% else %}	
+					<option value="{{ value.id }}">{{ value.name }}</option>
+					{% endif %}
 				{% endfor %}
 			</select>
-			<label>Dirección</label>
-			<input id="siteAddress" type="text" placeholder="Dirección" class="edit_input">
-			<label>Teléfono</label>
-			<input id="siteTelephone" type="tel" placeholder="Teléfono" class="edit_input">
+			<label>Direcciones</label>
+			<input id="siteAddress" type="text" value="{{ site.address }}"  placeholder="Dirección" class="edit_input">
+			<label>Teléfonos</label>
+			<input id="siteTelephone" type="tel" value="{{ site.phones }}"  placeholder="Teléfono" class="edit_input">
 			<div class="user addSite">Guardar Cambios</div>
 		</form>
 	</div>

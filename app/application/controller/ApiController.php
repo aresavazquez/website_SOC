@@ -84,20 +84,6 @@ class ApiController extends Controller{
         $this->View->renderJSON($this->success_code($users));
     }
 
-    public function get_post($params){
-        $post = Post::getInstance()->byId($params['id']);
-        $this->View->renderJSON($this->success_code($post));
-    }
-
-    public function set_post($params){
-        $data = array();
-        if(Request::get('title')) $data['post_title'] = Request::get('title');
-        if(Request::get('content')) $data['post_content'] = Request::get('content');
-
-        $id = Post::getInstance()->setData($params['id'], $data);
-        $this->View->renderJSON($this->success_code($id));
-    }
-
     public function get_user($params){
         $user = User::getInstance()->byId($params['id']);
         $this->View->renderJSON($this->success_code($user));
@@ -160,6 +146,20 @@ class ApiController extends Controller{
         if(Request::get('contact')) $data['contact'] = utf8_decode(Request::get('contact'));
 
         $id = Site::getInstance()->setData($params['url'], $data);
+        $this->View->renderJSON($this->success_code($id));
+    }
+
+    public function get_post($params){
+        $post = Post::getInstance()->byId($params['id']);
+        $this->View->renderJSON($this->success_code($post));
+    }
+
+    public function set_post($params){
+        $data = array();
+        if(Request::get('title')) $data['post_title'] = Request::get('title');
+        if(Request::get('content')) $data['post_content'] = Request::get('content');
+
+        $id = Post::getInstance()->setData($params['id'], $data);
         $this->View->renderJSON($this->success_code($id));
     }
 

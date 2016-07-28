@@ -159,12 +159,14 @@ $(document).on('ready', function(){
 
             $.post(host_url + "api/v1/password_reset", {email: email}, function(response){
                 if(response.status == 200){
-        				    $('#login-form .login__button').text('Entrando...');
-        				    window.location = host_url+'admin/users';
-        			  }else if(response.status == 500) {
-        				    $('.responses').text(response.errors);
-        				    $('.responses').show();
-        			  }
+        			$('.responses').text(response.data);
+                    $('.responses').show();
+                    //$('#login-form .login__button').text('Entrando...');
+        			//window.location = host_url+'admin/users';
+        		}else if(response.status == 500) {
+        		    $('.responses').text(response.errors);
+        		    $('.responses').show();
+        		}
             }).fail(function(){
                 $('.responses').text('Falló la comunicación con el servidor, inténtalo nuevamente');
                 $('.responses').show();

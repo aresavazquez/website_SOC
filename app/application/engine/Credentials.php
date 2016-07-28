@@ -141,10 +141,8 @@ class Credentials{
 
         User::getInstance()->setData($user_data->id, array('password'=>$user_password_hash));
 
-        if (self::sendPasswordEmail($user_data->id, $user_email, $user_password_hash)) {
-            echo $new_password;
-            Session::add('feedback_positive', $new_password);
-            //Text::get('FEEDBACK_ACCOUNT_SUCCESSFULLY_CREATED'));
+        if (self::sendPasswordEmail($user_data->id, $user_email, $new_password)) {
+            //Session::add('feedback_positive', $new_password);
             return true;
         }else{
             return false;
@@ -555,18 +553,18 @@ class Credentials{
 
     public static function sendPasswordEmail($user_id, $user_email, $password)
     {
-        $body = 'Nuevo password:' . $password;
+        $body = Config::get('EMAIL_PASSWORD_RESET_CONTENT') . $password;
 
         $mail = new Mail;
-        $mail_sent = $mail->sendMail($user_email, Config::get('EMAIL_VERIFICATION_FROM_EMAIL'),
-            Config::get('EMAIL_VERIFICATION_FROM_NAME'), Config::get('EMAIL_VERIFICATION_SUBJECT'), $body
+        $mail_sent = $mail->sendMail($user_email, Config::get('EMAIL_PASSWORD_RESET_FROM_EMAIL'),
+            Config::get('EMAIL_PASSWORD_RESET_FROM_NAME'), Config::get('EMAIL_PASSWORD_RESET_SUBJECT'), $body
         );
 
         if ($mail_sent) {
-            Session::add('feedback_positive', Text::get('FEEDBACK_VERIFICATION_MAIL_SENDING_SUCCESSFUL'));
+            Session::add('feedback_positive', Text::get('FEEDBACK_PASSWORD_RESET_MAIL_SENDING_SUCCESSFUL'));
             return true;
         } else {
-            Session::add('feedback_negative', Text::get('FEEDBACK_VERIFICATION_MAIL_SENDING_ERROR') . $mail->getError() );
+            Session::add('feedback_negative', Text::get('FEEDBACK_PASSWORD_RESET_MAIL_SENDING_ERROR') . $mail->getError() );
             return false;
         }
     }
