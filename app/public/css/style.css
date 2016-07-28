@@ -260,7 +260,8 @@ a,a:visited{
     text-align: center;
 }
 .carousel .item .abuela{
-    left: 340px;
+    left: 3px;
+    top: 105px;
 }
 .carousel .item p span{
     font-weight: 100;
