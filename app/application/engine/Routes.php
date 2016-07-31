@@ -18,13 +18,14 @@ class Routes{
 		self::$router->map( 'GET', '/inmobiliarias', 'IndexController#real_state', 'p_real_state');
 		self::$router->map( 'GET', '/franquicia', 'IndexController#franchise', 'p_franchise');
 		self::$router->map( 'GET', '/prensa', 'IndexController#news', 'p_news');
-		self::$router->map( 'GET', '/simulador', 'IndexController#simulator', 'p_simulator');
     	self::$router->map( 'GET', '/productos/hipotecarios', 'IndexController#products_mortgage', 'p_products_mortgage');
     	self::$router->map( 'GET', '/productos/empresas', 'IndexController#products_enterprise', 'p_products_enterprise');
     	self::$router->map( 'GET', '/oficinas', 'IndexController#offices', 'p_offices');
 		self::$router->map( 'GET', '/soc_tips', 'IndexController#tips', 'p_tips');
     	self::$router->map( 'GET', '/contacto', 'IndexController#contact', 'p_contact');
 		self::$router->map( 'POST', '/contacto', 'IndexController#post_contact', 'p_contact_post');
+        self::$router->map( 'GET', '/simulador', 'SimulatorController#index', 'simulator_index');
+        self::$router->map( 'GET', '/resultado_simulador', 'SimulatorController#calculate', 'simulator_calculate');
     	self::$router->map( 'GET', '/blog', 'BlogController#index', 'p_blog');
 		self::$router->map( 'GET', '/password_reset', 'PasswordsController#index', 'p_password_reset');
 		self::$router->map( 'GET', '/admin/microsite', 'BrokerController#edit', 'broker_microsite');

@@ -1,0 +1,51 @@
+{% extends "single.html" %}
+
+{% block title %}SOC{% endblock %}
+{% block head %}
+    {{ parent() }}
+{% endblock %}
+{% block content %}
+<div class="page p-simulator">
+    <div class="simulador">
+    	<div class="box">
+    		<div>
+    			<h1 class="title">Simulador</h1>
+    			<p class="texto">Nuestro simulador te mostrará el panorama con tus diferentes opciones de crédito.<br>Para calcular tu crédito hipotecario ingresa la información solicitada en los siguientes campos.</p>
+    		</div>
+    		<div class="form">
+    			<form id="simulador-form" action="/simulador" method="GET">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+      				<input type="text" placeholder="Nombre" id="name">
+      				<input type="number" placeholder="Número" id="number">
+      				<input type="text" placeholder="Correo" id="mail">
+      				<label>Estados</label>
+      				<select id="state">
+                {% for key,value in states %}
+                    <option value="{{ value.id }}">{{ value.name }}</option>
+                {% endfor %}
+      				</select>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+      				<input type="number" placeholder="Valor del Inmueble" id="value">
+      				<input type="number" placeholder="Enganche" id="hitch">
+      				<label>Tipo de Mensualidad</label>
+      				<select id="paytype" placeholder="Selecciona tipo de mensualidad">
+      					<option value="-1">-</option>
+      					<option value="fija">Fija</option>
+      					<option value="creciente">Creciente</option>
+      				</select>
+      				<label>Plazo</label>
+      				<select id="paytime" placeholder="Selecciona ek tiempo de pago">
+                <option value="-1">-</option>
+      					<option value="20">20 años</option>
+      					<option value="15">15 años</option>
+      				</select>
+      				<button type="submit" class="send">Enviar</button>
+            </div>
+    			</form>
+    		</div>
+    		<p class="aviso">Respecto al manejo de sus datos personales favor de revisar el Aviso de Privacidad, así como los Términos y Condiciones incluidos en la presente página.</p>
+    		<p class="aviso check"><span><input type="checkbox" class="aviso"></span> Acepto Términos y Condiciones , así como el Aviso de Privacidad.</p>
+    	</div>
+    </div>
+{% endblock %}

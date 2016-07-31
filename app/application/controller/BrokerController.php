@@ -10,7 +10,6 @@ class BrokerController extends Controller
     }
 
     public function show($url){
-        if(!Session::userIsLoggedIn()) Redirect::to('admin');
         $this->View->render('broker/show.html');
     }
 
