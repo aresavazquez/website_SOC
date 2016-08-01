@@ -262,6 +262,27 @@ $(document).on('ready', function(){
             });
         });
     }
+    var postsList_view = function(){
+        var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": host_url + "api/v1/post",
+            "method": "POST"
+        }
+        $.ajax(settings).done(function (response) {
+            var posts = response.data;
+            var html = '';
+            $.each(posts, function (index, value) {
+                html += '<div>';
+                html += '<img src="'+value.post_image+'">';
+                html += '<h1>'+value.post_title+'</h1>';
+                html += '<a href="'+value.post_id+'" class="vnota">Ver nota</a>';
+                html += '<p class="date">Posted on 17 mayo, 2016 by SOC Asesores Hipotecarios</p>';
+                html += '</div>';
+            });
+            $('.container_blog .itemBlog').append(html);
+        });
+    }
     var postsList = function(){
         var settings = {
             "async": true,
@@ -590,6 +611,9 @@ $(document).on('ready', function(){
         "admin-blog":function(){
             postsList();
             adminSitesListeners();
+        },
+        "p-blog":function(){
+            postsList_view();
         }
     }
 

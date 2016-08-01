@@ -50,7 +50,7 @@ class Routes{
     	self::$router->map( 'GET|POST', '/api/v1/sites/[*:url]', 'ApiController#get_site');
     	self::$router->map( 'PUT', '/api/v1/sites/[*:url]', 'ApiController#set_site');
     	self::$router->map( 'GET', '/api/v1/post/[i:id]', 'ApiController#get_post');
-        self::$router->map( 'GET', '/api/v1/post/', 'ApiController#get_posts');
+        self::$router->map( 'POST', '/api/v1/post', 'ApiController#get_posts');
     	self::$router->map( 'POST', '/api/v1/post/[i:id]', 'ApiController#set_post');
 
     	//- Microsites
