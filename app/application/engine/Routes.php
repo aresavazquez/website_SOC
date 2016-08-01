@@ -27,6 +27,7 @@ class Routes{
         self::$router->map( 'GET', '/simulador', 'SimulatorController#index', 'simulator_index');
         self::$router->map( 'GET', '/resultado_simulador', 'SimulatorController#calculate', 'simulator_calculate');
     	self::$router->map( 'GET', '/blog', 'BlogController#index', 'p_blog');
+        self::$router->map( 'GET', '/blog/nota', 'BlogController#nota', 'p_blog_nota');
 		self::$router->map( 'GET', '/password_reset', 'PasswordsController#index', 'p_password_reset');
 		self::$router->map( 'GET', '/admin/microsite', 'BrokerController#edit', 'broker_microsite');
 		self::$router->map( 'GET', '/admin', 'AdminController#index', 'p_admin');
