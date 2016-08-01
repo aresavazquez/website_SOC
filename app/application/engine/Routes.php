@@ -27,6 +27,7 @@ class Routes{
         self::$router->map( 'GET', '/simulador', 'SimulatorController#index', 'simulator_index');
         self::$router->map( 'GET', '/resultado_simulador', 'SimulatorController#calculate', 'simulator_calculate');
     	self::$router->map( 'GET', '/blog', 'BlogController#index', 'p_blog');
+        self::$router->map( 'GET', '/blog/nota', 'BlogController#nota', 'p_blog_nota');
 		self::$router->map( 'GET', '/password_reset', 'PasswordsController#index', 'p_password_reset');
 		self::$router->map( 'GET', '/admin/microsite', 'BrokerController#edit', 'broker_microsite');
 		self::$router->map( 'GET', '/admin', 'AdminController#index', 'p_admin');
@@ -50,6 +51,7 @@ class Routes{
     	self::$router->map( 'GET|POST', '/api/v1/sites/[*:url]', 'ApiController#get_site');
     	self::$router->map( 'PUT', '/api/v1/sites/[*:url]', 'ApiController#set_site');
     	self::$router->map( 'GET', '/api/v1/post/[i:id]', 'ApiController#get_post');
+        self::$router->map( 'POST', '/api/v1/post', 'ApiController#get_posts');
     	self::$router->map( 'POST', '/api/v1/post/[i:id]', 'ApiController#set_post');
 
     	//- Microsites

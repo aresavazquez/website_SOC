@@ -4,37 +4,136 @@
 }
 html, body{
     width: 100%;
-    height: 100%;
     font-family: 'MuseoSans',sans-serif;
+    height: 100%;
+}
+a,a:visited{
+    color:#fff;
+    text-decoration: none;
 }
 /*---------------------------------------header SLIDER*/
-.home{
-    width: 100%;
+.frase{
+    margin: auto;
+    display: block;
+    width: 550px;
+    height: 35px;
+    background: #4fa753;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    margin-top: 21px;
+    bottom: 0;
+    position: fixed;
+    left: 0;
+    right: 0;
 }
-.info{
+.frase h1{
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    font-style: italic;
+    margin: 10px;
+    font-weight: 100;
+}
+.p-home{
     width: 100%;
+    height: 100%;
+}
+.menu-header{
+    position: fixed;
+    z-index: 2;
+    background: #fff;
+    width: 100%;
+    text-align: center;
+    padding: 22px;
+    box-shadow: -7px -1px 21px #000;
+    font-size: 18px;
+    color: #fff;
+    background: #285CA4;
+    background: rgba(40, 92, 164, 1);
+    font-weight: 100;
+}
+.menu-header .logo{
+    position: absolute;
+    width: 100px;
+    left: 50px;
+    top: 11px;
+}
+.menu-header .menu img{
+    position: absolute;
+    width: 40px;
+    right: 50px;
+    top: 11px;
+}
+.menu-header .menu.close img{
+    position: absolute;
+    width: 40px;
+    right: 50px;
+    top: 11px;
+    display: none;
+    opacity: 0;
+}
+.menu-header p span{
+    font-weight: 900;
+    color: #4fa753;
+}
+.head{
+    width: 100%;
+    height: 75%;
     background: url(../img/head/back3.jpg)no-repeat center fixed;
     background-size: cover;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    position: relative;
+}
+.head .imagenes{
+    width: 1000px;
+    margin: auto;
+    display: block;
+    padding-top: 100px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0px;
+}
+.head .imagenes img{
+    width: 200px;
+    display: block;
+    padding: 55px 0 0 455px;
+    opacity: 0;
+    display: none;
+}
+.head .imagenes p{
+    opacity: 0;
+    display: none;
+}
+.head .imagenes .texto{
     color: #fff;
-    height: 310px;
-    align-items: center;
-}
-.info div{
-    width: 50%;
-    padding: 50px;
-}
-.info div h1{
+    font-size: 70px;
+    position: absolute;
     text-align: center;
-    color: #4fa753;
-    margin-bottom: 35px;
+    top: 85px;
 }
-.info div p{
-    text-align: center;
-    font-size: 18px;
+.head .simular{
+    color: #fff;
+    text-decoration: none;
+    background: #4fa753;
+    padding: 20px;
+    font-size: 28px;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 8%;
+    left: 25%;
+    z-index: 1;
+}
+.head .oculto{
+    color: #fff;
+    padding: 10px 25px;
+    font-size: 20px;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 200px;
+    left: 25%;
     font-weight: 100;
+    display: none;
+    opacity: 0;
 }
 /*-----------------------   */
 .soc{
@@ -61,23 +160,24 @@ html, body{
     text-align: center;
 }
 /* ------------------------------ menu*/
-.container_menu > ul{
+.container_menu ul{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    padding-top: 15px;
+    padding-top: 22px;
 }
 .container_menu img{
     position: absolute;
-    width: 90px;
+    width: 130px;
     left: 20px;
     top: 5px;
 }
 .container_menu{
     background: #fff;
-    height: 50px;
+    height: 65px;
     z-index: 100;
-    position: relative;
+    position: fixed;
+    width: 100%;
 }
 .container_menu ul li{
     list-style: none;
@@ -85,11 +185,12 @@ html, body{
 }
 .container_menu ul li a{
     color: #2a6496;
-    padding: 14px;
+    padding: 23px 14px;
     font-size: 16px;
 }
 .container_menu ul li a:hover{
-    color: #3a74a6;
+    background: #2a6496;
+    color: #fff;
 }
 .menu-general img{
     width: 25px;
@@ -103,11 +204,19 @@ html, body{
     position: absolute;
     left: 0;
     background: #eee;
-    padding: 10px;
+    padding: 0;
     width: 150px;
-    top: 35px;
+    top: 43px;
     display: none;
     opacity: 0;
+}
+.container_menu ul .submenu li a {
+    padding: 5px 15px;
+    display: block;
+}
+.container_menu ul .submenu li a:hover {
+    color: #eee;
+    background: #2a6496;
 }
 .container_menu > ul li:hover .submenu {
     display: block;
@@ -119,19 +228,27 @@ html, body{
 /*------------------------------- head*/
 .carousel{
     width: 100%;
-    height: 460px;
+    height: 80%;
     background: url(../img/head/back3.jpg)no-repeat center fixed;
     background-size: cover;
+    padding-top: 85px;
 }
 .carousel .carousel-inner{
-    width: 900px;
-    margin: auto;
-    padding-top: 30px;
-    height: 420px;
+    width: 1095px;
+    margin: 50px auto;
+    height: 100%;
+    //padding-top: 30px;
+    //height: 420px;
 }
-.carousel .item img{
-    width: 300px;
+.carousel .item .sliderImg{
+    width: 485px;
     float: right;
+}
+.carousel .item .mejora{
+    width: 800px;
+}
+.carousel .item .hipotecaPareja {
+    width: 445px;
 }
 .carousel .item p{
     position: absolute;
@@ -140,6 +257,16 @@ html, body{
     font-weight: 600;
     left: 100px;
     top: 55px;
+    text-align: center;
+}
+.carousel .item .abuela{
+    left: 3px;
+    top: 105px;
+}
+.carousel .item p span{
+    font-weight: 100;
+    font-size: 42px;
+    font-style: italic;
 }
 /*------------------------------- */
 .menu-header{
@@ -199,7 +326,7 @@ html, body{
 }
 .head .imagenes p{
     opacity: 0;
-    display: none; 
+    display: none;
 }
 .head .imagenes .texto{
     color: #fff;
@@ -216,8 +343,8 @@ html, body{
     font-size: 28px;
     border-radius: 10px;
     position: absolute;
-    bottom: 8%;
-    left: 25%;
+    bottom: 18%;
+    left: 26%;
     z-index: 1;
 }
 .simular:hover{
@@ -239,16 +366,22 @@ html, body{
 /*---------------------------------------Home body*/
 /*ICONOS*/
 .sub-menu{
-    height: 190px;
-    padding-top: 25px;
+    height: 20%;
     width: 100%;
     position: relative;
     display: flex;
     justify-content: center;
     background: #16193B;
+    align-items: center;
 }
 .sub-menu a{
+    margin: 15px auto;
     text-decoration: none;
+    width: 145px;
+    height: 140px;
+    display: none;
+    opacity: 0;
+    margin-bottom: -580px;
 }
 .sub-menu a .asesor{
     background: url(../img/body/asesor.png)no-repeat center;
@@ -262,14 +395,26 @@ html, body{
     width: 200px;
     position: relative;
 }
-.sub-menu a .prensa{
+.sub-menu a .prensaM{
     background: url(../img/body/prensa.png)no-repeat center;
+    height: 90px;
+    width: 200px;
+    position: relative;
+}
+.sub-menu a .propiedades{
+    background: url(../img/body/propiedades.png)no-repeat center;
     height: 90px;
     width: 200px;
     position: relative;
 }
 .sub-menu a .franquicia-icon{
     background: url(../img/body/franquicia.png)no-repeat center;
+    height: 90px;
+    width: 200px;
+    position: relative;
+}
+.sub-menu a .soc-premia{
+    background: url(../img/body/1socPremia.png)no-repeat center;
     height: 90px;
     width: 200px;
     position: relative;
@@ -284,7 +429,59 @@ html, body{
 }
 .sub-menu a p span{
     color: #ddd;
-} 
+}
+/*-----------------------------------info*/
+.info{
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    color: #fff;
+    align-items: center;
+}
+.info .asesoria{
+    width: 100%;
+    height: 50%;
+    flex-wrap: wrap;
+    display: flex;
+}
+.info .asesoria .backDiv1{
+    width: 50%;
+    height: 100%;
+    background: url(../img/body/asesoria1.jpg)no-repeat center;
+    background-size: cover;
+    position: relative;
+    opacity: 0;
+}
+.info .asesoria .backDiv{
+    width: 50%;
+    height: 100%;
+    background: url(../img/body/sinCosto.jpg)no-repeat top;
+    background-size: cover;
+    position: relative;
+    opacity: 0;
+}
+.info .asesoria .textoAsesoria{
+    width: 50%;
+    height: 100%;
+    position: relative;
+    padding: 70px;
+}
+.info .asesoria .textoAsesoria div{
+    font-size: 20px;
+    text-align: justify;
+    height: 350px;
+}
+.info .asesoria .textoAsesoria div p{
+    font-size: 17px;
+    font-weight: 100;
+    line-height: 30px;
+    color: #2a6496;
+}
+.info .asesoria .textoAsesoria div h1{
+    text-align: center;
+    padding-bottom: 30px;
+    color: #1dafec;
+}
 /*---------------------------------------simulador*/
 .simulador{
     background: #3a5e94;
@@ -292,9 +489,9 @@ html, body{
     width: 100%;
     position: relative;
     background-size: contain;
+    padding: 50px;
 }
 .simulador .box{
-    position: absolute;
     top: 0;
     bottom: 0;
     right: 0;
@@ -302,7 +499,8 @@ html, body{
     margin: auto;
     display: block;
     width: 900px;
-    height: 710px;
+    height: 655px;
+}
 }
 .simulador h1{
     color: #fff;
@@ -320,7 +518,7 @@ html, body{
     padding-bottom: 25px;
 }
 .simulador .form{
-    display: flex; 
+    display: flex;
     width: 825px;
     margin: auto;
     padding-bottom: 25px;
@@ -366,7 +564,6 @@ html, body{
     text-align: center;
     color: #fff;
     font-size: 11px;
-    margin: 0;
 }
 .simulador .aviso.check{
     padding-right: 10px;
@@ -378,7 +575,7 @@ html, body{
     background: url(../img/head/back3.jpg)no-repeat center fixed;
     background-size: cover;
     position: relative;
-    display: flex;
+    padding: 50px;
 }
 .comments .contenido-comments .content .comentarios{
     width: 500px;
@@ -422,7 +619,7 @@ html, body{
     padding-left: 10px;
     font-size: 50px;
     margin-bottom: 50px;
-    margin-top: 115px;
+    margin-top: 70px;
     text-align: center;
 }
 .title{
@@ -430,11 +627,11 @@ html, body{
     border-left: 3px solid #4fa753;
     padding-left: 10px;
     font-size: 50px;
-    margin-bottom: 50px;
-    margin-top: 50px;
     text-align: center;
+    width: 300px;
+    margin: 50px auto;
 }
-.comments .contenido-comments.iphone .cel{
+/*.comments .contenido-comments.iphone .cel{
     width: 250px;
     position: absolute;
     right: 20px;
@@ -444,6 +641,34 @@ html, body{
     right: 150px;
     top: 30px;
     width: 300px;
+}*/
+
+/*---------------------------------------social*/
+.social{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background: url(../img/body/back-white.jpg)no-repeat top fixed;
+    background-size: cover;
+    padding: 50px;
+    align-items: center;
+}
+.social .twitter, .facebook, .instagram{
+    width: 300px;
+    text-align: center;
+}
+.social .twitter, .facebook, .instagram, img{
+    padding-bottom: 20px;
+}
+.social .twitter iframe{
+    width: 300px !important;
+    height: 500px !important;
+}
+.social .instagram iframe{
+    width: 300px !important;
+    height: 500px !important;
 }
 /*---------------------------------------footer*/
 .footer{
@@ -452,10 +677,10 @@ html, body{
     color: #fff;
     text-align: center;
     position: relative;
-    padding: 40px 0;
+    padding: 10px 0 50px;
 }
 .footer .condu{
-    padding: 15px; 
+    padding: 0;
 }
 .footer .tel{
     font-size: 16px;
@@ -469,6 +694,7 @@ html, body{
 .footer ul li{
     list-style: none;
     padding: 10px;
+    height: 60px;
 }
 
 
@@ -476,12 +702,18 @@ html, body{
 .asesores{
     width: 100%;
     background: url(../img/head/back3.jpg)no-repeat center fixed;
+    height: 100%;
 }
 .asesores .form{
-    height: 425px;
     width: 800px;
     margin: auto;
     padding: 50px 50px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 450px;
 }
 .asesores .form form input{
     background: none;
@@ -501,19 +733,25 @@ html, body{
 .asesores .form form .check{
     width: 20px;
 }
-button{
+button, .login__button, form .user, form .send{
     background: #4fa753;
     border: none;
-    width: 300px;
-    padding: 10px;
+    width: 300px !important;
+    padding: 10px !important;
     color: #fff;
     font-weight: 100;
     margin: 10px;
     border-bottom: 1px solid #4fa753;
     font-size: 17px;
+    text-align: center;
+    display: inline-block;
 }
-button#hover{
+button:hover, .login__button:hover, form .user:hover{
     cursor: pointer;
+}
+button.close{
+    width: inherit;
+    margin:inherit;
 }
 .app{
     background: #3a5e94;
@@ -584,10 +822,10 @@ button#hover{
 /*---------------------micorsitios usuarios*/
 .content-usuario{
     width: 100%;
-    height: 100%;
     background: url(../img/head/back3.jpg)no-repeat center fixed;
+    padding-bottom: 20px;
 }
-.content-usuario div{
+/*.content-usuario div{
     bottom: 100px;
     right: 0;
     margin: auto;
@@ -597,6 +835,13 @@ button#hover{
     position: absolute;
     left: 0;
     top: 150px;
+}*/
+.content-usuario div{
+    margin: auto;
+    width: 80%;
+    height: auto;
+    position: relative;
+    padding-top: 100px;
 }
 .content-usuario div table{
     width: 100%;
@@ -610,6 +855,11 @@ button#hover{
 }
 .content-usuario div table .editInput{
     width: 50px;
+    color: #4fa753;
+}
+.content-usuario div table .editInput:hover{
+    text-decoration: underline;
+    cursor: pointer;
 }
 .content-usuario div table .editInput a{
     color: #4fa753;
@@ -625,12 +875,13 @@ button#hover{
 .agregarUsuario{
     width: 100%;
     height: 100%;
-    position: absolute;
+    position: fixed;
     background: rgba(0, 0, 0, 0.7);
     top: 0;
     opacity: 0;
     display: none;
-    z-index: 1;
+    z-index: 1000;
+    overflow: scroll;
 }
 .agregarUsuario form{
     position: fixed;
@@ -638,7 +889,7 @@ button#hover{
     bottom: 0;
     right: 0;
     left: 0;
-    margin: 70px auto;
+    margin: auto;
     display: block;
     width: 600px;
     height: 390px;
@@ -661,6 +912,39 @@ button#hover{
     width: 70%;
     border-bottom: 1px solid #4fa753;
 }
+/*---------------recuperar contraseña*/
+.page.password-reset{
+    background: url(../img/head/back3.jpg)no-repeat center;
+    height: 100%;
+    position: relative;
+    width: 100%
+}
+.page.password-reset .form{
+    width: 500px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 425px;
+    margin: auto;
+    display: block;
+}
+.page.password-reset .form #login-form{
+    text-align: center;
+}
+.page.password-reset .form #login-form input{
+    background: none;
+    border: none;
+    width: 300px;
+    padding: 10px;
+    color: #fff;
+    font-weight: 100;
+    margin: 20px auto;
+    border-bottom: 1px solid #4fa753;
+    font-size: 17px;
+}
+.editarUsuario .datosUsuario.microsite,
 .agregarUsuario .datosUsuario.microsite{
     width: 80%;
     height: 700px;
@@ -668,6 +952,7 @@ button#hover{
     overflow-y: scroll;
     height: 650px;
 }
+.editarUsuario .datosUsuario.microsite input,
 .agregarUsuario .datosUsuario.microsite input{
     display: block;
     border: none;
@@ -681,9 +966,16 @@ button#hover{
     margin: 15px 0;
     width: 70%;
 }
+.editarUsuario .datosUsuario.microsite select,
+.agregarUsuario .datosUsuario.microsite select{
+    display: block;
+    margin: 15px 0;
+}
+.editarUsuario .datosUsuario.microsite .edit_input,
 .agregarUsuario .datosUsuario.microsite .edit_input{
     border-bottom: 1px solid #4fa753;
 }
+.editarUsuario .datosUsuario.microsite label,
 .agregarUsuario .datosUsuario.microsite label{
     color: #fff;
     font-weight: 100;
@@ -695,19 +987,20 @@ button#hover{
     height: 200px;
     border-radius: 5px;
 }
+.editarUsuario .datosUsuario.microsite textarea,
 .agregarUsuario .datosUsuario.microsite textarea{
     display: block;
-    width: 70%;
+    width: 100%;
     border: none;
     padding: 10px;
     margin: 15px 0;
     letter-spacing: 1px;
     font-size: 16px;
     font-weight: 100;
-    background: none;
+    background: #fff;
     border-bottom: 1px solid #4fa753;
-    color: #fff;
-    height: 45px;
+    color: #000;
+    height: 250px;
 }
 .agregarUsuario .datosUsuario.microsite .borrar{
     background: #A4424B;
@@ -783,6 +1076,7 @@ button#hover{
 .footer .terminos{
     font-size: 10px;
     font-weight: 100;
+    margin: 0;
 }
 .footer .terminos a{
     color: #fff;
@@ -797,14 +1091,16 @@ button#hover{
 .editarUsuario{
     width: 100%;
     height: 100%;
-    position: absolute;
+    position: fixed;
     background: rgba(0, 0, 0, 0.7);
     top: 0;
     opacity: 0;
     display: none;
+    z-index: 1000;
+    overflow: scroll;
 }
 .editarUsuario form{
-    position: fixed;
+    //position: fixed;
     top: 0;
     bottom: 0;
     right: 0;
@@ -812,16 +1108,16 @@ button#hover{
     margin: auto;
     display: block;
     width: 600px;
-    height: 535px;
     opacity: 0;
     display: none;
     padding-top: 30px;
     background: #285CA4;
     border-radius: 10px;
+    padding-bottom: 30px;
 }
 .editarUsuario .datosUsuario.microsite{
     width: 80%;
-    height: 700px;
+    //height: 700px;
 }
 .editarUsuario form input{
     display: block;
@@ -850,15 +1146,11 @@ button#hover{
     color: #fff;
     height: 150px;
 }
-.editarUsuario form .user.borra{
-    background: #A4424B;
-    border-bottom: none;
-}
+
 .editarUsuario form .user{
     margin: 35px auto;
     display: block;
 }
-
 .editarUsuario form a img{
     position: absolute;
     width: 20px;
@@ -895,6 +1187,7 @@ center .text_simlador{
     font-weight: 100;
     margin-top: 25px;
     font-size: 20px;
+    text-transform: uppercase;
 }
 .contenido_micrositio{
     margin: auto;
@@ -990,23 +1283,11 @@ center .text_simlador{
 .head_contacto{
     background: url(../img/body/head_contacto.jpg)no-repeat center;
     background-size: cover;
-    height: 250px;
+    height: 350px;
     width: 100%;
     color: #fff;
     position: relative;
-    transsition: all 0.3s linear;
-    transition: all 1s ease;
     box-shadow: -7px -1px 21px #000;
-}
-.head_contacto:hover{
-    height: 300px;
-    transform: scale(1.2);
- 
-    -webkit-transition: all 1s ease;
-    -moz-transition: all 1s ease;
-    -o-transition: all 1s ease;
-    -ms-transition: all 1s ease;
-    transition: all 1s ease;
 }
 .head_contacto div{
     position: absolute;
@@ -1017,7 +1298,7 @@ center .text_simlador{
     margin: auto;
     display: block;
     width: 600px;
-    height: 150px;
+    height: 80px;
 }
 .head_contacto div .title_section{
     text-align: center;
@@ -1089,25 +1370,13 @@ center .text_simlador{
 }
 /* soc tips*/
 .tips{
-    background: url(../img/body/tips.jpg)no-repeat center;
+    background: url(../img/body/tips.jpg)no-repeat top;
     background-size: cover;
-    height: 250px;
+    height: 350px;
     width: 100%;
     color: #fff;
     position: relative;
-    transsition: all 0.3s linear;
-    transition: all 1s ease;
     box-shadow: -7px -1px 21px #000;
-}
-.tips:hover{
-    height: 300px;
-    transform: scale(1.2);
- 
-    -webkit-transition: all 1s ease;
-    -moz-transition: all 1s ease;
-    -o-transition: all 1s ease;
-    -ms-transition: all 1s ease;
-    transition: all 1s ease;
 }
 .tips div{
     position: absolute;
@@ -1118,7 +1387,7 @@ center .text_simlador{
     margin: auto;
     display: block;
     width: 600px;
-    height: 150px;
+    height: 80px;
 }
 .tips div .title_section{
     text-align: center;
@@ -1170,21 +1439,11 @@ center .text_simlador{
 .directores{
     background: url(../img/body/soc_.jpg)no-repeat center;
     background-size: cover;
-    height: 250px;
+    height: 350px;
     width: 100%;
     color: #fff;
     position: relative;
-    transsition: all 0.3s linear;
-    transition: all 1s ease;
-}
-.directores:hover{
-    transform: scale(1.2);
- 
-    -webkit-transition: all 1s ease;
-    -moz-transition: all 1s ease;
-    -o-transition: all 1s ease;
-    -ms-transition: all 1s ease;
-    transition: all 1s ease;
+    box-shadow: -7px -1px 21px #000;
 }
 .directores div{
     position: absolute;
@@ -1195,7 +1454,7 @@ center .text_simlador{
     margin: auto;
     display: block;
     width: 600px;
-    height: 150px;
+    height: 80px;
 }
 .directores div .title_section{
     text-align: center;
@@ -1282,23 +1541,13 @@ h2.zero,p.zero {
 }
 /*------- blog */
 .blog{
-    background: url(../img/body/blog.jpg)no-repeat center;
+    background: url(../img/body/blog.jpg)no-repeat top;
     background-size: cover;
-    height: 250px;
+    height: 350px;
     width: 100%;
     color: #fff;
     position: relative;
-    transsition: all 0.3s linear;
-    transition: all 1s ease;
-}
-.blog:hover{
-    transform: scale(1.2);
- 
-    -webkit-transition: all 1s ease;
-    -moz-transition: all 1s ease;
-    -o-transition: all 1s ease;
-    -ms-transition: all 1s ease;
-    transition: all 1s ease;
+    box-shadow: -7px -1px 21px #000;
 }
 .blog div{
     position: absolute;
@@ -1309,7 +1558,7 @@ h2.zero,p.zero {
     margin: auto;
     display: block;
     width: 600px;
-    height: 150px;
+    height: 80px;
 }
 .blog div .title_section{
     text-align: center;
@@ -1330,39 +1579,46 @@ h2.zero,p.zero {
     padding-top: 18px;
 }
 .container_blog{
-    background: url(../img/head/back3.jpg)no-repeat center fixed;
+    background: url(../img/body/back-white.jpg)no-repeat center fixed;
     background-size: cover;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
     padding: 40px 0 150px;
     position: relative;
 }
-.container_blog div{
+.container_blog .itemBlog{
+    width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.container_blog .itemBlog div{
     background: #fff;
     border-radius: 10px;
-    margin: 5px;
+    margin: 20px;
     width: 300px;
     overflow: hidden;
 }
-.container_blog div img{
+.container_blog .itemBlog div img{
     width: 100%;
+    padding-bottom: 0;
 }
-.container_blog div p{
+.container_blog .itemBlog div p{
     padding: 10px;
 }
-.container_blog div h1{
+.container_blog .itemBlog div h1{
     padding: 10px;
     font-size: 17px;
     color: #41546e;
     font-weight: 600;
-    margin-bottom: 0;
+    margin-bottom: 20px;
     padding-bottom: 0;
 }
-.container_blog div a{
+.container_blog .itemBlog div .vnota{
     padding: 10px;
+    color: #41546e;
+    font-style: italic;
 }
-.container_blog div .date{    
+.container_blog .itemBlog div .date{
     color: #4fa753;
     font-size: 10px;
     padding-bottom: 0;
@@ -1515,8 +1771,6 @@ h2.zero,p.zero {
     display: flex;
     position: relative;
     justify-content: center;
-    flex-wrap: wrap;
-
 }
 .contenido-nota .interesante{
     display: flex;
@@ -1572,23 +1826,13 @@ h2.zero,p.zero {
 }
 /*------- hipoteca */
 .hipoteca{
-    background: url(../img/body/hipotecario.jpg)no-repeat center;
+    background: url(../img/body/hipotecario.jpg)no-repeat top;
     background-size: cover;
-    height: 250px;
+    height: 350px;
     width: 100%;
     color: #fff;
     position: relative;
-    transsition: all 0.3s linear;
-    transition: all 1s ease;
-}
-.hipoteca:hover{
-    transform: scale(1.2);
- 
-    -webkit-transition: all 1s ease;
-    -moz-transition: all 1s ease;
-    -o-transition: all 1s ease;
-    -ms-transition: all 1s ease;
-    transition: all 1s ease;
+    box-shadow: -7px -1px 21px #000;
 }
 .hipoteca div{
     position: absolute;
@@ -1599,7 +1843,7 @@ h2.zero,p.zero {
     margin: auto;
     display: block;
     width: 600px;
-    height: 150px;
+    height: 80px;
 }
 .hipoteca div .title_section{
     text-align: center;
@@ -1654,21 +1898,11 @@ h2.zero,p.zero {
 .empresas{
     background: url(../img/body/empresas.jpg)no-repeat center;
     background-size: cover;
-    height: 250px;
+    height: 350px;
     width: 100%;
     color: #fff;
     position: relative;
-    transsition: all 0.3s linear;
-    transition: all 1s ease;
-}
-.empresas:hover{
-    transform: scale(1.2);
- 
-    -webkit-transition: all 1s ease;
-    -moz-transition: all 1s ease;
-    -o-transition: all 1s ease;
-    -ms-transition: all 1s ease;
-    transition: all 1s ease;
+    box-shadow: -7px -1px 21px #000;
 }
 .empresas div{
     position: absolute;
@@ -1679,7 +1913,7 @@ h2.zero,p.zero {
     margin: auto;
     display: block;
     width: 700px;
-    height: 150px;
+    height: 80px;
 }
 .empresas div .title_section{
     text-align: center;
@@ -1712,21 +1946,11 @@ h2.zero,p.zero {
 .directorios{
     background: url(../img/body/directorio.jpg)no-repeat center;
     background-size: cover;
-    height: 250px;
+    height: 350px;
     width: 100%;
     color: #fff;
     position: relative;
-    transsition: all 0.3s linear;
-    transition: all 1s ease;
-}
-.directorios:hover{
-    transform: scale(1.2);
- 
-    -webkit-transition: all 1s ease;
-    -moz-transition: all 1s ease;
-    -o-transition: all 1s ease;
-    -ms-transition: all 1s ease;
-    transition: all 1s ease;
+    box-shadow: -7px -1px 21px #000;
 }
 .directorios div{
     position: absolute;
@@ -1737,7 +1961,7 @@ h2.zero,p.zero {
     margin: auto;
     display: block;
     width: 700px;
-    height: 150px;
+    height: 80px;
 }
 .directorios div .title_section{
     text-align: center;
@@ -1789,25 +2013,26 @@ h2.zero,p.zero {
     display: block;
     margin-top: 49px;
 }
+.container_directorio .directorio-estado{
+    width: 100%;
+}
 /*------------------ directorio estado*/
 .directorio-estado .contenido{
-    display: flex;
+    display: none;
     width: 100%;
     justify-content: center;
     flex-wrap: wrap;
     background: #fff;
     color: #41546e;
-    border-radius: 10px; 
+    border-radius: 10px;
     padding: 30px;
 }
 .directorio-estado .contenido div{
     width: 400px;
     border-bottom: 1px solid #4fa753;
-    height: 300px;
 }
 .directorio-estado .contenido div h1{
     font-size: 21px;
-    padding-top: 15px;
 }
 .directorio-estado .contenido a{
     color: #428bca;
@@ -1815,23 +2040,13 @@ h2.zero,p.zero {
 }
 /*-----------------------------inmobiliarias*/
 .inmobiliaria{
-    background: url(../img/body/inmobiliarias.jpg)no-repeat center;
+    background: url(../img/body/inmobiliarias.jpg)no-repeat bottom;
     background-size: cover;
-    height: 250px;
+    height: 350px;
     width: 100%;
     color: #fff;
     position: relative;
-    transsition: all 0.3s linear;
-    transition: all 1s ease;
-}
-.inmobiliaria:hover{
-    transform: scale(1.2);
- 
-    -webkit-transition: all 1s ease;
-    -moz-transition: all 1s ease;
-    -o-transition: all 1s ease;
-    -ms-transition: all 1s ease;
-    transition: all 1s ease;
+    box-shadow: -7px -1px 21px #000;
 }
 .inmobiliaria div{
     position: absolute;
@@ -1842,7 +2057,7 @@ h2.zero,p.zero {
     margin: auto;
     display: block;
     width: 700px;
-    height: 150px;
+    height: 80px;
 }
 .inmobiliaria div .title_section{
     text-align: center;
@@ -1888,7 +2103,6 @@ h2.zero,p.zero {
 }
 .container.container-inmobiliaria{
     margin-bottom: 35px;
-    width: 100%;
 }
 .container_inmobiliaria .magazine{
     text-align: center;
@@ -1906,21 +2120,11 @@ h2.zero,p.zero {
 .franquicia{
     background: url(../img/body/franquicias.jpg)no-repeat center;
     background-size: cover;
-    height: 250px;
+    height: 350px;
     width: 100%;
     color: #fff;
     position: relative;
-    transsition: all 0.3s linear;
-    transition: all 1s ease;
-}
-.franquicia:hover{
-    transform: scale(1.2);
- 
-    -webkit-transition: all 1s ease;
-    -moz-transition: all 1s ease;
-    -o-transition: all 1s ease;
-    -ms-transition: all 1s ease;
-    transition: all 1s ease;
+    box-shadow: -7px -1px 21px #000;
 }
 .franquicia div{
     position: absolute;
@@ -1931,7 +2135,7 @@ h2.zero,p.zero {
     margin: auto;
     display: block;
     width: 700px;
-    height: 150px;
+    height: 80px;
 }
 .franquicia div .title_section{
     text-align: center;
@@ -2001,7 +2205,7 @@ h2.zero,p.zero {
 }
 .prensa:hover{
     transform: scale(1.2);
- 
+
     -webkit-transition: all 1s ease;
     -moz-transition: all 1s ease;
     -o-transition: all 1s ease;
@@ -2046,19 +2250,59 @@ h2.zero,p.zero {
     color: #fff;
     padding: 50px;
 }
-/*----------------------------responsive ipad*/
-@media screen and (max-width: 1024px){
-    .comments .contenido-comments.iphone .cel.two{
-        display: none;
-    }
-    .nota .notas-recientes {
-        background: #fff;
-        width: 100%;
-    }
+/*Responses*/
+.responses{
+    width: 100% !important;
+    clear: both;
+    margin:10px auto !important;
+    padding:10px !important;
+    text-align: center;
+    color:#fff;
+    background: #4fa753;
+    border: 2px solid rgba(255,255,255,0.3);
+    display: none;
+}
+/*Brocker Edit View*/
+.broker-edit{
+    background-size: cover;
+    padding-top: 80px;
+}
+.broker-edit form{
+    width: 100%;
+    max-width: 960px;
+    margin: 10px auto;
+    background: #fff;
+    padding: 10px;
+}
+.broker-edit form input,
+.broker-edit form textarea,
+.broker-edit form select{
+    width: 80%;
+    margin: 10px auto;
+    display: block;
+    padding:10px;
+}
+.broker-edit form label{
+    width: 80%;
+    margin: 10px auto;
+    display: block;
+}
+.broker-edit form textarea{
+    height: 250px;
+}
+.broker-edit form .user{
+    margin:10px auto;
+    display: block;
 }
 @media screen and (max-width: 768px){
+    .sub-menu{
+        justify-content: space-between;
+        align-items: center;
+        overflow-x: scroll;
+    }
     .carousel .item p {
         font-size: 40px;
+        z-index: 1;
     }
     .simular {
         left: 85px;
@@ -2071,9 +2315,14 @@ h2.zero,p.zero {
     .container_menu ul {
         justify-content: flex-end;
     }
-        
+    .simulador .form form {
+        text-align: center;
+    }
+    .simulador {
+        height: 1200px;
+    }   
     .info {
-        height: 530px;
+        height: 100%;
     }
     .info div h1{
         font-size: 27px;
@@ -2090,13 +2339,19 @@ h2.zero,p.zero {
     .comments .contenido-comments.iphone .cel{
         display: none;
     }
+    .social {
+        height: auto;
+    }
+    .container_blog .itemBlog {
+        width: 100%;
+    }
 }
 @media screen and (max-width: 420px){
     .simular{
         display: none;
     }
     .carousel{
-        height: 500px;
+        height: 80%;
     }
     .carousel .item img{
         left: 0;
@@ -2112,50 +2367,28 @@ h2.zero,p.zero {
         position: absolute;
         top: 0px;
     }
-    .sub-menu{
-        display: block;
-        height: 685px;
-    }
-    .sub-menu a{
-        padding: 15px;
-    }
-    .sub-menu a .asesor {
-        margin: 15px auto;
-    }
-    .sub-menu a .inmobiliarias {
-        margin: 15px auto;
-    }
-    .sub-menu a .franquicia-icon {
-        margin: 15px auto;
-    }
-    .sub-menu a .prensa {
-        margin: 15px auto;
-    }
-    .info {
-        height: auto;
-        display: block;
-    }
-    .info div {
-        width: 98%;
-        padding: 50px;
-        margin: auto;
-    }
-    .info div p {
-        text-align: -webkit-auto;
+    .carousel .item p span {
         font-size: 16px;
+    }
+    .info .asesoria .textoAsesoria {
+        padding: 9px;
+        width: 100%;
+        height: 100%;
+    }
+    .info{
+        height: auto;
     }
     .simulador {
-        height: 1100px;
+        padding: 15px;
     }
     .simulador .texto {
-        font-size: 16px;
-        text-align: left;
+        font-size: 15px;
     }
-    .simulador .form{
-        display: block;
+    .simulador .form form input {
+        width: 265px;
     }
-    .simulador .box{
-        margin: 0 auto;
+    .simulador .form form {
+        text-align: -webkit-auto;
     }
     .comments .contenido-comments .content ul {
         width: 98%;
@@ -2166,65 +2399,11 @@ h2.zero,p.zero {
     .comments .contenido-comments .content .comentarios{
         width: 88%;
     }
-    .directores div {
-        width: 90%;
+    .comments .contenido-comments .content ul li {
+        padding: 5px;
     }
-    .empresas div{
-        width: 90%;
-        height: 225px;
-    }
-    .empresas {
-        height: 350px;
-    }
-    .hipoteca div{
-        width: 90%;
-        height: 225px;
-    }
-    .hipoteca{
-        height: 350px;
-    }
-    .soc div p {
-        font-size: 16px;
-    }
-    .soc div .titleS {
-        font-size: 23px;
-    }
-    .container_empresas {
-        padding: 0;
-    }
-    .empresas div .title_section {
-        font-size: 35px;
-    }
-    .content-home .container {
-        padding: 40px 0px;
-        text-align: left;
-    }
-    .container-productos h4 {
-        font-size: 21px;
-    }
-
-    .container_hipoteca {
-        padding: 0;
-    }
-    .hipoteca div .title_section {
-        font-size: 35px;
-    }
-    .directorios div{
-        width: 90%;
-    }
-    .container_directorio {
-        padding: 50px 0px;
-    }
-    .container_directorio select {
-        width: 100%;
-    }
-    .tips div{
-        width: 90%;
-    }
-    .container_tips h1{
-        font-size: 21px
-    }
-    .container_tips .video div .title_video{
+    .comments .contenido-comments .content .comentarios p {
+        text-align: -webkit-center;
         font-size: 16px;
     }
     .blog div{
@@ -2233,4 +2412,20 @@ h2.zero,p.zero {
     .head_contacto div{
         width: 90%;
     }
+    .tips div{
+        width: 90%;
+    }
+    .directorios div{
+        width: 90%;
+    }
+    .hipoteca div{
+        width: 90%;
+    }
+    .empresas div{
+        width: 90%;
+    }
 }
+
+
+
+

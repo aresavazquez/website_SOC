@@ -13,4 +13,8 @@ class BlogController extends Controller
     	$posts = Post::getInstance()->all();
         $this->View->render('blog/index.html', array('posts'=>$posts));
     }
+
+    public function nota(){
+        $this->View->render('blog/detalle.html');
+    }
 }

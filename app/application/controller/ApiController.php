@@ -156,6 +156,11 @@ class ApiController extends Controller{
         $this->View->renderJSON($this->success_code($post));
     }
 
+    public function get_posts(){
+        $post = Post::getInstance()->all();
+        $this->View->renderJSON($this->success_code($post));
+    }
+
     public function set_post($params){
         $data = array();
         if(Request::get('title')) $data['post_title'] = Request::get('title');
