@@ -26,7 +26,8 @@
 					{% endif %}
 				{% endfor %}
 			</select>
-			<label>Direcciones</label>
+			<label>Latitud y longitud</label>
+			<input id="latlong" type="text" value="{{ site.lat_lon }}"  placeholder="19.4299998,-99.1377792" class="edit_input"><label>Direcciones</label>
 			<input id="siteAddress" type="text" value="{{ site.address }}"  placeholder="Dirección" class="edit_input">
 			<label>Teléfonos</label>
 			<input id="siteTelephone" type="tel" value="{{ site.phones }}"  placeholder="Teléfono" class="edit_input">
