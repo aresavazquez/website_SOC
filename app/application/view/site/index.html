@@ -130,35 +130,36 @@
     			<p class="texto">Nuestro simulador te mostrará el panorama con tus diferentes opciones de crédito.<br>Para calcular tu crédito hipotecario ingresa la información solicitada en los siguientes campos.</p>
     		</div>
     		<div class="form">
-    			<form id="simulador-form" action="/simulador" method="GET">
-            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-      				<input type="text" placeholder="Nombre" id="name">
-      				<input type="number" placeholder="Número" id="number">
-      				<input type="text" placeholder="Correo" id="mail">
-      				<label>Estados</label>
-      				<select id="state">
-                {% for key,value in states %}
-                    <option value="{{ value.id }}">{{ value.name }}</option>
-                {% endfor %}
-      				</select>
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-      				<input type="number" placeholder="Valor del Inmueble" id="value">
-      				<input type="number" placeholder="Enganche" id="hitch">
-      				<label>Tipo de Mensualidad</label>
-      				<select id="paytype" placeholder="Selecciona tipo de mensualidad">
+    			<form id="simulador-form" action="{{ base_path }}resultado_simulador" method="GET">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+      				  <input type="text" placeholder="Nombre" name="name" id="name">
+      				  <input type="number" placeholder="Teléfono" name="phone" id="number">
+      				  <input type="text" placeholder="Correo" name="mail" id="mail">
+      				  <label>Estado</label>
+      				  <select name="state" id="state">
+                        <option selected="selected" value="0">SELECCIONE UN ESTADO</option>
+                        {% for item in states %}
+                        <option value={{ item.id }}>{{ item.name | convert_encoding('UTF-8', 'iso-8859-1') }}</option>
+                        {% endfor %}
+      				  </select>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+      				  <input name="value" type="number" placeholder="Valor del Inmueble" id="value">
+      				  <input name="hitch" type="number" placeholder="Enganche" id="hitch">
+      				  <label>Tipo de Mensualidad</label>
+      				  <select name="paytype" id="paytype" placeholder="Selecciona tipo de mensualidad">
       					<option value="-1">-</option>
       					<option value="fija">Fija</option>
       					<option value="creciente">Creciente</option>
-      				</select>
-      				<label>Plazo</label>
-      				<select id="paytime" placeholder="Selecciona ek tiempo de pago">
-                <option value="-1">-</option>
+      				  </select>
+      				  <label>Plazo</label>
+      				  <select name="paytime" id="paytime" placeholder="Selecciona ek tiempo de pago">
+                        <option value="-1">-</option>
       					<option value="20">20 años</option>
       					<option value="15">15 años</option>
-      				</select>
-      				<button type="submit" class="send">Enviar</button>
-            </div>
+      				  </select>
+      				  <button type="submit" class="send">Enviar</button>
+                    </div>
     			</form>
     		</div>
     		<p class="aviso">Respecto al manejo de sus datos personales favor de revisar el Aviso de Privacidad, así como los Términos y Condiciones incluidos en la presente página.</p>

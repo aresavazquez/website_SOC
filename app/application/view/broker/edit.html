@@ -8,15 +8,15 @@
 	<div class="page microsite content-usuario broker-edit">
 		<form class="datosUsuario microsite" id="newSiteForm">
 			<label>Nombre del sitio</label>
-			<input id="siteName" type="text" value="{{ site.title }}" placeholder="Nombre del sitio" class="edit_input">
+			<input name="name" id="siteName" type="text" value="{{ site.title }}" placeholder="Nombre del sitio" class="edit_input">
 			<label>URL para el sitio</label>
-			<input id="siteUrl" type="text" value="{{ site.url }}" placeholder="URL del sitio" class="edit_input">
+			<input name="url" id="siteUrl" type="text" value="{{ site.url }}" placeholder="URL del sitio" class="edit_input">
 			<label>Descripción</label>
-			<textarea id="siteContent" placeholder="Descripción" class="">
+			<textarea name="content" id="siteContent" placeholder="Descripción" class="">
 				{{ site.content }}
 			</textarea>
 			<label>Localidad</label>
-			<select id="siteState" placeholder="Selecciona un Estado" class="edit_input">
+			<select name="state" id="siteState" placeholder="Selecciona un Estado" class="edit_input">
 				<option value="-1">Selecciona una opción</option>
 				{% for key,value in states %}
 					{% if value.id == site.state_id %}
@@ -27,11 +27,12 @@
 				{% endfor %}
 			</select>
 			<label>Latitud y longitud</label>
-			<input id="latlong" type="text" value="{{ site.lat_lon }}"  placeholder="19.4299998,-99.1377792" class="edit_input"><label>Direcciones</label>
-			<input id="siteAddress" type="text" value="{{ site.address }}"  placeholder="Dirección" class="edit_input">
+			<input name="latlon" id="siteLatlon" type="text" value="{{ site.latlon }}"  placeholder="19.4299998,-99.1377792" class="edit_input"><label>Direcciones</label>
+			<input name="address" id="siteAddress" type="text" value="{{ site.address }}"  placeholder="Dirección" class="edit_input">
 			<label>Teléfonos</label>
-			<input id="siteTelephone" type="tel" value="{{ site.phones }}"  placeholder="Teléfono" class="edit_input">
+			<input name="phone" id="siteTelephone" type="tel" value="{{ site.phones }}"  placeholder="Teléfono" class="edit_input">
 			<div class="user addSite">Guardar Cambios</div>
+			<a href="{{ base_path }}{{ site.url }}" class="user">Ver Sitio</a>
 		</form>
 	</div>
 {% endblock %}

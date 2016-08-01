@@ -435,7 +435,7 @@ $(document).on('ready', function(){
             }});
         });
     }
-    var loadTheSite = function(){
+    /*var loadTheSite = function(){
         var thesite = window.location.href.split( host_url );
         $.get(host_url + "api/v1/sites/"+thesite[1], function(response){
             var site = response.data;
@@ -443,7 +443,7 @@ $(document).on('ready', function(){
             $('.contenido_micrositio p.thecontent').text(site.content);
             console.log(site);
         });
-    }
+    }*/
     var registerUser = function(){
         $('.agregarUsuario .datosUsuario .registerUserform').on('click', function(){
             var username = $('.datosUsuario #user_name').val();
@@ -510,6 +510,15 @@ $(document).on('ready', function(){
     		});
     	});
     }
+    var updateBrokerSite = function(){
+        var prev = $('#siteUrl').val();
+        console.log(prev);
+        $('.addSite').on('click', function(){
+            $.put(host_url  + "api/v1/sites/" + prev + "?" + $('#newSiteForm').serialize(), function(response){
+                console.log(response);
+            });
+        });
+    }
     var findBroker = function(){
         $('#ddlEstados').on('change', function(){
             var state_id = $(this).val();
@@ -560,14 +569,17 @@ $(document).on('ready', function(){
             //animateHomePhones();
             menuBehaviors();
         },
-        "p-detalle": function(){
+        /*"p-detalle": function(){
           loadTheSite();
-        },
+        },*/
         "p-offices": function(){
             findBroker();
         },
         "asesores": function(){
             loginForm();
+        },
+        "microsite": function(){
+            updateBrokerSite();
         },
         "password-reset": function(){
             passwordResetForm();

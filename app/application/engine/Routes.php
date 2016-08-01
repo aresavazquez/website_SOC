@@ -54,6 +54,7 @@ class Routes{
 
     	//- Microsites
     	self::$router->map( 'GET', '/[*:url]', 'BrokerController#show', 'broker_show');
+        self::$router->map( 'POST', '/site/contact/[*:url]', 'BrokerController#contact');
 	}
 
 	/**
