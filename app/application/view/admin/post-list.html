@@ -40,6 +40,7 @@
 	</div>
 	<div class="editarUsuario">
 		<form class="datosUsuario microsite" id="editPostForm">
+			<input id="e_post_id" type="hidden" value="">
 			<a href=""><img src="{{ base_path }}img/body/close.png" class="close"></a>
 	    	<label>Título del artículo</label>
 			<input id="e_post_title" type="text" placeholder="Título del artículo" class="edit_input">
@@ -48,7 +49,7 @@
 			<label>Contenido del artículo</label>
 			<textarea id="e_post_content" placeholder="Descripción" class=""></textarea>
 	      	<div class="user addSite">Guardar como borrador</div>
-			<div class="user addSite">Publicar</div>
+			<div class="user updatePost">Actualizar</div>
 		</form>	
 	</div>
 {% endblock %}

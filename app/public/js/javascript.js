@@ -331,11 +331,31 @@ $(document).on('ready', function(){
             }
             $.ajax(settings).done(function (response) {
                 var post = response.data;
+                $('.editarUsuario .datosUsuario #e_post_id').val(post[0].post_id);
                 $('.editarUsuario .datosUsuario #e_post_title').val(post[0].post_title);
                 //$('.editarUsuario .datosUsuario #e_post_image').val(post[0].post_image);
                 $('.editarUsuario .datosUsuario #e_post_content').val(post[0].post_content);
-                console.log(post.post_title);
             });
+        });
+    }
+    var updatePostinfo = function(){
+        $('#editPostForm .updatePost').on('click', function(){
+            var epost_id = $('#editPostForm #e_post_id').val();
+            var epost_title = $('#editPostForm #e_post_title').val();
+            console.log(epost_title);
+
+            $('.close').trigger( "click" );
+            $.put(host_url + 'api/v1/post/'+epost_id,
+                {post_title: epost_title
+                }, function(response){
+                    if(response.status == 200){
+                        $('.responses').text('El sitio se ha actualizado correctamente');
+                        $('.responses').show();
+                    }else if(response.status == 500) {
+                        $('.responses').text(response.errors);
+                        $('.responses').show();
+                    }
+                })
         });
     }
     var sitesList = function(){
@@ -431,22 +451,6 @@ $(document).on('ready', function(){
                         $('.responses').show();
                     }
                 })
-            /*var settings = {
-                "async": true,
-                "crossDomain": true,
-                "url": host_url + "api/v1/sites/"+esiteUrl+"?title="+esiteName+"&content="+esiteContent+"&address="+esiteAddress+"&contact="+esiteTelephone,
-                "method": "PUT"
-            }
-            $('.close').trigger( "click" );
-            $.ajax(settings).done(function (response) {
-               if(response.status == 200){
-                    $('.responses').text('El sitio se ha actualizado correctamente');
-                    $('.responses').show();
-                }else if(response.status == 500) {
-                    $('.responses').text(response.errors);
-                    $('.responses').show();
-                }
-            });*/
         });
     }
     var adminUsersListeners = function(){
@@ -514,15 +518,6 @@ $(document).on('ready', function(){
             }});
         });
     }
-    /*var loadTheSite = function(){
-        var thesite = window.location.href.split( host_url );
-        $.get(host_url + "api/v1/sites/"+thesite[1], function(response){
-            var site = response.data;
-            $('.head_micrositio h1').text(site.title);
-            $('.contenido_micrositio p.thecontent').text(site.content);
-            console.log(site);
-        });
-    }*/
     var registerUser = function(){
         $('.agregarUsuario .datosUsuario .registerUserform').on('click', function(){
             var username = $('.datosUsuario #user_name').val();
@@ -682,6 +677,7 @@ $(document).on('ready', function(){
             postsList();
             adminBlogListeners();
             loadPostinfoEdit();
+            updatePostinfo();
         },
         "p-blog":function(){
             postsList_view();
