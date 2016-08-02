@@ -287,16 +287,17 @@ $(document).on('ready', function(){
         var settings = {
             "async": true,
             "crossDomain": true,
-            "url": host_url + "api/v1/sites",
-            "method": "GET"
+            "url": host_url + "api/v1/post",
+            "method": "POST"
         }
         $.ajax(settings).done(function (response) {
-            var sites = response.data;
+            var blogpost = response.data;
+            console.log(blogpost);
             var html = '';
-            $.each(sites, function (index, value) {
+            $.each(blogpost, function (index, value) {
                 html += '<tr>';
-                html += '<td class="viewsite" data-site="'+value.url+'">'+value.title+'</td>';
-                html += '<td class="editInput" data-site="'+value.url+'">editar</td>';
+                html += '<td class="viewsite" data-site="'+value.post_title+'">'+value.post_title+'</td>';
+                html += '<td class="editInput" data-site="'+value.post_id+'">editar</td>';
                 html += '</tr>';
             });
             $('#postList tbody').append(html);
