@@ -276,7 +276,7 @@ $(document).on('ready', function(){
                 html += '<div>';
                 html += '<img src="'+value.post_image+'">';
                 html += '<h1>'+value.post_title+'</h1>';
-                html += '<a href="'+value.post_id+'" class="vnota">Ver nota</a>';
+                html += '<a href="'+host_url+'blog/nota?nota='+value.post_id+'" class="vnota">Ver nota</a>';
                 html += '<p class="date">Posted on 17 mayo, 2016 by SOC Asesores Hipotecarios</p>';
                 html += '</div>';
             });
@@ -300,6 +300,23 @@ $(document).on('ready', function(){
                 html += '</tr>';
             });
             $('#postList tbody').append(html);
+        });
+    }
+    var loadPostInfo = function(){
+        var url = window.location.href;
+        var postID = url.split("?nota=");
+        postID = postID[1];
+        var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": host_url + "api/v1/post/" +postID,
+            "method": "GET"
+        }
+        $.ajax(settings).done(function (response) {
+            var postInfo = response.data[0];
+            $('.contenido-nota h1').text(postInfo.post_title);
+            $('.contenido-nota .post-image').attr('src',postInfo.post_image);
+            $('.contenido-nota .post-content p').text(postInfo.post_content);
         });
     }
     var sitesList = function(){
@@ -614,6 +631,9 @@ $(document).on('ready', function(){
         },
         "p-blog":function(){
             postsList_view();
+        },
+        "p_blog_nota":function(){
+            loadPostInfo();
         }
     }
 
