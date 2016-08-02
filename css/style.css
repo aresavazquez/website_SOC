@@ -2090,6 +2090,13 @@ h2.zero,p.zero {
     .comments .contenido-comments.iphone .cel{
         display: none;
     }
+    .carousel .item p {
+        top: -15px; 
+    }
+    .carousel .item .abuela {
+        left: 3px;
+        top: 50px;
+    }
 }
 @media screen and (max-width: 420px){
     .simular{
