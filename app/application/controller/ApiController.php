@@ -122,7 +122,8 @@ class ApiController extends Controller{
         $content = strip_tags(Request::post('content'));
         $address = strip_tags(Request::post('address'));
         $contact = strip_tags(Request::post('contact'));
-        $registration_successful = Site::save($user_id, $state_id, $url, $title, $content, $address, $contact);
+        $latlon = strip_tags(Request::post('latlon'));
+        $registration_successful = Site::save($user_id, $state_id, $url, $title, $content, $address, $contact, $latlon);
         if($registration_successful){
             $this->View->renderJSON($this->success_code($registration_successful));
         }else{
@@ -144,6 +145,7 @@ class ApiController extends Controller{
         if(Request::get('content')) $data['content'] = utf8_decode(Request::get('content'));
         if(Request::get('address')) $data['address'] = utf8_decode(Request::get('address'));
         if(Request::get('contact')) $data['contact'] = utf8_decode(Request::get('contact'));
+        if(Request::get('latlon')) $data['latlon'] = utf8_decode(Request::get('latlon'));
 
         $id = Site::getInstance()->setData($params['url'], $data);
         $this->View->renderJSON($this->success_code($id));

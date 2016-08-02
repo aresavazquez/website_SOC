@@ -7,7 +7,7 @@
 	<div class="page p-detalle">
     <div class="head_micrositio">
         <img src="./img/micrositios/logo.png" alt="..." class="logo">
-        <h1></h1>
+        <h1>{{site.title}}</h1>
     </div>
     <center>
       <div class="head_micro">
@@ -35,7 +35,7 @@
       </div>
       <div class="contenido_micrositio">
           <p class="titleMicrositio">Asesores Hipotecarios</p>
-          <p class="thecontent"></p>
+          <p class="thecontent">{{site.content}}</p>
           <ul>
               <li>
                   <img src="./img/micrositios/img1.jpg">
@@ -56,15 +56,15 @@
       <iframe src="http://widget.sisec.mx?Id=&prov=1" width="1180" height="450"> </iframe>
     </center>
     <div class="datos">
-        <form>
+        <form action="{{base_path}}site/contact/{{site.url}}" method="POST">
             <p class="contact">Contacto</p>
-            <input type="text" placeholder="Nombre" class="inputBroker">
-            <input type="number" placeholder="Teléfono" class="inputBroker">
-            <input type="text" placeholder="Correo" class="inputBroker">
-            <textarea class="inputBroker" placeholder="Deja un comentario"></textarea>
+            <input type="text" placeholder="Nombre" name="name" class="inputBroker">
+            <input type="number" placeholder="Teléfono" name="phone" class="inputBroker">
+            <input type="text" placeholder="Correo" name="mail" class="inputBroker">
+            <textarea class="inputBroker" name="message" placeholder="Deja un comentario"></textarea>
             <input type="submit" class="send">
         </form>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7499.4202604354805!2d-99.16917675959607!3d19.42413080015006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff49bf92b0c3%3A0xdeff9a7834f3c55!2sSOC+Cr%C3%A9dito+en+ti!5e0!3m2!1ses!2smx!4v1463456229955" width="800" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+        <iframe src="https://maps.google.com/maps?q={{site.latlon}}&output=embed" width="800" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
     </div>
   </div>
 {% endblock %}

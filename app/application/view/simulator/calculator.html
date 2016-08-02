@@ -7,9 +7,9 @@
 {% block content %}
 <div class="page p-simulator">
   	{% include 'components/menu-header.html' %}
-  	<h1>Mensualidad fija 20 años</h1>
+  	<h1 class="mensualidad">Mensualidad {{paytype}} {{paytime}} años</h1>
   	<h2>Ideal para personas que deseen el menor costo financiero</h2>
-  	<p>En este esquema de crédito hipotecario la mensualidad permanece fija durante toda la vida del crédito, el beneficio más grande es el costo financiero bajo.</p>
+  	<!--p>En este esquema de crédito hipotecario la mensualidad permanece fija durante toda la vida del crédito, el beneficio más grande es el costo financiero bajo.</p-->
   	<table>
   		<thead>
   			<tr>
@@ -33,7 +33,7 @@
   		</thead>
   		<tbody>
   			<tr>
-  				<td>Comisión por administración</td>
+  				<td class="color">Comisión por administración</td>
   				<td>{{ banks.afirme.comision }}</td>
   				<td>{{ banks.banamex.comision }}</td>
   				<td>{{ banks.banorte.comision }}</td>
@@ -42,7 +42,7 @@
   				<td>{{ banks.scotiabank.comision }}</td>
   			</tr>
   			<tr>
-  				<td>Mensualidad</td>
+  				<td class="color">Mensualidad</td>
   				<td>{{ banks.afirme.mensualidad }}</td>
   				<td>{{ banks.banamex.mensualidad }}</td>
   				<td>{{ banks.banorte.mensualidad }}</td>
@@ -51,7 +51,7 @@
   				<td>{{ banks.scotiabank.mensualidad }}</td>
   			</tr>
   			<tr>
-  				<td>Monto de crédito</td>
+  				<td class="color">Monto de crédito</td>
   				<td>{{ banks.afirme.monto }}</td>
   				<td>{{ banks.banamex.monto }}</td>
   				<td>{{ banks.banorte.monto }}</td>
@@ -60,7 +60,7 @@
   				<td>{{ banks.scotiabank.monto }}</td>
   			</tr>
   			<tr>
-  				<td>Monto de crédito más prima única</td>
+  				<td class="color">Monto de crédito más prima única</td>
   				<td>{{ banks.afirme.prima_unica }}</td>
   				<td>{{ banks.banamex.prima_unica }}</td>
   				<td>{{ banks.banorte.prima_unica }}</td>
@@ -69,7 +69,7 @@
   				<td>{{ banks.scotiabank.prima_unica }}</td>
   			</tr>
   			<tr>
-  				<td>Tasa de interés</td>
+  				<td class="color">Tasa de interés</td>
   				<td>{{ banks.afirme.tasa_interes }}</td>
   				<td>{{ banks.banamex.tasa_interes }}</td>
   				<td>{{ banks.banorte.tasa_interes }}</td>
@@ -78,7 +78,7 @@
   				<td>{{ banks.scotiabank.tasa_interes }}</td>
   			</tr>
   			<tr>
-  				<td>Ingreso requerido</td>
+  				<td class="color">Ingreso requerido</td>
   				<td>{{ banks.afirme.ingreso_requerido }}</td>
   				<td>{{ banks.banamex.ingreso_requerido }}</td>
   				<td>{{ banks.banorte.ingreso_requerido }}</td>
@@ -87,7 +87,7 @@
   				<td>{{ banks.scotiabank.ingreso_requerido }}</td>
   			</tr>
   			<tr>
-  				<td>CAT</td>
+  				<td class="color">CAT</td>
   				<td>{{ banks.afirme.cat }}</td>
   				<td>{{ banks.banamex.cat }}</td>
   				<td>{{ banks.banorte.cat }}</td>
@@ -96,7 +96,7 @@
   				<td>{{ banks.scotiabank.cat }}</td>
   			</tr>
   			<tr>
-  				<td>Enganche</td>
+  				<td class="color">Enganche</td>
   				<td>{{ banks.afirme.enganche }}</td>
   				<td>{{ banks.banamex.enganche }}</td>
   				<td>{{ banks.banorte.enganche }}</td>
@@ -105,7 +105,7 @@
   				<td>{{ banks.scotiabank.enganche }}</td>
   			</tr>
   			<tr>
-  				<td>Enganche adicional</td>
+  				<td class="color">Enganche adicional</td>
   				<td>{{ banks.afirme.enganche_adicional }}</td>
   				<td>{{ banks.banamex.enganche_adicional }}</td>
   				<td>{{ banks.banorte.enganche_adicional }}</td>
@@ -114,7 +114,7 @@
   				<td>{{ banks.scotiabank.enganche_adicional }}</td>
   			</tr>
   			<tr>
-  				<td>Avalúo</td>
+  				<td class="color">Avalúo</td>
   				<td>{{ banks.afirme.avaluo }}</td>
   				<td>{{ banks.banamex.avaluo }}</td>
   				<td>{{ banks.banorte.avaluo }}</td>
@@ -123,7 +123,7 @@
   				<td>{{ banks.scotiabank.avaluo }}</td>
   			</tr>
   			<tr>
-  				<td>Comisión por apertura</td>
+  				<td class="color">Comisión por apertura</td>
   				<td>{{ banks.afirme.comision_apertura }}</td>
   				<td>{{ banks.banamex.comision_apertura }}</td>
   				<td>{{ banks.banorte.comision_apertura }}</td>
@@ -132,7 +132,7 @@
   				<td>{{ banks.scotiabank.comision_apertura }}</td>
   			</tr>
   			<tr>
-  				<td>Gastos notariales</td>
+  				<td class="color">Gastos notariales</td>
   				<td>{{ banks.afirme.gastos_notario }}</td>
   				<td>{{ banks.banamex.gastos_notario }}</td>
   				<td>{{ banks.banorte.gastos_notario }}</td>
@@ -141,7 +141,7 @@
   				<td>{{ banks.scotiabank.gastos_notario }}</td>
   			</tr>
   			<tr>
-  				<td>Desembolso total</td>
+  				<td class="color">Desembolso total</td>
   				<td>{{ banks.afirme.total }}</td>
   				<td>{{ banks.banamex.total }}</td>
   				<td>{{ banks.banorte.total }}</td>
@@ -151,5 +151,10 @@
   			</tr>
   		</tbody>
   	</table>
+    <ul class="botones">
+      <li><a href="http://localhost:8000/contacto">Contactar a un asesor</a></li>
+      <li><a href=".simulador">Hacer otra simulación</a></li>
+      <li><a href="">Imprimir resultados</a></li>
+    </ul>
 </div>
 {% endblock %}

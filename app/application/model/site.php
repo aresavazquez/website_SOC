@@ -39,14 +39,14 @@ class Site {
         return $result;
     }
 
-    public static function save($user_id, $state_id, $url, $title, $content, $address, $contact) {
+    public static function save($user_id, $state_id, $url, $title, $content, $address, $contact, $latlon) {
         $user = User::getInstance()->byId($user_id);
         if($user){
             if(self::getInstance()->hasSite($user_id)) {
               Session::add('feedback_negative', Text::get('FEEDBACK_USER_HAS_SITE'));
               return false;
             }
-            if (!self::getInstance()->writeNewSiteToDatabase($user_id, $state_id, $url, $title, $content, $address, $contact)) {
+            if (!self::getInstance()->writeNewSiteToDatabase($user_id, $state_id, $url, $title, $content, $address, $contact, $latlon)) {
                 Session::add('feedback_negative', Text::get('FEEDBACK_SITE_CREATION_FAILED'));
                 return false; // no reason not to return false here
             }
@@ -62,8 +62,8 @@ class Site {
       return $result->count() > 0;
     }
 
-    public static function writeNewSiteToDatabase($user_id, $state_id, $url, $title, $content, $address, $contact) {
-        $data = array('user_id'=>$user_id, 'state_id'=>$state_id, 'url'=>$url, 'title'=>$title, 'content'=>$content, 'address'=>$address, 'contact'=>$contact);
+    public static function writeNewSiteToDatabase($user_id, $state_id, $url, $title, $content, $address, $contact, $latlon) {
+        $data = array('user_id'=>$user_id, 'state_id'=>$state_id, 'url'=>$url, 'title'=>$title, 'content'=>$content, 'address'=>$address, 'contact'=>$contact, 'latlon'=>$latlon);
         return self::$PDO->_insert($data);
     }
 }
