@@ -292,12 +292,11 @@ $(document).on('ready', function(){
         }
         $.ajax(settings).done(function (response) {
             var blogpost = response.data;
-            console.log(blogpost);
             var html = '';
             $.each(blogpost, function (index, value) {
                 html += '<tr>';
-                html += '<td class="viewsite" data-site="'+value.post_title+'">'+value.post_title+'</td>';
-                html += '<td class="editInput" data-site="'+value.post_id+'">editar</td>';
+                html += '<td class="viewsite" data-post="'+value.post_title+'">'+value.post_title+'</td>';
+                html += '<td class="editInput" data-post="'+value.post_id+'">editar</td>';
                 html += '</tr>';
             });
             $('#postList tbody').append(html);
@@ -318,6 +317,25 @@ $(document).on('ready', function(){
             $('.contenido-nota h1').text(postInfo.post_title);
             $('.contenido-nota .post-image').attr('src',postInfo.post_image);
             $('.contenido-nota .post-content p').text(postInfo.post_content);
+        });
+    }
+    var loadPostinfoEdit = function(){
+        $('#postList').on('click', '.editInput' ,function (e){
+            e.preventDefault ();
+            var postID = $(this).data('post');
+            var settings = {
+                "async": true,
+                "crossDomain": true,
+                "url": host_url + "api/v1/post/"+postID,
+                "method": "GET",
+            }
+            $.ajax(settings).done(function (response) {
+                var post = response.data;
+                $('.editarUsuario .datosUsuario #e_post_title').val(post[0].post_title);
+                //$('.editarUsuario .datosUsuario #e_post_image').val(post[0].post_image);
+                $('.editarUsuario .datosUsuario #e_post_content').val(post[0].post_content);
+                console.log(post.post_title);
+            });
         });
     }
     var sitesList = function(){
@@ -454,6 +472,28 @@ $(document).on('ready', function(){
     }
     var adminSitesListeners = function(){
         $('#sitesList').on('click', '.editInput' ,function (e){
+            e.preventDefault ();
+            TweenLite.to('.editarUsuario', .5, {opacity: 1, display: 'block', onComplete: function(){
+                TweenLite.to('.datosUsuario', .5, { opacity: 1, display: 'block', ease: Power2.easeOut, y: 30});
+            }});
+        });
+
+        $('.plusUser').on('click', function (e){
+            e.preventDefault ();
+            TweenLite.to('.agregarUsuario', .5, {opacity: 1, display: 'block', onComplete: function(){
+                TweenLite.to('.datosUsuario', .5, { opacity: 1, display: 'block', ease: Power2.easeOut, y: 30});
+            }});
+        });
+        $('.close').on('click', function (e){
+            e.preventDefault ();
+            TweenLite.to('.datosUsuario', .5, { opacity: 0, display: 'none', ease: Power2.easeOut, y: 0, onComplete: function(){
+                TweenLite.to('.agregarUsuario', .5, {opacity: 0, display: 'none'});
+                TweenLite.to('.editarUsuario', .5, {opacity:0, display: 'none'});
+            }});
+        });
+    }
+    var adminBlogListeners = function(){
+        $('#postList').on('click', '.editInput' ,function (e){
             e.preventDefault ();
             TweenLite.to('.editarUsuario', .5, {opacity: 1, display: 'block', onComplete: function(){
                 TweenLite.to('.datosUsuario', .5, { opacity: 1, display: 'block', ease: Power2.easeOut, y: 30});
@@ -640,7 +680,8 @@ $(document).on('ready', function(){
         },
         "admin-blog":function(){
             postsList();
-            adminSitesListeners();
+            adminBlogListeners();
+            loadPostinfoEdit();
         },
         "p-blog":function(){
             postsList_view();
