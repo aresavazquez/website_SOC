@@ -2332,6 +2332,22 @@ h2.zero,p.zero {
 .p-simulator table tr .color{
     background: #ddd;
 }
+.p-simulator .botones{
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+    padding-top: 48px;
+}
+.p-simulator .botones li{
+    font-size: 20px;
+    margin: 0px 50px;
+    background-color: #1DAFEB;
+    color: #fff;
+    padding: 10px 20px;
+    box-shadow: 0px 5px 0px 0px rgba(0,0,0,0.15);
+    border-radius: 5px;
+    list-style: none;
+}
 @media screen and (max-width: 768px){
     .sub-menu{
         justify-content: space-between;
