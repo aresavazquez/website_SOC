@@ -2046,6 +2046,92 @@ h2.zero,p.zero {
     color: #fff;
     padding: 50px;
 }
+/* admin users */
+.content-usuarioAdmin{
+    background: url(../img/head/back3.jpg)no-repeat center fixed;
+    background-size: cover;
+}
+.content-usuarioAdmin .profile{
+    background: rgba(42, 100, 150, .6);
+    display: flex;
+    color: #fff;
+    padding: 50px;
+    justify-content: center;
+}
+.content-usuarioAdmin .profile .data{
+    margin-left: 20px;
+}
+.content-usuarioAdmin .profile .data p{
+    font-size: 18px;
+    font-weight: 100;
+}
+.content-usuarioAdmin .profile div img{
+    padding-right: 20px;
+    width: 150px;
+}
+.content-usuarioAdmin .container-sites{
+    position: relative;
+    padding: 50px;
+    color: #fff;
+    font-weight: 100;
+}
+.content-usuarioAdmin .container-sites .general{
+    padding: 50px;
+}
+.content-usuarioAdmin .container-sites .general .sites-content{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+.content-usuarioAdmin .search{
+    background: none;
+    border: none;
+    width: 300px;
+    padding: 10px;
+    color: #fff;
+    font-weight: 100;
+    margin: 10px;
+    border-bottom: 1px solid #4fa753;
+    font-size: 17px;
+}
+.content-usuarioAdmin .plusUser{
+    position: absolute;
+    right: 150px;
+    top: 90px;
+    color: #fff;
+    text-decoration: none;
+}
+.content-usuarioAdmin .container-sites .general .sites-content .site{
+    width: 340px;
+    background: #fff;
+    margin: 10px;
+    padding: 10px;
+    color: #000;
+    display: flex;
+    border-radius: 10px;
+}
+.content-usuarioAdmin .container-sites .general .sites-content .site .nameOffice{
+    width: 260px;
+    padding: 5px 10px;x;
+}
+.content-usuarioAdmin .container-sites .general .sites-content .site .nameOffice p{
+    margin: 0;
+    font-weight: normal;
+    font-size: 18px;
+    color: #41546e;
+}
+.content-usuarioAdmin .container-sites .general .sites-content .site .nameOffice a{
+    font-weight: normal;
+}
+.content-usuarioAdmin .container-sites .general .sites-content .site div ul li{
+    list-style: none;
+}
+.content-usuarioAdmin .container-sites .general .sites-content .site div ul li .delete{
+    color: red;
+}
+.content-usuarioAdmin .container-sites .general .sites-content .site div ul li a{
+    font-weight: normal;
+}
 /*----------------------------responsive ipad*/
 @media screen and (max-width: 1024px){
     .comments .contenido-comments.iphone .cel.two{
