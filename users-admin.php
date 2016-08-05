@@ -14,7 +14,7 @@
 	</div>
 	<div class="container-sites">
 		<input type="search" placeholder="buscar" class="search">
-		<a href="" class="plusUser"><span></span>+ Agregar usuario</a>
+		<a href="" class="plusUser"><span></span>+ Agregar oficina</a>
 		<div class="general">
 			<div class="sites-content">
 				<div class="site">
