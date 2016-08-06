@@ -28,41 +28,28 @@
 	<div class="agregarUsuario">
 		<form class="datosUsuario microsite" id="newPostForm">
 			<a href=""><img src="{{ base_path }}img/body/close.png" class="close"></a>
-      <label>Título del artículo</label>
+	    	<label>Título del artículo</label>
 			<input id="postTitle" type="text" placeholder="Título del artículo" class="edit_input">
-      <label>Imagen del artículo</label>
-      <input type="file">
+	      	<label>Imagen del artículo</label>
+	      	<input type="file">
 			<label>Contenido del artículo</label>
 			<textarea id="postContent" placeholder="Descripción" class=""></textarea>
-      <div class="user addSite">Guardar como borrador</div>
+	      	<div class="user addSite">Guardar como borrador</div>
 			<div class="user addSite">Publicar</div>
-		</form>
+		</form>	
 	</div>
 	<div class="editarUsuario">
-		<form class="datosUsuario microsite update-site" id="newSiteForm">
+		<form class="datosUsuario microsite" id="editPostForm">
+			<input id="e_post_id" type="hidden" value="">
 			<a href=""><img src="{{ base_path }}img/body/close.png" class="close"></a>
-			<label>Encabezado</label>
-			<input id="e_siteName" type="text" placeholder="Nombre del sitio" class="edit_input">
-			<input id="e_siteUrl" type="hidden" placeholder="Nombre del sitio" class="edit_input">
-			<label>Descripción</label>
-			<textarea id="e_siteContent" placeholder="Descripción" class=""></textarea>
-			<label>Localidad</label>
-			<select name="" id="e_siteState" placeholder="Selecciona un Estado" class="edit_input">
-      		{% for key,value in states %}
-          		<option value="{{ value.id }}">{{ value.name }}</option>
-      		{% endfor %}
-			</select>
-			<label>Ciudad</label>
-			<input id="e_siteCity" placeholder="Colonia" class="edit_input">
-			<label>Colonia</label>
-			<input id="e_siteSettlement" placeholder="Colonia" class="edit_input">
-			<label>Dirección</label>
-			<input id="e_siteAddress" type="text" placeholder="Dirección" class="edit_input">
-			<label>Emails(Separados por una coma)</label>
-			<input id="e_siteMails" type="text" placeholder="Emails" class="edit_input">
-			<label>Teléfonos(Separados por una coma)</label>
-			<input id="e_siteTelephone" type="tel" placeholder="Teléfonos" class="edit_input">
-			<div class="user updateSite">Actualizar Información</div>
-		</form>
+	    	<label>Título del artículo</label>
+			<input id="e_post_title" type="text" placeholder="Título del artículo" class="edit_input">
+	      	<label>Imagen del artículo</label>
+	      	<input type="file" id="e_post_image">
+			<label>Contenido del artículo</label>
+			<textarea id="e_post_content" placeholder="Descripción" class=""></textarea>
+	      	<div class="user addSite">Guardar como borrador</div>
+			<div class="user updatePost">Actualizar</div>
+		</form>	
 	</div>
 {% endblock %}

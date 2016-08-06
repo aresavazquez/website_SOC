@@ -1,0 +1,54 @@
+{% extends "admin.html" %}
+{% block title %}Admin{% endblock %}
+{% block head %}
+    {{ parent() }}
+{% endblock %}
+{% block content %}
+	{{ parent() }}
+	<div class="page admin-users content-usuarioAdmin">
+		<div class="profile">
+			<div>
+				<img src="../img/body/brokerImg.png">
+			</div>
+			<div>
+				<p>Nombre</p>
+				<p>Empresa</p>
+				<p>Correo</p>
+				<p>Teléfono</p>
+			</div>
+		</div>
+		<div class="sites">
+			<input type="search" placeholder="buscar" class="search">
+			<a href="" class="plusUser"><span></span>+ Agregar usuario</a>
+			<p>Sitios</p>
+			<div class="">
+				<div class="container-sites">
+					<div class="site">
+						<div>
+							<p>SOC Guadalajara</p>
+							<a href="">visitar sitio</a>
+						</div>
+						<div>
+							<ul>
+								<li><a href="">Editar</a></li>
+								<li><a href="" class="delete">Eliminar</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="site">
+						<div>
+							<p>SOC Guadalajara</p>
+							<a href="">visitar sitio</a>
+						</div>
+						<div>
+							<ul>
+								<li><a href="">Editar</a></li>
+								<li><a href="" class="delete">Eliminar</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}
