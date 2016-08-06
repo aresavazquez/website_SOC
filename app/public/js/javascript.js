@@ -582,6 +582,9 @@ $(document).on('ready', function(){
             });
         });
     }
+    var simulatorListeners = function(){
+
+    }
     var site = {
         "p-home": function(){
             simulador();
@@ -593,6 +596,9 @@ $(document).on('ready', function(){
         /*"p-detalle": function(){
           loadTheSite();
         },*/
+        "p-simulator": function(){
+            simulatorListeners();
+        },
         "p-offices": function(){
             findBroker();
         },
