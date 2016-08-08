@@ -98,6 +98,11 @@ class ApiController extends Controller{
         $this->View->renderJSON($this->success_code($id));
     }
 
+    public function delete_user($params){
+        $id = User::getInstance()->delete($params['id']);
+        $this->View->renderJSON($this->success_code($id));
+    }
+
     public function sites(){
         Session::set('feedback_negative', array());
         //if(!Auth::checkAdminAuthentication()){

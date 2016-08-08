@@ -220,7 +220,7 @@ $(document).on('ready', function(){
         });
     }
     var loadUserinfo = function(){
-        $('#usersList').on('click', '.editInput' ,function (e){
+        $('.containerOffices').on('click', '.editInput' ,function (e){
             e.preventDefault ();
             var userID = $(this).data('user');
             var datauser = ''
@@ -233,10 +233,26 @@ $(document).on('ready', function(){
             $.ajax(settings).done(function (response) {
                 var user = response.data;
                 $('.editarUsuario .datosUsuario #e_user_name').val(user.name);
+                $('.editarUsuario .datosUsuario #e_user_company').val(user.company);
                 $('.editarUsuario .datosUsuario #e_user_email').val(user.email);
                 $('.editarUsuario .datosUsuario #e_user_id').val(user.id);
             });
         });
+    }
+    var deleteUserInfo = function(){
+        $('.containerOffices').on('click', '.delete', function(e){
+            e.preventDefault();
+            var userID = $(this).data('user');
+            var container = $(this).parent().parent().parent();
+            var response = confirm('Esta acción borrará al usuario del sistema ¿Deseas continuar?');
+            if(response){
+                $.delete(host_url+"api/v1/users/"+userID, function(){
+                    TweenLite.to(container, 0.5, {alpha: 0, onComplete: function(){
+                        container.remove();
+                    }});
+                });
+            }
+        })
     }
     var updateUserinfo = function(){
         $('.editarUsuario .datosUsuario .update-user').on('click', function(){
@@ -454,7 +470,7 @@ $(document).on('ready', function(){
         });
     }
     var adminUsersListeners = function(){
-        $('#usersList').on('click', '.editInput' ,function (e){
+        $('.containerOffices').on('click', '.editInput' ,function (e){
             e.preventDefault ();
             TweenLite.to('.editarUsuario', .5, {opacity: 1, display: 'block', onComplete: function(){
                 TweenLite.to('.datosUsuario', .5, { opacity: 1, display: 'block', ease: Power2.easeOut, y: 30});
@@ -665,10 +681,11 @@ $(document).on('ready', function(){
             passwordResetForm();
         },
         "admin-users": function(){
-            usersList();
+            //usersList();
             loadUserinfo();
             adminUsersListeners();
             updateUserinfo();
+            deleteUserInfo();
             registerUser();
         },
         "admin-sites": function(){

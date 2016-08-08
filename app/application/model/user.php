@@ -16,12 +16,12 @@ class User {
 
     public static function all(){
         $result = self::$PDO->_all("*");
-        return $result->get();
+        return $result->get('name,company');
     }
 
     public static function byId($id){
-        $result = self::$PDO->_where("id, name, email", "id='$id'");
-        return $result->first();
+        $result = self::$PDO->_where("id, name, company, email", "id='$id'");
+        return $result->first('name,company');
     }
 
     public static function setData($id, $data){
@@ -30,8 +30,8 @@ class User {
     }
 
 	public static function getDataByEmail($user_email){
-        $result = self::$PDO->_where("id, name, email, password, user_active, user_deleted, user_suspension_timestamp, user_last_failed_login, id_role", "email='$user_email'");
-        return $result->first();
+        $result = self::$PDO->_where("id, name, email, company, password, user_active, user_deleted, user_suspension_timestamp, user_last_failed_login, id_role", "email='$user_email'");
+        return $result->first('name,company');
     }
 
     public static function incrementFails($user_name){

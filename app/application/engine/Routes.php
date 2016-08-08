@@ -32,6 +32,7 @@ class Routes{
 		self::$router->map( 'GET', '/admin/microsite', 'BrokerController#edit', 'broker_microsite');
 		self::$router->map( 'GET', '/admin', 'AdminController#index', 'p_admin');
     	self::$router->map( 'GET', '/admin/users', 'AdminController#users', 'admin_users');
+        self::$router->map( 'GET', '/admin/users/[i:id_user]/sites', 'AdminController#user_sites', 'admin_user_sites');
     	self::$router->map( 'GET', '/admin/sites', 'AdminController#sites', 'admin_sites');
     	self::$router->map( 'GET', '/admin/blog', 'AdminController#blog', 'admin_blog');
     	self::$router->map( 'GET', '/logout', 'AdminController#logout', 'p_logout');
@@ -46,6 +47,7 @@ class Routes{
     	self::$router->map( 'GET|POST', '/api/v1/users', 'ApiController#users');
     	self::$router->map( 'GET|POST', '/api/v1/users/[i:id]', 'ApiController#get_user');
     	self::$router->map( 'PUT', '/api/v1/users/[i:id]', 'ApiController#set_user');
+        self::$router->map( 'DELETE', '/api/v1/users/[i:id]', 'ApiController#delete_user');
     	self::$router->map( 'GET', '/api/v1/sites', 'ApiController#sites');
     	self::$router->map( 'POST', '/api/v1/sites', 'ApiController#new_site');
     	self::$router->map( 'GET|POST', '/api/v1/sites/[*:url]', 'ApiController#get_site');
