@@ -16,6 +16,6 @@ class State {
 
     public static function all() {
         $result = self::$PDO->_all('*');
-        return $result->get();
+        return $result->get('name');
     }
 }

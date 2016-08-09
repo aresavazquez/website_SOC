@@ -20,12 +20,6 @@ class AdminController extends Controller
         if(!Session::userIsLoggedIn()) Redirect::to('admin');
         $states = State::getInstance()->all();
         $users = User::getInstance()->all();
-        foreach ($states as $key => $state) {
-          $state->name = utf8_encode($state->name);
-        }
-        foreach ($users as $key => $user) {
-          $user->name = utf8_encode($user->name);
-        }
         $this->View->render('admin/sites.html', array('states'=>$states, 'users'=>$users, 'is_admin'=>true));
     }
     public function users(){
@@ -37,7 +31,8 @@ class AdminController extends Controller
       if(!Session::userIsLoggedIn()) Redirect::to('admin');
       $user = User::getInstance()->byId($params['id_user']);
       $sites = Site::getInstance()->allFrom($params['id_user']);
-      $this->View->render('admin/user-sites.html', array('sites'=>$sites, 'user'=>$user, 'is_admin'=>true));
+      $states = State::getInstance()->all();
+      $this->View->render('admin/user-sites.html', array('sites'=>$sites, 'states'=>$states, 'user'=>$user, 'is_admin'=>true));
     }
     public function logout(){
         Session::destroy();

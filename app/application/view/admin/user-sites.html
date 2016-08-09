@@ -5,7 +5,7 @@
 {% endblock %}
 {% block content %}
 	{{ parent() }}
-	<div class="page admin-users content-usuarioAdmin">
+	<div class="page user-sites content-usuarioAdmin">
 		<div class="profile">
 			<div>
 				<img src="{{ base_path }}img/body/brokerImg.png">
@@ -18,27 +18,78 @@
 			</div>
 		</div>
 		<div class="sites">
-			<input type="search" placeholder="buscar" class="search">
+			<!--input type="search" placeholder="buscar" class="search"-->
 			<a href="" class="plusUser"><span></span>+ Agregar sitio</a>
 			<p>Sitios</p>
-			<div class="">
-				<div class="container-sites">
-					{% for site in sites %}
-					<div class="site">
-						<div>
-							<p>{{ site.title }}</p>
-							<a href="{{ base_path }}{{ site.url }}">visitar sitio</a>
-						</div>
-						<div>
-							<ul>
-								<li><a href="#edit">Editar</a></li>
-								<li><a href="#delete" class="delete">Eliminar</a></li>
-							</ul>
-						</div>
+			<div class="container-sites">
+			{% if sites.total > 0 %}
+				{% for site in sites.items %}
+				<div class="site">
+					<div>
+						<p>{{ site.title }}</p>
+						<a target="_blank" href="{{ base_path }}{{ site.url }}">visitar sitio</a>
 					</div>
-					{% endfor %}
+					<div>
+						<ul>
+							<li><a class="edit" data-site="{{ site.id }}" href="#edit">Editar</a></li>
+							<li><a class="delete" data-site="{{ site.id }}" href="#delete">Eliminar</a></li>
+						</ul>
+					</div>
 				</div>
+				{% endfor %}
+			{% else %}
+			<div class="none">Este usuario aún no cuenta con sitios registrados.</div>
+			{% endif %}
 			</div>
 		</div>
+	</div>
+	<div class="agregarUsuario">
+		<form class="datosUsuario microsite" id="newSiteForm">
+			<a href=""><img src="{{ base_path }}img/body/close.png" class="close"></a>
+			<input id="userID" type="hidden" value="{{ user.id }}" />
+			<input id="siteName" type="text" placeholder="Nombre del sitio" class="edit_input">
+			<label>URl para el sitio</label>
+			<input id="siteUrl" type="text" placeholder="Nombre del sitio" class="edit_input">
+			<label>Descripción</label>
+			<textarea id="siteContent" placeholder="Descripción" class=""></textarea>
+			<label>Localidad</label>
+			<select id="siteState" placeholder="Selecciona un Estado" class="edit_input">
+			{% for key,value in states %}
+          		<option value="{{ value.id }}">{{ value.name }}</option>
+      		{% endfor %}
+			</select>
+			<label>Dirección</label>
+			<input id="siteAddress" type="text" placeholder="Dirección" class="edit_input">
+			<label>Teléfono</label>
+			<input id="siteTelephone" type="tel" placeholder="Teléfono" class="edit_input">
+			<div class="user addSite">Crear Micrositio</div>
+		</form>
+	</div>
+	<div class="editarUsuario">
+		<form class="datosUsuario microsite update-site" id="newSiteForm">
+			<a href=""><img src="{{ base_path }}img/body/close.png" class="close"></a>
+			<label>Encabezado</label>
+			<input id="e_siteName" type="text" placeholder="Nombre del sitio" class="edit_input">
+			<input id="e_siteUrl" type="hidden" placeholder="Nombre del sitio" class="edit_input">
+			<label>Descripción</label>
+			<textarea id="e_siteContent" placeholder="Descripción" class=""></textarea>
+			<label>Localidad</label>
+			<select name="" id="e_siteState" placeholder="Selecciona un Estado" class="edit_input">
+      		{% for key,value in states %}
+          		<option value="{{ value.id }}">{{ value.name }}</option>
+      		{% endfor %}
+			</select>
+			<label>Ciudad</label>
+			<input id="e_siteCity" placeholder="Colonia" class="edit_input">
+			<label>Colonia</label>
+			<input id="e_siteSettlement" placeholder="Colonia" class="edit_input">
+			<label>Dirección</label>
+			<input id="e_siteAddress" type="text" placeholder="Dirección" class="edit_input">
+			<label>Emails(Separados por una coma)</label>
+			<input id="e_siteMails" type="text" placeholder="Emails" class="edit_input">
+			<label>Teléfonos(Separados por una coma)</label>
+			<input id="e_siteTelephone" type="tel" placeholder="Teléfonos" class="edit_input">
+			<div class="user updateSite">Actualizar Información</div>
+		</form>
 	</div>
 {% endblock %}

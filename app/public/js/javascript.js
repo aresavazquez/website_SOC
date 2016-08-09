@@ -239,7 +239,7 @@ $(document).on('ready', function(){
             });
         });
     }
-    var deleteUserInfo = function(){
+    var deleteUserinfo = function(){
         $('.containerOffices').on('click', '.delete', function(e){
             e.preventDefault();
             var userID = $(this).data('user');
@@ -469,21 +469,42 @@ $(document).on('ready', function(){
                 })
         });
     }
-    var adminUsersListeners = function(){
-        $('.containerOffices').on('click', '.editInput' ,function (e){
-            e.preventDefault ();
+    var adminUserSitesListeners = function(){
+        $('.container-sites').on('click', '.edit', function(e){
+            e.preventDefault();
             TweenLite.to('.editarUsuario', .5, {opacity: 1, display: 'block', onComplete: function(){
                 TweenLite.to('.datosUsuario', .5, { opacity: 1, display: 'block', ease: Power2.easeOut, y: 30});
             }});
         });
-        $('.plusUser').on('click', function (e){
-            e.preventDefault ();
+        $('.plusUser').on('click', function(e){
+            e.preventDefault();
             TweenLite.to('.agregarUsuario', .5, {opacity: 1, display: 'block', onComplete: function(){
                 TweenLite.to('.datosUsuario', .5, { opacity: 1, display: 'block', ease: Power2.easeOut, y: 30});
             }});
         });
-        $('.close').on('click', function (e){
-            e.preventDefault ();
+        $('.close').on('click', function(e){
+            e.preventDefault();
+            TweenLite.to('.datosUsuario', .5, { opacity: 0, display: 'none', ease: Power2.easeOut, y: 0, onComplete: function(){
+                TweenLite.to('.agregarUsuario', .5, {opacity: 0, display: 'none'});
+                TweenLite.to('.editarUsuario', .5, {opacity:0, display: 'none'});
+            }});
+        });
+    }
+    var adminUsersListeners = function(){
+        $('.containerOffices').on('click', '.editInput' , function (e){
+            e.preventDefault();
+            TweenLite.to('.editarUsuario', .5, {opacity: 1, display: 'block', onComplete: function(){
+                TweenLite.to('.datosUsuario', .5, { opacity: 1, display: 'block', ease: Power2.easeOut, y: 30});
+            }});
+        });
+        $('.plusUser').on('click', function(e){
+            e.preventDefault();
+            TweenLite.to('.agregarUsuario', .5, {opacity: 1, display: 'block', onComplete: function(){
+                TweenLite.to('.datosUsuario', .5, { opacity: 1, display: 'block', ease: Power2.easeOut, y: 30});
+            }});
+        });
+        $('.close').on('click', function(e){
+            e.preventDefault();
             TweenLite.to('.datosUsuario', .5, { opacity: 0, display: 'none', ease: Power2.easeOut, y: 0, onComplete: function(){
                 TweenLite.to('.agregarUsuario', .5, {opacity: 0, display: 'none'});
                 TweenLite.to('.editarUsuario', .5, {opacity:0, display: 'none'});
@@ -685,14 +706,21 @@ $(document).on('ready', function(){
             loadUserinfo();
             adminUsersListeners();
             updateUserinfo();
-            deleteUserInfo();
+            deleteUserinfo();
             registerUser();
+        },
+        "user-sites": function(){
+            adminUserSitesListeners();
+            loadSiteinfo();
+            updateSiteinfo();
+            //deleteSiteinfo();
+            registerSite();
         },
         "admin-sites": function(){
             sitesList();
             adminSitesListeners();
-            loadSiteinfo();
-            updateSiteinfo();
+            loadSiteInfo();
+            updateSiteInfo();
             viewSite();
             registerSite();
         },

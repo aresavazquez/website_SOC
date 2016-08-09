@@ -4,7 +4,7 @@ class PDOResult{
 	public function __construct( $result ){
 		$this->result = $result;
 	}
-	public function get($values_to_encode){
+	public function get($values_to_encode = null){
 		if($values_to_encode){
 			$decoded = explode(',', $values_to_encode);
 			foreach ($decoded as $decoded_value) {
@@ -16,7 +16,7 @@ class PDOResult{
 		}
 		return $this->result;
 	}
-	public function first($values_to_encode){
+	public function first($values_to_encode = null){
 		if(isset($this->result[0])){
 			if($values_to_encode){
 				$decoded = explode(',', $values_to_encode);

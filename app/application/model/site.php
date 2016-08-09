@@ -21,7 +21,7 @@ class Site {
 
     public static function allFrom($id){
         $result = self::$PDO->_where("*", "user_id=$id");
-        return $result->get('title,content,settlement');
+        return array('items'=>$result->get('title,content,settlement'), 'total'=>$result->count());
     }
 
     public static function byState($id){
