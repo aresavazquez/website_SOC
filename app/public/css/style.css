@@ -2441,6 +2441,17 @@ h2.zero,p.zero {
     border-radius: 5px;
     list-style: none;
 }
+@media print {
+    .container_menu{
+        display: none !important;
+    }
+    .botones{
+        display: none !important;
+    }
+    .footer{
+        display: none !important;
+    }
+}
 /* admin */
 .containerOffices{
     padding: 0 !important;

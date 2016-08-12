@@ -673,7 +673,10 @@ $(document).on('ready', function(){
         });
     }
     var simulatorListeners = function(){
-
+        $('.printSimulator').on('click', function(e){
+            e.preventDefault();
+            print();
+        });
     }
     var site = {
         "p-home": function(){

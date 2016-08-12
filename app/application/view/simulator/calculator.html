@@ -59,7 +59,7 @@
   				<td>{{ banks.santander.monto }}</td>
   				<td>{{ banks.scotiabank.monto }}</td>
   			</tr>
-  			<tr>
+  			<!--tr>
   				<td class="color">Monto de crédito más prima única</td>
   				<td>{{ banks.afirme.prima_unica }}</td>
   				<td>{{ banks.banamex.prima_unica }}</td>
@@ -67,7 +67,7 @@
   				<td>{{ banks.hsbc.prima_unica }}</td>
   				<td>{{ banks.santander.prima_unica }}</td>
   				<td>{{ banks.scotiabank.prima_unica }}</td>
-  			</tr>
+  			</tr-->
   			<tr>
   				<td class="color">Tasa de interés</td>
   				<td>{{ banks.afirme.tasa_interes }}</td>
@@ -142,6 +142,7 @@
   			</tr>
   		</tbody>
   	</table>
+    <p>Nota: “Debido a la constante actualización de los bancos en sus Factores de pago, la presente información puede tener una variación de hasta un 3.5% sobre la expuesta en un simulador Bancario. Para una simulación más exacta comunícate con tu Asesor SOC”</p>
     <ul class="botones">
       <li><a href="http://localhost:8000/contacto">Contactar a un asesor</a></li>
       <li><a href="{{ base_path }}simulador">Hacer otra simulación</a></li>
