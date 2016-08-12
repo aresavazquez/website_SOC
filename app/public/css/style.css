@@ -2116,6 +2116,10 @@ h2.zero,p.zero {
     padding: 15px;
     border-radius: 5px;
     color: #fff;
+    position: absolute;
+    bottom: -25px;
+    left: 0;
+    right: 0;
 }
 /*---------------franuicias*/
 
@@ -2520,6 +2524,9 @@ h2.zero,p.zero {
     }
     .carousel .carousel-inner {
         margin: 15px auto;
+    }
+    .container_inmobiliaria .magazine{
+        position: relative;
     }
 }
 @media screen and (max-width: 768px){
