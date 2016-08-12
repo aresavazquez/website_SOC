@@ -1585,42 +1585,37 @@ h2.zero,p.zero {
     background-size: cover;
     padding: 40px 0 150px;
     position: relative;
-}
-.container_blog .itemBlog{
-    width: 1200px;
-    margin: auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
-.container_blog .itemBlog div{
+.container_blog > div{
     background: #fff;
     border-radius: 10px;
-    margin: 20px;
+    margin: 5px;
     width: 300px;
+    height: 480px;
+    text-overflow: ellipsis;
     overflow: hidden;
 }
-.container_blog .itemBlog div img{
+.container_blog > div img{
     width: 100%;
-    padding-bottom: 0;
 }
-.container_blog .itemBlog div p{
+.container_blog > div p{
     padding: 10px;
 }
-.container_blog .itemBlog div h1{
+.container_blog > div h1{
     padding: 10px;
     font-size: 17px;
     color: #41546e;
     font-weight: 600;
-    margin-bottom: 20px;
+    margin-bottom: 0;
     padding-bottom: 0;
 }
-.container_blog .itemBlog div .vnota{
+.container_blog > div a{
     padding: 10px;
-    color: #41546e;
-    font-style: italic;
 }
-.container_blog .itemBlog div .date{
+.container_blog > div .date{    
     color: #4fa753;
     font-size: 10px;
     padding-bottom: 0;
@@ -1690,6 +1685,7 @@ h2.zero,p.zero {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
+    padding-top: 65px;
 }
 .nota .contenido-nota .redes{
     display: flex;

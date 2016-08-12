@@ -9,67 +9,62 @@
 <div class="page p_blog_nota nota">
 	<div class="nota-general">
 		<div class="contenido-nota">
-			<h1></h1>
-			<!--p class="date">Posted on 24 mayo, 2016 by SOC Asesores Hipotecarios</p-->
-			<img class="post-image" src="">
+			<h1>{{ post.post_title }}</h1>
+			<p class="date">Posted on {{ post.post_date }} by SOC Asesores Hipotecarios</p>
+			<img class="post-image" src="{{ post.post_image }}">
 			<ul class="redes">
 				<li>Compartir nota</li>
     		    <li>
-    		        <a href="https://www.facebook.com/SOCAsesores/?ref=ts&fref=ts" target="_blank">
-    		            <img src="./img/footer/face.png">
+    		        <a href="https://www.facebook.com/sharer/sharer.php?u={{ base_path }}blog/nota/{{ post.url_tag }}" target="_blank">
+    		            <img src="{{ base_path }}img/footer/face.png">
     		        </a>
     		    </li>
     		    <li>
-    		        <a href="https://twitter.com/SOCasesores?lang=es" target="_blank">
-    		            <img src="./img/footer/tw.png">
+    		        <a href="https://twitter.com/home?status={{ base_path }}blog/nota/{{ post.url_tag }}" target="_blank">
+    		            <img src="{{ base_path }}img/footer/tw.png">
     		        </a>
     		    </li>
     		    <li>
-    		        <a href="https://www.youtube.com/channel/UCUzn3H-tWe8vrveeYDKqJGw" target="_blank">
-    		            <img src="./img/footer/ytube.png">
+    		        <a href="https://www.linkedin.com/shareArticle?url={{ base_path }}blog/nota/{{ post.url_tag }}" target="_blank">
+    		            <img src="{{ base_path }}img/footer/in.png">
     		        </a>
     		    </li>
     		    <li>
-    		        <a href="" target="_blank">
-    		            <img src="./img/footer/in.png">
-    		        </a>
-    		    </li>
-    		    <li>
-    		        <a href="https://plus.google.com/+SOCCr%C3%A9ditoenti_SOC_Asesores/posts" target="_blank">
-    		            <img src="./img/footer/gmas.png">
+    		        <a href="https://plus.google.com/share?url={{ base_path }}blog/nota/{{ post.url_tag }}" target="_blank">
+    		            <img src="{{ base_path }}img/footer/gmas.png">
     		        </a>
     		    </li>
     		</ul>
 			<br>
             <div class="post-content">
-                <p></p>
+                {{ post.post_content | raw }}
             </div>
-			<div class="">
+			<div>
 				<p>Síguenos en nuestras redes sociales:</p>
 				<ul class="redes">
     			    <li>
     			        <a href="https://www.facebook.com/SOCAsesores/?ref=ts&fref=ts" target="_blank">
-    			            <img src="./img/footer/face.png">
+    			            <img src="{{ base_path }}img/footer/face.png">
     			        </a>
     			    </li>
     			    <li>
     			        <a href="https://twitter.com/SOCasesores?lang=es" target="_blank">
-    			            <img src="./img/footer/tw.png">
+    			            <img src="{{ base_path }}img/footer/tw.png">
     			        </a>
     			    </li>
     			    <li>
     			        <a href="https://www.youtube.com/channel/UCUzn3H-tWe8vrveeYDKqJGw" target="_blank">
-    			            <img src="./img/footer/ytube.png">
+    			            <img src="{{ base_path }}img/footer/ytube.png">
     			        </a>
     			    </li>
     			    <li>
     			        <a href="" target="_blank">
-    			            <img src="./img/footer/in.png">
+    			            <img src="{{ base_path }}img/footer/in.png">
     			        </a>
     			    </li>
     			    <li>
     			        <a href="https://plus.google.com/+SOCCr%C3%A9ditoenti_SOC_Asesores/posts" target="_blank">
-    			            <img src="./img/footer/gmas.png">
+    			            <img src="{{ base_path }}img/footer/gmas.png">
     			        </a>
     			    </li>
     			</ul>

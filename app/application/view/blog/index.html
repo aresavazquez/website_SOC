@@ -15,18 +15,30 @@
 		</div>
 	</div>
 	<div class="container_blog">
-		<div class="itemBlog">
-			<!--ul>
-				<li><a href="" class="box">1-10</a></li>
-				<li><a href="">1</a></li>
-				<li><a href="">2</a></li>
-				<li><a href="">3</a></li>
-				<li><a href="">4</a></li>
-				<li><a href="">5</a></li>
-				<li><a href="">6</a></li>
-				<li><a href="" class="box">10</a></li>
-			</ul-->
+		{% for post in posts %}
+		<div>
+			<img src="{{ post.post_image }}">
+			<h1>{{ post.post_title }}</h1>
+			<p class="date">Posted on {{ post.post_date }} by SOC Asesores Hipotecarios</p>
+			{{ post.excerpt | raw }}...
+			<a href="{{ base_path }}blog/nota/{{ post.url_tag }}">Ver nota</a>
 		</div>
+		{% endfor %}
+		<ul>
+			{% if page - 1 > 0 %}
+			<li><a href="{{ base_path }}blog/{{ page - 1 }}"><</a></li>
+			{% endif %}
+			{% for i in 1..pages %}
+				{% if i == page %}
+				<li><a class="box" href="{{ base_path }}blog/{{ i }}">{{ i }}</a></li>
+				{% else %}
+				<li><a href="{{ base_path }}blog/{{ i }}">{{ i }}</a></li>
+				{% endif %}
+			{% endfor %}
+			{% if page + 1 < pages %}
+			<li><a href="{{ base_path }}blog/{{ page + 1 }}">></a></li>
+			{% endif %}
+		</ul>
 	</div>
 	<div class="second-section">
 		<div>
