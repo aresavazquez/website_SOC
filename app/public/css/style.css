@@ -2500,6 +2500,8 @@ h2.zero,p.zero {
 @media screen and (max-width: 1370px){
     .carousel .item p {
         top: 0px;
+        font-size: 50px;
+        left: 130px;
     }
     .carousel .item .abuela {
         left: 82px;
@@ -2510,8 +2512,11 @@ h2.zero,p.zero {
     }
     .carousel .item .sliderImg {
         width: 333px;
-        margin-right: 0px;
+        margin-right: 115px;
         padding: 0;
+    }
+    .carousel .item p span {
+        font-size: 35px;
     }
     .carousel .item .mejora {
         width: 668px;
