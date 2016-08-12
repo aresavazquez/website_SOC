@@ -1,4 +1,4 @@
-var host_url = "http://localhost:8000/";
+var host_url = "http://nueva.socasesores.com/";
 
 function showModal(modalName){
     if( modalName == 'aviso' ){
