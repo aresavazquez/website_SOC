@@ -11,6 +11,93 @@ function showModal(modalName){
     $('#siteModal').modal();
 }
 
+$.fn.simulator = function() {
+  var name = this.find('#name');
+  var phone = this.find('#number');
+  var mail = this.find('#mail');
+  var state = this.find('#state');
+  var value = this.find('#value');
+  var hitch = this.find('#hitch');
+  var paytype = this.find('#paytype');
+  var paytime = this.find('#paytime');
+  var self = this;
+
+  var inputs = [
+    {input: name, valid: true, rules: 'exist,hasValue'},
+    {input: phone, valid: true, rules: 'exist,isNumber,hasLength:10'},
+    {input: mail, valid: true, rules: 'exist,validEmail'},
+    {input: state, valid: true, rules: 'notEqual:-1'},
+    {input: value, valid: true, rules: 'exist,hasValue,isNumber'},
+    {input: hitch, valid: true, rules: 'exist,hasValue,isNumber'},
+    {input: paytype, valid: true, rules: 'notEqual:-1'},
+    {input: paytime, valid: true, rules: 'notEqual:-1'}
+  ];
+
+  self.exist = function(value){
+    return value != null;
+  }
+
+  self.hasValue = function(value){
+    return value != '';
+  }
+
+  self.isNumber = function(value){
+    return !isNaN(value);
+  }
+
+  self.hasLength = function(value, params){
+    return value.length == params;
+  }
+
+  self.validEmail = function(value){
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(value);
+  }
+
+  self.notEqual = function(value, params){
+    return value != params;
+  }
+
+  self.biggerThan = function(value, params){
+    return value > params;
+  }
+
+  self.validate = function(value,rules, cb){
+    var success = true;
+    var methodI = 0;
+    var methods = rules.split(',');
+    $.each(methods, function(index, item){
+        var method = item.split(':')[0];
+        var params = item.split(':')[1];
+        var eval = self[method].call(this, value, params);
+        if(!eval) success = false;
+        methodI++;
+        if(methodI == methods.length) cb(success);
+    });
+  }
+
+  self.find('button[type="submit"]').on('click', function(e){
+    e.preventDefault();
+    var success = true;
+
+    $.each(inputs, function(index, item){
+        item.valid = true;
+        item.input.css({'border-color':'#4fa753'});
+        self.validate(item.input.val(), item.rules, function(valid){
+            if(!valid){
+                item.input.css({'border-color': 'red'});
+                item.valid = false;
+                success = false;
+            }
+        });
+        if(index == inputs.length - 1){
+            console.log(success, self);
+            if(success) self.find('form').submit();
+        };
+    });
+  });
+};
+
 $(document).on('ready', function(){
     $.put = function(url, data, callback, type){
         if ( $.isFunction(data) ){
@@ -171,31 +258,6 @@ $(document).on('ready', function(){
                 $('.responses').text('Falló la comunicación con el servidor, inténtalo nuevamente');
                 $('.responses').show();
             });
-        });
-    }
-    var simulador = function(){
-        $('#simulador-form .send').on('click', function(){
-          var nameS = $('#simulador-form #name').val();
-          var phoneS = $('#simulador-form #number').val();
-          var mailS = $('#simulador-form #mail').val();
-          var stateS = $('#simulador-form #state').val();
-          var valueS = $('#simulador-form #value').val();
-          var hitchS = $('#simulador-form #hitch').val();
-          var paytypeS = $('#simulador-form #paytype').val();
-          var paytimeS = $('#simulador-form #paytime').val();
-          console.log(nameS, phoneS, mailS, stateS, valueS, hitchS, paytypeS, paytimeS);
-            /*var settings = {
-                "async": true,
-                "crossDomain": true,
-                "url": host_url + "api/v1/sites/"+esiteUrl+"?title="+esiteName+"&content="+esiteContent+"&address="+esiteAddress+"&contact="+esiteTelephone,
-                "method": "PUT"
-            }
-            $.ajax(settings).done(function (response) {
-               if(response.status == 200){
-
-                }else if(response.status == 500) {
-                }
-            });*/
         });
     }
     var usersList = function(){
@@ -680,10 +742,10 @@ $(document).on('ready', function(){
     }
     var site = {
         "p-home": function(){
-            simulador();
             animateHomeIntro();
             //animateHomeSlider();
             //animateHomePhones();
+            $('.simulador .form').simulator();
             menuBehaviors();
         },
         /*"p-detalle": function(){

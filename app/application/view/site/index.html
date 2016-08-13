@@ -123,7 +123,7 @@
     		<p>Los mejores asesores hipotecarios trabajando para ti de manera gratuita.<br>En ningún momento del proceso pagarás por su servicio..</p>
     	</div-->
     </div>
-    <div class="simulador">
+    <div id="simulador" class="simulador">
     	<div class="box">
     		<div>
     			<h1 class="title">Simulador</h1>
@@ -137,7 +137,7 @@
       				  <input type="text" placeholder="Correo" name="mail" id="mail">
       				  <label>Estado</label>
       				  <select name="state" id="state">
-                        <option selected="selected" value="0">SELECCIONE UN ESTADO</option>
+                        <option selected="selected" value="-1">SELECCIONE UN ESTADO</option>
                         {% for item in states %}
                         <option value={{ item.id }}>{{ item.name | convert_encoding('UTF-8', 'iso-8859-1') }}</option>
                         {% endfor %}
