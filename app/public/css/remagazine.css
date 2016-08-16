@@ -1,0 +1,289 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+html {
+	width: 100%;
+	height: 100%;
+}
+body {
+	width: 100%;
+	height: 100%;
+	font-family: 'MuseoSans',sans-serif;
+	font-weight: 100;
+}
+/*  //////////////////// Pop /////////////////// */
+/*  //////////////////// Pop /////////////////// */
+/*  //////////////////// Pop /////////////////// */
+
+.pop {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: #000;
+	opacity: 1;
+	display: block;
+	z-index: 120;
+}
+.cont-title {
+	width: 100%;
+	height: 200px;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	background: rgba(255, 255, 255, 0,5);
+}
+.home{
+	margin: auto;
+	display: table;
+}
+.home h1 { 
+	position: relative; 
+	float: left;
+	color: #fff;
+	background: #000;	
+	font-size: 120px;
+	font-weight: 100;
+}
+.home h1 strong { 
+	color: #F0882B;
+}
+span {
+    position:absolute;
+    right:0;
+    width:0;
+    background: #000;
+  	border-left: 1px solid #fff;
+    animation: escribir 2.5s steps(12) alternate;
+}
+@keyframes escribir {
+    from { width: 100% }
+    to { width: 0 }
+}
+
+/*  //////////////////// contenido /////////////////// */
+/*  //////////////////// contenido /////////////////// */
+/*  //////////////////// contenido /////////////////// */
+
+.portadas {
+	width: 100%;
+	height: 100%;
+	background: url(../img/magazine/back-portadas.jpg) no-repeat center;
+	background-size: cover;
+}
+.logo-re {
+	position: absolute;
+	top: 20px;
+	left: 30px;
+	font-size: 90px;
+	color: #F0882B;
+	font-weight: 700;
+}
+.content-portadas {
+	position: absolute;
+	width: 70%;
+	height: 430px;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	display: -webkit-box;
+  	display: -moz-box;
+  	display: -ms-flexbox;
+  	display: -webkit-flex;
+  	display: flex;
+
+  	-webkit-flex-flow: row wrap;
+  	justify-content: space-around;
+  	overflow: hidden;
+}
+.edicion {
+	position: relative;
+	width: 300px;
+	height: 450px;
+	margin-bottom: 20px;
+}
+.edicion .altura {
+	height: 430px
+}
+.edicion .orange {
+	position: absolute;
+	width: 100%;
+	height: 430px;
+	background: rgba(0, 0, 0, 0.85);
+	opacity: 0;
+	-webkit-transition:all 0.7s ease;
+   	-moz-transition:all 0.7s ease;
+   	-o-transition:all 0.7s ease;
+   	transition:all 0.7s ease;
+}
+.orange a {
+	text-decoration: none;
+}
+.orange p {
+	width: 70%;
+	height: 40px;
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: auto;
+	text-align: center;
+	font-size: 30px;
+	font-weight: 100;
+	color: #fff;
+	border: solid 1px #F0882B;
+	padding: 8px 5px 5px 5px;
+	margin-top:	200px;
+}
+.orange:hover {
+	opacity: 1;
+	-webkit-transition:all 0.7s ease;
+   	-moz-transition:all 0.7s ease;
+   	-o-transition:all 0.7s ease;
+   	transition:all 0.7s ease;
+
+}
+.edicion img {
+	display: block;
+	width: 100%;
+}
+.flecha {
+	display: none;
+}
+/* ////////////////////// footer   ////////////////////*/
+.footer {
+	position: absolute;
+	width: 300px;
+	height: 70px;
+	left: 0;
+	right: 0;
+	bottom: 10px;
+	margin: auto;
+}
+.footer .magazine {
+	font-size: 25px;
+	color: #fff;
+	font-weight: 300;
+	text-align: center;
+	border-bottom: solid 1px #F0882B;
+	padding-bottom: 5px;
+}
+.footer .soc {
+	font-size: 17px;
+	font-weight: 300;
+	text-align: center;
+	padding-top: 8px;
+	color: #fff;
+}
+
+/* ////////////////////// responsive  ////////////////////*/
+/* ////////////////////// ipad  ////////////////////*/
+
+@media screen and (max-width: 768px) {
+	.home h1 {
+		font-size: 100px;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.content-portadas {
+		width: 95%;
+	}
+}
+
+
+/* ////////////////////// celular ////////////////////*/
+
+@media screen and (max-width: 414px) {
+	.cont-title {
+		height: 70px;
+	}
+}
+@media screen and (max-width: 414px) {
+	.home h1 {
+		font-size: 58px;
+	}
+}
+@media screen and (max-width: 375px) {
+	.home h1 {
+		font-size: 45px;
+	}
+}
+@media screen and (max-width: 414px) {
+	.content-portadas {
+		overflow-y: scroll;
+		height: 300px;
+		top: -70px;
+	}
+}
+
+@media screen and (max-width: 414px) {
+	.logo-re{
+		top: 10px;
+    	left: 15px;
+    	font-size: 45px;
+	}
+}
+@media screen and (max-width: 414px) {
+	.edicion {
+		width: 200px;
+    	height: 300px;
+	}
+}
+
+@media screen and (max-width: 414px) {
+	.edicion .altura {
+		height: 300px;
+	}
+}
+@media screen and (max-width: 414px) {
+	.edicion .orange {
+		height: 0;
+	}
+}
+
+@media screen and (max-width: 414px) {
+	.flecha {
+		display: block;
+		position: absolute;
+    	width: 35px;
+    	height: 30px;
+    	left: 0;
+    	right: 0;
+    	bottom: 90px;
+    	margin: auto;
+
+	}
+}
+@media screen and (max-width: 414px) {
+	.footer {
+		bottom: 0px;
+		height: 60px;
+	}
+}
+@media screen and (max-width: 414px) {
+	.footer .magazine {
+		font-size: 15px;
+	}
+}
+@media screen and (max-width: 414px) {
+	.footer .solid {
+		font-size: 12px;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

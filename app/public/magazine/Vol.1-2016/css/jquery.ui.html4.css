@@ -1,0 +1,16 @@
+.fpf-slider{
+	width:600px;
+	height:8px;
+	background-color:#B4B4B4;
+	border-radius:5px;
+	margin:20px auto;
+}
+
+.fpf-slider .ui-slider .ui-slider-handle{
+	background-color:#8F8F8F;
+	z-index:10000;
+}
+
+.fpf-slider .thumbnail{
+	background: #666;
+}
