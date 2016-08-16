@@ -908,7 +908,7 @@ button.close{
     margin: auto;
     display: block;
     width: 600px;
-    height: 420px;
+    height: 433px;
     opacity: 0;
     padding-top: 30px;
     background: #285CA4;
@@ -2890,6 +2890,16 @@ h2.zero,p.zero {
     }
     .container_franquicia .row .col-md-6 .space {
         padding: 0;
+    }
+    .content-usuario div{
+        padding-top: 32px;
+    }
+    .titulo{
+        margin: 0 16px 100px;
+    }
+    .content-usuario div .plusUser{
+        top: 152px;
+        left: 0;
     }
 }
 
