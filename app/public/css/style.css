@@ -18,6 +18,13 @@ a,a:visited{
     opacity: 0;
     display: none;
 }
+/*-------*/
+.nota{
+    color: #fff;
+    text-align: center;
+    width: 900px !important;
+    margin: auto;
+}
 /*---------------------------------------header SLIDER*/
 .frase{
     margin: auto;
@@ -1621,6 +1628,7 @@ h2.zero,p.zero {
 }
 .container_blog > div a{
     padding: 10px;
+    color: #428bca;
 }
 .container_blog > div .date{    
     color: #4fa753;
@@ -2814,6 +2822,50 @@ h2.zero,p.zero {
     }
     .container_inmobiliaria {
         padding: 50px 0px;
+    }
+    .directores div{
+        width: 100%;
+    }
+    .container_directores { 
+        padding: 40px 0;
+    }
+    .hipoteca div { 
+        height: 155px;
+    }
+    .container_hipoteca {
+        padding: 50px 0;
+    }
+    .content-home .container {
+        padding: 40px 5px;
+    }
+    .empresas div {
+        height: 140px;
+    }
+    .container_empresas {
+        padding: 50px 0;
+    }
+    .container_directorio {
+        padding: 50px 0;
+    }
+    .container_directorio select {
+        width: 335px;
+    }
+    .nota .nota-general {
+        width: 100%;
+        display: block; 
+    }
+    .nota {
+        width: 100% !important;
+    }
+    .nota .contenido-nota img {
+        width: 100%;
+        padding: 0;
+    }
+    .nota .contenido-nota {
+        padding: 30px 35px 50px;
+    }
+    .nota .contenido-nota .redes {
+        width: 100%;
     }
 }
 
