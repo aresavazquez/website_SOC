@@ -1,0 +1,1112 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+html {
+	width: 100%;
+	height: 100%;
+}
+body {
+	width: 100%;
+	height: 100%;
+	font-family: 'MuseoSans',sans-serif;
+	font-size: 19px;
+	font-weight: 100;
+    background: url("../img/SOCmedios/back.jpg") repeat-y center;
+    background-size: cover;
+    background-attachment: fixed;
+
+}
+/*-----pop up inicio -------*/
+/*-----pop up inicio -------*/
+/*-----pop up inicio -------*/
+.pop {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index: 2;
+	background: #000;
+	opacity: 0;
+	display: none;
+}
+.pop div {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+}
+.pop div .tex-pop{
+	display: none;
+	opacity: 0;
+	color: #fff;
+	font-size: 80px;
+	text-align: center;
+}
+.pop div .tex-pop span {
+	font-weight: 700;
+	font-size: 130px;
+	color: #1dafec;
+}
+.pop div .tex-pop .textmedios {
+	font-weight: 700;
+	font-size: 95px;
+	color: #1dafec;
+}
+/* /////////////// pop-radio ///////////////// */
+.pop-radio {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1000;
+    background: #000;
+    opacity: 0;
+    display: none;
+    position: fixed;
+    top: 0;
+}
+.close {
+    display: block;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    width: 40px;
+    opacity: 1;
+}
+.pop-radio div {
+    position: absolute;
+    width:100%;
+    height: 55%;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+.pop-radio div iframe {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+/*.pop-radio div img {
+    width: 80%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    display: block;
+}*/
+/* /////////////// MENU ///////////////// */
+.logo {
+    width: 20%;
+    position: relative;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.logo img {
+    display: block;
+    position: relative;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 200px;
+    padding: 15px;
+}
+nav {
+  padding: 24px;
+  text-align: center;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  padding-top: 25px;
+}
+#nav-1 {
+  background: #16193b;
+}
+.link-1 {
+    transition: 0.3s ease;
+    background: #16193b;
+    color: #ffffff;
+    font-size: 22px;
+    text-decoration: none;
+    border-top: 2px solid #3fa46a;
+    border-bottom: 2px solid #3fa46a;
+    padding: 20px 0;
+    margin: 0 60px;
+}
+.link-1:hover {
+  border-top: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  padding: 6px 0; 
+  color: #fff;
+  text-decoration: none;
+}
+
+.lideres {
+    width: 100%;
+    height: 50px;
+}
+.lideres h1 {
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 100;
+    padding: 0;
+    margin: 0;
+    font-style: italic;
+}
+/*------ incio ------------- */
+/*------ incio ------------- */
+/*------ incio ------------- */
+
+.section {
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+    background-color: #000;
+}
+.section__content {
+	width: 100%;
+	height: 100%;
+}
+.card {
+	position: relative;
+    float: left;
+    padding-bottom:51%;
+    height: auto;
+    width: 33%;
+    text-align: center;
+}
+
+.card:nth-child(1) {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.card:nth-child(2),
+.card:nth-child(3) {
+  margin-right: 0;
+}
+
+/* card fronts and backs */
+/*------------------------------*/
+.card__front,
+.card__back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.card__front,
+.card__back {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transition: -webkit-transform 0.3s;
+          transition: transform 0.3s;
+}
+.card__front {
+  background-color: #000;
+  z-index: 1;
+}
+.card__front div{
+	width: 100%;
+	height: 100%;
+}
+.card__front div img {
+	display:  block;
+	width: 100%;
+}
+.card__back {
+  -webkit-transform: rotateY(-180deg);
+          transform: rotateY(-180deg);
+}
+/* card text */
+/* card text */
+/* card text */
+.card__back div {
+	position: absolute;
+	width: 100%;
+	height: 15%;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	padding: 10px;
+}
+.card__text {
+	text-align: center;
+    display: inline-block;
+    color: #fff;
+    font-size: 40px;
+    font-weight: 100;
+    padding-top: 40px;
+ }
+/*------------------------------*/
+.card.effect__hover:hover .card__front {
+  -webkit-transform: rotateY(-180deg);
+          transform: rotateY(-180deg);
+}
+.card.effect__hover:hover .card__back {
+  -webkit-transform: rotateY(0);
+          transform: rotateY(0);
+}
+/* //////////////////////////////// VISTA ipad Home //////////////////////////////////*/
+/* //////////////////////////////// VISTA ipad Home //////////////////////////////////*/
+.ipad-medios {
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+.menu-responsive {
+    width: 100%;
+    height: 33.3%;
+    position: relative;
+    background: red;
+}
+.menu-responsive div {
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0, 0.5); 
+}
+.menu-responsive div a {
+    text-decoration: none;
+}
+.menu-responsive div p {
+    font-size: 50px;
+    text-align: center;
+    color: #fff;
+    padding-top: 8%;
+
+}
+.fondo1 {
+    background: url("../img/SOCmedios/impr-responsive.jpg") no-repeat center;
+    background-size: cover;
+}
+.fondo2 {
+    background: url("../img/SOCmedios/radio-responsive.jpg") no-repeat left;
+    background-size: cover;
+}
+.fondo3 {
+    background: url("../img/SOCmedios/tv-responsive.jpg") no-repeat center;
+    background-size: cover;
+}
+
+
+/* //////////////////////////////// impresos  //////////////////////////////////*/
+/* //////////////////////////////// impresos  //////////////////////////////////*/
+/* //////////////////////////////// impresos //////////////////////////////////*/
+
+.home {
+    position: relative;
+    width: 100%;
+    height: 35%;
+    background: rgba(65, 84, 110, 0.55);
+}
+.home div {
+    width: 38%;
+    height: 33%;
+    position: absolute;
+    left: 0; 
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    border: solid 3px #4fa753;
+    padding: 10px 10px 10px 10px;
+}
+.home div p {
+    font-size: 65px;
+    text-align: center;
+    color: #fff;
+    font-weight: 500;
+}
+.content-impresos {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    margin-top: 0px;
+    display: block;
+    margin-bottom: 30px;
+}
+.cont-responsive {
+    display: none;
+}
+.title-responsive {
+    width: 100%;
+    height: 50px;
+    display: none;
+}
+.title-responsive div {
+    width: 100%;
+    height: 100%;
+    font-size: 25px;
+    font-weight: 500;
+    color: #fff;
+    text-align: center;
+    padding-top: 50px;
+}
+.cuadros {
+    width: 90%;
+    height: 70%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    justify-content: space-around;
+}
+.view {
+    width: 350px;
+    height: 267px;
+    margin: 10px;
+    float: left;
+    border: 10px solid #fff;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    box-shadow: 1px 1px 2px #e6e6e6;
+    cursor: default;
+    background: #fff;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+.view .mask, .view .content {
+    width: 350px;
+    height: 267px;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    color: #fff
+}
+.view img {
+    display: block;
+    position: relative;
+    width: 100%;
+}
+.view h2 {
+    color: #fff;
+    text-align: center;
+    position: relative;
+    font-size: 32px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    margin: 20px 0 0 0
+}
+.view p {
+    font-family: Georgia, serif;
+    font-style: italic;
+    font-size: 15px;
+    position: relative;
+    color: #fff;
+    padding: 10px 20px 20px;
+    text-align: center
+}
+.view a.info {
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 14px;
+    background: #1dafec;
+    color: #fff;
+    text-transform: uppercase;
+    box-shadow: 0 0 1px;
+    margin-left: -14px;
+
+}
+.view a.info:hover {
+    box-shadow: 0 0 5px #000
+}
+.view-tenth img { 
+	transform: scaleY(1);
+	transition: all 0.7s ease-in-out;
+}
+.view-tenth .mask { 
+    background-color: #41546e; 
+    transition: all 0.5s linear;
+    opacity: 0;
+}	
+.view-tenth h2{
+    border-bottom: 2px solid rgba(255, 255, 255, 0.9);
+    background: transparent;
+    margin: 36px 55px 0px 40px;
+    transform: scale(0);
+    color: #fff;
+    transition: all 0.5s linear;
+    opacity: 0;
+}
+.view-tenth p {
+    color: #fff;
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.5s linear;
+}
+.view-tenth a.info { 
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.5s linear;
+}
+.view-tenth:hover img { 
+	transform: scale(10);
+    opacity: 0;
+}
+.view-tenth:hover .mask { 
+	opacity: 1;
+}																			 
+.view-tenth:hover h2,
+.view-tenth:hover p,
+.view-tenth:hover a.info{ 
+    transform: scale(1);
+    opacity: 1;
+}
+.me-digitales {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    margin-top: 140px;
+}
+.me-digitales p {
+    font-size: 45px;
+    color: #fff;
+    font-weight: 300;
+    text-align: center;
+    border-bottom: solid 2px #4fa753;
+    height: 90px;
+}
+.cont-medios-dig {
+    position: relative;
+    width: 100%;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    justify-content: space-around;
+    top: 60px;
+    padding-bottom: 50px;
+}
+.cont-medios {
+    width: 450px;
+    height: 300px;
+    position: relative;
+    background: #fff;
+    margin: 20px;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+#cont-medios-fondo1 {
+    background: url("../img/SOCmedios/lamudi-digitales.jpg") no-repeat center;
+    background-size: cover;
+}
+#cont-medios-fondo2 {
+    background: url("../img/SOCmedios/el-norte.jpg") no-repeat center;
+    background-size: cover;
+}
+/* ///////////////////////////// RADIO ///////////////////////////////////////////// */
+/* ///////////////////////////// RADIO ///////////////////////////////////////////// */
+/* ///////////////////////////// RADIO ///////////////////////////////////////////// */
+
+.radio {
+	position: relative;
+	width: 100%;
+	z-index: 5;
+	margin-top: 0px;
+}
+.radio h1 {
+    font-size: 50px;
+    text-align: center;
+    font-weight: 100;
+    color: #fff;
+    padding-bottom: 20px;
+    margin-top: 100px;
+}
+.content-radio {
+    position: relative;
+    width: 90%;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    justify-content: space-around;
+    padding-bottom: 60px;
+}
+.programa {
+    width: 650px;
+    margin-top: 60px;
+}
+.programa img {
+    display: block;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding: 30px;
+}
+.programa .title-prog {
+    color: #1dafec;
+    font-size: 26px;
+    font-weight: 500;
+    text-align: center;
+}
+.programa p {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 100;
+    text-align: justify;
+}
+.programa .horario {
+    width: 70%;
+    position: relative;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.horario li {
+    width: 70%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    list-style:  none;
+    text-align: center;
+    color: #fff;
+    border-bottom: solid 1.5px #4fa753;
+    padding-top: 30px;
+    padding-bottom: 10px;
+}
+.panel-body .horario a  {
+    color: #41546e;
+}
+.horario .mes {
+    font-size: 20px;
+    color: #fff;
+    font-weight: 100;
+    border-bottom: solid 5px #1dafec;
+}
+.horario li a {
+    color: #fff;
+    text-decoration: none;
+}
+.horario li a:hover {
+    color: #1dafec;
+}
+.horario li a span {
+    color: #4fa753;
+}
+.boton-radio {
+    width: 180px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-color: #0098C3;
+    -ms-border-radius:8px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: 0 8px 0 #41546e, 0 10px 20px rgba(0, 0, 0, .4);
+    -moz-box-shadow: 0 8px 0  #41546e, 0 10px 20px rgba(0, 0, 0, .4);
+    box-shadow: 0 8px 0  #41546e, 0 10px 20px rgba(0, 0, 0, .4);
+    color: #fff;
+    display: inline-block;
+    font-size: 18px;
+    line-height: 1;
+    padding: 15px 25px;
+    text-decoration: none;
+    text-align: center;
+    margin-bottom: 50px;
+    text-decoration: none;
+}
+
+/* ///////////////////////////// TV ///////////////////////////////////////////// */
+/* ///////////////////////////// TV ///////////////////////////////////////////// */
+/* ///////////////////////////// TV ///////////////////////////////////////////// */
+
+.content-video {
+    width: 70%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    margin-top: 500px;
+}
+.flex-container {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  
+  -webkit-flex-flow: row wrap;
+  justify-content: space-around;
+  margin-top: 130px;
+}
+
+.flex-item {
+  width: 465px;
+  height: 320px;
+  margin-top: 20px;
+}
+.flex-item iframe {
+    position: relative;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding-top: 5px;
+}
+
+
+
+
+/* ///////////////////////////// enero ///////////////////////////////////////////// */
+/* ///////////////////////////// enero ///////////////////////////////////////////// */
+/* ///////////////////////////// enero ///////////////////////////////////////////// */
+.content-noticias {
+	position: relative;
+	width: 60%;
+	height: 100%;
+	left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    padding-top: 30px;
+    color: #41546D;
+    padding-top: 100px;
+}
+.panel-group .panel {
+    margin-bottom: 15px;
+    border-radius: 0px;
+    overflow: hidden;
+    border: solid 0;
+    border-bottom: solid 4px #1dafec;
+}
+.panel-default>.panel-heading{
+    background-color: #fff;
+    border-color: #fff;
+}
+.panel-heading {
+    padding: 30px 20px;
+}
+.panel-title{
+    color: #41546D;
+    font-size: 16px;
+}
+.panel-title a span {
+    font-size: 22px;
+    line-height: 2;
+    font-weight: 700;
+    color: #1dafec;
+}
+.panel-title .fecha {
+    font-size: 18px;
+    line-height: 2;
+    font-weight: 100;
+    color: #40a949;
+}
+.panel-body img {
+    width: 100%;
+} 
+
+/* /////////////////////// Patrocinios /////////////////// */
+/* /////////////////////// Patrocinios /////////////////// */
+
+.content-patrocinio {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    margin-top: 150px;
+}
+.video-patrocinio { 
+    width: 460px;
+    height: 268px;
+    position: relative;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+
+
+/* ////////// PARAMO RADIO  /////////////////// */
+.paramo {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 70%;
+    display: block;
+}
+
+
+
+/* ////////// PARAMO RADIO  /////////////////// */
+
+
+
+
+
+
+/* /////////////////////// Media Query /////////////////// */
+/* /////////////////////// Media Query /////////////////// */
+/* /////////////////////// pop up incio /////////////////// */
+/* /////////////////////// pop up incio /////////////////// */
+
+@media screen and (max-width: 414px) {
+    .pop div .tex-pop {
+        font-size: 45px;
+        line-height: 1;
+        margin-top: -90px;
+    }
+}
+
+@media screen and (max-width: 414px) {
+    .pop div .tex-pop span {
+      font-size: 70px;
+    }
+}
+
+@media screen and (max-width: 414px) {
+    .pop div .tex-pop .textmedios {
+        font-size: 55px;
+    }
+}
+/* /////////////// MENU ///////////////// */
+/* /////////////// MENU ///////////////// */
+
+/*@media screen and (max-width: 414px) {
+    .menu-responsive div p {
+        padding-top: 21%;
+    }
+}*/
+@media screen and (max-width: 768px) {
+    .menu-responsive div p {
+        padding-top: 21%;
+    }
+}
+@media screen and (max-width: 414px) {
+    .menu-responsive div p {
+        padding-top: 19%;
+    }
+}
+@media screen and (max-width: 320px) {
+    .menu-responsive div p {
+        padding-top: 15%;
+    }
+}
+@media screen and (max-width: 414px) {
+    .logo  {
+        width: 42%;
+    }
+}
+@media screen and (max-width: 414px) {
+    .logo img  {
+        width: 120px;
+    }
+}
+@media screen and (max-width: 414px) {
+    .lideres h1 {
+        font-size: 15px;
+    }
+}
+
+/* /////////////////  Home ipad y celular /////////////////////*/
+/* /////////////////  Home ipad y celular /////////////////////*/
+
+@media screen and (max-width: 1024px) {
+    .section {
+       display: none;
+    }
+}
+@media screen and (max-width: 1024px) {
+    .ipad-medios {
+       display: block;
+    }
+}
+
+
+/* /////////////////  Barra Menu /////////////////////*/
+/* /////////////////  Barra Menu /////////////////////*/
+
+@media screen and (max-width: 414px) {
+    #nav-1 {
+        background: #16193b;
+        width: 100%;
+        margin: 0;
+        padding: 12px;
+        height: 55px;
+    }
+}
+@media screen and (max-width: 900px) {
+    .link-1 {
+        margin: 0 50px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .link-1 {
+        margin: 0 40px;
+    }
+}
+@media screen and (max-width: 414px) {
+    .link-1 {
+        padding: 14px 0;
+        margin: 0px 8px;
+        font-size: 13px;
+    }
+}
+
+/* /////////////////  Titulo /////////////////////*/
+/* /////////////////  titulo /////////////////////*/
+
+@media screen and (max-width: 1290px) {
+    .home div {
+        width: 55%;
+        height: 42%;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .home div {
+        width: 80%;
+        height: 45%;
+    }
+}
+@media screen and (max-width: 768px) {
+    .home div {
+        width: 80%;
+        height: 33%;
+    }
+}
+@media screen and (max-width: 414px) {
+    .home div {
+        height: 35%;
+    }
+}
+@media screen and (max-width: 414px) {
+    .home div p {
+        font-size: 30px;
+    }
+}
+
+/* /////////////////  radio /////////////////////*/
+/* /////////////////  radio /////////////////////*/
+
+
+
+@media screen and (max-width: 1440px) {
+    .programa {
+      width: 500px;
+    }
+}
+@media screen and (max-width: 414px) {
+    .radio, .checkbox {
+        padding-left: 0;
+    }
+}
+@media screen and (max-width: 414px) {
+    .radio h1 {
+        font-size: 26px;
+        padding-bottom: 0px;
+        margin-top: 50px;
+    }
+}
+@media screen and (max-width: 414px) {
+    .programa img {
+        padding: 0px;
+        padding-bottom: 35px;
+    }
+}
+@media screen and (max-width: 414px) {
+    .programa .horario {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 414px) {
+    .horario .mes {
+        font-size: 20px;
+    }
+}
+@media screen and (max-width: 414px) {
+    .horario li {
+        font-size: 18px;
+    }
+}
+/* /////////////////  audios /////////////////////*/
+/* /////////////////  audios /////////////////////*/
+
+@media screen and (max-width: 414px) {
+    .panel-title a span {
+        font-size: 17px;
+        font-weight: 500;
+    }
+}
+
+
+
+/* /////////////////  noticias(mes) /////////////////////*/
+/* /////////////////  noticias(mes) /////////////////////*/
+
+@media screen and (max-width: 414px) {
+    .content-noticias {
+        width: 90%;
+        padding-top: 70px;
+    }
+}
+@media screen and (max-width: 414px) {
+    .view {
+        margin-bottom: 30px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .view .mask, .view .content {
+        width: 308px;
+    }
+}
+
+
+/* /////////////////  television  /////////////////////*/
+/* /////////////////  television /////////////////////*/
+@media screen and (max-width: 1024px) {
+    .content-video {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 414px) {
+    .content-video {
+        margin-top: 300px;
+    }
+}
+@media screen and (max-width: 350px) {
+    .content-video {
+        margin-top: 170px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .flex-item {
+        margin-top: 110px;
+    }
+}   
+@media screen and (max-width: 414px) {
+    .flex-item {
+        height: 240px;
+        margin-top: 0;
+    }
+}
+@media screen and (max-width: 414px) {
+    .flex-item iframe {
+        width: 90%;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+}
+/* /////////////////  impresos  /////////////////////*/
+/* /////////////////  impresos /////////////////////*/
+@media screen and (max-width: 1024px) {
+    .title-responsive {
+        display: block;
+    }
+}
+@media screen and (max-width: 414px) {
+    .title-responsive div {
+        font-size: 17px;
+    }
+}
+@media screen and (max-width: 414px) {
+    .me-digitales p {
+        font-size: 30px;
+        height: 60px;
+    }
+}
+@media screen and (max-width: 414px) {
+   .cont-medios {
+        width: 294px;
+        height: 240px;
+    }
+}
+@media screen and (max-width: 414px) {
+    #cont-medios-fondo1  {
+        background: url("../img/SOCmedios/lamudi-digitales-responsive.jpg") no-repeat center;
+        background-size: cover
+    }
+}
+@media screen and (max-width: 414px) {
+    #cont-medios-fondo2  {
+        background: url("../img/SOCmedios/el-norte-responsive.jpg") no-repeat center;
+        background-size: cover;
+    }
+}
+/* /////////////////  Patrocinios  /////////////////////*/
+/* /////////////////  Patrocinios /////////////////////*/
+@media screen and (max-width: 414px) {
+    .content-patrocinio  {
+       margin-top: 0px;
+    }
+}
+@media screen and (max-width: 414px) {
+    .content-patrocinio .flex-container  {
+       margin-top: 0px;
+    }
+} 
+
+@media screen and (max-width: 414px) {
+    .video-patrocinio  {
+        width: 300px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: auto;
+        padding: 8px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
