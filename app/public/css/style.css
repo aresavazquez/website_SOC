@@ -1697,7 +1697,7 @@ h2.zero,p.zero {
 .nota{
     background: url(../img/head/back3.jpg)no-repeat center fixed;
     background-size: cover;
-    width: 100%;
+    width: 100% !important;
     display: flex;
     flex-wrap: wrap;
     padding-top: 65px;
@@ -1779,7 +1779,6 @@ h2.zero,p.zero {
     color: #41546e;
 }
 .nota .nota-general{
-    width: 800px;
     margin: auto;
     display: flex;
     position: relative;
@@ -2562,6 +2561,23 @@ h2.zero,p.zero {
         align-items: center;
         overflow-x: scroll;
     }
+    .nota .nota-general {
+        width: 100%;
+        display: block; 
+    }
+    .nota {
+        width: 100% !important;
+    }
+    .nota .contenido-nota img {
+        width: 100%;
+        padding: 0;
+    }
+    .nota .contenido-nota {
+        padding: 30px 35px 50px;
+    }
+    .nota .contenido-nota .redes {
+        width: 100%;
+    }
     .carousel .item .mejora {
         width: 832px;
         margin: 50px -50px 0 0;
@@ -2866,6 +2882,9 @@ h2.zero,p.zero {
     }
     .nota .contenido-nota .redes {
         width: 100%;
+    }
+    .container_franquicia .row .col-md-6 .space {
+        padding: 0;
     }
 }
 
