@@ -322,28 +322,22 @@ $(document).on('ready', function(){
     }
     var updateUserinfo = function(){
         $('.editarUsuario .datosUsuario .update-user').on('click', function(){
-            $.put();
-            /*
-            var useridU = $('.editarUsuario .datosUsuario #e_user_id').val();
-            var usernameU = $('.editarUsuario .datosUsuario #e_user_name').val();
-            var mailU = $('.editarUsuario .datosUsuario #e_user_email').val();
-
-            var settings = {
-                "async": true,
-                "crossDomain": true,
-                "url": host_url + "api/v1/users/"+useridU+'?name='+usernameU+'&email='+mailU,
-                "method": "PUT"
-            }
-            $('.close').trigger( "click" );
-            $.ajax(settings).done(function (response) {
-               if(response.status == 200){
+            var userID = $('.editarUsuario .datosUsuario #e_user_id').val();
+            var data = $('.editarUsuario .datosUsuario').serialize();
+            $.put(host_url + "api/v1/users/"+userID, data, function(response){
+                if(response.status == 200){
                     $('.responses').text('El usuario se ha actualizado correctamente');
                     $('.responses').show();
+                    TweenLite.to('.datosUsuario', .5, { opacity: 0, display: 'none', ease: Power2.easeOut, y: 0, onComplete: function(){
+                        TweenLite.to('.agregarUsuario', .5, {opacity: 0, display: 'none'});
+                        TweenLite.to('.editarUsuario', .5, {opacity:0, display: 'none'});
+                        location.reload();
+                    }});
                 }else if(response.status == 500) {
                     $('.responses').text(response.errors);
                     $('.responses').show();
                 }
-            });*/
+            });
         });
     }
     var postsList_view = function(){

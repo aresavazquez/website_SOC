@@ -9,6 +9,7 @@
  */
 class Request
 {
+    public static $post_vars;
     /**
      * Gets/returns the value of a specific key of the POST super-global.
      * When using just Request::post('x') it will return the raw and untouched $_POST['x'], when using it like
@@ -47,6 +48,13 @@ class Request
     {
         if (isset($_GET[$key])) {
             return $_GET[$key];
+        }
+    }
+
+    public static function put($key){
+        if(!self::$post_vars) parse_str(file_get_contents("php://input"), self::$post_vars);
+        if(isset(self::$post_vars[$key])){
+            return self::$post_vars[$key];
         }
     }
 

@@ -92,8 +92,14 @@ class ApiController extends Controller{
 
     public function set_user($params){
         $data = array();
-        if(Request::get('name')) $data['name'] = Request::get('name');
-        if(Request::get('email')) $data['email'] = Request::get('email');
+        
+        if(Request::put('name')) $data['name'] = Request::put('name');
+        if(Request::put('company')) $data['company'] = Request::put('company');
+        if(Request::put('email')) $data['email'] = Request::put('email');   
+        if( Request::put('password') && 
+            Request::put('password') != '' 
+            && Request::put('password') == Request::put('password_confirm')
+        ) $data['password'] = Request::put('password');
 
         $id = User::getInstance()->setData($params['id'], $data);
         $this->View->renderJSON($this->success_code($id));
