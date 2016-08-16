@@ -53,6 +53,7 @@ class Routes{
     	self::$router->map( 'POST', '/api/v1/sites', 'ApiController#new_site');
     	self::$router->map( 'GET|POST', '/api/v1/sites/[*:url]', 'ApiController#get_site');
     	self::$router->map( 'PUT', '/api/v1/sites/[*:url]', 'ApiController#set_site');
+        self::$router->map( 'DELETE', '/api/v1/sites/[i:id]', 'ApiController#delete_site');
     	self::$router->map( 'GET', '/api/v1/post/[i:id]', 'ApiController#get_post');
         self::$router->map( 'POST', '/api/v1/post', 'ApiController#get_posts');
     	self::$router->map( 'POST', '/api/v1/post/[i:id]', 'ApiController#set_post');

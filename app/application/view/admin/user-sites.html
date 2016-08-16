@@ -20,7 +20,8 @@
 		<div class="sites">
 			<!--input type="search" placeholder="buscar" class="search"-->
 			<a href="" class="plusUser"><span></span>+ Agregar sitio</a>
-			<p>Sitios</p>
+			<p class="titulo">Micrositios</p>
+			<div class="responses"></div>
 			<div class="container-sites">
 			{% if sites.total > 0 %}
 				{% for site in sites.items %}
@@ -46,22 +47,31 @@
 	<div class="agregarUsuario">
 		<form class="datosUsuario microsite" id="newSiteForm">
 			<a href=""><img src="{{ base_path }}img/body/close.png" class="close"></a>
-			<input id="userID" type="hidden" value="{{ user.id }}" />
-			<input id="siteName" type="text" placeholder="Nombre del sitio" class="edit_input">
-			<label>URl para el sitio</label>
-			<input id="siteUrl" type="text" placeholder="Nombre del sitio" class="edit_input">
+			<input id="userID" name="user_id" type="hidden" value="{{ user.id }}" />
+			<label>Nombre del sitio</label>
+			<input id="siteName" name="title" type="text" placeholder="Nombre del sitio" class="edit_input">
+			<label>URL para el sitio</label>
+			<input id="siteUrl" name="url" type="text" placeholder="Nombre del sitio" class="edit_input">
 			<label>Descripción</label>
-			<textarea id="siteContent" placeholder="Descripción" class=""></textarea>
-			<label>Localidad</label>
-			<select id="siteState" placeholder="Selecciona un Estado" class="edit_input">
+			<textarea id="siteContent" name="content" placeholder="Descripción" class=""></textarea>
+			<label>Estado</label>
+			<select id="siteState" name="state_id" placeholder="Selecciona un Estado" class="edit_input">
 			{% for key,value in states %}
           		<option value="{{ value.id }}">{{ value.name }}</option>
       		{% endfor %}
 			</select>
+			<label>Ciudad</label>
+			<input id="siteCity" name="city" type="text" placeholder="Ciudad" class="edit_input">
+			<label>Colonia</label>
+			<input id="siteSettlement" name="settlement" type="text" placeholder="Colonia" class="edit_input">
 			<label>Dirección</label>
-			<input id="siteAddress" type="text" placeholder="Dirección" class="edit_input">
-			<label>Teléfono</label>
-			<input id="siteTelephone" type="tel" placeholder="Teléfono" class="edit_input">
+			<input id="siteAddress" name="address" type="text" placeholder="Dirección" class="edit_input">
+			<label>Coordenadas</label>
+			<input id="siteLatlon" name="latlon" type="text" placeholder="Locación" class="edit_input">
+			<label>Teléfonos (Separados por una coma)</label>
+			<input id="siteTelephone" name="phones" type="tel" placeholder="Teléfono" class="edit_input">
+			<label>Emails (Separados por una coma)</label>
+			<input id="siteMails" name="emails" type="text" placeholder="Correos Electrónicos" class="edit_input">
 			<div class="user addSite">Crear Micrositio</div>
 		</form>
 	</div>

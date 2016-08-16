@@ -92,7 +92,7 @@ class ApiController extends Controller{
 
     public function set_user($params){
         $data = array();
-        
+
         if(Request::put('name')) $data['name'] = Request::put('name');
         if(Request::put('company')) $data['company'] = Request::put('company');
         if(Request::put('email')) $data['email'] = Request::put('email');   
@@ -132,10 +132,13 @@ class ApiController extends Controller{
         $url = strip_tags(Request::post('url'));
         $title = strip_tags(Request::post('title'));
         $content = strip_tags(Request::post('content'));
+        $city =strip_tags(Request::post('city'));
+        $settlement = strip_tags(Request::post('settlement'));
         $address = strip_tags(Request::post('address'));
-        $contact = strip_tags(Request::post('contact'));
         $latlon = strip_tags(Request::post('latlon'));
-        $registration_successful = Site::save($user_id, $state_id, $url, $title, $content, $address, $contact, $latlon);
+        $phones = strip_tags(Request::post('phones'));
+        $emails = strip_tags(Request::post('emails'));
+        $registration_successful = Site::save($user_id, $state_id, $url, $title, $content, $city, $settlement, $address, $latlon, $phones, $emails);
         if($registration_successful){
             $this->View->renderJSON($this->success_code($registration_successful));
         }else{
@@ -160,6 +163,11 @@ class ApiController extends Controller{
         if(Request::get('latlon')) $data['latlon'] = utf8_decode(Request::get('latlon'));
 
         $id = Site::getInstance()->setData($params['url'], $data);
+        $this->View->renderJSON($this->success_code($id));
+    }
+
+    public function delete_site($params){
+        $id = Site::getInstance()->delete($params['id']);
         $this->View->renderJSON($this->success_code($id));
     }
 

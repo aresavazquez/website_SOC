@@ -44,14 +44,14 @@ class Site {
         return $result;
     }
 
-    public static function save($user_id, $state_id, $url, $title, $content, $address, $contact, $latlon) {
+    public static function save($user_id, $state_id, $url, $title, $content, $city, $settlement, $address, $latlon, $phones, $emails) {
         $user = User::getInstance()->byId($user_id);
         if($user){
-            if(self::getInstance()->hasSite($user_id)) {
-              Session::add('feedback_negative', Text::get('FEEDBACK_USER_HAS_SITE'));
-              return false;
-            }
-            if (!self::getInstance()->writeNewSiteToDatabase($user_id, $state_id, $url, $title, $content, $address, $contact, $latlon)) {
+            //if(self::getInstance()->hasSite($user_id)) {
+            //  Session::add('feedback_negative', Text::get('FEEDBACK_USER_HAS_SITE'));
+            //  return false;
+            //}
+            if (!self::getInstance()->writeNewSiteToDatabase($user_id, $state_id, $url, $title, $content, $city, $settlement, $latlon, $address, $phones, $emails)) {
                 Session::add('feedback_negative', Text::get('FEEDBACK_SITE_CREATION_FAILED'));
                 return false; // no reason not to return false here
             }
@@ -62,13 +62,17 @@ class Site {
         }
     }
 
+    public static function delete($site_id){
+      return self::$PDO->_delete("id=$site_id");
+    }
+
     public static function hasSite($user_id){
       $result = self::$PDO->_where("id", "user_id=$user_id");
       return $result->count() > 0;
     }
 
-    public static function writeNewSiteToDatabase($user_id, $state_id, $url, $title, $content, $address, $contact, $latlon) {
-        $data = array('user_id'=>$user_id, 'state_id'=>$state_id, 'url'=>$url, 'title'=>$title, 'content'=>$content, 'address'=>$address, 'contact'=>$contact, 'latlon'=>$latlon);
+    public static function writeNewSiteToDatabase($user_id, $state_id, $url, $title, $content, $city, $settlement, $latlon, $address, $phones, $emails) {
+        $data = array('user_id'=>$user_id, 'state_id'=>$state_id, 'url'=>$url, 'title'=>$title, 'content'=>$content, 'city'=>$city, 'settlement'=>$settlement, 'latlon'=>$latlon, 'address'=>$address, 'phones'=>$phones, 'emails'=>$emails);
         return self::$PDO->_insert($data);
     }
 }

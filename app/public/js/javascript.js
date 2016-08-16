@@ -531,6 +531,21 @@ $(document).on('ready', function(){
                 })
         });
     }
+    var deleteSiteinfo = function(){
+        $('.container-sites').on('click', '.delete', function(e){
+            e.preventDefault();
+            var siteID = $(this).data('site');
+            var container = $(this).parent().parent().parent().parent();
+            var response = confirm('Esta acción borrará el sitio del sistema permanentemente ¿Deseas continuar?');
+            if(response){
+                $.delete(host_url+"api/v1/sites/"+siteID, function(){
+                    TweenLite.to(container, 0.5, {alpha: 0, onComplete: function(){
+                        container.remove();
+                    }});
+                });
+            }
+        })
+    }
     var adminUserSitesListeners = function(){
         $('.container-sites').on('click', '.edit', function(e){
             e.preventDefault();
@@ -637,39 +652,17 @@ $(document).on('ready', function(){
     }
     var registerSite = function(){
     	$('#newSiteForm .addSite').on('click', function(){
-    		var userID = $('#newSiteForm #userID').val();
-    		var siteURL = $('#newSiteForm #siteUrl').val();
-    		var siteName = $('#newSiteForm #siteName').val();
-    		var siteState = $('#newSiteForm #siteState').val();
-    		var siteContent = $('#newSiteForm #siteContent').val();
-    		var siteAddress = $('#newSiteForm #siteAddress').val();
-    		var siteTelephone = $('#newSiteForm #siteTelephone').val();
-
-    		var settings = {
-    			"async": true,
-    			"crossDomain": true,
-    			"url": host_url + "api/v1/sites",
-    			"method": "POST",
-    			"data": {
-    				"user_id": userID,
-    				"state_id": siteState,
-    				"url": siteURL,
-    				"title": siteName,
-    				"content": siteContent,
-    				"address": siteAddress,
-    				"contact": siteTelephone
-    			}
-    		}
-        $('.close').trigger( "click" );
-    		$.ajax(settings).done(function (response) {
-    			if(response.status == 200){
-    				$('.responses').text('Se ha creado el sitio correctamente');
-    				$('.responses').show();
-    			}else if(response.status == 500) {
-    				$('.responses').text(response.errors);
-    				$('.responses').show();
-    			}
-    		});
+            $.post(host_url + "api/v1/sites", $('#newSiteForm').serialize(), function(response){
+                $('.close').trigger( "click" );
+                location.reload();
+                if(response.status == 200){
+                  $('.responses').text('Se ha creado el sitio correctamente');
+                  $('.responses').show();
+                }else if(response.status == 500) {
+                  $('.responses').text(response.errors);
+                  $('.responses').show();
+              }
+            });
     	});
     }
     var updateBrokerSite = function(){
@@ -767,7 +760,7 @@ $(document).on('ready', function(){
             adminUserSitesListeners();
             loadSiteinfo();
             updateSiteinfo();
-            //deleteSiteinfo();
+            deleteSiteinfo();
             registerSite();
         },
         "admin-sites": function(){
