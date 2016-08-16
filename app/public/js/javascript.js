@@ -1,4 +1,4 @@
-var host_url = "http://nueva.socasesores.com/";
+var host_url = location.protocol + "//" + location.host + "/" || "http://nueva.socasesores.com/";
 
 function showModal(modalName){
     if( modalName == 'aviso' ){
@@ -160,17 +160,7 @@ $(document).on('ready', function(){
         tl.to('.tres', .5, {opacity: 0, display: "none", ease: Power2.easeOut, x: -200, delay: 5});
         tl.to('.img3', .5, {opacity: 0, display: "none", ease: Power2.easeOut}, '-=0.5');
     }
-    //var animateHomeSlider = function(){
-    //    var tx = new TimelineLite({onComplete: function(){ this.restart(); }});
-    //    tx.to('.avuno', .5, {opacity: 1, display: "block"});
-    //    tx.to('.avuno', .5, {opacity: 0, display: "none", delay: 4.5});
-
-    //    tx.to('.avdos', 1, {opacity: 1, display: "block"});
-    //    tx.to('.avdos', .5, {opacity: 0, display: "none", delay: 4.5});
-
-    //    tx.to('.avtres', 1, {opacity: 1, display: "block"});
-    //    tx.to('.avtres', .5, {opacity: 0, display: "none", delay: 4.5});
-    //}
+    
     var tx = new TimelineLite({onComplete: function(){
         this.restart();
     }});
@@ -213,18 +203,6 @@ $(document).on('ready', function(){
         e.preventDefault ();
         TweenLite.to('.contenidoSubmenu', 1, { opacity: 1, display: 'block'});
     });
-    //var animateHomePhones = function(){
-    //    var section = $('.simulador' ).offset().top;
-    //    $(window).scroll(function(){
-    //        console.log($(window).scrollTop());
-    //        console.log($('.simulador' ).offset().top);
-    //        var scroll = $(window).scrollTop();
-    //        if(scroll > 550){
-    //            TweenLite.to('.cel2', 2, { ease: Power2.easeOut, y: -300});
-    //            TweenLite.to('.cel', 2, { ease: Power2.easeOut, y: -400});
-    //        };
-    //    });
-    //}
 
     var menuBehaviors = function(){
         $('.menu').on('click', function (e){
@@ -344,6 +322,8 @@ $(document).on('ready', function(){
     }
     var updateUserinfo = function(){
         $('.editarUsuario .datosUsuario .update-user').on('click', function(){
+            $.put();
+            /*
             var useridU = $('.editarUsuario .datosUsuario #e_user_id').val();
             var usernameU = $('.editarUsuario .datosUsuario #e_user_name').val();
             var mailU = $('.editarUsuario .datosUsuario #e_user_email').val();
@@ -363,7 +343,7 @@ $(document).on('ready', function(){
                     $('.responses').text(response.errors);
                     $('.responses').show();
                 }
-            });
+            });*/
         });
     }
     var postsList_view = function(){
@@ -645,31 +625,34 @@ $(document).on('ready', function(){
     }
     var registerUser = function(){
         $('.agregarUsuario .datosUsuario .registerUserform').on('click', function(){
-            var username = $('.datosUsuario #user_name').val();
-            var useremail = $('.datosUsuario #user_email').val();
-            var userpassword = $('.datosUsuario #user_password').val();
+            $.post(host_url, $('.agregarUsuario .datosUsuario').serialize(), function(){
 
-            var settings = {
-                "async": true,
-                "crossDomain": true,
-                "url": host_url + "api/v1/register",
-                "method": "POST",
-                "data": {
-                    "user_name": username,
-                    "user_email": useremail,
-                    "user_password": userpassword
-                }
-            }
-            $('.close').trigger( "click" );
-    	      $.ajax(settings).done(function (response) {
-    		        if(response.status == 200){
-    			          $('.responses').text('Se ha creado el usuario correctamente');
-    			          $('.responses').show();
-    		        }else if(response.status == 500) {
-    			          $('.responses').text(response.errors);
-    			          $('.responses').show();
-    		        }
-    	      });
+            });
+            //var username = $('.datosUsuario #user_name').val();
+            //var useremail = $('.datosUsuario #user_email').val();
+            //var userpassword = $('.datosUsuario #user_password').val();
+            //
+            //var settings = {
+            //    "async": true,
+            //    "crossDomain": true,
+            //    "url": host_url + "api/v1/register",
+            //    "method": "POST",
+            //    "data": {
+            //        "user_name": username,
+            //        "user_email": useremail,
+            //        "user_password": userpassword
+            //    }
+            //}
+            //$('.close').trigger( "click" );
+    	    //  $.ajax(settings).done(function (response) {
+    		//        if(response.status == 200){
+    		//	          $('.responses').text('Se ha creado el usuario correctamente');
+    		//	          $('.responses').show();
+    		//        }else if(response.status == 500) {
+    		//	          $('.responses').text(response.errors);
+    		//	          $('.responses').show();
+    		//        }
+    	    //  });
         });
     }
     var registerSite = function(){

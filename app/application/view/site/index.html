@@ -139,7 +139,7 @@
       				  <select name="state" id="state">
                         <option selected="selected" value="-1">SELECCIONE UN ESTADO</option>
                         {% for item in states %}
-                        <option value={{ item.id }}>{{ item.name }}</option>
+                        <option value={{ item.id }}>{{ item.name | convert_encoding('UTF-8', 'iso-8859-1') }}</option>
                         {% endfor %}
       				  </select>
                     </div>
