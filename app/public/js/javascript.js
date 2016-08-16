@@ -187,6 +187,32 @@ $(document).on('ready', function(){
         var top = $('.simulador').offset().top;
         TweenLite.to(window, 1, {scrollTo:{y: top}, ease:Power2.easeOut});
     });
+
+    $('.iconMenu').on('click', function (e){
+        e.preventDefault ();
+        TweenLite.to('.contentMenuCel', .5, { opacity: 1, display: 'block', onComplete: function(){
+            TweenLite.to('.iconMenu', .5, { opacity: 0, display: 'none', ease: Power2.easeOut, x: 50});
+            TweenLite.to('.iconMenuClose', 1, { opacity: 1, display: 'block', ease: Power2.easeOut, x: 0});
+        }});
+    });
+
+    $('.iconMenuClose').on('click', function (e){
+        e.preventDefault ();
+        TweenLite.to('.contentMenuCel', .5, { opacity: 0, display: 'none', onComplete: function(){
+            TweenLite.to('.iconMenuClose', .5, { opacity: 0, display: 'none', ease: Power2.easeOut, x: 50});
+            TweenLite.to('.iconMenu', 1, { opacity: 1, display: 'block', ease: Power2.easeOut, x: 0});
+        }});
+    });
+
+    $('.opcionesPro').on('click', function (e){
+        e.preventDefault ();
+        TweenLite.to('.hiem', .5, { opacity: 1, display: 'block'});
+    });
+
+    $('.submenuCel').on('click', function (e){
+        e.preventDefault ();
+        TweenLite.to('.contenidoSubmenu', 1, { opacity: 1, display: 'block'});
+    });
     //var animateHomePhones = function(){
     //    var section = $('.simulador' ).offset().top;
     //    $(window).scroll(function(){
