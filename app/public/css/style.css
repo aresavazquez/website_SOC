@@ -2266,6 +2266,11 @@ h2.zero,p.zero {
     color: #fff;
     padding: 50px;
 }
+.none{
+    text-align: center;
+    font-size: 16px;
+    color: red;
+}
 /* admin users */
 .content-usuarioAdmin{
     background: url(../img/head/back3.jpg)no-repeat center fixed;
@@ -2275,7 +2280,7 @@ h2.zero,p.zero {
     background: rgba(42, 100, 150, .6);
     display: flex;
     color: #fff;
-    padding: 50px;
+    padding: 115px 50px 50px;
     justify-content: center;
 }
 .content-usuarioAdmin .profile .data{
