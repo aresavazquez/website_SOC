@@ -11,6 +11,13 @@ a,a:visited{
     color:#fff;
     text-decoration: none;
 }
+.container.MenuCel{
+    display: none;
+}
+.menuMobile{
+    opacity: 0;
+    display: none;
+}
 /*---------------------------------------header SLIDER*/
 .frase{
     margin: auto;
@@ -659,7 +666,7 @@ a,a:visited{
     width: 300px;
     text-align: center;
 }
-.social .twitter, .facebook, .instagram, img{
+.social .twitter, .facebook, .instagram{
     padding-bottom: 20px;
 }
 .social .twitter iframe{
@@ -2619,7 +2626,7 @@ h2.zero,p.zero {
         display: none;
     }
     .carousel{
-        height: 80%;
+        height: 100%;
     }
     .carousel .item img{
         left: 0;
@@ -2633,8 +2640,11 @@ h2.zero,p.zero {
         font-size: 22px;
         text-align: center;
         position: absolute;
-        top: 0px;
-        margin-top: 0;
+        top: 0px;   
+        text-align: center;
+        margin: 0 auto;
+        left: 0;
+        width: 100%;
     }
     .carousel .item p span {
         font-size: 16px;
@@ -2697,8 +2707,9 @@ h2.zero,p.zero {
         display: none;
     }
     .carousel .item .sliderImg{ 
-        width: 259px;
-        padding-top: 40px;
+        width: 310px;
+        padding-top: 23px;
+        margin: auto;   
     }
     .title {
         margin: 30px 0;
@@ -2716,6 +2727,93 @@ h2.zero,p.zero {
     }
     .info .asesoria .textoAsesoria div h1{
         margin-top: 78px;
+    }
+    .carousel .item .abuela {
+        top: 10px;
+        text-align: center;
+        margin: auto;
+        left: 0;
+        width: 100%;
+    }
+    .container_menu{
+        display: none;
+    }
+    .sub-menu{
+        display: none;  
+    }
+    .container.MenuCel{
+        display: block;
+    }
+    /*  menu mobile  */
+    .menuMobile div a .logoM{
+        width: 140px;
+    }
+    .menuMobile{
+        position: fixed;
+        top: 78px;
+        z-index: 100;
+        width: 100%;
+        background: #fff;
+        top: 0;
+        opacity: 1;
+        display: block;
+    }
+    .menuMobile div{
+        padding: 10px;
+        position: relative;
+        width: 100%;
+    }
+    .menuMobile div a .iconMenu{
+        width: 25px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        right: 40px;
+    }
+    .menuMobile div a .iconMenuClose{
+        display: none;
+        opacity: 0;
+        width: 25px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        right: 40px;
+    }
+    .contentMenuCel{
+        background: #ddd;
+        display: none;
+        opacity: 0;
+    }
+    .contentMenuCel div a{
+        display: block;
+        color: #2a6496;
+        text-decoration: none;
+        font-size: 16px;
+        padding: 5px;
+    }
+    .contentMenuCel div div a{
+        background: #2a6496;
+        color: #fff;
+    }
+    .contentMenuCel div div{
+        padding: 0;
+        opacity: 0;
+        display: none;
+    }
+    .contentMenuCel div .submenuCel{
+        background: #2a6496;
+        color: #fff;
+    }
+    .franquicia div {
+        width: 100%;
+    }
+    .inmobiliaria div{
+        width: 100%;
+    }
+    .container_inmobiliaria {
+        padding: 50px 0px;
     }
 }
 
