@@ -385,7 +385,7 @@ class Credentials{
      *
      * @return boolean Gives back the success status of the registration
      */
-    public static function registerNewUser($user_name, $user_email, $user_password_new){
+    public static function registerNewUser($user_name, $user_email, $user_company, $user_password_new){
         // stop registration flow if registrationInputValidation() returns false (= anything breaks the input check rules)
         $validation_result = self::registrationInputValidation($user_name, $user_password_new, $user_email);
         if (!$validation_result) return false;
@@ -408,7 +408,7 @@ class Credentials{
         $user_activation_hash = sha1(uniqid(mt_rand(), true));
 
         // write user data to database
-        if (!self::writeNewUserToDatabase($user_name, $user_password_hash, $user_email, time(), $user_activation_hash)) {
+        if (!self::writeNewUserToDatabase($user_name, $user_password_hash, $user_email, $user_company, time(), $user_activation_hash)) {
             Session::add('feedback_negative', Text::get('FEEDBACK_ACCOUNT_CREATION_FAILED'));
             return false; // no reason not to return false here
         }
@@ -419,14 +419,14 @@ class Credentials{
             return false;
         }
         // send verification email
-        if (self::sendVerificationEmail($user_id, $user_email, $user_activation_hash)) {
+        #if (self::sendVerificationEmail($user_id, $user_email, $user_activation_hash)) {
             Session::add('feedback_positive', Text::get('FEEDBACK_ACCOUNT_SUCCESSFULLY_CREATED'));
             return true;
-        }
+        #}
         // if verification email sending failed: instantly delete the user
-        self::rollbackRegistrationByUserId($user_id);
-        Session::add('feedback_negative', Text::get('FEEDBACK_VERIFICATION_MAIL_SENDING_FAILED'));
-        return false;
+        #self::rollbackRegistrationByUserId($user_id);
+        #Session::add('feedback_negative', Text::get('FEEDBACK_VERIFICATION_MAIL_SENDING_FAILED'));
+        #return false;
     }
 
     /**
@@ -508,8 +508,8 @@ class Credentials{
      *
      * @return bool
      */
-    public static function writeNewUserToDatabase($user_name, $user_password_hash, $user_email, $user_creation_timestamp, $user_activation_hash){
-        return User::getInstance()->save($user_name, $user_password_hash, $user_email, $user_creation_timestamp, $user_activation_hash);
+    public static function writeNewUserToDatabase($user_name, $user_password_hash, $user_email, $user_company, $user_creation_timestamp, $user_activation_hash){
+        return User::getInstance()->save($user_name, $user_password_hash, $user_email, $user_company, $user_creation_timestamp, $user_activation_hash);
     }
 
     /**

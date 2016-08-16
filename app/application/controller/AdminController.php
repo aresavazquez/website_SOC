@@ -24,7 +24,11 @@ class AdminController extends Controller
     }
     public function users(){
         if(!Session::userIsLoggedIn()) Redirect::to('admin');
-        $users = User::getInstance()->all();
+        if(Request::get('search')){
+            $users = User::getInstance()->search(Request::get('search'));
+        }else{
+            $users = User::getInstance()->all();
+        }
         $this->View->render('admin/users.html', array('users'=>$users, 'is_admin'=>true));
     }
     public function user_sites($params){

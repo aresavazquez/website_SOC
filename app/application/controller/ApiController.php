@@ -32,10 +32,11 @@ class ApiController extends Controller{
     public function register(){
       $user_name = strip_tags(Request::post('user_name'));
       $user_email = strip_tags(Request::post('user_email'));
+      $user_company = strip_tags(Request::post('user_company'));
       $user_password_new = strip_tags(Request::post('user_password'));
 
       Session::set('feedback_negative', array());
-      $registration_successful = Credentials::registerNewUser($user_name, $user_email, $user_password_new);
+      $registration_successful = Credentials::registerNewUser($user_name, $user_email, $user_company, $user_password_new);
       if($registration_successful){
         $this->View->renderJSON($this->success_code($registration_successful));
       }else{

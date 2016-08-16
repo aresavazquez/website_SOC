@@ -11,7 +11,10 @@
 			<div class="responses">
 
 			</div>
-			<input type="search" placeholder="buscar" class="search">
+			<form method="GET">
+				<input type="text" name="search" placeholder="Keyword" class="search">
+				<input type="submit" value="Buscar" class="user">
+			</form>
 			<a href="" class="plusUser"><span></span>+ Agregar usuario</a>
 			<div class="containerOffices">
 				{% for user in users %}

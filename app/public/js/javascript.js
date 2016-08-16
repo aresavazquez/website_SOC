@@ -625,34 +625,20 @@ $(document).on('ready', function(){
     }
     var registerUser = function(){
         $('.agregarUsuario .datosUsuario .registerUserform').on('click', function(){
-            $.post(host_url, $('.agregarUsuario .datosUsuario').serialize(), function(){
-
+            $.post(host_url + "api/v1/register", $('.agregarUsuario .datosUsuario').serialize(), function(response){
+                TweenLite.to('.datosUsuario', .5, { opacity: 0, display: 'none', ease: Power2.easeOut, y: 0, onComplete: function(){
+                    TweenLite.to('.agregarUsuario', .5, {opacity: 0, display: 'none'});
+                    TweenLite.to('.editarUsuario', .5, {opacity:0, display: 'none'});
+                    location.reload();
+                }});
+                if(response.status == 200){
+                    $('.responses').text('Se ha creado el usuario correctamente');
+                    $('.responses').show();
+                }else if(response.status == 500) {
+                    $('.responses').text(response.errors);
+                    $('.responses').show();
+                }
             });
-            //var username = $('.datosUsuario #user_name').val();
-            //var useremail = $('.datosUsuario #user_email').val();
-            //var userpassword = $('.datosUsuario #user_password').val();
-            //
-            //var settings = {
-            //    "async": true,
-            //    "crossDomain": true,
-            //    "url": host_url + "api/v1/register",
-            //    "method": "POST",
-            //    "data": {
-            //        "user_name": username,
-            //        "user_email": useremail,
-            //        "user_password": userpassword
-            //    }
-            //}
-            //$('.close').trigger( "click" );
-    	    //  $.ajax(settings).done(function (response) {
-    		//        if(response.status == 200){
-    		//	          $('.responses').text('Se ha creado el usuario correctamente');
-    		//	          $('.responses').show();
-    		//        }else if(response.status == 500) {
-    		//	          $('.responses').text(response.errors);
-    		//	          $('.responses').show();
-    		//        }
-    	    //  });
         });
     }
     var registerSite = function(){

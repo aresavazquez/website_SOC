@@ -1,0 +1,116 @@
+{% extends "single.html" %}
+{% block title %}SOC{% endblock %}
+{% block head %}
+    {{ parent() }}
+{% endblock %}
+{% block content %}
+<div class="page p-simulator">
+  	<h1 class="mensualidad">Mensualidad {{paytype}} {{paytime}} años</h1>
+  	<table>
+  		<thead>
+  			<tr>
+  				<td></td>
+  				<td>AFIRME</td>
+  				<td>BANAMEX</td>
+  				<td>BANORTE</td>
+  				<td>HSBC</td>
+  				<td>SANTANDER</td>
+  				<td>SCOTIABANK</td>
+  			</tr>
+  		</thead>
+  		<tbody>
+  			<tr>
+  				<td class="color">Mensualidad</td>
+  				<td>{{ banks.afirme.mensualidad }}</td>
+  				<td>{{ banks.banamex.mensualidad }}</td>
+  				<td>{{ banks.banorte.mensualidad }}</td>
+  				<td>{{ banks.hsbc.mensualidad }}</td>
+  				<td>{{ banks.santander.mensualidad }}</td>
+  				<td>{{ banks.scotiabank.mensualidad }}</td>
+  			</tr>
+  			<tr>
+  				<td class="color">Monto de crédito</td>
+  				<td>{{ banks.afirme.monto }}</td>
+  				<td>{{ banks.banamex.monto }}</td>
+  				<td>{{ banks.banorte.monto }}</td>
+  				<td>{{ banks.hsbc.monto }}</td>
+  				<td>{{ banks.santander.monto }}</td>
+  				<td>{{ banks.scotiabank.monto }}</td>
+  			</tr>
+  			<tr>
+  				<td class="color">Tasa de interés</td>
+  				<td>{{ banks.afirme.tasa_interes }}</td>
+  				<td>{{ banks.banamex.tasa_interes }}</td>
+  				<td>{{ banks.banorte.tasa_interes }}</td>
+  				<td>{{ banks.hsbc.tasa_interes }}</td>
+  				<td>{{ banks.santander.tasa_interes }}</td>
+  				<td>{{ banks.scotiabank.tasa_interes }}</td>
+  			</tr>
+  			<tr>
+  				<td class="color">Ingreso requerido</td>
+  				<td>{{ banks.afirme.ingreso_requerido }}</td>
+  				<td>{{ banks.banamex.ingreso_requerido }}</td>
+  				<td>{{ banks.banorte.ingreso_requerido }}</td>
+  				<td>{{ banks.hsbc.ingreso_requerido }}</td>
+  				<td>{{ banks.santander.ingreso_requerido }}</td>
+  				<td>{{ banks.scotiabank.ingreso_requerido }}</td>
+  			</tr>
+  			<tr>
+  				<td class="color">CAT</td>
+  				<td>{{ banks.afirme.cat }}</td>
+  				<td>{{ banks.banamex.cat }}</td>
+  				<td>{{ banks.banorte.cat }}</td>
+  				<td>{{ banks.hsbc.cat }}</td>
+  				<td>{{ banks.santander.cat }}</td>
+  				<td>{{ banks.scotiabank.cat }}</td>
+  			</tr>
+  			<tr>
+  				<td class="color">Enganche</td>
+  				<td>{{ banks.afirme.enganche }}</td>
+  				<td>{{ banks.banamex.enganche }}</td>
+  				<td>{{ banks.banorte.enganche }}</td>
+  				<td>{{ banks.hsbc.enganche }}</td>
+  				<td>{{ banks.santander.enganche }}</td>
+  				<td>{{ banks.scotiabank.enganche }}</td>
+  			</tr>
+  			<tr>
+  				<td class="color">Avalúo</td>
+  				<td>{{ banks.afirme.avaluo }}</td>
+  				<td>{{ banks.banamex.avaluo }}</td>
+  				<td>{{ banks.banorte.avaluo }}</td>
+  				<td>{{ banks.hsbc.avaluo }}</td>
+  				<td>{{ banks.santander.avaluo }}</td>
+  				<td>{{ banks.scotiabank.avaluo }}</td>
+  			</tr>
+  			<tr>
+  				<td class="color">Comisión por apertura</td>
+  				<td>{{ banks.afirme.comision_apertura }}</td>
+  				<td>{{ banks.banamex.comision_apertura }}</td>
+  				<td>{{ banks.banorte.comision_apertura }}</td>
+  				<td>{{ banks.hsbc.comision_apertura }}</td>
+  				<td>{{ banks.santander.comision_apertura }}</td>
+  				<td>{{ banks.scotiabank.comision_apertura }}</td>
+  			</tr>
+  			<tr>
+  				<td class="color">Gastos notariales</td>
+  				<td>{{ banks.afirme.gastos_notario }}</td>
+  				<td>{{ banks.banamex.gastos_notario }}</td>
+  				<td>{{ banks.banorte.gastos_notario }}</td>
+  				<td>{{ banks.hsbc.gastos_notario }}</td>
+  				<td>{{ banks.santander.gastos_notario }}</td>
+  				<td>{{ banks.scotiabank.gastos_notario }}</td>
+  			</tr>
+  			<tr>
+  				<td class="color">Desembolso total</td>
+  				<td>{{ banks.afirme.total }}</td>
+  				<td>{{ banks.banamex.total }}</td>
+  				<td>{{ banks.banorte.total }}</td>
+  				<td>{{ banks.hsbc.total }}</td>
+  				<td>{{ banks.santander.total }}</td>
+  				<td>{{ banks.scotiabank.total }}</td>
+  			</tr>
+  		</tbody>
+  	</table>
+    <p>Nota: “Debido a la constante actualización de los bancos en sus Factores de pago, la presente información puede tener una variación de hasta un 3.5% sobre la expuesta en un simulador Bancario. Para una simulación más exacta comunícate con tu Asesor SOC”</p>
+</div>
+{% endblock %}
