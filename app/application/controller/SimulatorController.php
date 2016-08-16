@@ -67,6 +67,9 @@ class SimulatorController extends Controller
       'paytime' => Request::get('paytime')
     ));
     
+    $mail = new Mail;
+    $body = $this->View->render_string('mailer/simulator.html', array('banks'=>$banks, 'paytype'=>Request::get('paytype'), 'paytime'=>Request::get('paytime')));
+    $mail_sent = $mail->sendMail(Request::get('mail'), Config::get('EMAIL_CONTACT_FROM_EMAIL'), 'SOC Asesores', 'Resultado del Simulador', $body);
     $this->View->render('simulator/calculator.html', array('banks'=>$banks, 'paytype'=>Request::get('paytype'), 'paytime'=>Request::get('paytime')));
   }
   
