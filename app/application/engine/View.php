@@ -37,6 +37,20 @@ class View
         echo $this->twig->render($filename, $data);
     }
 
+    public function render_string($filename, $scope_data = null){
+        $links = $this->generateRoutes();
+        if(!$scope_data) $scope_data = array();
+        $data =array_merge(
+            $scope_data,
+            array(
+                'links'=>$links,
+                'base_path'=>Config::get('URL'),
+                'logged_in'=>Session::userIsLoggedIn()
+            )
+        );
+        return $this->twig->render($filename, $data);
+    }
+
     /**
      * Renders pure JSON to the browser, useful for API construction
      * @param $data
