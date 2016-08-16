@@ -2052,7 +2052,7 @@ h2.zero,p.zero {
 }
 /*-----------------------------inmobiliarias*/
 .inmobiliaria{
-    background: url(../img/body/inmobiliarias.jpg)no-repeat bottom;
+    background: url(../img/body/inmobiliarias.jpg)no-repeat top;
     background-size: cover;
     height: 350px;
     width: 100%;
@@ -2096,7 +2096,7 @@ h2.zero,p.zero {
     display: flex;
     flex-wrap: wrap;
     color: #fff;
-    padding: 50px;
+    padding: 50px 50px 0;
 }
 .container-inmobiliaria h4 {
     font-size: 30px;
@@ -2114,22 +2114,19 @@ h2.zero,p.zero {
     font-size: 18px;
 }
 .container.container-inmobiliaria{
-    margin-bottom: 35px;
+    margin-bottom: 75px;
 }
-.container_inmobiliaria .magazine{
-    text-align: center;
+.page.inmobiliaria .magazine{
     font-size: 18px;
     font-style: italic;
     width: 315px;
-    margin: auto;
     background: #4fa753;
     padding: 15px;
     border-radius: 5px;
     color: #fff;
-    position: absolute;
-    bottom: -25px;
-    left: 0;
-    right: 0;
+    margin: auto;
+    text-align: center;
+    display: block;
 }
 /*---------------franuicias*/
 
