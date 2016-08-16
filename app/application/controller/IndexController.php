@@ -39,7 +39,14 @@ class IndexController extends Controller
     $this->View->render('site/tips.html');
   }
   public function contact(){
-    $this->View->render('site/contact.html');
+    $prospect = null;
+    if(Request::get('prospect')){
+      $prospect = Session::get('prospect');
+      $paytime = $prospect['paytime'];
+      $paytype = $prospect['paytype'];
+    }
+    $message = ($prospect) ? "Deseo recibir asesoría con respecto al esquema de mensualidad $paytype a $paytime años. \r\n\r\nGracias por su atención." : "";
+    $this->View->render('site/contact.html', array('prospect'=>$prospect, 'message'=>$message));
   }
   public function post_contact(){
     $name = strip_tags(Request::post('contact_name'));

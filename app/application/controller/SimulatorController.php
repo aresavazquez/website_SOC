@@ -59,6 +59,14 @@ class SimulatorController extends Controller
       'scotiabank' => $scotiabank
     );
     
+    Session::set('prospect', array(
+      'name' => Request::get('name'),
+      'phone' => Request::get('phone'),
+      'mail' => Request::get('mail'),
+      'paytype' => Request::get('paytype'),
+      'paytime' => Request::get('paytime')
+    ));
+    
     $this->View->render('simulator/calculator.html', array('banks'=>$banks, 'paytype'=>Request::get('paytype'), 'paytime'=>Request::get('paytime')));
   }
   
