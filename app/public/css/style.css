@@ -2472,8 +2472,6 @@ h2.zero,p.zero {
     flex-wrap: wrap;
     justify-content: center;
     margin: 50px 0 !important;
-    height: 300px !important;
-    overflow-y: scroll;
 }
 .containerOffices .cardOffices{
     background: #fff;
