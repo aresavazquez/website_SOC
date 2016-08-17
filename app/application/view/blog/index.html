@@ -24,7 +24,7 @@
 			<a href="{{ base_path }}blog/nota/{{ post.url_tag }}">Ver nota</a>
 		</div>
 		{% else %}
-		<h1>No hay posts que coincidan con esta búsqueda</h1>
+		<h1 style="color: red; font-size: 20px;">No hay posts que coincidan con esta búsqueda</h1>
 		{% endfor %}
 		<ul>
 			{% if page - 1 > 0 %}
@@ -45,7 +45,7 @@
 	<div class="second-section">
 		<div>
 			<form method="GET" action="{{ base_path }}blog">
-				<input type="search" name="keyword" placeholder="Buscar..." style="margin: 10px 0px 17px;">
+				<input type="search" name="keyword" placeholder="Buscar..." style="margin: 10px 0px 17px; color: #2a6496; font-weight: normal;">
 				<input type="submit" class="searchSend">
 			</form>
 			<p>ÚLTIMAS ENTRADAS</p>
