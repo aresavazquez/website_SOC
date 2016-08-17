@@ -2882,8 +2882,13 @@ select option {
         display: block;
     }
     .container_menu.cel img {
-        width: 72px;
+        width: 85px;
         top: 18px;
+        left: 10px;
+    }
+    .titulo {
+        margin: 55px 16px 100px;
+        font-size: 30px;
     }
     .container_menu.cel ul li a {
         padding: 23px 10px;
@@ -3015,11 +3020,8 @@ select option {
     .content-usuario div{
         padding-top: 32px;
     }
-    .titulo{
-        margin: 0 16px 100px;
-    }
     .content-usuario div .plusUser{
-        top: 152px;
+        top: 199px;
         left: 0;
     }
     .post-content {
