@@ -564,7 +564,7 @@ a,a:visited{
     border: none;
     width: 300px;
     padding: 10px;
-    color: #fff;
+    color: #23AFEC;
     letter-spacing: 1px;
     font-weight: 100;
     margin: 10px;
@@ -2481,6 +2481,10 @@ h2.zero,p.zero {
     justify-content: space-around;
     margin: auto;
     padding-top: 48px;
+}
+select option {
+    background: rgba(0,0,0,0.3);
+    color:red;
 }
 .p-simulator .botones li{
     font-size: 20px;
