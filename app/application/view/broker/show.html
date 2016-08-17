@@ -14,7 +14,7 @@
     </div>
     <center>
       <div class="head_micro">
-          <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+          <div id="carousel-example-generic" class="carousel slide microUsuario" data-ride="carousel">
               <!-- Indicators -->
                   <ol class="carousel-indicators">
                       <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
@@ -36,7 +36,7 @@
               </div>
           </div>
       </div>
-      <div class="contenido_micrositio">
+      <div class="contenido_micrositio" id="contenidoMircoUser">
           <p class="titleMicrositio">Asesores Hipotecarios</p>
           <p class="thecontent">{{site.content}}</p>
           <ul>
@@ -56,7 +56,7 @@
       </div>
       <p class="titleSimulador">Simula tu crédito</p>
       <p class="text_simlador">En SOC, te acompañamos durante el trámite de tu crédito garantizándote una asesoría experta SIN COSTO.</p>
-      <div class="simulador micrositio_simulador">
+      <div class="simulador micrositio_simulador" id="simluadorUser">
         <div class="box">
           <div class="form">
             <form id="simulador-form" action="{{ base_path }}resultado_simulador" method="GET">
@@ -96,7 +96,7 @@
         </div>
       </div>
     </center>
-    <div class="datos">
+    <div class="datos clienteMicro">
         <form action="{{base_path}}site/contact/{{site.url}}" method="POST">
             <p class="contact">Contacto</p>
             <input type="text" placeholder="Nombre" name="name" class="inputBroker">

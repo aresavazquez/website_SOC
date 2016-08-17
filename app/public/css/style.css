@@ -25,6 +25,36 @@ a,a:visited{
     width: 900px !important;
     margin: auto;
 }
+.searchSend{
+    background: #4fa753 !important;
+    font-weight: normal;
+    color: #fff;
+}
+.carousel.slide.microUsuario{
+    padding: 0;
+    background: rgba(42, 100, 150, .6);
+    height: auto;
+}
+#contenidoMircoUser{
+    margin: auto;
+    width: 100%;
+    padding: 0px 100px;
+}
+.datos.clienteMicro{
+    background: url(../img/head/back3.jpg)no-repeat center fixed;
+    background-size: cover;
+}
+#simluadorUser {
+    background: #3a5e94;
+    height: 800px;
+    position: relative;
+}
+#simluadorUser .box{
+    height: 450px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+}
 /*---------------------------------------header SLIDER*/
 .frase{
     margin: auto;
@@ -564,7 +594,7 @@ a,a:visited{
     border: none;
     width: 300px;
     padding: 10px;
-    color: #fff;
+    color: #23AFEC;
     letter-spacing: 1px;
     font-weight: 100;
     margin: 10px;
@@ -1781,6 +1811,16 @@ h2.zero,p.zero {
     font-size: 16px;
     padding-bottom: 0;
     font-style: italic;
+    text-align: center;
+}
+.post-content{
+    text-align: justify;
+    margin: auto;
+    display: block;
+    width: 75%;
+    font-size: 17px;
+    font-weight: 100;
+    line-height: 30px
 }
 .nota .contenido-nota ul li{
     color: #fff;
@@ -1808,6 +1848,37 @@ h2.zero,p.zero {
     font-size: 20px;
     font-weight: 600;
     padding: 10px 10px 0;
+    color: #333;
+}
+.titulo.micrositioAdmin{
+    margin: 70px 70px 0;
+}
+.sitiotituloAdmin{
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.sites .container-sites .site{
+    background: #fff;
+    width: 300px;
+    color: #2A649B;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px;
+}
+.sites .container-sites .site div a{
+    color: #2A649B;
+    font-weight: normal;
+    font-size: 16px;
+}
+.sites .container-sites .site div .visitSite{
+    background: #4fa753;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+}
+.sites .container-sites .site div ul {
+    margin: 20px 20px 0;
 }
 .notas-recientes div ul li{
     padding: 10px;
@@ -2335,6 +2406,8 @@ h2.zero,p.zero {
     padding: 50px;
     color: #fff;
     font-weight: 100;
+    display: flex;
+    flex-wrap: wrap;
 }
 .content-usuarioAdmin .container-sites .general{
     padding: 40px;
@@ -2481,6 +2554,10 @@ h2.zero,p.zero {
     justify-content: space-around;
     margin: auto;
     padding-top: 48px;
+}
+select option {
+    background: rgba(0,0,0,0.3);
+    color:red;
 }
 .p-simulator .botones li{
     font-size: 20px;
@@ -2914,7 +2991,7 @@ h2.zero,p.zero {
     }
     .nota .contenido-nota img {
         width: 100%;
-        padding: 0;
+        padding: 32px 0px;
     }
     .nota .contenido-nota {
         padding: 30px 35px 50px;
@@ -2934,6 +3011,12 @@ h2.zero,p.zero {
     .content-usuario div .plusUser{
         top: 152px;
         left: 0;
+    }
+    .post-content {
+        width: 100%;
+    }
+    .nota .contenido-nota .redes li {
+        padding: 10px 0;
     }
 }
 
