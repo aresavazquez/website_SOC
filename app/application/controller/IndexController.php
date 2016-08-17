@@ -63,4 +63,7 @@ class IndexController extends Controller
     }
     Redirect::to('contacto');
   }
+  public function error404(){
+    $this->View->render('error/404.html');
+  }
 }

@@ -11,7 +11,7 @@ class BrokerController extends Controller
 
     public function show($params){
         $site = Site::getInstance()->byUrl($params['url']);
-        if(!$site) Redirect::to('404');
+        //if(!$site) Redirect::to('404');
 
         $site->title = utf8_encode($site->title);
         $site->address = utf8_encode($site->address);
