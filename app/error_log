@@ -1,0 +1,74 @@
+127.0.0.1 - - [17/Aug/2016:10:52:53 -0500] "GET /audios.php HTTP/1.1" 200 12293
+127.0.0.1 - - [17/Aug/2016:10:52:53 -0500] "GET /css/bootstrap.css HTTP/1.1" 200 12293
+127.0.0.1 - - [17/Aug/2016:10:52:53 -0500] "GET /css/museo/museo.css HTTP/1.1" 200 12293
+127.0.0.1 - - [17/Aug/2016:10:52:53 -0500] "GET /js/ScrollToPlugin.js HTTP/1.1" 200 12293
+127.0.0.1 - - [17/Aug/2016:10:52:54 -0500] "GET /js/javascript.js HTTP/1.1" 200 12293
+127.0.0.1 - - [17/Aug/2016:10:52:54 -0500] "GET /img/micrositios/logo.png HTTP/1.1" 200 12293
+127.0.0.1 - - [17/Aug/2016:10:52:54 -0500] "GET /img/micrositios/chica.png HTTP/1.1" 200 12293
+127.0.0.1 - - [17/Aug/2016:10:52:54 -0500] "GET /css/style.css HTTP/1.1" 200 12293
+127.0.0.1 - - [17/Aug/2016:10:52:54 -0500] "GET /css/trumbowyg.min.css HTTP/1.1" 200 12293
+127.0.0.1 - - [17/Aug/2016:10:52:55 -0500] "GET /img/micrositios/quince.jpg HTTP/1.1" 200 12293
+127.0.0.1 - - [17/Aug/2016:10:52:55 -0500] "GET /img/micrositios/widget.jpg HTTP/1.1" 200 12293
+127.0.0.1 - - [17/Aug/2016:10:52:55 -0500] "GET /img/micrositios/img1.jpg HTTP/1.1" 200 12293
+127.0.0.1 - - [17/Aug/2016:10:52:55 -0500] "GET /js/bootstrap.min.js HTTP/1.1" 200 12293
+127.0.0.1 - - [17/Aug/2016:10:52:55 -0500] "GET /js/trumbowyg.min.js HTTP/1.1" 200 12293
+127.0.0.1 - - [17/Aug/2016:10:52:56 -0500] "GET /img/micrositios/img2.jpg HTTP/1.1" 200 12293
+127.0.0.1 - - [17/Aug/2016:10:52:56 -0500] "GET /img/micrositios/img3.jpg HTTP/1.1" 200 12293
+127.0.0.1 - - [17/Aug/2016:10:52:56 -0500] "GET /img/footer/face.png HTTP/1.1" 200 12293
+127.0.0.1 - - [17/Aug/2016:10:52:57 -0500] "GET /img/footer/tw.png HTTP/1.1" 200 12293
+127.0.0.1 - - [17/Aug/2016:10:52:57 -0500] "GET /img/footer/ytube.png HTTP/1.1" 200 12293
+127.0.0.1 - - [17/Aug/2016:10:52:57 -0500] "GET /img/body/condusef.png HTTP/1.1" 200 12293
+127.0.0.1 - - [17/Aug/2016:10:52:58 -0500] "GET /img/micrositios/logo.png HTTP/1.1" 200 12293
+127.0.0.1 - - [17/Aug/2016:10:52:58 -0500] "GET /img/micrositios/img1.jpg HTTP/1.1" 200 12293
+127.0.0.1 - - [17/Aug/2016:10:52:58 -0500] "GET /img/micrositios/widget.jpg HTTP/1.1" 200 12293
+127.0.0.1 - - [17/Aug/2016:10:52:59 -0500] "GET /img/micrositios/chica.png HTTP/1.1" 200 12293
+127.0.0.1 - - [17/Aug/2016:10:52:59 -0500] "GET /img/micrositios/quince.jpg HTTP/1.1" 200 12293
+127.0.0.1 - - [17/Aug/2016:10:53:01 -0500] "GET /favicon.ico HTTP/1.1" 200 12293
+127.0.0.1 - - [17/Aug/2016:10:54:08 -0500] "GET /audios.php HTTP/1.1" 404 208
+127.0.0.1 - - [17/Aug/2016:10:54:08 -0500] "GET /favicon.ico HTTP/1.1" 404 209
+127.0.0.1 - - [17/Aug/2016:10:54:16 -0500] "GET /public/audios.php HTTP/1.1" 200 20715
+127.0.0.1 - - [17/Aug/2016:10:54:17 -0500] "GET /public/css/bootstrap.css HTTP/1.1" 200 99961
+127.0.0.1 - - [17/Aug/2016:10:54:17 -0500] "GET /public/css/bootstrap-select.min.css HTTP/1.1" 200 5686
+127.0.0.1 - - [17/Aug/2016:10:54:17 -0500] "GET /public/css/medios.css HTTP/1.1" 200 21746
+127.0.0.1 - - [17/Aug/2016:10:54:17 -0500] "GET /public/js/medios.js HTTP/1.1" 200 351
+127.0.0.1 - - [17/Aug/2016:10:54:17 -0500] "GET /public/img/SOCmedios/logo.png HTTP/1.1" 200 21754
+127.0.0.1 - - [17/Aug/2016:10:54:17 -0500] "GET /public/img/SOCmedios/back.jpg HTTP/1.1" 200 275299
+127.0.0.1 - - [17/Aug/2016:10:54:22 -0500] "GET / HTTP/1.1" 200 21887
+127.0.0.1 - - [17/Aug/2016:10:54:22 -0500] "GET /css/bootstrap.css HTTP/1.1" 404 215
+127.0.0.1 - - [17/Aug/2016:10:54:22 -0500] "GET /css/museo/museo.css HTTP/1.1" 404 217
+127.0.0.1 - - [17/Aug/2016:10:54:22 -0500] "GET /css/style.css HTTP/1.1" 404 211
+127.0.0.1 - - [17/Aug/2016:10:54:22 -0500] "GET /css/trumbowyg.min.css HTTP/1.1" 404 219
+127.0.0.1 - - [17/Aug/2016:10:54:23 -0500] "GET /js/trumbowyg.min.js HTTP/1.1" 404 217
+127.0.0.1 - - [17/Aug/2016:10:54:23 -0500] "GET /js/bootstrap.min.js HTTP/1.1" 404 217
+127.0.0.1 - - [17/Aug/2016:10:54:23 -0500] "GET /js/ScrollToPlugin.js HTTP/1.1" 404 218
+127.0.0.1 - - [17/Aug/2016:10:54:23 -0500] "GET /js/javascript.js HTTP/1.1" 404 214
+127.0.0.1 - - [17/Aug/2016:10:54:23 -0500] "GET /js/trumbowyg.min.js HTTP/1.1" 404 217
+127.0.0.1 - - [17/Aug/2016:10:54:23 -0500] "GET /js/bootstrap.min.js HTTP/1.1" 404 217
+127.0.0.1 - - [17/Aug/2016:10:54:23 -0500] "GET /js/ScrollToPlugin.js HTTP/1.1" 404 218
+127.0.0.1 - - [17/Aug/2016:10:54:23 -0500] "GET /js/javascript.js HTTP/1.1" 404 214
+127.0.0.1 - - [17/Aug/2016:10:54:23 -0500] "GET /img/footer/face.png HTTP/1.1" 404 217
+127.0.0.1 - - [17/Aug/2016:10:54:23 -0500] "GET /img/footer/tw.png HTTP/1.1" 404 215
+127.0.0.1 - - [17/Aug/2016:10:54:23 -0500] "GET /img/footer/ytube.png HTTP/1.1" 404 218
+127.0.0.1 - - [17/Aug/2016:10:54:23 -0500] "GET /img/body/condusef.png HTTP/1.1" 404 219
+127.0.0.1 - - [17/Aug/2016:10:54:50 -0500] "GET / HTTP/1.1" 500 528
+[Wed Aug 17 10:57:17.378489 2016] [core:error] [pid 14214] [client 127.0.0.1:63440] AH00124: Request exceeded the limit of 10 internal redirects due to probable configuration error. Use 'LimitInternalRecursion' to increase the limit if necessary. Use 'LogLevel debug' to get a backtrace.
+[Wed Aug 17 10:58:03.879159 2016] [core:error] [pid 14219] [client 127.0.0.1:63977] AH00124: Request exceeded the limit of 10 internal redirects due to probable configuration error. Use 'LimitInternalRecursion' to increase the limit if necessary. Use 'LogLevel debug' to get a backtrace.
+[Wed Aug 17 10:58:33.341834 2016] [core:error] [pid 14216] [client 127.0.0.1:64320] AH00124: Request exceeded the limit of 10 internal redirects due to probable configuration error. Use 'LimitInternalRecursion' to increase the limit if necessary. Use 'LogLevel debug' to get a backtrace.
+[Wed Aug 17 10:59:30.368534 2016] [core:error] [pid 14219] [client 127.0.0.1:64972] AH00124: Request exceeded the limit of 10 internal redirects due to probable configuration error. Use 'LimitInternalRecursion' to increase the limit if necessary. Use 'LogLevel debug' to get a backtrace.
+[Wed Aug 17 11:00:10.870186 2016] [core:error] [pid 14214] [client 127.0.0.1:65459] AH00124: Request exceeded the limit of 10 internal redirects due to probable configuration error. Use 'LimitInternalRecursion' to increase the limit if necessary. Use 'LogLevel debug' to get a backtrace.
+[Wed Aug 17 11:00:31.572247 2016] [core:error] [pid 14216] [client 127.0.0.1:49321] AH00124: Request exceeded the limit of 10 internal redirects due to probable configuration error. Use 'LimitInternalRecursion' to increase the limit if necessary. Use 'LogLevel debug' to get a backtrace.
+[Wed Aug 17 11:00:33.870465 2016] [core:error] [pid 14218] [client 127.0.0.1:49346] AH00124: Request exceeded the limit of 10 internal redirects due to probable configuration error. Use 'LimitInternalRecursion' to increase the limit if necessary. Use 'LogLevel debug' to get a backtrace.
+[Wed Aug 17 11:07:49.137856 2016] [core:error] [pid 14217] [client 127.0.0.1:54343] AH00124: Request exceeded the limit of 10 internal redirects due to probable configuration error. Use 'LimitInternalRecursion' to increase the limit if necessary. Use 'LogLevel debug' to get a backtrace.
+[Wed Aug 17 11:07:51.282264 2016] [core:error] [pid 14219] [client 127.0.0.1:54369] AH00124: Request exceeded the limit of 10 internal redirects due to probable configuration error. Use 'LimitInternalRecursion' to increase the limit if necessary. Use 'LogLevel debug' to get a backtrace.
+[Wed Aug 17 11:10:10.191869 2016] [core:error] [pid 14282] [client 127.0.0.1:55970] AH00124: Request exceeded the limit of 10 internal redirects due to probable configuration error. Use 'LimitInternalRecursion' to increase the limit if necessary. Use 'LogLevel debug' to get a backtrace.
+[Wed Aug 17 11:10:42.740131 2016] [core:error] [pid 14282] [client 127.0.0.1:56349] AH00124: Request exceeded the limit of 10 internal redirects due to probable configuration error. Use 'LimitInternalRecursion' to increase the limit if necessary. Use 'LogLevel debug' to get a backtrace.
+[Wed Aug 17 11:11:12.290037 2016] [core:error] [pid 14298] [client 127.0.0.1:56686] AH00124: Request exceeded the limit of 10 internal redirects due to probable configuration error. Use 'LimitInternalRecursion' to increase the limit if necessary. Use 'LogLevel debug' to get a backtrace.
+[Wed Aug 17 11:14:00.193759 2016] [core:error] [pid 14298] [client 127.0.0.1:58668] AH00124: Request exceeded the limit of 10 internal redirects due to probable configuration error. Use 'LimitInternalRecursion' to increase the limit if necessary. Use 'LogLevel debug' to get a backtrace.
+[Wed Aug 17 11:41:49.736921 2016] [core:error] [pid 14320] [client 127.0.0.1:60383] AH00124: Request exceeded the limit of 10 internal redirects due to probable configuration error. Use 'LimitInternalRecursion' to increase the limit if necessary. Use 'LogLevel debug' to get a backtrace.
+[Wed Aug 17 11:42:21.358764 2016] [core:error] [pid 14298] [client 127.0.0.1:60744] AH00124: Request exceeded the limit of 10 internal redirects due to probable configuration error. Use 'LimitInternalRecursion' to increase the limit if necessary. Use 'LogLevel debug' to get a backtrace.
+[Wed Aug 17 11:42:23.293253 2016] [core:error] [pid 14320] [client 127.0.0.1:60757] AH00124: Request exceeded the limit of 10 internal redirects due to probable configuration error. Use 'LimitInternalRecursion' to increase the limit if necessary. Use 'LogLevel debug' to get a backtrace.
+[Wed Aug 17 11:43:39.943972 2016] [core:error] [pid 14298] [client 127.0.0.1:61641] AH00124: Request exceeded the limit of 10 internal redirects due to probable configuration error. Use 'LimitInternalRecursion' to increase the limit if necessary. Use 'LogLevel debug' to get a backtrace.
+[Wed Aug 17 11:46:26.566756 2016] [core:error] [pid 14320] [client 127.0.0.1:63548] AH00124: Request exceeded the limit of 10 internal redirects due to probable configuration error. Use 'LimitInternalRecursion' to increase the limit if necessary. Use 'LogLevel debug' to get a backtrace.
+[Wed Aug 17 11:50:26.703709 2016] [core:error] [pid 14336] [client 127.0.0.1:49908] AH00124: Request exceeded the limit of 10 internal redirects due to probable configuration error. Use 'LimitInternalRecursion' to increase the limit if necessary. Use 'LogLevel debug' to get a backtrace.
+[Wed Aug 17 12:04:08.228768 2016] [autoindex:error] [pid 14411] [client 127.0.0.1:59291] AH01276: Cannot serve directory /Users/vampaynani/Sites/SOC/website_SOC/app/: No matching DirectoryIndex (index.html,index.html,index.php) found, and server-generated directory index forbidden by Options directive
+[Wed Aug 17 12:06:40.159911 2016] [autoindex:error] [pid 14412] [client 127.0.0.1:61028] AH01276: Cannot serve directory /Users/vampaynani/Sites/SOC/website_SOC/app/: No matching DirectoryIndex (index.html,index.html,index.php) found, and server-generated directory index forbidden by Options directive

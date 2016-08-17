@@ -1,23 +1,10 @@
 Options +FollowSymLinks
-
 DirectoryIndex /public/index.php
+RewriteEngine on
 
-RewriteEngine On
-
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME} !-l
-RewriteRule ^css/(.*)$  /public/css/$1 [L]
+RewriteCond %{DOCUMENT_ROOT}/public/$1 -f
+RewriteCond %{DOCUMENT_ROOT}/$1 !index.php
+RewriteRule ^(.*)$ /public/$1 [L]
 
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME} !-l
-RewriteRule ^js/(.*)$  /public/js/$1 [L]
-
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME} !-l
-RewriteRule ^img/(.*)$  /public/img/$1 [L]
-
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule . /public/index.php [L]
+RewriteRule . /public/index.php [L] 

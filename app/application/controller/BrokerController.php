@@ -11,11 +11,14 @@ class BrokerController extends Controller
 
     public function show($params){
         $site = Site::getInstance()->byUrl($params['url']);
+        if(!$site) Redirect::to('404');
+
         $site->title = utf8_encode($site->title);
         $site->address = utf8_encode($site->address);
         $site->content = ltrim(utf8_encode($site->content));
         $lat_lon = explode(',', $site->latlon);
         $feedback = (Session::get('feedback_positive')) ? join(',', Session::get('feedback_positive')) : "";
+        
         Session::set('feedback_positive', array());
         $this->View->render('broker/show.html', array('site' => $site, 'lat' => $lat_lon[0], 'lon' => $lat_lon[1], 'feedback' => $feedback));
     }
