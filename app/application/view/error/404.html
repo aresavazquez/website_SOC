@@ -1,9 +1,18 @@
 {% extends "main.html" %}
 
-{% block title %}Index{% endblock %}
+{% block title %}404{% endblock %}
 {% block head %}
     {{ parent() }}
 {% endblock %}
 {% block content %}
-    <h1>404 Not Found</h1>
+	<div class="page p-contact">
+		{% include 'components/menu-header.html' %}
+		<div class="head_contacto">
+			<div>
+				<p class="title_section">404</p>
+				<div></div>
+				<p>Página no encontrada.</p>
+			</div>
+		</div>
+	</div>
 {% endblock %}

@@ -60,12 +60,12 @@ class Routes{
         self::$router->map( 'POST', '/api/v1/post', 'ApiController#get_posts');
     	self::$router->map( 'POST', '/api/v1/post/[i:id]', 'ApiController#set_post');
 
+        //- Error
+        self::$router->map( 'GET', '/404', 'IndexController#error404', '404');
+
     	//- Microsites
     	self::$router->map( 'GET', '/[*:url]', 'BrokerController#show', 'broker_show');
         self::$router->map( 'POST', '/site/contact/[*:url]', 'BrokerController#contact');
-
-        //- 404
-        self::$router->map( 'GET', '/404', 'IndexController#error404', '404');
 	}
 
 	/**
