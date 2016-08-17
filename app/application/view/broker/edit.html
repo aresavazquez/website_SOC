@@ -1,38 +1,107 @@
 {% extends "admin.html" %}
-{% block title %}Dashboard{% endblock %}
+{% block title %}Admin{% endblock %}
 {% block head %}
     {{ parent() }}
 {% endblock %}
 {% block content %}
 	{{ parent() }}
-	<div class="page microsite content-usuario broker-edit">
-		<form class="datosUsuario microsite" id="newSiteForm">
-			<label>Nombre del sitio</label>
-			<input name="name" id="siteName" type="text" value="{{ site.title }}" placeholder="Nombre del sitio" class="edit_input">
-			<label>URL para el sitio</label>
-			<input name="url" id="siteUrl" type="text" value="{{ site.url }}" placeholder="URL del sitio" class="edit_input">
-			<label>Descripción</label>
-			<textarea name="content" id="siteContent" placeholder="Descripción" class="">
-				{{ site.content }}
-			</textarea>
-			<label>Localidad</label>
-			<select name="state" id="siteState" placeholder="Selecciona un Estado" class="edit_input">
-				<option value="-1">Selecciona una opción</option>
-				{% for key,value in states %}
-					{% if value.id == site.state_id %}
-					<option selected value="{{ value.id }}">{{ value.name }}</option>
-					{% else %}	
-					<option value="{{ value.id }}">{{ value.name }}</option>
-					{% endif %}
+	<div class="page user-sites content-usuarioAdmin">
+		<div class="profile">
+			<div>
+				<img src="{{ base_path }}img/body/brokerImg.png">
+			</div>
+			<div>
+				<p>{{ user.name }}</p>
+				<p>{{ user.company }}</p>
+				<p>{{ user.email }}</p>
+				<p>{{ user.phone }}</p>
+			</div>
+		</div>
+		<div class="sites">
+			<!--input type="search" placeholder="buscar" class="search"-->
+			<p class="titulo">Micrositios</p>
+			<div class="responses"></div>
+			<div class="container-sites">
+			{% if sites.total > 0 %}
+				{% for site in sites.items %}
+				<div class="site">
+					<div>
+						<p>{{ site.title }}</p>
+						<a target="_blank" href="{{ base_path }}{{ site.url }}">visitar sitio</a>
+					</div>
+					<div>
+						<ul>
+							<li><a class="edit" data-site="{{ site.id }}" href="#edit">Editar</a></li>
+							<!--li><a class="delete" data-site="{{ site.id }}" href="#delete">Eliminar</a></li-->
+						</ul>
+					</div>
+				</div>
 				{% endfor %}
+			{% else %}
+			<div class="none">Este usuario aún no cuenta con sitios registrados.</div>
+			{% endif %}
+			</div>
+		</div>
+	</div>
+	<div class="agregarUsuario">
+		<form class="datosUsuario microsite" id="newSiteForm">
+			<a href=""><img src="{{ base_path }}img/body/close.png" class="close"></a>
+			<input id="userID" name="user_id" type="hidden" value="{{ user.id }}" />
+			<label>Nombre del sitio</label>
+			<input id="siteName" name="title" type="text" placeholder="Nombre del sitio" class="edit_input">
+			<label>URL para el sitio</label>
+			<input id="siteUrl" name="url" type="text" placeholder="Nombre del sitio" class="edit_input">
+			<label>Descripción</label>
+			<textarea id="siteContent" name="content" placeholder="Descripción" class=""></textarea>
+			<label>Estado</label>
+			<select id="siteState" name="state_id" placeholder="Selecciona un Estado" class="edit_input">
+			{% for key,value in states %}
+          		<option value="{{ value.id }}">{{ value.name }}</option>
+      		{% endfor %}
 			</select>
-			<label>Latitud y longitud</label>
-			<input name="latlon" id="siteLatlon" type="text" value="{{ site.latlon }}"  placeholder="19.4299998,-99.1377792" class="edit_input"><label>Direcciones</label>
-			<input name="address" id="siteAddress" type="text" value="{{ site.address }}"  placeholder="Dirección" class="edit_input">
-			<label>Teléfonos</label>
-			<input name="phone" id="siteTelephone" type="tel" value="{{ site.phones }}"  placeholder="Teléfono" class="edit_input">
-			<div class="user addSite">Guardar Cambios</div>
-			<a href="{{ base_path }}{{ site.url }}" class="user">Ver Sitio</a>
+			<label>Ciudad</label>
+			<input id="siteCity" name="city" type="text" placeholder="Ciudad" class="edit_input">
+			<label>Colonia</label>
+			<input id="siteSettlement" name="settlement" type="text" placeholder="Colonia" class="edit_input">
+			<label>Dirección</label>
+			<input id="siteAddress" name="address" type="text" placeholder="Dirección" class="edit_input">
+			<label>Coordenadas</label>
+			<input id="siteLatlon" name="latlon" type="text" placeholder="Locación" class="edit_input">
+			<label>Teléfonos (Separados por una coma)</label>
+			<input id="siteTelephone" name="phones" type="tel" placeholder="Teléfono" class="edit_input">
+			<label>Emails (Separados por una coma)</label>
+			<input id="siteMails" name="emails" type="text" placeholder="Correos Electrónicos" class="edit_input">
+			<div class="user addSite">Crear Micrositio</div>
+		</form>
+	</div>
+	<div class="editarUsuario">
+		<form class="datosUsuario microsite update-site" id="newSiteForm">
+			<a href=""><img src="{{ base_path }}img/body/close.png" class="close"></a>
+			<input id="e_siteID" name="id" type="hidden" />
+			<input id="e_siteOrigin" name="origin" value="user" type="hidden" />
+			<label>Nombre del sitio</label>
+			<input id="e_siteName" name="title" type="text" placeholder="Nombre del sitio" class="edit_input">
+			<label>Descripción</label>
+			<textarea id="e_siteContent" name="content" placeholder="Descripción" class=""></textarea>
+			<label>Estado</label>
+			<select id="e_siteState" name="state_id" placeholder="Selecciona un Estado" class="edit_input">
+			{% for key,value in states %}
+          		<option value="{{ value.id }}">{{ value.name }}</option>
+      		{% endfor %}
+			</select>
+			<label>Ciudad</label>
+			<input id="e_siteCity" name="city" type="text" placeholder="Ciudad" class="edit_input">
+			<label>Colonia</label>
+			<input id="e_siteSettlement" name="settlement" type="text" placeholder="Colonia" class="edit_input">
+			<label>Dirección</label>
+			<input id="e_siteAddress" name="address" type="text" placeholder="Dirección" class="edit_input">
+			<label>Coordenadas</label>
+			<input id="e_siteLatlon" name="latlon" type="text" placeholder="Locación" class="edit_input">
+			<label>Teléfonos (Separados por una coma)</label>
+			<input id="e_siteTelephone" name="phones" type="tel" placeholder="Teléfono" class="edit_input">
+			<label>Emails (Separados por una coma)</label>
+			<input id="e_siteMails" name="emails" type="text" placeholder="Correos Electrónicos" class="edit_input">
+			<div class="user updateSite">Actualizar Información</div>
 		</form>
 	</div>
 {% endblock %}

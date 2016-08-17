@@ -16,7 +16,12 @@ class Post{
 
 	public static function all() {
         $result = self::$PDO->_all("*");
-        return $result->get();
+        return $result->get('post_title,post_content');
+    }
+
+    public static function last() {
+        $result = self::$PDO->_where("*","post_id ORDER BY created_at DESC LIMIT 5");
+        return $result->get('post_title,post_content');
     }
 
     public static function pages() {
@@ -31,7 +36,7 @@ class Post{
 
     public static function byId($id){
         $result = self::$PDO->_where("*", "post_id=$id");
-        return $result->get();
+        return $result->first('post_title,post_content');
     }
 
     public static function byUser($id_user){
@@ -41,5 +46,42 @@ class Post{
     public static function byTag($tag){
         $result = self::$PDO->_where("*", "url_tag='$tag'");
         return $result->first('post_title,post_content');
+    }
+
+    public static function byKeyword($keyword){
+        $result = self::$PDO->_where("*", "post_title LIKE '%$keyword%'");
+        return $result->get('post_title,post_content');
+    }
+
+    public static function save($title, $image, $content){
+        $url = self::sluggify($title);
+        $data = array('id_user'=>1, 'post_title'=>utf8_decode($title), 'url_tag'=>$url, 'post_image'=>$image, 'post_content'=>utf8_decode($content), 'post_status'=>'publish');
+        return self::$PDO->_insert($data);
+    }
+
+    public static function set_data($id, $title, $image, $content){
+        $url = self::sluggify($title);
+        $data = array('id_user'=>1, 'post_title'=>utf8_decode($title), 'url_tag'=>$url, 'post_image'=>$image, 'post_content'=>utf8_decode($content), 'post_status'=>'publish');
+        return self::$PDO->_update($data, "post_id=$id");
+    }
+
+    private static function sluggify($url){
+        # Prep string with some basic normalization
+        $url = strtolower($url);
+        $url = strip_tags($url);
+        $url = stripslashes($url);
+        $url = html_entity_decode($url);
+
+        # Remove quotes (can't, etc.)
+        $url = str_replace('\'', '', $url);
+
+        # Replace non-alpha numeric with hyphens
+        $match = '/[^a-z0-9]+/';
+        $replace = '-';
+        $url = preg_replace($match, $replace, $url);
+
+        $url = trim($url, '-');
+
+        return $url;
     }
 }

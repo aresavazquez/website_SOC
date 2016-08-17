@@ -78,27 +78,31 @@
 	<div class="editarUsuario">
 		<form class="datosUsuario microsite update-site" id="newSiteForm">
 			<a href=""><img src="{{ base_path }}img/body/close.png" class="close"></a>
-			<label>Encabezado</label>
-			<input id="e_siteName" type="text" placeholder="Nombre del sitio" class="edit_input">
-			<input id="e_siteUrl" type="hidden" placeholder="Nombre del sitio" class="edit_input">
+			<input id="e_siteID" name="id" type="hidden" />
+			<label>Nombre del sitio</label>
+			<input id="e_siteName" name="title" type="text" placeholder="Nombre del sitio" class="edit_input">
+			<label>URL para el sitio</label>
+			<input id="e_siteUrl" name="url" type="text" placeholder="Nombre del sitio" class="edit_input">
 			<label>Descripción</label>
-			<textarea id="e_siteContent" placeholder="Descripción" class=""></textarea>
-			<label>Localidad</label>
-			<select name="" id="e_siteState" placeholder="Selecciona un Estado" class="edit_input">
-      		{% for key,value in states %}
+			<textarea id="e_siteContent" name="content" placeholder="Descripción" class=""></textarea>
+			<label>Estado</label>
+			<select id="e_siteState" name="state_id" placeholder="Selecciona un Estado" class="edit_input">
+			{% for key,value in states %}
           		<option value="{{ value.id }}">{{ value.name }}</option>
       		{% endfor %}
 			</select>
 			<label>Ciudad</label>
-			<input id="e_siteCity" placeholder="Colonia" class="edit_input">
+			<input id="e_siteCity" name="city" type="text" placeholder="Ciudad" class="edit_input">
 			<label>Colonia</label>
-			<input id="e_siteSettlement" placeholder="Colonia" class="edit_input">
+			<input id="e_siteSettlement" name="settlement" type="text" placeholder="Colonia" class="edit_input">
 			<label>Dirección</label>
-			<input id="e_siteAddress" type="text" placeholder="Dirección" class="edit_input">
-			<label>Emails(Separados por una coma)</label>
-			<input id="e_siteMails" type="text" placeholder="Emails" class="edit_input">
-			<label>Teléfonos(Separados por una coma)</label>
-			<input id="e_siteTelephone" type="tel" placeholder="Teléfonos" class="edit_input">
+			<input id="e_siteAddress" name="address" type="text" placeholder="Dirección" class="edit_input">
+			<label>Coordenadas</label>
+			<input id="e_siteLatlon" name="latlon" type="text" placeholder="Locación" class="edit_input">
+			<label>Teléfonos (Separados por una coma)</label>
+			<input id="e_siteTelephone" name="phones" type="tel" placeholder="Teléfono" class="edit_input">
+			<label>Emails (Separados por una coma)</label>
+			<input id="e_siteMails" name="emails" type="text" placeholder="Correos Electrónicos" class="edit_input">
 			<div class="user updateSite">Actualizar Información</div>
 		</form>
 	</div>

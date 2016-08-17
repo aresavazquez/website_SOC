@@ -99,8 +99,7 @@ class ApiController extends Controller{
         if( Request::put('password') && 
             Request::put('password') != '' 
             && Request::put('password') == Request::put('password_confirm')
-        ) $data['password'] = Request::put('password');
-
+        ) $data['password'] = password_hash(Request::put('password'), PASSWORD_DEFAULT);
         $id = User::getInstance()->setData($params['id'], $data);
         $this->View->renderJSON($this->success_code($id));
     }
@@ -147,22 +146,27 @@ class ApiController extends Controller{
     }
 
     public function get_site($params){
-        $site = Site::getInstance()->byUrl($params['url']);
-        $site->title = utf8_encode($site->title);
-        $site->content = utf8_encode($site->content);
-        $site->address = utf8_encode($site->address);
+        $site = Site::getInstance()->byId($params['id']);
         $this->View->renderJSON($this->success_code($site));
     }
 
     public function set_site($params){
         $data = array();
-        if(Request::get('title')) $data['title'] = utf8_decode(Request::get('title'));
-        if(Request::get('content')) $data['content'] = utf8_decode(Request::get('content'));
-        if(Request::get('address')) $data['address'] = utf8_decode(Request::get('address'));
-        if(Request::get('contact')) $data['contact'] = utf8_decode(Request::get('contact'));
-        if(Request::get('latlon')) $data['latlon'] = utf8_decode(Request::get('latlon'));
-
-        $id = Site::getInstance()->setData($params['url'], $data);
+        if(Request::put('title')) $data['title'] = utf8_decode(Request::put('title'));
+        if(Request::put('content')) $data['content'] = utf8_decode(Request::put('content'));
+        if(Request::put('address')) $data['address'] = utf8_decode(Request::put('address'));
+        if(Request::put('state_id')) $data['state_id'] = utf8_decode(Request::put('state_id'));
+        if(Request::put('city')) $data['city'] = utf8_decode(Request::put('city'));
+        if(Request::put('settlement')) $data['settlement'] = utf8_decode(Request::put('settlement'));
+        if(Request::put('address')) $data['address'] = utf8_decode(Request::put('address'));
+        if(Request::put('latlon')) $data['latlon'] = utf8_decode(Request::put('latlon'));
+        if(Request::put('phones')) $data['phones'] = utf8_decode(Request::put('phones'));
+        if(Request::put('emails')) $data['emails'] = utf8_decode(Request::put('emails'));
+        if(Request::put('origin') == "user"){
+            $mail_obj = new Mail();
+            $mail_obj->sendMailWithPHPMailer('socialmedia@socasesores.com', 'socialmedia@socasesores.com', 'Micrositio :: ' . $data['title'], 'Cambio en el micrositio', 'Se ha reportado un cambio en el micrositio ' . $data['title'] . '.');
+        }
+        $id = Site::getInstance()->setData($params['id'], $data);
         $this->View->renderJSON($this->success_code($id));
     }
 

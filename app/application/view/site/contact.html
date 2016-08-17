@@ -15,6 +15,9 @@
 		</div>
 	</div>
 	<div class="container_contacto">
+		{% if feedback != "" %}
+		<p class="responses" style="display:block; margin: 0 !important">{{ feedback }}</p>
+		{% endif %}
 		<div>
 			<form action="{{ links.p_contact_post }}" method="post">
 				<input type="text" name="contact_name" placeholder="Nombre" value="{{ prospect.name }}">

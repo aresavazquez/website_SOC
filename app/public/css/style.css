@@ -839,7 +839,7 @@ button.close{
     background: url(../img/head/back3.jpg)no-repeat center fixed;
     padding-bottom: 20px;
     background-size: cover;
-    height: 100%;
+    min-height: calc(100% - 150px);
 }
 /*.content-usuario div{
     bottom: 100px;
@@ -1205,6 +1205,12 @@ center .text_simlador{
     font-size: 20px;
     text-transform: uppercase;
 }
+.head_micrositio .response{
+    margin: 20px auto;
+    background-color: #4fa753;
+    padding: 5px 30px;
+    border-radius: 5px;
+}
 .contenido_micrositio{
     margin: auto;
     padding: 50px;
@@ -1245,6 +1251,12 @@ center .text_simlador{
     text-align: center;
     margin-bottom: 29px;
     color: #4fa753;
+}
+.micrositio_simulador{
+    background: none;
+}
+.micrositio_simulador .box{
+    height: inherit;
 }
 .titleSimulador{
     font-size: 30px;
@@ -1679,6 +1691,31 @@ h2.zero,p.zero {
     color: #fff;
     padding: 11px;
     border-radius: 5px;
+}
+.post{
+    padding-top: 100px;
+}
+.post input{
+    display: block;
+    border: none;
+    padding: 10px;
+    letter-spacing: 1px;
+    font-size: 16px;
+    font-weight: 100;
+    background: none;
+    color: #fff;
+    position: relative;
+    margin: 15px 0;
+    width: 70%;
+}
+.post select{
+    display: block;
+    margin: 15px 0;
+}
+.post label{
+    color: #fff;
+    font-weight: 100;
+    font-size: 20px;
 }
 /* -------------------------------------nota   */
 .nota div h1{

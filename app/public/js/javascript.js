@@ -456,28 +456,22 @@ $(document).on('ready', function(){
         });
     }
     var loadSiteinfo = function(){
-        $('#sitesList').on('click', '.editInput' ,function (e){
+        $('.container-sites').on('click', '.edit' ,function (e){
             e.preventDefault ();
-            var siteURL = $(this).data('site');
-            var datauser = ''
-            var settings = {
-                "async": true,
-                "crossDomain": true,
-                "url": host_url + "api/v1/sites/"+siteURL,
-                "method": "GET",
-            }
-            $.ajax(settings).done(function (response) {
+            var siteID = $(this).data('site');
+            $.get(host_url + "api/v1/sites/"+siteID, function(response){
                 var site = response.data;
-                console.log(site);
-                $('.update-site #e_siteName').val(site.title);
-                $('.update-site #e_siteUrl').val(site.url);
-                $('.update-site #e_siteContent').val(site.content);
-                $('.update-site #e_siteState').val(site.state_id);
-                $('.update-site #e_siteCity').val(site.city);
-                $('.update-site #e_siteSettlement').val(site.settlement);
-                $('.update-site #e_siteAddress').val(site.address);
-                $('.update-site #e_siteMails').val(site.emails);
-                $('.update-site #e_siteTelephone').val(site.phones);
+                $('#e_siteID').val(site.id);
+                $('#e_siteName').val(site.title);
+                $('#e_siteUrl').val(site.url);
+                $('#e_siteContent').val(site.content);
+                $('#e_siteState').val(site.state_id);
+                $('#e_siteCity').val(site.city);
+                $('#e_siteSettlement').val(site.settlement);
+                $('#e_siteAddress').val(site.address);
+                $('#e_siteLatlon').val(site.latlon);
+                $('#e_siteMails').val(site.emails);
+                $('#e_siteTelephone').val(site.phones);
             });
         });
     }
@@ -500,35 +494,16 @@ $(document).on('ready', function(){
     }
     var updateSiteinfo = function(){
         $('.update-site .updateSite').on('click', function(){
-            var esiteName = $('.update-site #e_siteName').val();
-            var esiteUrl = $('.update-site #e_siteUrl').val();
-            var esiteContent = $('.update-site #e_siteContent').val();
-            var esiteState = $('.update-site #e_siteState').val();
-            var esiteCity = $('.update-site #e_siteCity').val();
-            var esiteSettlement = $('.update-site #e_siteSettlement').val();
-            var esiteAddress = $('.update-site #e_siteAddress').val();
-            var esiteMails = $('.update-site #e_siteMails').val();
-            var esitePhones = $('.update-site #e_siteTelephone').val();
-
-            $('.close').trigger( "click" );
-            $.put(host_url + 'api/v1/sites/'+esiteUrl,
-                {title: esiteName,
-                content: esiteContent,
-                state: esiteState,
-                city: esiteCity,
-                settlement: esiteSettlement,
-                address: esiteAddress,
-                emails: esiteMails,
-                phones: esitePhones
-                }, function(response){
-                    if(response.status == 200){
-                        $('.responses').text('El sitio se ha actualizado correctamente');
-                        $('.responses').show();
-                    }else if(response.status == 500) {
-                        $('.responses').text(response.errors);
-                        $('.responses').show();
-                    }
-                })
+            var siteID = $('.update-site #e_siteID').val();
+            $.put(host_url + 'api/v1/sites/'+siteID, $('.update-site').serialize(), function(response){
+                $('.responses').text('El sitio se ha actualizado correctamente');
+                $('.responses').show();
+                TweenLite.to('.datosUsuario', .5, { opacity: 0, display: 'none', ease: Power2.easeOut, y: 0, onComplete: function(){
+                    TweenLite.to('.agregarUsuario', .5, {opacity: 0, display: 'none'});
+                    TweenLite.to('.editarUsuario', .5, {opacity:0, display: 'none'});
+                    location.reload();
+                }});
+            });
         });
     }
     var deleteSiteinfo = function(){
@@ -757,6 +732,7 @@ $(document).on('ready', function(){
             registerUser();
         },
         "user-sites": function(){
+            //$('#gmaps').locationpicker();
             adminUserSitesListeners();
             loadSiteinfo();
             updateSiteinfo();
@@ -772,21 +748,22 @@ $(document).on('ready', function(){
             registerSite();
         },
         "admin-blog":function(){
-            postsList();
-            adminBlogListeners();
-            loadPostinfoEdit();
-            updatePostinfo();
+            $('.post_content').trumbowyg();
+            //postsList();
+            //adminBlogListeners();
+            //loadPostinfoEdit();
+            //updatePostinfo();
         },
         "p-blog":function(){
-            postsList_view();
+            //postsList_view();
         },
         "p_blog_nota":function(){
-            loadPostInfo();
+            //loadPostInfo();
         }
     }
 
     // -  Get the current page
-    var currentPage = $('.page').attr('class').split(' ')[1];
+    var currentPage = typeof $('.page').attr('class') != "undefined" ? $('.page').attr('class').split(' ')[1] : "";
     // - Do the behaviors that correspond to the current page
     if(site[currentPage]) site[currentPage]();
 });

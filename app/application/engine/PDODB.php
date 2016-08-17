@@ -95,6 +95,7 @@ class PDODB{
 			$fields[] = $key . '=:' . $key;
 		}
 		$fieldsstr = implode( ', ', $fields );
+		//echo "UPDATE " . $this->table . " SET $fieldsstr WHERE $condition";
 		$STH = $this->DBH->prepare("UPDATE " . $this->table . " SET $fieldsstr WHERE $condition");
 		$STH->execute( $data );
 		return $STH->rowCount();	

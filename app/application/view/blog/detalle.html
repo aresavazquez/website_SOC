@@ -10,7 +10,7 @@
 	<div class="nota-general">
 		<div class="contenido-nota">
 			<h1>{{ post.post_title }}</h1>
-			<p class="date">Posted on {{ post.post_date }} by SOC Asesores Hipotecarios</p>
+			<p class="date">Posted on {{ post.created_at }} by SOC Asesores Hipotecarios</p>
 			<img class="post-image" src="{{ post.post_image }}">
 			<ul class="redes">
 				<li>Compartir nota</li>
@@ -52,15 +52,19 @@
 		</div>
 		<div class="notas-recientes">
 			<div>
-				<form>
-					<input type="search" placeholder="Buscar...">
+				<form method="GET" action="{{ base_path }}blog">
+					<input type="search" name="keyword" placeholder="Buscar...">
+					<input type="submit" value="Buscar">
 				</form>
 				<p>ÚLTIMAS ENTRADAS</p>
 				<ul>
-					<li><a href="">Banca Afirme y SOC hacen más fácil el crédito de liquidez empresarial</a></li>
+					{% for post in last %}
+					<li><a href="{{ base_path }}blog/nota/{{ post.url_tag }}">{{ post.post_title }}</a></li>
+					{% endfor %}
+					<!--li><a href="">Banca Afirme y SOC hacen más fácil el crédito de liquidez empresarial</a></li>
 					<li><a href="">Las lecciones de House of Cards para que elijas tu crédito hipotecario</a></li>
 					<li><a href="">Crédito Hipotecario Empresarial, la nueva manera de incrementar tu patrimonio</a></li>
-					<li><a href="">Encuentra tu casa ideal</a></li>
+					<li><a href="">Encuentra tu casa ideal</a></li-->
 				</ul>
 			</div>
 		</div>

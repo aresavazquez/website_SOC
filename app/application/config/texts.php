@@ -75,5 +75,7 @@ return array(
 	"FEEDBACK_COOKIE_LOGIN_SUCCESSFUL" => "You were successfully logged in via the remember-me-cookie.",
 	"FEEDBACK_USER_HAS_SITE" => "El usuario ya tiene un sitio registrado.",
 	"FEEDBACK_SITE_CREATION_FAILED" => "Ha fallado la creación del sitio, inténtalo nuevamente.",
-	"BROKERS_NOT_FOUND" => "No se han encontrado brokers que pertenezcan a este estado."
+	"BROKERS_NOT_FOUND" => "No se han encontrado brokers que pertenezcan a este estado.",
+	"FEEDBACK_CONTACT_MAIL_SENDING_SUCCESSFUL" => "Tu mensaje se ha enviado correctamente.",
+	"FEEDBACK_CONTACT_MAIL_SENDING_FAILED" => "Ha habido un error al enviar tu mensaje, por favor inténtalo nuevamente."
 );

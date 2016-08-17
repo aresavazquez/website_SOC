@@ -12,7 +12,7 @@
 
 			</div>
 			<!--input type="search" placeholder="buscar" class="search"-->
-			<a href="" class="plusUser">+ Agregar artículo</a>
+			<a href="{{ base_path }}admin/blog/post/new" class="plusUser">+ Agregar artículo</a>
 			<table id="postList">
 				<thead>
 					<tr class="back-white">
@@ -21,6 +21,17 @@
 					</tr>
 				</thead>
 				<tbody>
+				{% for post in posts %}
+					<tr>
+						<td class="viewsite"><a href="{{ base_path }}blog/nota/{{ post.url_tag }}">{{post.post_title}}</a></td>
+						<td class="editInput"><a href="{{ base_path }}admin/blog/post/{{ post.post_id }}">editar</a></td>
+					</tr>
+				{% else %}
+					<tr>
+						<td class="none">Aún no has creado una entrada del blog.</td>
+						<td></td>
+					</tr>
+				{% endfor %}
 				</tbody>
 			</table>
 		</div>
@@ -33,8 +44,8 @@
 	      	<label>Imagen del artículo</label>
 	      	<input type="file">
 			<label>Contenido del artículo</label>
-			<textarea id="postContent" placeholder="Descripción" class=""></textarea>
-	      	<div class="user addSite">Guardar como borrador</div>
+			<textarea id="postContent" placeholder="Descripción" class="post_content"></textarea>
+	      	<!--div class="user addSite">Guardar como borrador</div-->
 			<div class="user addSite">Publicar</div>
 		</form>	
 	</div>
@@ -47,8 +58,8 @@
 	      	<label>Imagen del artículo</label>
 	      	<input type="file" id="e_post_image">
 			<label>Contenido del artículo</label>
-			<textarea id="e_post_content" placeholder="Descripción" class=""></textarea>
-	      	<div class="user addSite">Guardar como borrador</div>
+			<textarea id="e_post_content" placeholder="Descripción" class="post_content"></textarea>
+	      	<!--div class="user addSite">Guardar como borrador</div-->
 			<div class="user updatePost">Actualizar</div>
 		</form>	
 	</div>

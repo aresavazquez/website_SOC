@@ -16,6 +16,9 @@ class SimulatorController extends Controller
   public function calculate(){
     $amount = Request::get('value') ? Request::get('value') : 1000000;
     $hitch = Request::get('hitch') ? Request::get('hitch') : 200000;
+
+    $amount -= $hitch;
+
     if(Request::get('paytype') == 'fija'){
       if(Request::get('paytime') == 15){
         $afirme =   $this->fixed15($amount, 0.6999, 10.53, 9.8, 10.6, 0.8, 0.06931, 0.98, 98, 199, 70.17, 2.5, true, 0.003596, 0.01, 0.06, $hitch);
@@ -107,6 +110,9 @@ class SimulatorController extends Controller
         'total' => 'N/A'
       );
     }
+
+    $factor_gastos_notario = $this->notarial(Request::get('state'));
+
     $monto = $valor * $aforo;
     
     $pago_seguro_vida = $monto * $factor_seguro_vida / 1000;
@@ -163,9 +169,9 @@ class SimulatorController extends Controller
       'mensualidad' => '$'.number_format($mensualidad, 2),
       'monto' => '$'.number_format($monto, 2), 
       'prima_unica' => $prima_unica ? '$'.number_format($prima_unica, 2) : 'N/A',
-      'tasa_interes' => number_format($interes, 2).'%', 
+      'tasa_interes' => number_format($interes * 100, 2).'%', 
       'ingreso_requerido' => '$'.number_format($ingreso, 2),
-      'cat' => number_format($cat, 2).'%',
+      'cat' => number_format($cat * 100, 2).'%',
       'enganche' => '$'.number_format($enganche, 2),
       'enganche_adicional' => '$'.number_format($enganche_adicional, 2),
       'avaluo' => '$'.number_format($avaluo, 2),
@@ -209,6 +215,9 @@ class SimulatorController extends Controller
         'total' => 'N/A'
       );
     }
+
+    $factor_gastos_notario = $this->notarial(Request::get('state'));
+
     $monto = $valor * $aforo;
     
     $pago_seguro_vida = $monto * $factor_seguro_vida / 1000;
@@ -262,9 +271,9 @@ class SimulatorController extends Controller
       'mensualidad' => '$'.number_format($mensualidad, 2),
       'monto' => '$'.number_format($monto, 2), 
       'prima_unica' => $prima_unica ? '$'.number_format($prima_unica, 2) : 'N/A',
-      'tasa_interes' => number_format($interes, 2).'%', 
+      'tasa_interes' => number_format($interes * 100, 2).'%', 
       'ingreso_requerido' => '$'.number_format($ingreso, 2),
-      'cat' => number_format($cat, 2).'%',
+      'cat' => number_format($cat * 100, 2).'%',
       'enganche' => '$'.number_format($enganche, 2),
       'enganche_adicional' => '$'.number_format($enganche_adicional, 2),
       'avaluo' => '$'.number_format($avaluo, 2),
@@ -291,6 +300,9 @@ class SimulatorController extends Controller
     $enganche_adicional = 0,
     $show_prima_unica = false
   ){
+
+    $factor_gastos_notario = $this->notarial(Request::get('state'));
+
     $monto = $valor * $aforo;
     
     $pago_seguro_vida = $monto * $factor_seguro_vida / 1000;
@@ -347,9 +359,9 @@ class SimulatorController extends Controller
       'mensualidad' => '$'.number_format($mensualidad, 2),
       'monto' => '$'.number_format($monto, 2), 
       'prima_unica' => $prima_unica ? '$'.number_format($prima_unica, 2) : 'N/A',
-      'tasa_interes' => number_format($interes, 2).'%', 
+      'tasa_interes' => number_format($interes * 100, 2).'%', 
       'ingreso_requerido' => '$'.number_format($ingreso, 2),
-      'cat' => number_format($cat, 2).'%',
+      'cat' => number_format($cat * 100, 2).'%',
       'enganche' => '$'.number_format($enganche, 2),
       'enganche_adicional' => '$'.number_format($enganche_adicional, 2),
       'avaluo' => '$'.number_format($avaluo, 2),
@@ -376,6 +388,9 @@ class SimulatorController extends Controller
     $enganche_adicional = 0,
     $show_prima_unica = false
   ){
+
+    $factor_gastos_notario = $this->notarial(Request::get('state'));
+    
     $monto = $valor * $aforo;
     
     $pago_seguro_vida = $monto * $factor_seguro_vida / 1000;
@@ -429,9 +444,9 @@ class SimulatorController extends Controller
       'mensualidad' => '$'.number_format($mensualidad, 2),
       'monto' => '$'.number_format($monto, 2), 
       'prima_unica' => $prima_unica ? '$'.number_format($prima_unica, 2) : 'N/A',
-      'tasa_interes' => number_format($interes, 2).'%', 
+      'tasa_interes' => number_format($interes * 100, 2).'%', 
       'ingreso_requerido' => '$'.number_format($ingreso, 2),
-      'cat' => number_format($cat, 2).'%',
+      'cat' => number_format($cat * 100, 2).'%',
       'enganche' => '$'.number_format($enganche, 2),
       'enganche_adicional' => '$'.number_format($enganche_adicional, 2),
       'avaluo' => '$'.number_format($avaluo, 2),
@@ -497,5 +512,14 @@ class SimulatorController extends Controller
     if($amount > 650000) return 3000;
     if($amount > 1) return 3000;
     if($amount <= 0) return 0;
+  }
+
+  private function notarial($state_id){
+    $expenses = [
+    0.04, 0.06, 0.05, 0.04, 0.05, 0.04, 0.04, 0.06, 0.1, 0.06, 
+    0.03, 0.03, 0.1, 0.05, 0.09, 0.04, 0.04, 0.06, 0.04, 0.02, 
+    0.06, 0.04, 0.04, 0.04, 0.07, 0.04, 0.06, 0.05, 0.08, 0.02,
+    0.04, 0.03];
+    return $expenses[$state_id - 1];
   }
 }

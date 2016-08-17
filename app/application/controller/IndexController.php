@@ -39,7 +39,12 @@ class IndexController extends Controller
     $this->View->render('site/tips.html');
   }
   public function contact(){
-    $this->View->render('site/contact.html');
+    $positive = (Session::get('feedback_positive')) ? join(',', Session::get('feedback_positive')) : "";
+    $negative = (Session::get('feedback_negative')) ? join(',', Session::get('feedback_negative')) : "";
+    $feedback = $positive != "" ? $positive : $negative;
+    Session::set('feedback_positive', array());
+    Session::set('feedback_negative', array());
+    $this->View->render('site/contact.html', array('feedback'=>$feedback));
   }
   public function post_contact(){
     $name = strip_tags(Request::post('contact_name'));
@@ -52,9 +57,9 @@ class IndexController extends Controller
     $mail_sent = $mail->sendMail(Config::get('EMAIL_CONTACT_RECEIVER'), $email, $name, 'Comentario de /contacto', $body);
 
     if ($mail_sent) {
-        Session::add('feedback_positive', Text::get('FEEDBACK_VERIFICATION_MAIL_SENDING_SUCCESSFUL'));
+        Session::add('feedback_positive', Text::get('FEEDBACK_CONTACT_MAIL_SENDING_SUCCESSFUL'));
     } else {
-        Session::add('feedback_negative', Text::get('FEEDBACK_VERIFICATION_MAIL_SENDING_ERROR') . $mail->getError() );
+        Session::add('feedback_negative', Text::get('FEEDBACK_CONTACT_MAIL_SENDING_FAILED') . $mail->getError() );
     }
     Redirect::to('contacto');
   }

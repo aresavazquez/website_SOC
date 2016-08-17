@@ -1,0 +1,23 @@
+{% extends "admin.html" %}
+{% block title %}Admin{% endblock %}
+{% block head %}
+    {{ parent() }}
+{% endblock %}
+{% block content %}
+	{{ parent() }}
+	<div class="page post content-usuario">
+		<form method="POST">
+			<label>Título del artículo</label>
+			<input name="title" type="text" placeholder="Título del artículo" class="edit_input" value="{{ post.post_title }}">
+			<br />
+		    <label>Imagen del artículo</label>
+		    <input name="image" type="text" placeholder="URL a la imagen del artículo" class="edit_input" value="{{ post.post_image }}">
+		    <br />
+			<label>Contenido del artículo</label>
+			<br />
+			<textarea name="content" placeholder="Descripción" class="post_content">{{ post.post_content }}</textarea>
+			<br />
+		    <button type="submit" name="save_post" value="publish" class="user addSite">Actualizar</div>
+		</form>
+	</div>
+{% endblock %}	

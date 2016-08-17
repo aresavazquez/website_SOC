@@ -36,6 +36,8 @@ class Routes{
         self::$router->map( 'GET', '/admin/users/[i:id_user]/sites', 'AdminController#user_sites', 'admin_user_sites');
     	self::$router->map( 'GET', '/admin/sites', 'AdminController#sites', 'admin_sites');
     	self::$router->map( 'GET', '/admin/blog', 'AdminController#blog', 'admin_blog');
+        self::$router->map( 'GET|POST', '/admin/blog/post/new', 'AdminController#new_blog_post', 'admin_new_blog_post');
+        self::$router->map( 'GET|POST', '/admin/blog/post/[i:id_post]', 'AdminController#edit_blog_post', 'admin_edit_blog_post');
     	self::$router->map( 'GET', '/logout', 'AdminController#logout', 'p_logout');
         self::$router->map( 'GET', '/password_encode/[*:password]', 'PasswordsController#encode');
 
@@ -51,8 +53,8 @@ class Routes{
         self::$router->map( 'DELETE', '/api/v1/users/[i:id]', 'ApiController#delete_user');
     	self::$router->map( 'GET', '/api/v1/sites', 'ApiController#sites');
     	self::$router->map( 'POST', '/api/v1/sites', 'ApiController#new_site');
-    	self::$router->map( 'GET|POST', '/api/v1/sites/[*:url]', 'ApiController#get_site');
-    	self::$router->map( 'PUT', '/api/v1/sites/[*:url]', 'ApiController#set_site');
+    	self::$router->map( 'GET|POST', '/api/v1/sites/[*:id]', 'ApiController#get_site');
+    	self::$router->map( 'PUT', '/api/v1/sites/[*:id]', 'ApiController#set_site');
         self::$router->map( 'DELETE', '/api/v1/sites/[i:id]', 'ApiController#delete_site');
     	self::$router->map( 'GET', '/api/v1/post/[i:id]', 'ApiController#get_post');
         self::$router->map( 'POST', '/api/v1/post', 'ApiController#get_posts');

@@ -23,6 +23,8 @@
 			{{ post.excerpt | raw }}...
 			<a href="{{ base_path }}blog/nota/{{ post.url_tag }}">Ver nota</a>
 		</div>
+		{% else %}
+		<h1>No hay posts que coincidan con esta búsqueda</h1>
 		{% endfor %}
 		<ul>
 			{% if page - 1 > 0 %}
@@ -42,15 +44,19 @@
 	</div>
 	<div class="second-section">
 		<div>
-			<form>
-				<input type="search" placeholder="Buscar...">
+			<form method="GET" action="{{ base_path }}blog">
+				<input type="search" name="keyword" placeholder="Buscar...">
+				<input type="submit">
 			</form>
 			<p>ÚLTIMAS ENTRADAS</p>
 			<ul>
-				<li><a href="">Banca Afirme y SOC hacen más fácil el crédito de liquidez empresarial</a></li>
+				{% for post in last %}
+				<li><a href="{{ base_path }}blog/nota/{{ post.url_tag }}">{{ post.post_title }}</a></li>
+				{% endfor %}
+				<!--li><a href="">Banca Afirme y SOC hacen más fácil el crédito de liquidez empresarial</a></li>
 				<li><a href="">Las lecciones de House of Cards para que elijas tu crédito hipotecario</a></li>
 				<li><a href="">Crédito Hipotecario Empresarial, la nueva manera de incrementar tu patrimonio</a></li>
-				<li><a href="">Encuentra tu casa ideal</a></li>
+				<li><a href="">Encuentra tu casa ideal</a></li-->
 			</ul>
 		</div>
 	</div>
