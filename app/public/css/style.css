@@ -2878,6 +2878,16 @@ select option {
     .container_menu{
         display: none;
     }
+    .container_menu.cel{
+        display: block;
+    }
+    .container_menu.cel img {
+        width: 72px;
+        top: 18px;
+    }
+    .container_menu.cel ul li a {
+        padding: 23px 10px;
+    }
     .sub-menu{
         display: none;  
     }
