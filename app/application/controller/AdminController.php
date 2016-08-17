@@ -49,6 +49,7 @@ class AdminController extends Controller
     public function new_blog_post(){
         if(Request::post('save_post')){
             Post::getInstance()->save(Request::post('title'), Request::post('image'), Request::post('content'));
+            Redirect::to('admin/blog');
         }
         $this->View->render('admin/new-post.html',array('is_admin'=>true)); 
     }
