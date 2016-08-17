@@ -1398,7 +1398,7 @@ center .text_simlador{
 }
 /* soc tips*/
 .tips{
-    background: url(../img/body/tips.jpg)no-repeat top;
+    background: rgba(22, 25, 59, .8);
     background-size: cover;
     height: 350px;
     width: 100%;
@@ -1435,9 +1435,11 @@ center .text_simlador{
     text-align: center;
     padding-top: 18px;
 }
-.container_tips{
+.page.p-tips{
     background: url(../img/head/back3.jpg)no-repeat center fixed;
     background-size: cover;
+}
+.container_tips{
     padding: 50px;
 }
 .container_tips .video{
