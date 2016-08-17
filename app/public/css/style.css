@@ -594,7 +594,7 @@ a,a:visited{
     border: none;
     width: 300px;
     padding: 10px;
-    color: #23AFEC;
+    color: #fff;
     letter-spacing: 1px;
     font-weight: 100;
     margin: 10px;
@@ -2557,7 +2557,7 @@ h2.zero,p.zero {
 }
 select option {
     background: rgba(0,0,0,0.3);
-    color:red;
+    color: #fff;
 }
 .p-simulator .botones li{
     font-size: 20px;
