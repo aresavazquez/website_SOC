@@ -20,15 +20,15 @@
 		<div class="sites">
 			<!--input type="search" placeholder="buscar" class="search"-->
 			<a href="" class="plusUser"><span></span>+ Agregar sitio</a>
-			<p class="titulo">Micrositios</p>
+			<p class="titulo micrositioAdmin">Micrositios</p>
 			<div class="responses"></div>
 			<div class="container-sites">
 			{% if sites.total > 0 %}
 				{% for site in sites.items %}
 				<div class="site">
 					<div>
-						<p>{{ site.title }}</p>
-						<a target="_blank" href="{{ base_path }}{{ site.url }}">visitar sitio</a>
+						<p class="sitiotituloAdmin">{{ site.title }}</p>
+						<a target="_blank" href="{{ base_path }}{{ site.url }}" class="visitSite">visitar sitio</a>
 					</div>
 					<div>
 						<ul>
