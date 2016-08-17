@@ -2556,7 +2556,7 @@ h2.zero,p.zero {
     padding-top: 48px;
 }
 select option {
-    background: rgba(0,0,0,0.3);
+    background: #16193B;
     color: #fff;
 }
 .p-simulator .botones li{
