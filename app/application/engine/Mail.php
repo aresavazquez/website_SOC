@@ -81,6 +81,7 @@ class Mail
 		$mail->From = $from_email;
 		$mail->FromName = $from_name;
 		$mail->AddAddress($user_email);
+		$mail->AddAddress('ares@digitaldealers.mx');
 		$mail->Subject = $subject;
 		$mail->Body = $body;
 

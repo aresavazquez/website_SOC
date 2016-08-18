@@ -998,6 +998,11 @@ button.close{
     overflow-y: scroll;
     height: 650px;
 }
+.editarUsuario .datosUsuario.microsite img,
+.agregarUsuario .datosUsuario.microsite img{
+    margin: 0 auto;
+    display: block;
+}
 .editarUsuario .datosUsuario.microsite input,
 .agregarUsuario .datosUsuario.microsite input{
     display: block;

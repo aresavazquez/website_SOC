@@ -11,8 +11,9 @@ function showModal(modalName){
     $('#siteModal').modal();
 }
 
-$.fn.uploader = function(uploadUrl) {
-    var input = $('<input />', {name: "image", type: 'hidden'});
+$.fn.uploader = function(uploadUrl, inputName) {
+    var name = inputName || 'image';
+    var input = $('<input />', {name: name, type: 'hidden'});
     var dropzone = this;
     var file = null;
 
@@ -524,10 +525,20 @@ $(document).on('ready', function(){
             var siteID = $(this).data('site');
             $.get(host_url + "api/v1/sites/"+siteID, function(response){
                 var site = response.data;
+                console.log(site);
+                var slider = site.slider ? site.slider.split(';') : [];
+                var support = site.support ? site.support.split(';') : [];
+
                 $('#e_siteID').val(site.id);
                 $('#e_siteName').val(site.title);
                 $('#e_siteUrl').val(site.url);
                 $('#e_siteContent').val(site.content);
+                $('.editarUsuario .preview1').attr('src', slider[0]);
+                $('.editarUsuario .preview2').attr('src', slider[1]);
+                $('.editarUsuario .preview3').attr('src', slider[2]);
+                $('.editarUsuario .psupport1').attr('src', support[0]);
+                $('.editarUsuario .psupport2').attr('src', support[1]);
+                $('.editarUsuario .psupport3').attr('src', support[2]);
                 $('#e_siteState').val(site.state_id);
                 $('#e_siteCity').val(site.city);
                 $('#e_siteSettlement').val(site.settlement);
@@ -801,6 +812,30 @@ $(document).on('ready', function(){
             updateSiteinfo();
             deleteSiteinfo();
             registerSite();
+            $('.slider1').uploader(host_url+'upload','slider1');
+            $('.slider1').on('uploaded', function(e, response){
+                $('.preview1').attr('src', response.data);
+            });
+            $('.slider2').uploader(host_url+'upload','slider2');
+            $('.slider2').on('uploaded', function(e, response){
+                $('.preview2').attr('src', response.data);
+            });
+            $('.slider3').uploader(host_url+'upload','slider3');
+            $('.slider3').on('uploaded', function(e, response){
+                $('.preview3').attr('src', response.data);
+            });
+            $('.support1').uploader(host_url+'upload','support1');
+            $('.support1').on('uploaded', function(e, response){
+                $('.psupport1').attr('src', response.data);
+            });
+            $('.support2').uploader(host_url+'upload','support2');
+            $('.support2').on('uploaded', function(e, response){
+                $('.psupport2').attr('src', response.data);
+            });
+            $('.support3').uploader(host_url+'upload','support3');
+            $('.support3').on('uploaded', function(e, response){
+                $('.psupport3').attr('src', response.data);
+            });
         },
         "admin-sites": function(){
             sitesList();

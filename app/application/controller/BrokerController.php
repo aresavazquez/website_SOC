@@ -20,7 +20,9 @@ class BrokerController extends Controller
         $lat_lon = explode(',', $site->latlon);
         $feedback = (Session::get('feedback_positive')) ? join(',', Session::get('feedback_positive')) : "";
         $states = State::getInstance()->all();
-        $this->View->render('broker/show.html', array('site'=>$site, 'states'=>$states, 'lat'=>$lat_lon[0], 'lon'=>$lat_lon[1], 'feedback'=>$feedback));
+        $slider = explode(';', $site->slider);
+        $support = explode(';', $site->support);
+        $this->View->render('broker/show.html', array('site'=>$site, 'states'=>$states, 'slider'=>$slider, 'support'=>$support, 'lat'=>$lat_lon[0], 'lon'=>$lat_lon[1], 'feedback'=>$feedback));
     }
 
     public function edit(){

@@ -128,7 +128,6 @@ class ApiController extends Controller{
         Session::set('feedback_negative', array());
         $user_id = strip_tags(Request::post('user_id'));
         $state_id = strip_tags(Request::post('state_id'));
-        $url = strip_tags(Request::post('url'));
         $title = strip_tags(Request::post('title'));
         $content = strip_tags(Request::post('content'));
         $city =strip_tags(Request::post('city'));
@@ -137,7 +136,13 @@ class ApiController extends Controller{
         $latlon = strip_tags(Request::post('latlon'));
         $phones = strip_tags(Request::post('phones'));
         $emails = strip_tags(Request::post('emails'));
-        $registration_successful = Site::save($user_id, $state_id, $url, $title, $content, $city, $settlement, $address, $latlon, $phones, $emails);
+        $slider[] = strip_tags(Request::post('slider1'));
+        $slider[] = strip_tags(Request::post('slider2'));
+        $slider[] = strip_tags(Request::post('slider3'));
+        $support[] = strip_tags(Request::post('support1'));
+        $support[] = strip_tags(Request::post('support2'));
+        $support[] = strip_tags(Request::post('support3'));
+        $registration_successful = Site::save($user_id, $state_id, $title, $content, $city, $settlement, $address, $latlon, $phones, $emails, $slider, $support);
         if($registration_successful){
             $this->View->renderJSON($this->success_code($registration_successful));
         }else{
