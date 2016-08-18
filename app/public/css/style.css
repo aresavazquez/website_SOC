@@ -1739,6 +1739,24 @@ h2.zero,p.zero {
     margin: 15px 0;
     width: 70%;
 }
+.editBlog input{
+    width: 500px;
+    background: #fff;
+    color: #2a6496;
+    font-weight: normal;
+    margin: auto;
+}
+.editBlog textarea{
+    width: 600px;
+    height: 200px;
+    padding: 25px;
+}
+.editBlog{
+    padding: 50px;
+    margin: auto;
+    width: 90%;
+    text-align: center;
+}
 .post select{
     display: block;
     margin: 15px 0;

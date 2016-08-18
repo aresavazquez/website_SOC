@@ -6,7 +6,7 @@
 {% block content %}
 	{{ parent() }}
 	<div class="page post content-usuario">
-		<form method="POST">
+		<form method="POST" class="editBlog">
 			<label>Título del artículo</label>
 			<input name="title" type="text" placeholder="Título del artículo" class="edit_input" value="{{ post.post_title }}">
 			<br />
