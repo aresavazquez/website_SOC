@@ -1818,7 +1818,7 @@ h2.zero,p.zero {
     display: block;
 }
 .nota .contenido-nota p{
-    color: #fff;
+    color: #fff !important;
     font-size: 16px;
     font-weight: 100;
     text-align: justify;
@@ -1839,8 +1839,9 @@ h2.zero,p.zero {
     font-weight: 100;
     line-height: 30px
 }
+.nota .contenido-nota ol li,
 .nota .contenido-nota ul li{
-    color: #fff;
+    color: #fff !important;
     font-size: 16px;
     font-weight: 100;
 }
@@ -3049,6 +3050,41 @@ select option {
     }
 }
 
+/* Trumbowyg */
+.editBlog div{
+    margin: initial;
+    width: initial;
+    height: initial;
+    position: relative;
+    padding-top: 0;
+    text-align: initial;
+}
+.editBlog .trumbowyg-box button{
+    color: inherit;
+    font-weight: initial;
+    margin: initial;
+    font-size: initial;
+    text-align: initial;
+}
+.editBlog .trumbowyg-button-pane button{
+    width: 35px !important;
+}
+.editBlog .trumbowyg-box{
+    background: white;
+}
 
-
-
+/* Uploader */
+div.dragdrop{
+        width: 80%;
+    max-width: 600px;
+    border: dashed 3px #4FA755;
+    margin: 15px auto;
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background: rgba(0,0,0,0.5);
+    font-size: 17px;
+    font-weight: bold;
+    color: #4fa753;
+}

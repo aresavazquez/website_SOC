@@ -11,6 +11,61 @@ function showModal(modalName){
     $('#siteModal').modal();
 }
 
+$.fn.uploader = function(uploadUrl) {
+    var input = $('<input />', {name: "image", type: 'hidden'});
+    var dropzone = this;
+    var file = null;
+
+    dropzone.parent().append(input);
+    dropzone.text('Arrastra una imagen aquí si deseas cambiar la imagen del artículo');
+
+    dropzone.on('dragover', function(e){
+        e.stopPropagation();
+        e.preventDefault();
+        e.originalEvent.dataTransfer.dropEffect = 'copy';
+        dropzone.text('Suelta la imagen aquí');
+    });
+    dropzone.on('drop', function(e){
+        e.stopPropagation();
+        e.preventDefault();
+        file = e.originalEvent.dataTransfer.files[0];
+        dropzone.uploadFile();
+        dropzone.text('Subiendo...');
+    });
+    dropzone.uploadFile = function(){
+        var fd = new FormData();
+        var xhr = new XMLHttpRequest();
+                
+        xhr.upload.addEventListener('progress', function(e){
+            if(e.lengthComputable){
+                dropzone.trigger('progress', {percentage: e.loaded / e.total * 90});
+                dropzone.text('Subiendo '+ (e.loaded / e.total * 90) + '%');
+            }
+        });
+        xhr.addEventListener('load', function(e){
+            let response = xhr.response != undefined ? xhr.response : xhr.responseText;
+            if(typeof response == 'string') response = JSON.parse(response);
+            dropzone.trigger('uploaded', response);
+            dropzone.text('La imagen ha sido guardada');
+            input.val(response.data);
+            setTimeout(function(){
+                dropzone.text('Arrastra una imagen aquí si deseas cambiar la imagen del artículo');
+            }, 3000);
+        });
+        xhr.addEventListener('error', function(e){
+            dropzone.text('Ocurrio un error al subir la imagen');
+        });
+        for(var item in dropzone.data()){
+            fd.append(item, dropzone.data(item));
+        };
+        fd.append('file', file);
+        xhr.open('POST', uploadUrl);
+        xhr.responseType='json';
+        xhr.multipart = true;
+        xhr.send(fd);
+    }
+}
+
 $.fn.simulator = function() {
   var name = this.find('#name');
   var phone = this.find('#number');
@@ -755,7 +810,11 @@ $(document).on('ready', function(){
             viewSite();
             registerSite();
         },
-        "admin-blog":function(){
+        "post":function(){
+            $('.dragdrop').uploader(host_url+'upload');
+            $('.dragdrop').on('uploaded', function(e, response){
+                $('.preview').attr('src', response.data);
+            });
             $('.post_content').trumbowyg();
             //postsList();
             //adminBlogListeners();

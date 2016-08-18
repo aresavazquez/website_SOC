@@ -15,7 +15,7 @@ class Post{
     }
 
 	public static function all() {
-        $result = self::$PDO->_all("*");
+        $result = self::$PDO->_where("*", "post_id ORDER BY created_at DESC");
         return $result->get('post_title,post_content');
     }
 
@@ -66,6 +66,11 @@ class Post{
     public static function set_data($id, $title, $image, $content){
         $url = self::sluggify($title);
         $data = array('id_user'=>1, 'post_title'=>utf8_decode($title), 'url_tag'=>$url, 'post_image'=>$image, 'post_content'=>utf8_decode($content), 'post_status'=>'publish');
+        return self::$PDO->_update($data, "post_id=$id");
+    }
+
+    public static function update_image($id, $path){
+        $data = array('post_image'=>$path);
         return self::$PDO->_update($data, "post_id=$id");
     }
 

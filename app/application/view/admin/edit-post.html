@@ -11,7 +11,8 @@
 			<input name="title" type="text" placeholder="Título del artículo" class="edit_input" value="{{ post.post_title }}">
 			<br />
 		    <label>Imagen del artículo</label>
-		    <input name="image" type="text" placeholder="URL a la imagen del artículo" class="edit_input" value="{{ post.post_image }}">
+		    <br /><img class="preview" width="400" src="{{ post.post_image }}"><br />
+		    <div class="dragdrop" data-post-id="{{ post.post_id }}"></div>
 		    <br />
 			<label>Contenido del artículo</label>
 			<br />
