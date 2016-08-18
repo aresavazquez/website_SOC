@@ -61,6 +61,7 @@
           <div class="form">
             <form id="simulador-form" action="{{ base_path }}resultado_simulador" method="GET">
               <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <input type="hidden" name="micrositio" value="true">
                 <input type="text" placeholder="Nombre" name="name" id="name">
                 <input type="number" placeholder="Teléfono" name="phone" id="number">
                 <input type="text" placeholder="Correo" name="mail" id="mail">
@@ -68,7 +69,7 @@
                 <select name="state" id="state">
                   <option selected="selected" value="-1">SELECCIONE UN ESTADO</option>
                   {% for item in states %}
-                  <option value={{ item.id }}>{{ item.name | convert_encoding('UTF-8', 'iso-8859-1') }}</option>
+                  <option value={{ item.id }}>{{ item.name }}</option>
                   {% endfor %}
                 </select>
               </div>

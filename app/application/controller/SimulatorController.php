@@ -62,16 +62,27 @@ class SimulatorController extends Controller
       'scotiabank' => $scotiabank
     );
     
-    Session::set('prospect', array(
+    $prospect = array(
       'name' => Request::get('name'),
+      'state' => State::getInstance()->byId(Request::get('state'))->name,
       'phone' => Request::get('phone'),
       'mail' => Request::get('mail'),
+      'value' => Request::get('value'),
+      'hitch' => Request::get('hitch'),
       'paytype' => Request::get('paytype'),
       'paytime' => Request::get('paytime')
-    ));
+    );
+
+    Session::set('prospect', $prospect);
     
     $mail = new Mail;
     $body = $this->View->render_string('mailer/simulator.html', array('banks'=>$banks, 'paytype'=>Request::get('paytype'), 'paytime'=>Request::get('paytime')));
+    $admin_body = $this->View->render_string('mailer/admin_simulator.html', array('prospect'=>$prospect));
+    if(Request::get('micrositio')){
+      $mail->sendMail(Config::get('EMAIL_FROM_SITES_SIMULATOR'), Config::get('EMAIL_CONTACT_FROM_EMAIL'), 'Simulador SOC', 'Resultado del Simulador', $admin_body);
+    }else{
+      $mail->sendMail(Config::get('EMAIL_FROM_INDEX_SIMULATOR'), Config::get('EMAIL_CONTACT_FROM_EMAIL'), 'Simulador SOC', 'Resultado del Simulador', $admin_body);
+    }
     $mail_sent = $mail->sendMail(Request::get('mail'), Config::get('EMAIL_CONTACT_FROM_EMAIL'), 'SOC Asesores', 'Resultado del Simulador', $body);
     $this->View->render('simulator/calculator.html', array('banks'=>$banks, 'paytype'=>Request::get('paytype'), 'paytime'=>Request::get('paytime')));
   }

@@ -18,6 +18,7 @@
 					<tr class="back-white">
 						<td>Nombre del artículo</td>
 						<td></td>
+						<td></td>
 					</tr>
 				</thead>
 				<tbody>
@@ -25,6 +26,7 @@
 					<tr>
 						<td class="viewsite"><a href="{{ base_path }}blog/nota/{{ post.url_tag }}">{{post.post_title}}</a></td>
 						<td class="editInput"><a href="{{ base_path }}admin/blog/post/{{ post.post_id }}">editar</a></td>
+						<td class="editInput"><a href="{{ base_path }}admin/blog/post/{{ post.post_id }}/delete">borrar</a></td>
 					</tr>
 				{% else %}
 					<tr>

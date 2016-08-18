@@ -15,7 +15,7 @@ class User {
     }
 
     public static function all(){
-        $result = self::$PDO->_all("*");
+        $result = self::$PDO->_where("*","id_role=2");
         return $result->get('name,company');
     }
 

@@ -13,14 +13,14 @@ class BrokerController extends Controller
         $site = Site::getInstance()->byUrl($params['url']);
         if(!$site) Redirect::to('404');
 
-        $site->title = utf8_encode($site->title);
-        $site->address = utf8_encode($site->address);
-        $site->content = ltrim(utf8_encode($site->content));
+        Session::set('feedback_positive', array());
+        $site->title = $site->title;
+        $site->address = $site->address;
+        $site->content = ltrim($site->content);
         $lat_lon = explode(',', $site->latlon);
         $feedback = (Session::get('feedback_positive')) ? join(',', Session::get('feedback_positive')) : "";
-        
-        Session::set('feedback_positive', array());
-        $this->View->render('broker/show.html', array('site' => $site, 'lat' => $lat_lon[0], 'lon' => $lat_lon[1], 'feedback' => $feedback));
+        $states = State::getInstance()->all();
+        $this->View->render('broker/show.html', array('site'=>$site, 'states'=>$states, 'lat'=>$lat_lon[0], 'lon'=>$lat_lon[1], 'feedback'=>$feedback));
     }
 
     public function edit(){
@@ -29,7 +29,7 @@ class BrokerController extends Controller
         $user = User::getInstance()->byId($uid);
         $sites = Site::getInstance()->allFrom($uid);
         $states = State::getInstance()->all();
-        $this->View->render('broker/edit.html', array('user' => $user, 'sites' => $sites, 'states' => $states, 'is_admin' => false));
+        $this->View->render('broker/edit.html', array('user'=>$user, 'sites'=>$sites, 'states'=>$states, 'is_admin'=>false));
     }
 
     public function contact($params){

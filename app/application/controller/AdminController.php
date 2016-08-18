@@ -60,4 +60,8 @@ class AdminController extends Controller
         $post = Post::getInstance()->byId($params['id_post']);
         $this->View->render('admin/edit-post.html',array('post'=>$post, 'is_admin'=>true)); 
     }
+    public function delete_blog_post($params){
+        Post::getInstance()->delete($params['id_post']);
+        Redirect::to('admin/blog');
+    }
 }

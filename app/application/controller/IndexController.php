@@ -10,7 +10,7 @@ class IndexController extends Controller
   }
 
   public function home(){
-    $states = State::getInstance()->all('name');
+    $states = State::getInstance()->all();
     $this->View->render('site/index.html', array('states'=>$states));
   }
   public function soc(){
@@ -39,12 +39,14 @@ class IndexController extends Controller
     $this->View->render('site/tips.html');
   }
   public function contact(){
+    $prospect = null;
+    if(Request::get('prospect')) $prospect = Session::get('prospect');
     $positive = (Session::get('feedback_positive')) ? join(',', Session::get('feedback_positive')) : "";
     $negative = (Session::get('feedback_negative')) ? join(',', Session::get('feedback_negative')) : "";
     $feedback = $positive != "" ? $positive : $negative;
     Session::set('feedback_positive', array());
     Session::set('feedback_negative', array());
-    $this->View->render('site/contact.html', array('feedback'=>$feedback));
+    $this->View->render('site/contact.html', array('feedback'=>$feedback, 'prospect'=>$prospect));
   }
   public function post_contact(){
     $name = strip_tags(Request::post('contact_name'));

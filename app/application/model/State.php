@@ -15,7 +15,12 @@ class State {
     }
 
     public static function all() {
-        $result = self::$PDO->_all('*');
+        $result = self::$PDO->_all("*");
         return $result->get('name');
+    }
+
+    public static function byId($id) {
+        $result = self::$PDO->_where("*", "id=$id");
+        return $result->first('name');
     }
 }

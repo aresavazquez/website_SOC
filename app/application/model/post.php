@@ -59,6 +59,10 @@ class Post{
         return self::$PDO->_insert($data);
     }
 
+    public static function delete($id){
+        return self::$PDO->_delete("post_id=$id");
+    }
+
     public static function set_data($id, $title, $image, $content){
         $url = self::sluggify($title);
         $data = array('id_user'=>1, 'post_title'=>utf8_decode($title), 'url_tag'=>$url, 'post_image'=>$image, 'post_content'=>utf8_decode($content), 'post_status'=>'publish');

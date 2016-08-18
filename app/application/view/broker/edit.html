@@ -55,9 +55,9 @@
 			<textarea id="siteContent" name="content" placeholder="Descripción" class=""></textarea>
 			<label>Estado</label>
 			<select id="siteState" name="state_id" placeholder="Selecciona un Estado" class="edit_input">
-			{% for key,value in states %}
-          		<option value="{{ value.id }}">{{ value.name }}</option>
-      		{% endfor %}
+			{% for item in states %}
+            	<option value={{ item.id }}>{{ item.name }}</option>
+            {% endfor %}
 			</select>
 			<label>Ciudad</label>
 			<input id="siteCity" name="city" type="text" placeholder="Ciudad" class="edit_input">

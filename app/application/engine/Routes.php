@@ -38,8 +38,10 @@ class Routes{
     	self::$router->map( 'GET', '/admin/blog', 'AdminController#blog', 'admin_blog');
         self::$router->map( 'GET|POST', '/admin/blog/post/new', 'AdminController#new_blog_post', 'admin_new_blog_post');
         self::$router->map( 'GET|POST', '/admin/blog/post/[i:id_post]', 'AdminController#edit_blog_post', 'admin_edit_blog_post');
+        self::$router->map( 'GET|POST', '/admin/blog/post/[i:id_post]/delete', 'AdminController#delete_blog_post', 'admin_delete_blog_post');
     	self::$router->map( 'GET', '/logout', 'AdminController#logout', 'p_logout');
         self::$router->map( 'GET', '/password_encode/[*:password]', 'PasswordsController#encode');
+        self::$router->map( 'GET', '/upload', 'UploadController#form');
 
     	//- API
     	self::$router->map( 'GET', '/api/v1', 'ApiController#index');

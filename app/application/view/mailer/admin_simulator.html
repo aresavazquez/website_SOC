@@ -1,0 +1,22 @@
+{% extends "single.html" %}
+{% block title %}SOC{% endblock %}
+{% block head %}
+    {{ parent() }}
+{% endblock %}
+{% block content %}
+<div>
+<h1>Generales</h1>
+<p>Nombre: {{ prospect.name }}</p>
+<p>Estado: {{ prospect.state }} </p>
+<p style="border-bottom: 1px solid #333"></p>
+<h1>Contacto</h1>
+<p>Teléfono: {{ prospect.phone }}</p>
+<p>Correo: {{ prospect.mail }}</p>
+<p style="border-bottom: 1px solid #333"></p>
+<h1>Simulador</h1>
+<p>Valor del inmueble: {{ prospect.value }}</p>
+<p>Enganche: {{ prospect.hitch }}</p>
+<p>Mensualidad: {{ prospect.paytype }}</p>
+<p>Plazo: {{ prospect.paytime }}</p>
+</div>
+{% endblock %}

@@ -24,7 +24,7 @@ $.fn.simulator = function() {
 
   var inputs = [
     {input: name, valid: true, rules: 'exist,hasValue'},
-    {input: phone, valid: true, rules: 'exist,isNumber,hasLength:10'},
+    {input: phone, valid: true, rules: 'exist,isNumber,minLength:7,maxLength:10'},
     {input: mail, valid: true, rules: 'exist,validEmail'},
     {input: state, valid: true, rules: 'notEqual:-1'},
     {input: value, valid: true, rules: 'exist,hasValue,isNumber'},
@@ -48,6 +48,14 @@ $.fn.simulator = function() {
   self.hasLength = function(value, params){
     return value.length == params;
   }
+
+  self.minLength = function(value, params){
+    return value.length >= params;
+  }
+
+  self.maxLength = function(value, params){
+    return value.length <= params;
+  }  
 
   self.validEmail = function(value){
     var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -759,6 +767,9 @@ $(document).on('ready', function(){
         },
         "p_blog_nota":function(){
             //loadPostInfo();
+        },
+        "upload":function(){
+            console.log('Upload script');
         }
     }
 

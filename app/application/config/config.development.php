@@ -94,7 +94,9 @@ return array(
 	 * Configuration for: Email content data
 	 */
 	'EMAIL_CONTACT_FROM_EMAIL'=>'no-reply@socasesores.com',
-	'EMAIL_CONTACT_RECEIVER' => 'ares@digitaldealers.mx',
+	'EMAIL_CONTACT_RECEIVER' => 'contacto@socasesores.com',
+	'EMAIL_FROM_INDEX_SIMULATOR' => 'simuladorsoc@gmail.com',
+	'EMAIL_FROM_SITES_SIMULATOR' => 'micrositiosoc@gmail.com',
 	'EMAIL_PASSWORD_RESET_URL' => 'login/verifypasswordreset',
 	'EMAIL_PASSWORD_RESET_FROM_EMAIL' => 'no-reply@example.com',
 	'EMAIL_PASSWORD_RESET_FROM_NAME' => 'My Project',
