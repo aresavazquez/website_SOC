@@ -3055,6 +3055,22 @@ select option {
     }
 }
 
+/* Layout */
+.container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.col-4{
+    flex: 0 33%;
+}
+.editarUsuario .datosUsuario.microsite .col-4 img,
+.editarUsuario .datosUsuario.microsite .col-4 textarea{
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+}
+
 /* Trumbowyg */
 .editBlog div{
     margin: initial;
@@ -3080,7 +3096,7 @@ select option {
 
 /* Uploader */
 div.dragdrop{
-        width: 80%;
+    width: 80%;
     max-width: 600px;
     border: dashed 3px #4FA755;
     margin: 15px auto;
@@ -3092,4 +3108,5 @@ div.dragdrop{
     font-size: 17px;
     font-weight: bold;
     color: #4fa753;
+    text-align: center;
 }
