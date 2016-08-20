@@ -17,23 +17,21 @@ class SimulatorController extends Controller
     $amount = Request::get('value') ? Request::get('value') : 1000000;
     $hitch = Request::get('hitch') ? Request::get('hitch') : 200000;
 
-    $amount -= $hitch;
-
     if(Request::get('paytype') == 'fija'){
       if(Request::get('paytime') == 15){
-        $afirme =   $this->fixed15($amount, 0.6999, 10.53, 9.8, 10.6, 0.8, 0.06931, 0.98, 98, 199, 70.17, 2.5, true, 0.003596, 0.01, 0.06, $hitch);
-        $banamex =  $this->fixed15($amount, 0.6, 9.85, 8.5, 11, 0.5, 0.24, 0, 0, 0, 0, 2.5, false, 'banamex', 0.01, 0.06, $hitch);
-        $banorte = $this->fixed15($amount, 0.7, 9.9, 8.74, 11.60, 0.52, 0.31931, 0, 0, 499, 0, 2, false, 0.00348, 0.01, 0.06, $hitch);
-        $hsbc = $this->fixed15($amount, 0.75, 9.818, 10.10, 11.70, 0.255, 0.228, 0, 0, 0, 0, 2, true, 'hsbc', 0, 0.06, $hitch);
-        $santander = $this->fixed15($amount, 0.9, 10.5, 9.6, 11.80, 31.54, 0.3376, 0, 0, 406, 0, 2.5, true, 0.00275, 0.01, 0.06, $hitch, 0, true);
-        $scotiabank = $this->fixed15($amount, 0.65, 9.75, 8.2, 11.60, 0.5, 0.3016, 0, 0, 0, 0, 2.6, false, 'scotiabank', 0, 0.06, $hitch);
+        $afirme =   $this->fixed15($amount, 0.6999, 10.53, 0.098, 0.106, 0.8, 0.06931, 0.98, 98, 199, 70.17, 2.5, true, 0.003596, 0.01, 0.06, $hitch);
+        $banamex =  $this->fixed15($amount, 0.6, 9.85, 0.085, 0.11, 0.5, 0.24, 0, 0, 0, 0, 2.5, false, 'banamex', 0.01, 0.06, $hitch);
+        $banorte = $this->fixed15($amount, 0.7, 9.9, 0.0874, 0.116, 0.52, 0.31931, 0, 0, 499, 0, 2, false, 0.00348, 0.01, 0.06, $hitch);
+        $hsbc = $this->fixed15($amount, 0.75, 9.818, 0.101, 0.117, 0.255, 0.228, 0, 0, 0, 0, 2, true, 'hsbc', 0, 0.06, $hitch);
+        $santander = $this->fixed15($amount, 0.9, 10.5, 0.096, 0.118, 31.54, 0.3376, 0, 0, 406, 0, 2.5, true, 0.00275, 0.01, 0.06, $hitch, 0, true);
+        $scotiabank = $this->fixed15($amount, 0.65, 9.75, 0.082, 0.116, 0.5, 0.3016, 0, 0, 0, 0, 2.6, false, 'scotiabank', 0, 0.06, $hitch);
       }else{
-        $afirme =   $this->fixed20($amount, 0.8, 9.9858, 10.55, 12.25, 0.8, 0.06931, 0.98, 98, 199, 70.62, 2.5, true, 0.0035728, 0.0116, 0.06, $hitch);
-        $banamex =  $this->fixed20($amount, 0.6, 8.68, 8.5, 14.50, 0.5, 0.24, 0, 0, 0, 0, 2.61, false, 'banamex', 0.01, 0.06, $hitch, 0);
-        $banorte = $this->fixed20($amount, 0.7, 8.73722, 8.48, 12.90, 0.52, 0.31931, 0, 0, 499, 0, 2, false, 0.00116, 0.01, 0.06, $hitch, 0);
-        $hsbc = $this->fixed20($amount, 0.75, 8.647, 8.45, 9.70, 0.255, 0.228, 0, 0, 0, 0, 2.5, false, 'hsbc', 0, 0.06, $hitch, 0);
-        $santander = $this->fixed20($amount, 0.9, 9.39, 9.6, 11.70, 31.54, 0.3376, 0, 0, 406, 0, 2.5, true, 0.00319, 0.01, 0.06, $hitch, 0, true);
-        $scotiabank = $this->fixed20($amount, 0.65, 8.64, 10, 11.60, 0.5, 0.3016, 0, 0, 0, 0, 2.5703573901, false, 'scotiabank', 0, 0.06, $hitch, 0);
+        $afirme =   $this->fixed20($amount, 0.8, 9.9858, 0.1055, 0.1225, 0.8, 0.06931, 0.98, 98, 199, 70.62, 2.5, true, 0.0035728, 0.0116, 0.06, $hitch);
+        $banamex =  $this->fixed20($amount, 0.6, 8.68, 0.085, 0.145, 0.5, 0.24, 0, 0, 0, 0, 2.61, false, 'banamex', 0.01, 0.06, $hitch, 0);
+        $banorte = $this->fixed20($amount, 0.7, 8.73722, 0.0848, 0.129, 0.52, 0.31931, 0, 0, 499, 0, 2, false, 0.00116, 0.01, 0.06, $hitch, 0);
+        $hsbc = $this->fixed20($amount, 0.75, 8.647, 0.0845, 0.097, 0.255, 0.228, 0, 0, 0, 0, 2.5, false, 'hsbc', 0, 0.06, $hitch, 0);
+        $santander = $this->fixed20($amount, 0.9, 9.39, 0.096, 0.117, 31.54, 0.3376, 0, 0, 406, 0, 2.5, true, 0.00319, 0.01, 0.06, $hitch, 0, true);
+        $scotiabank = $this->fixed20($amount, 0.65, 8.64, 0.1, 0.116, 0.5, 0.3016, 0, 0, 0, 0, 2.5703573901, false, 'scotiabank', 0, 0.06, $hitch, 0);
       }
     }else{
       if(Request::get('paytime') == 15){
@@ -41,14 +39,14 @@ class SimulatorController extends Controller
         $banamex = $this->grow15(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
         $banorte = $this->grow15($amount, 0.9, 8.9, 0.0899, 0.121, 0.52, 0.41054, 0, 0, 0, 0, 2, false, 0.00116, 0.01, 0.06, $hitch);
         $hsbc = $this->grow15($amount, 0.75, 8.82, 0.101, 0.098, 0.255, 0.228, 0, 0, 0, 0, 3.03, false, 'hsbc', 0, 0.06, $hitch);
-        $santander = $this->grow15($amount, 0.9, 9, 0.096, 0.118, 31.54, 0.3376, 0, 0, 0, 0, 2.2941305511, false, 2.75, 0.01, 0.06, $hitch);
+        $santander = $this->grow15($amount, 0.9, 9, 0.096, 0.118, 31.54, 0.3376, 0, 0, 0, 0, 2.2941305511, false, 2.75, 0.01, 0.06, $hitch, 0, true);
         $scotiabank = $this->grow15($amount, 0.95, 9.06, 0.0875, 0.107, 0.5, 0.3016, 0, 0, 0, 0, 2.6, false, 'scotiabank', 0.0125, 0.06, $hitch);
       }else{
-        $afirme = $this->grow20($amount, 0.6999, 9.095, 0.1055, 0.1218, 0.8, 0.06931, 0.98, 98, 199, 69.51, 2.5, true, 0.003596, 0.01, 0.06, $hitch);
+        $afirme = $this->grow20($amount, 0.8, 9.095, 0.1055, 0.1218, 0.8, 0.06931, 0.98, 98, 199, 69.51, 2.5, true, 0.003596, 0.01, 0.06, $hitch);
         $banamex = $this->grow20(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
         $banorte = $this->grow20($amount, 0.9, 7.6, 0.0899, 0.118, 0.52, 0.41054, 0, 0, 299, 0, 2, false, 0.00116, 0.01, 0.06, $hitch);
         $hsbc = $this->grow20($amount, 0.75, 7.55, 0.0845, 0.098, 0.255, 0.228, 0, 0, 0, 0, 3.0304, false, 'hsbc', 0, 0.06, $hitch);
-        $santander = $this->grow20($amount, 0.9, 8.2, 0.096, 0.117, 31.54, 0.3376, 0, 0, 0, 0, 2.5, true, 0.00275, 0.01, 0.06, $hitch);
+        $santander = $this->grow20($amount, 0.9, 8.2, 0.096, 0.117, 31.54, 0.3376, 0, 0, 0, 0, 2.5, true, 0.00275, 0.01, 0.06, $hitch, 0, true);
         $scotiabank = $this->grow20($amount, 0.95, 7.92, 0.0875, 0.107, 0.5, 0.3016, 0, 0, 0, 0, 2.7075492331, false, 'scotiabank', 0.0125, 0.06, $hitch);
       }
     }
@@ -78,17 +76,17 @@ class SimulatorController extends Controller
     $mail = new Mail;
     $body = $this->View->render_string('mailer/simulator.html', array('banks'=>$banks, 'paytype'=>Request::get('paytype'), 'paytime'=>Request::get('paytime')));
     $admin_body = $this->View->render_string('mailer/admin_simulator.html', array('prospect'=>$prospect));
-    if(Request::get('micrositio')){
-      $mail->sendMail(Config::get('EMAIL_FROM_SITES_SIMULATOR'), Config::get('EMAIL_CONTACT_FROM_EMAIL'), 'Simulador SOC', 'Resultado del Simulador', $admin_body);
-    }else{
-      $mail->sendMail(Config::get('EMAIL_FROM_INDEX_SIMULATOR'), Config::get('EMAIL_CONTACT_FROM_EMAIL'), 'Simulador SOC', 'Resultado del Simulador', $admin_body);
-    }
+    //if(Request::get('micrositio')){
+    //  $mail->sendMail(Config::get('EMAIL_FROM_SITES_SIMULATOR'), Config::get('EMAIL_CONTACT_FROM_EMAIL'), 'Simulador SOC', 'Resultado //del Simulador', $admin_body);
+    //}else{
+    //  $mail->sendMail(Config::get('EMAIL_FROM_INDEX_SIMULATOR'), Config::get('EMAIL_CONTACT_FROM_EMAIL'), 'Simulador SOC', 'Resultado //del Simulador', $admin_body);
+    //}
     $mail_sent = $mail->sendMail(Request::get('mail'), Config::get('EMAIL_CONTACT_FROM_EMAIL'), 'SOC Asesores', 'Resultado del Simulador', $body);
     $this->View->render('simulator/calculator.html', array('banks'=>$banks, 'paytype'=>Request::get('paytype'), 'paytime'=>Request::get('paytime')));
   }
   
   private function grow15(
-    $valor, $aforo, $factor_pago, $interes, $cat, 
+    $valor, $factor_aforo, $factor_pago, $interes, $cat, 
     $factor_seguro_vida, 
     $factor_seguro_danos,
     $factor_seguro_desempleo,
@@ -124,7 +122,11 @@ class SimulatorController extends Controller
 
     $factor_gastos_notario = $this->notarial(Request::get('state'));
 
-    $monto = $valor * $aforo;
+    $monto_bruto = $valor - $enganche;
+
+    $aforo = $valor * $factor_aforo;
+    
+    $monto = $aforo > $monto_bruto ? $monto_bruto : $aforo;
     
     $pago_seguro_vida = $monto * $factor_seguro_vida / 1000;
     
@@ -193,7 +195,7 @@ class SimulatorController extends Controller
   }
 
   private function grow20(
-    $valor, $aforo, $factor_pago, $interes, $cat, 
+    $valor, $factor_aforo, $factor_pago, $interes, $cat, 
     $factor_seguro_vida, 
     $factor_seguro_danos,
     $factor_seguro_desempleo,
@@ -229,7 +231,11 @@ class SimulatorController extends Controller
 
     $factor_gastos_notario = $this->notarial(Request::get('state'));
 
-    $monto = $valor * $aforo;
+    $monto_bruto = $valor - $enganche;
+
+    $aforo = $valor * $factor_aforo;
+    
+    $monto = $aforo > $monto_bruto ? $monto_bruto : $aforo;
     
     $pago_seguro_vida = $monto * $factor_seguro_vida / 1000;
     
@@ -295,7 +301,7 @@ class SimulatorController extends Controller
   }
 
   private function fixed15(
-    $valor, $aforo, $factor_pago, $interes, $cat, 
+    $valor, $factor_aforo, $factor_pago, $interes, $cat, 
     $factor_seguro_vida, 
     $factor_seguro_danos,
     $factor_seguro_desempleo,
@@ -314,7 +320,11 @@ class SimulatorController extends Controller
 
     $factor_gastos_notario = $this->notarial(Request::get('state'));
 
-    $monto = $valor * $aforo;
+    $monto_bruto = $valor - $enganche;
+
+    $aforo = $valor * $factor_aforo;
+    
+    $monto = $aforo > $monto_bruto ? $monto_bruto : $aforo;
     
     $pago_seguro_vida = $monto * $factor_seguro_vida / 1000;
     
@@ -383,7 +393,7 @@ class SimulatorController extends Controller
   }
 
   private function fixed20(
-    $valor, $aforo, $factor_pago, $interes, $cat, 
+    $valor, $factor_aforo, $factor_pago, $interes, $cat, 
     $factor_seguro_vida, 
     $factor_seguro_danos,
     $factor_seguro_desempleo,
@@ -402,7 +412,11 @@ class SimulatorController extends Controller
 
     $factor_gastos_notario = $this->notarial(Request::get('state'));
     
-    $monto = $valor * $aforo;
+    $monto_bruto = $valor - $enganche;
+
+    $aforo = $valor * $factor_aforo;
+    
+    $monto = $aforo > $monto_bruto ? $monto_bruto : $aforo;
     
     $pago_seguro_vida = $monto * $factor_seguro_vida / 1000;
     
