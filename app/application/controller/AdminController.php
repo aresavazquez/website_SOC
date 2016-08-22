@@ -35,7 +35,7 @@ class AdminController extends Controller
       if(!Session::userIsLoggedIn()) Redirect::to('admin');
       $user = User::getInstance()->byId($params['id_user']);
       $site = Site::getInstance()->byUser($params['id_user']);
-      $branches = Site::getInstance()->allFrom($site->site_id);
+      $branches = Site::getInstance()->allFrom($site->id);
       $states = State::getInstance()->all();
       $this->View->render('admin/user-sites.html', array('site'=>$site, 'branches'=>$branches, 'states'=>$states, 'user'=>$user, 'is_admin'=>true));
     }

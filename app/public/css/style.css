@@ -1131,6 +1131,7 @@ button.close{
 }
 .footer .terminos a{
     color: #fff;
+    cursor: pointer;
 }
 .gradient{
     background: url(../img/footer/content_separator.png)no-repeat;
@@ -1822,7 +1823,7 @@ h2.zero,p.zero {
     margin: auto;
     display: block;
 }
-.nota .contenido-nota p{
+.nota .contenido-nota span{
     color: #fff !important;
     font-size: 16px;
     font-weight: 100;
