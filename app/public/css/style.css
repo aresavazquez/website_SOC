@@ -1788,7 +1788,6 @@ h2.zero,p.zero {
 .nota{
     background: url(../img/head/back3.jpg)no-repeat center fixed;
     background-size: cover;
-    width: 100% !important;
     display: flex;
     flex-wrap: wrap;
     padding-top: 65px;
