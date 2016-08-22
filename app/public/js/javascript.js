@@ -11,7 +11,7 @@ function showModal(modalName){
     $('#siteModal').modal();
 }
 
-$.fn.uploader = function(uploadUrl, inputName) {
+$.fn.uploader = function(uploadUrl, inputName, hideImage) {
     return this.each(function(){
         var name = inputName || 'image';
         var input = $('<input />', {name: name, type: 'hidden'});
@@ -50,8 +50,10 @@ $.fn.uploader = function(uploadUrl, inputName) {
                 if(typeof response == 'string') response = JSON.parse(response);
                 dropzone.trigger('uploaded', response);
                 dropzone.text('La imagen ha sido guardada');
-                img.attr('src', response.data);
-                dropzone.parent().prepend(img);
+                if(!hideImage){
+                	img.attr('src', response.data);
+                	dropzone.parent().prepend(img);
+                }
                 input.val(response.data);
                 setTimeout(function(){
                     dropzone.text('Arrastra una imagen aquí si deseas cambiar la imagen del artículo');
@@ -830,7 +832,7 @@ $(document).on('ready', function(){
             registerSite();
         },
         "post":function(){
-            $('.dragdrop').uploader(host_url+'upload');
+            $('.dragdrop').uploader(host_url+'upload', 'image', true);
             $('.dragdrop').on('uploaded', function(e, response){
                 $('.preview').attr('src', response.data);
             });
