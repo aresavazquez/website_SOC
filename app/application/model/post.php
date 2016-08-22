@@ -64,6 +64,10 @@ class Post{
     }
 
     public static function set_data($id, $title, $image, $content){
+        $post = self::$PDO->_where("*", "post_id=$id")->first();
+        if(!$title) $title = $post->post_title;
+        if(!$image) $image = $post->post_image;
+        if(!$content) $content = $post->post_content;
         $url = self::sluggify($title);
         $data = array('id_user'=>1, 'post_title'=>utf8_decode($title), 'url_tag'=>$url, 'post_image'=>$image, 'post_content'=>utf8_decode($content), 'post_status'=>'publish');
         return self::$PDO->_update($data, "post_id=$id");
