@@ -13,15 +13,19 @@ class BrokerController extends Controller
         $site = Site::getInstance()->byUrl($params['url']);
         if(!$site) Redirect::to('404');
 
-        Session::set('feedback_positive', array());
-        $site->title = $site->title;
-        $site->address = $site->address;
-        $site->content = ltrim($site->content);
         $lat_lon = explode(',', $site->latlon);
-        $feedback = (Session::get('feedback_positive')) ? join(',', Session::get('feedback_positive')) : "";
+        $slider = $site->slider != "" ? explode('|', $site->slider) : null;
+
+
+        $support_images = explode('|', $site->support_images);
+        $support_quotes = explode('|', $site->support_quotes);
+        $support = array('images'=>$support_images, 'quotes'=>$support_quotes);
+
         $states = State::getInstance()->all();
-        $slider = explode(';', $site->slider);
-        $support = explode(';', $site->support);
+
+        Session::set('feedback_positive', array());
+        $feedback = (Session::get('feedback_positive')) ? join(',', Session::get('feedback_positive')) : "";
+
         $this->View->render('broker/show.html', array('site'=>$site, 'states'=>$states, 'slider'=>$slider, 'support'=>$support, 'lat'=>$lat_lon[0], 'lon'=>$lat_lon[1], 'feedback'=>$feedback));
     }
 
@@ -29,9 +33,10 @@ class BrokerController extends Controller
         if(!Session::userIsLoggedIn()) Redirect::to('admin');
         $uid = Session::get('user_id');
         $user = User::getInstance()->byId($uid);
-        $sites = Site::getInstance()->allFrom($uid);
+        $site = Site::getInstance()->byUser($uid);
+        $branches = Site::getInstance()->allFrom($site->id);
         $states = State::getInstance()->all();
-        $this->View->render('broker/edit.html', array('user'=>$user, 'sites'=>$sites, 'states'=>$states, 'is_admin'=>false));
+        $this->View->render('broker/edit.html', array('user'=>$user, 'site'=>$site, 'branches'=>$branches, 'states'=>$states, 'is_admin'=>false));
     }
 
     public function contact($params){

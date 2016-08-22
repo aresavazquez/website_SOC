@@ -38,6 +38,8 @@ class ApiController extends Controller{
       Session::set('feedback_negative', array());
       $registration_successful = Credentials::registerNewUser($user_name, $user_email, $user_company, $user_password_new);
       if($registration_successful){
+        $user = User::getInstance()->getDataByEmail($user_email);
+        $site = Site::getInstance()->save($user->id, NULL, -1, $user_company, '', '', '', '', '', '', '', array(), array(), array(), 1);
         $this->View->renderJSON($this->success_code($registration_successful));
       }else{
         $this->View->renderJSON($this->error_code(Session::get('feedback_negative'), array('redirect_to'=>$this->Routes['root_url'])));
@@ -126,8 +128,21 @@ class ApiController extends Controller{
 
     public function new_site(){
         Session::set('feedback_negative', array());
-        $user_id = strip_tags(Request::post('user_id'));
+        
+        $user_name = strip_tags(Request::post('admin_name'));
+        $user_email = strip_tags(Request::post('admin_email'));
+        $user_company = strip_tags(Request::post('title'));
+        $user_password = strip_tags(Request::post('admin_password'));
+
+        $registration_successful = Credentials::registerNewUser($user_name, $user_email, $user_company, $user_password, 3);
+        if(!$registration_successful){
+            $this->View->renderJSON($this->error_code(Session::get('feedback_negative')));   
+        }
+
+        $user = User::getInstance()->getDataByEmail($user_email);
+        $user_id = $user->id;
         $state_id = strip_tags(Request::post('state_id'));
+        $site_id = strip_tags(Request::post('site_id'));
         $title = strip_tags(Request::post('title'));
         $content = strip_tags(Request::post('content'));
         $city =strip_tags(Request::post('city'));
@@ -136,13 +151,10 @@ class ApiController extends Controller{
         $latlon = strip_tags(Request::post('latlon'));
         $phones = strip_tags(Request::post('phones'));
         $emails = strip_tags(Request::post('emails'));
-        $slider[] = strip_tags(Request::post('slider1'));
-        $slider[] = strip_tags(Request::post('slider2'));
-        $slider[] = strip_tags(Request::post('slider3'));
-        $support[] = strip_tags(Request::post('support1'));
-        $support[] = strip_tags(Request::post('support2'));
-        $support[] = strip_tags(Request::post('support3'));
-        $registration_successful = Site::save($user_id, $state_id, $title, $content, $city, $settlement, $address, $latlon, $phones, $emails, $slider, $support);
+        $slider = array();
+        $support_quotes = Request::post('support_quote');
+        $support_images = Request::post('support_image');
+        $registration_successful = Site::save($user_id, $state_id, $site_id, $title, $content, $city, $settlement, $address, $latlon, $phones, $emails, $slider, $support_quotes, $support_images, 2);
         if($registration_successful){
             $this->View->renderJSON($this->success_code($registration_successful));
         }else{

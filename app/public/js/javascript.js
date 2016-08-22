@@ -12,59 +12,64 @@ function showModal(modalName){
 }
 
 $.fn.uploader = function(uploadUrl, inputName) {
-    var name = inputName || 'image';
-    var input = $('<input />', {name: name, type: 'hidden'});
-    var dropzone = this;
-    var file = null;
+    return this.each(function(){
+        var name = inputName || 'image';
+        var input = $('<input />', {name: name, type: 'hidden'});
+        var img = $('<img />');
+        var dropzone = $(this);
+        var file = null;
 
-    dropzone.parent().append(input);
-    dropzone.text('Arrastra una imagen aquí si deseas cambiar la imagen del artículo');
+        dropzone.parent().append(input);
+        dropzone.text('Arrastra una imagen aquí si deseas cambiar la imagen del artículo');
 
-    dropzone.on('dragover', function(e){
-        e.stopPropagation();
-        e.preventDefault();
-        e.originalEvent.dataTransfer.dropEffect = 'copy';
-        dropzone.text('Suelta la imagen aquí');
+        dropzone.on('dragover', function(e){
+            e.stopPropagation();
+            e.preventDefault();
+            e.originalEvent.dataTransfer.dropEffect = 'copy';
+            dropzone.text('Suelta la imagen aquí');
+        });
+        dropzone.on('drop', function(e){
+            e.stopPropagation();
+            e.preventDefault();
+            file = e.originalEvent.dataTransfer.files[0];
+            dropzone.uploadFile();
+            dropzone.text('Subiendo...');
+        });
+        dropzone.uploadFile = function(){
+            var fd = new FormData();
+            var xhr = new XMLHttpRequest();
+                    
+            xhr.upload.addEventListener('progress', function(e){
+                if(e.lengthComputable){
+                    dropzone.trigger('progress', {percentage: e.loaded / e.total * 90});
+                    dropzone.text('Subiendo '+ (e.loaded / e.total * 90) + '%');
+                }
+            });
+            xhr.addEventListener('load', function(e){
+                let response = xhr.response != undefined ? xhr.response : xhr.responseText;
+                if(typeof response == 'string') response = JSON.parse(response);
+                dropzone.trigger('uploaded', response);
+                dropzone.text('La imagen ha sido guardada');
+                img.attr('src', response.data);
+                dropzone.parent().prepend(img);
+                input.val(response.data);
+                setTimeout(function(){
+                    dropzone.text('Arrastra una imagen aquí si deseas cambiar la imagen del artículo');
+                }, 3000);
+            });
+            xhr.addEventListener('error', function(e){
+                dropzone.text('Ocurrio un error al subir la imagen');
+            });
+            for(var item in dropzone.data()){
+                fd.append(item, dropzone.data(item));
+            };
+            fd.append('file', file);
+            xhr.open('POST', uploadUrl);
+            xhr.responseType='json';
+            xhr.multipart = true;
+            xhr.send(fd);
+        }
     });
-    dropzone.on('drop', function(e){
-        e.stopPropagation();
-        e.preventDefault();
-        file = e.originalEvent.dataTransfer.files[0];
-        dropzone.uploadFile();
-        dropzone.text('Subiendo...');
-    });
-    dropzone.uploadFile = function(){
-        var fd = new FormData();
-        var xhr = new XMLHttpRequest();
-                
-        xhr.upload.addEventListener('progress', function(e){
-            if(e.lengthComputable){
-                dropzone.trigger('progress', {percentage: e.loaded / e.total * 90});
-                dropzone.text('Subiendo '+ (e.loaded / e.total * 90) + '%');
-            }
-        });
-        xhr.addEventListener('load', function(e){
-            let response = xhr.response != undefined ? xhr.response : xhr.responseText;
-            if(typeof response == 'string') response = JSON.parse(response);
-            dropzone.trigger('uploaded', response);
-            dropzone.text('La imagen ha sido guardada');
-            input.val(response.data);
-            setTimeout(function(){
-                dropzone.text('Arrastra una imagen aquí si deseas cambiar la imagen del artículo');
-            }, 3000);
-        });
-        xhr.addEventListener('error', function(e){
-            dropzone.text('Ocurrio un error al subir la imagen');
-        });
-        for(var item in dropzone.data()){
-            fd.append(item, dropzone.data(item));
-        };
-        fd.append('file', file);
-        xhr.open('POST', uploadUrl);
-        xhr.responseType='json';
-        xhr.multipart = true;
-        xhr.send(fd);
-    }
 }
 
 $.fn.simulator = function() {
@@ -684,14 +689,14 @@ $(document).on('ready', function(){
     var registerUser = function(){
         $('.agregarUsuario .datosUsuario .registerUserform').on('click', function(){
             $.post(host_url + "api/v1/register", $('.agregarUsuario .datosUsuario').serialize(), function(response){
-                TweenLite.to('.datosUsuario', .5, { opacity: 0, display: 'none', ease: Power2.easeOut, y: 0, onComplete: function(){
-                    TweenLite.to('.agregarUsuario', .5, {opacity: 0, display: 'none'});
-                    TweenLite.to('.editarUsuario', .5, {opacity:0, display: 'none'});
-                    location.reload();
-                }});
                 if(response.status == 200){
                     $('.responses').text('Se ha creado el usuario correctamente');
                     $('.responses').show();
+                    TweenLite.to('.datosUsuario', .5, { opacity: 0, display: 'none', ease: Power2.easeOut, y: 0, onComplete: function(){
+                        TweenLite.to('.agregarUsuario', .5, {opacity: 0, display: 'none'});
+                        TweenLite.to('.editarUsuario', .5, {opacity:0, display: 'none'});
+                        location.reload();
+                    }});
                 }else if(response.status == 500) {
                     $('.responses').text(response.errors);
                     $('.responses').show();
@@ -703,10 +708,11 @@ $(document).on('ready', function(){
     	$('#newSiteForm .addSite').on('click', function(){
             $.post(host_url + "api/v1/sites", $('#newSiteForm').serialize(), function(response){
                 $('.close').trigger( "click" );
-                location.reload();
+                
                 if(response.status == 200){
                   $('.responses').text('Se ha creado el sitio correctamente');
                   $('.responses').show();
+                  location.reload();
                 }else if(response.status == 500) {
                   $('.responses').text(response.errors);
                   $('.responses').show();
@@ -812,30 +818,7 @@ $(document).on('ready', function(){
             updateSiteinfo();
             deleteSiteinfo();
             registerSite();
-            $('.slider1').uploader(host_url+'upload','slider1');
-            $('.slider1').on('uploaded', function(e, response){
-                $('.preview1').attr('src', response.data);
-            });
-            $('.slider2').uploader(host_url+'upload','slider2');
-            $('.slider2').on('uploaded', function(e, response){
-                $('.preview2').attr('src', response.data);
-            });
-            $('.slider3').uploader(host_url+'upload','slider3');
-            $('.slider3').on('uploaded', function(e, response){
-                $('.preview3').attr('src', response.data);
-            });
-            $('.support1').uploader(host_url+'upload','support1');
-            $('.support1').on('uploaded', function(e, response){
-                $('.psupport1').attr('src', response.data);
-            });
-            $('.support2').uploader(host_url+'upload','support2');
-            $('.support2').on('uploaded', function(e, response){
-                $('.psupport2').attr('src', response.data);
-            });
-            $('.support3').uploader(host_url+'upload','support3');
-            $('.support3').on('uploaded', function(e, response){
-                $('.psupport3').attr('src', response.data);
-            });
+            $('.dragdrop').uploader(host_url+'upload','support_image[]');
         },
         "admin-sites": function(){
             sitesList();

@@ -84,8 +84,8 @@ class User {
         return $result = self::$PDO->_where("id", "name='$user_name'")->first()->id;
     }
 
-    public static function save($user_name, $user_password_hash, $user_email, $user_company, $user_creation_timestamp, $user_activation_hash){
-        $data = array('name'=>$user_name, 'email'=>$user_email, 'company'=>$user_company, 'password'=>$user_password_hash, 'remember_token'=>$user_activation_hash, 'id_role'=>2);
+    public static function save($user_name, $user_password_hash, $user_email, $user_company, $user_creation_timestamp, $user_activation_hash, $role){
+        $data = array('name'=>$user_name, 'email'=>$user_email, 'company'=>$user_company, 'password'=>$user_password_hash, 'remember_token'=>$user_activation_hash, 'id_role'=>$role);
         return $result = self::$PDO->_insert($data);
     }
 

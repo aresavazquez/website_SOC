@@ -20,7 +20,7 @@ class Site {
     }
 
     public static function allFrom($id){
-        $result = self::$PDO->_where("*", "user_id=$id");
+        $result = self::$PDO->_where("*", "site_id=$id");
         return array('items'=>$result->get('title,content,settlement,city'), 'total'=>$result->count());
     }
 
@@ -49,7 +49,7 @@ class Site {
         return $result;
     }
 
-    public static function save($user_id, $state_id, $title, $content, $city, $settlement, $address, $latlon, $phones, $emails, $slider, $support) {
+    public static function save($user_id, $state_id, $site_id, $title, $content, $city, $settlement, $address, $latlon, $phones, $emails, $slider, $support_quotes, $support_images, $type) {
         $user = User::getInstance()->byId($user_id);
         if($user){
             //if(self::getInstance()->hasSite($user_id)) {
@@ -57,7 +57,7 @@ class Site {
             //  return false;
             //}
             $url = self::sluggify($title);
-            if (!self::getInstance()->writeNewSiteToDatabase($user_id, $state_id, $url, $title, $content, $city, $settlement, $latlon, $address, $phones, $emails, $slider, $support)) {
+            if (!self::getInstance()->writeNewSiteToDatabase($user_id, $state_id, $site_id, $url, $title, $content, $city, $settlement, $latlon, $address, $phones, $emails, $slider, $support_quotes, $support_images, $type)) {
                 Session::add('feedback_negative', Text::get('FEEDBACK_SITE_CREATION_FAILED'));
                 return false; // no reason not to return false here
             }
@@ -77,8 +77,8 @@ class Site {
       return $result->count() > 0;
     }
 
-    public static function writeNewSiteToDatabase($user_id, $state_id, $url, $title, $content, $city, $settlement, $latlon, $address, $phones, $emails, $slider, $support) {
-        $data = array('user_id'=>$user_id, 'state_id'=>$state_id, 'url'=>$url, 'title'=>$title, 'content'=>$content, 'city'=>$city, 'settlement'=>$settlement, 'latlon'=>$latlon, 'address'=>$address, 'phones'=>$phones, 'emails'=>$emails, 'slider'=>implode(';', $slider), 'support'=>implode(';', $support));
+    public static function writeNewSiteToDatabase($user_id, $state_id, $site_id, $url, $title, $content, $city, $settlement, $latlon, $address, $phones, $emails, $slider, $support_quotes, $support_images, $type) {
+        $data = array('user_id'=>$user_id, 'state_id'=>$state_id, 'site_id'=>$site_id, 'url'=>$url, 'title'=>$title, 'content'=>$content, 'city'=>$city, 'settlement'=>$settlement, 'latlon'=>$latlon, 'address'=>$address, 'phones'=>$phones, 'emails'=>$emails, 'slider'=>implode('|', $slider), 'support_quotes'=>implode('|', $support_quotes), 'support_images'=>implode('|', $support_images), 'site_type'=>$type);
         return self::$PDO->_insert($data);
     }
 

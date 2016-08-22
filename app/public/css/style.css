@@ -3064,6 +3064,8 @@ select option {
 .col-4{
     flex: 0 33%;
 }
+.agregarUsuario .datosUsuario.microsite .col-4 img,
+.agregarUsuario .datosUsuario.microsite .col-4 textarea,
 .editarUsuario .datosUsuario.microsite .col-4 img,
 .editarUsuario .datosUsuario.microsite .col-4 textarea{
     width: 80%;

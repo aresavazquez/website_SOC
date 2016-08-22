@@ -19,12 +19,27 @@
 		</div>
 		<div class="sites">
 			<!--input type="search" placeholder="buscar" class="search"-->
-			<a href="" class="plusUser"><span></span>+ Agregar sitio</a>
-			<p class="titulo micrositioAdmin">Micrositios</p>
+			<a href="" class="plusUser"><span></span>+ Agregar sucursal</a>
 			<div class="responses"></div>
+			<p class="titulo micrositioAdmin">Micrositio</p>
 			<div class="container-sites">
-			{% if sites.total > 0 %}
-				{% for site in sites.items %}
+				<div class="site">
+					<div>
+						<p class="sitiotituloAdmin">{{ site.title }}</p>
+						<a target="_blank" href="{{ base_path }}{{ site.url }}" class="visitSite">visitar sitio</a>
+					</div>
+					<div>
+						<ul>
+							<li><a class="edit" data-site="{{ site.id }}" href="#edit">Editar</a></li>
+							<li><a class="delete" data-site="{{ site.id }}" href="#delete">Eliminar</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<p class="titulo micrositioAdmin">Sucursales</p>
+			<div class="container-sites">
+			{% if branches.total > 0 %}
+				{% for site in branches.items %}
 				<div class="site">
 					<div>
 						<p class="sitiotituloAdmin">{{ site.title }}</p>
@@ -39,7 +54,7 @@
 				</div>
 				{% endfor %}
 			{% else %}
-			<div class="none">Este usuario aún no cuenta con sitios registrados.</div>
+			<div class="none">Este sitio aún no cuenta con sucursales registradas.</div>
 			{% endif %}
 			</div>
 		</div>
@@ -47,11 +62,15 @@
 	<div class="agregarUsuario">
 		<form class="datosUsuario microsite" id="newSiteForm">
 			<a href=""><img src="{{ base_path }}img/body/close.png" class="close"></a>
-			<input id="userID" name="user_id" type="hidden" value="{{ user.id }}" />
+			<!--input id="userID" name="user_id" type="hidden" value="{{ user.id }}" /-->
+			<label>Nombre del admin</label>
+			<input id="siteAdminName" name="admin_name" type="text" placeholder="Nombre del administrador" class="edit_input">
+			<label>Correo del admin</label>
+			<input id="siteAdminMail" name="admin_mail" type="text" placeholder="Correo del administrador" class="edit_input">
+			<label>Password del admin</label>
+			<input id="siteAdminPwd" name="admin_password" type="text" placeholder="Password del administrador" class="edit_input">
 			<label>Nombre del sitio</label>
 			<input id="siteName" name="title" type="text" placeholder="Nombre del sitio" class="edit_input">
-			<label>URL para el sitio</label>
-			<input id="siteUrl" name="url" type="text" placeholder="Nombre del sitio" class="edit_input">
 			<label>Descripción</label>
 			<textarea id="siteContent" name="content" placeholder="Descripción" class=""></textarea>
 			<label>Imagenes del slider</label>

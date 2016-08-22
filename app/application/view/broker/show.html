@@ -41,16 +41,16 @@
         <p class="thecontent">{{site.content}}</p>
         <ul>
           <li>
-            <img src="{{ support ? support[0] : './img/micrositios/img1.jpg' }}">
-            <p>Nos especializamos en ayudarte a encontrar y elegir el mejor crédito hipotecario; para que compres tú casa, un terreno, cambies tu hipoteca</p>
+            <img src="{{ support.images ? support.images[0] : './img/micrositios/img1.jpg' }}">
+            <p>{{ support.quotes ? support.quotes[0] : 'Nos especializamos en ayudarte a encontrar y elegir el mejor crédito hipotecario; para que compres tú casa, un terreno, cambies tu hipoteca' }}</p>
           </li>
           <li>
-            <img src="{{ support ? support[1] : './img/micrositios/img2.jpg' }}">
-            <p>Contamos con la red más grande del país. Ellos tienen la capacidad de analizar tu perfil para conocer a fondo tus necesidades y así ofrecer la información necesaria acerca de las instituciones financieras para que tú puedas analizar y seleccionar la opción que más te convenga.</p>
+            <img src="{{ support.images ? support.images[1] : './img/micrositios/img2.jpg' }}">
+            <p>{{ support.quotes ? support.quotes[1] : 'Contamos con la red más grande del país. Ellos tienen la capacidad de analizar tu perfil para conocer a fondo tus necesidades y así ofrecer la información necesaria acerca de las instituciones financieras para que tú puedas analizar y seleccionar la opción que más te convenga.' }}</p>
           </li>
           <li>
-            <img src="{{ support ? support[2] : './img/micrositios/img3.jpg' }}">
-            <p>Te recomendamos prestar atención a diversos factores como lo son, los plazos, la tasa de interés –fija o variable-, el enganche, la moneda, los seguros que lo integran, las comisiones, gastos notariales y el número de mensualidades.</p>
+            <img src="{{ support.images ? support.images[2] : './img/micrositios/img3.jpg' }}">
+            <p>{{ support.quotes ? support.quotes[2] : 'Te recomendamos prestar atención a diversos factores como lo son, los plazos, la tasa de interés –fija o variable-, el enganche, la moneda, los seguros que lo integran, las comisiones, gastos notariales y el número de mensualidades.' }}</p>
           </li>
         </ul>
       </div>
