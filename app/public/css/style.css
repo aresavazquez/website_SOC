@@ -1790,7 +1790,7 @@ h2.zero,p.zero {
     background-size: cover;
     display: flex;
     flex-wrap: wrap;
-    padding-top: 65px;
+    padding-top: 10px;
 }
 .nota .contenido-nota .redes{
     display: flex;
