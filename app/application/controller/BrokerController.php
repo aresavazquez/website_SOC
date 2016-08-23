@@ -17,8 +17,8 @@ class BrokerController extends Controller
         $slider = $site->slider != "" ? explode('|', $site->slider) : null;
 
 
-        $support_images = explode('|', $site->support_images);
-        $support_quotes = explode('|', $site->support_quotes);
+        $support_images = $site->support_images != "" ? explode('|', $site->support_images) : null;
+        $support_quotes =  $site->support_quotes != "" ? explode('|', $site->support_quotes) : null;
         $support = array('images'=>$support_images, 'quotes'=>$support_quotes);
 
         $states = State::getInstance()->all();

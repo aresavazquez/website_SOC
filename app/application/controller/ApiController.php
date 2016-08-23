@@ -40,6 +40,9 @@ class ApiController extends Controller{
       if($registration_successful){
         $user = User::getInstance()->getDataByEmail($user_email);
         $site = Site::getInstance()->save($user->id, NULL, -1, $user_company, '', '', '', '', '', '', '', array(), array(), array(), 1);
+        $mail_obj = new Mail();
+        $mail_obj->sendMailWithPHPMailer($user_email, 'socialmedia@socasesores.com', 'SOC Asesores', 'Nuevo Micrositio', 'Felicidades, te hemos creado un nuevo micrositio para ' . $title . '. Para comenzar a utilizarlo puedes entrar a socasesores.com con las siguientes credenciales: \r\nEmail: ' . $user_email . '\r\nPassword: ' . $user_password);
+        $mail_obj->sendMailWithPHPMailer('socialmedia@socasesores.com', 'socialmedia@socasesores.com', 'Micrositio :: ' . $title, 'Nuevo Micrositio', 'Se ha creado el micrositio matriz ' . $title . '.');
         $this->View->renderJSON($this->success_code($registration_successful));
       }else{
         $this->View->renderJSON($this->error_code(Session::get('feedback_negative'), array('redirect_to'=>$this->Routes['root_url'])));
@@ -156,6 +159,9 @@ class ApiController extends Controller{
         $support_images = Request::post('support_image');
         $registration_successful = Site::save($user_id, $state_id, $site_id, $title, $content, $city, $settlement, $address, $latlon, $phones, $emails, $slider, $support_quotes, $support_images, 2);
         if($registration_successful){
+            $mail_obj = new Mail();
+            $mail_obj->sendMailWithPHPMailer($user_email, 'socialmedia@socasesores.com', 'SOC Asesores', 'Nuevo Micrositio', 'Felicidades, te hemos creado un nuevo micrositio para ' . $title . '. Para comenzar a utilizarlo puedes entrar a socasesores.com con las siguientes credenciales: \r\nEmail: ' . $user_email . '\r\nPassword: ' . $user_password);
+            $mail_obj->sendMailWithPHPMailer('socialmedia@socasesores.com', 'socialmedia@socasesores.com', 'Micrositio :: ' . $title, 'Nueva Sucursal', 'Se ha creado la nueva sucursal ' . $title . '.');
             $this->View->renderJSON($this->success_code($registration_successful));
         }else{
             $this->View->renderJSON($this->error_code(Session::get('feedback_negative'), array('redirect_to'=>$this->Routes['root_url'])));
@@ -179,6 +185,8 @@ class ApiController extends Controller{
         if(Request::put('latlon')) $data['latlon'] = utf8_decode(Request::put('latlon'));
         if(Request::put('phones')) $data['phones'] = utf8_decode(Request::put('phones'));
         if(Request::put('emails')) $data['emails'] = utf8_decode(Request::put('emails'));
+        if(Request::put('support_quote')) $data['support_quotes'] = implode('|', Request::put('support_quote'));
+        if(Request::put('support_image')) $data['support_images'] = implode('|', Request::put('support_image'));
         if(Request::put('origin') == "user"){
             $mail_obj = new Mail();
             $mail_obj->sendMailWithPHPMailer('socialmedia@socasesores.com', 'socialmedia@socasesores.com', 'Micrositio :: ' . $data['title'], 'Cambio en el micrositio', 'Se ha reportado un cambio en el micrositio ' . $data['title'] . '.');

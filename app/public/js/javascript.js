@@ -12,8 +12,10 @@ function showModal(modalName){
 }
 
 $.fn.uploader = function(uploadUrl, inputName, hideImage) {
-    return this.each(function(){
-        var name = inputName || 'image';
+    return this.each(function(index,item){
+    	var name = inputName || 'image';
+    	name += '[' + index + ']';
+        
         var input = $('<input />', {name: name, type: 'hidden'});
         var img = $('<img />');
         var dropzone = $(this);
@@ -48,6 +50,7 @@ $.fn.uploader = function(uploadUrl, inputName, hideImage) {
             xhr.addEventListener('load', function(e){
                 let response = xhr.response != undefined ? xhr.response : xhr.responseText;
                 if(typeof response == 'string') response = JSON.parse(response);
+                response.index = index;
                 dropzone.trigger('uploaded', response);
                 dropzone.text('La imagen ha sido guardada');
                 if(!hideImage){
@@ -534,16 +537,16 @@ $(document).on('ready', function(){
                 var site = response.data;
                 console.log(site);
                 var slider = site.slider ? site.slider.split('|') : [];
-                var supportQuotes = site.support_quotes ? site.support_quotes.split('|') : [];
-                var supportImages = site.support_images ? site.support_images.split('|') : [];
-
-                console.log(supportQuotes,supportImages);
+                var supportQuotes = site.support_quotes ? site.support_quotes.split('|') : ['','',''];
+                var supportImages = site.support_images ? site.support_images.split('|') : ['','',''];
 
                 $('#e_siteID').val(site.id);
                 $('#e_siteName').val(site.title);
                 $('#e_siteUrl').val(site.url);
                 $('#e_siteContent').val(site.content);
-                console.log($('.editarUsuario textarea'));
+                $('.editarUsuario .preview').eq(0).attr('src', supportImages[0]);
+                $('.editarUsuario .preview').eq(1).attr('src', supportImages[1]);
+                $('.editarUsuario .preview').eq(2).attr('src', supportImages[2]);
                 $('.editarUsuario textarea').eq(1).text(supportQuotes[0]);
                 $('.editarUsuario textarea').eq(2).text(supportQuotes[1]);
                 $('.editarUsuario textarea').eq(3).text(supportQuotes[2]);
@@ -580,11 +583,16 @@ $(document).on('ready', function(){
             $.put(host_url + 'api/v1/sites/'+siteID, $('.update-site').serialize(), function(response){
                 $('.responses').text('El sitio se ha actualizado correctamente');
                 $('.responses').show();
-                TweenLite.to('.datosUsuario', .5, { opacity: 0, display: 'none', ease: Power2.easeOut, y: 0, onComplete: function(){
-                    TweenLite.to('.agregarUsuario', .5, {opacity: 0, display: 'none'});
-                    TweenLite.to('.editarUsuario', .5, {opacity:0, display: 'none'});
-                    location.reload();
-                }});
+                if(response.status == 200){
+                	TweenLite.to('.datosUsuario', .5, { opacity: 0, display: 'none', ease: Power2.easeOut, y: 0, onComplete: function(){
+	                    TweenLite.to('.agregarUsuario', .5, {opacity: 0, display: 'none'});
+	                    TweenLite.to('.editarUsuario', .5, {opacity:0, display: 'none'});
+	                    location.reload();
+	                }});
+                }else{
+                	$('.responses').text(response.errors);
+                    $('.responses').show();
+                }
             });
         });
     }
@@ -821,7 +829,14 @@ $(document).on('ready', function(){
             updateSiteinfo();
             deleteSiteinfo();
             registerSite();
-            $('.dragdrop').uploader(host_url+'upload','support_image[]');
+            $('.agregarUsuario .dragdrop').uploader(host_url+'upload','support_image', true);
+            $('.agregarUsuario .dragdrop').on('uploaded', function(e, response){
+                $(this).parent().find('.preview').attr('src', response.data);
+            });
+            $('.editarUsuario .dragdrop').uploader(host_url+'upload','support_image', true);
+            $('.editarUsuario .dragdrop').on('uploaded', function(e, response){
+                $(this).parent().find('.preview').attr('src', response.data);
+            });
         },
         "admin-sites": function(){
             sitesList();
