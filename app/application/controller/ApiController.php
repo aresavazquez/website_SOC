@@ -39,10 +39,10 @@ class ApiController extends Controller{
       $registration_successful = Credentials::registerNewUser($user_name, $user_email, $user_company, $user_password_new);
       if($registration_successful){
         $user = User::getInstance()->getDataByEmail($user_email);
-        $site = Site::getInstance()->save($user->id, NULL, -1, $user_company, '', '', '', '', '', '', '', array(), array(), array(), 1);
+        $site = Site::getInstance()->save($user->id, -1, NULL, $user_company, '', '', '', '', '', '', '', array(), array(), array(), 1);
         $mail_obj = new Mail();
-        $mail_obj->sendMailWithPHPMailer($user_email, 'socialmedia@socasesores.com', 'SOC Asesores', 'Nuevo Micrositio', 'Felicidades, te hemos creado un nuevo micrositio para ' . $title . '. Para comenzar a utilizarlo puedes entrar a socasesores.com con las siguientes credenciales: \r\nEmail: ' . $user_email . '\r\nPassword: ' . $user_password);
-        $mail_obj->sendMailWithPHPMailer('socialmedia@socasesores.com', 'socialmedia@socasesores.com', 'Micrositio :: ' . $title, 'Nuevo Micrositio', 'Se ha creado el micrositio matriz ' . $title . '.');
+        $mail_obj->sendMailWithPHPMailer($user_email, 'socialmedia@socasesores.com', 'SOC Asesores', 'Nuevo Micrositio', 'Felicidades, te hemos creado un nuevo micrositio para ' . $user_company . '. Para comenzar a utilizarlo puedes entrar a socasesores.com con las siguientes credenciales: \r\nEmail: ' . $user_email . '\r\nPassword: ' . $user_password_new);
+        $mail_obj->sendMailWithPHPMailer('socialmedia@socasesores.com', 'socialmedia@socasesores.com', 'Micrositio :: ' . $user_email, 'Nuevo Micrositio', 'Se ha creado el micrositio matriz ' . $user_email . '.');
         $this->View->renderJSON($this->success_code($registration_successful));
       }else{
         $this->View->renderJSON($this->error_code(Session::get('feedback_negative'), array('redirect_to'=>$this->Routes['root_url'])));
@@ -175,6 +175,9 @@ class ApiController extends Controller{
 
     public function set_site($params){
         $data = array();
+        $site = Site::getInstance()->byId($params['id']);
+        $prev_support_quotes = explode('|', $site->support_quotes);
+        $prev_support_images = explode('|', $site->support_images);
         if(Request::put('title')) $data['title'] = utf8_decode(Request::put('title'));
         if(Request::put('content')) $data['content'] = utf8_decode(Request::put('content'));
         if(Request::put('address')) $data['address'] = utf8_decode(Request::put('address'));
@@ -185,8 +188,20 @@ class ApiController extends Controller{
         if(Request::put('latlon')) $data['latlon'] = utf8_decode(Request::put('latlon'));
         if(Request::put('phones')) $data['phones'] = utf8_decode(Request::put('phones'));
         if(Request::put('emails')) $data['emails'] = utf8_decode(Request::put('emails'));
-        if(Request::put('support_quote')) $data['support_quotes'] = implode('|', Request::put('support_quote'));
-        if(Request::put('support_image')) $data['support_images'] = implode('|', Request::put('support_image'));
+        if(Request::put('support_quote')){
+            $support_quotes = Request::put('support_quote');
+            $support_quotes[0] = $support_quotes[0] != null ? $support_quotes[0] : $prev_support_quotes[0];
+            $support_quotes[1] = $support_quotes[1] != null ? $support_quotes[1] : $prev_support_quotes[1];
+            $support_quotes[2] = $support_quotes[2] != null ? $support_quotes[2] : $prev_support_quotes[2];
+            $data['support_quotes'] = implode('|', $support_quotes);
+        }
+        if(Request::put('support_image')) {
+            $support_images = Request::put('support_image');
+            $support_images[0] = $support_images[0] != null ? $support_images[0] : $prev_support_images[0];
+            $support_images[1] = $support_images[1] != null ? $support_images[1] : $prev_support_images[1];
+            $support_images[2] = $support_images[2] != null ? $support_images[2] : $prev_support_images[2];
+            $data['support_images'] = implode('|', $support_images);
+        }
         if(Request::put('origin') == "user"){
             $mail_obj = new Mail();
             $mail_obj->sendMailWithPHPMailer('socialmedia@socasesores.com', 'socialmedia@socasesores.com', 'Micrositio :: ' . $data['title'], 'Cambio en el micrositio', 'Se ha reportado un cambio en el micrositio ' . $data['title'] . '.');

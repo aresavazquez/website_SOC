@@ -56,7 +56,7 @@ class IndexController extends Controller
     $body = "Nombre: " . $name . "\r\nCorreo: " . $email . "\r\nTeléfono: " . $phone . "\r\nComentario: " . $message;
 
     $mail = new Mail;
-    $mail_sent = $mail->sendMail(Config::get('EMAIL_CONTACT_RECEIVER'), $email, $name, 'Comentario de /contacto', $body);
+    $mail_sent = $mail->sendMail(Config::get('EMAIL_CONTACT_RECEIVER'), $email, utf8_encode($name), 'Comentario de /contacto', $body);
 
     if ($mail_sent) {
         Session::add('feedback_positive', Text::get('FEEDBACK_CONTACT_MAIL_SENDING_SUCCESSFUL'));
