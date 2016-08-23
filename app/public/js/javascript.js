@@ -311,8 +311,9 @@ $(document).on('ready', function(){
                     window.location = host_url+'admin/users';
                   }
       		    }else if(response.status == 500) {
-      			      $('.responses').text(response.errors);
-      			      $('.responses').show();
+      		    	//alert(response.errors);
+      			    $('.responses').text(response.errors);
+      			    $('.responses').show();
       		    }
       	  });
       });
@@ -408,6 +409,7 @@ $(document).on('ready', function(){
                         location.reload();
                     }});
                 }else if(response.status == 500) {
+                	alert(response.errors);
                     $('.responses').text(response.errors);
                     $('.responses').show();
                 }
@@ -504,6 +506,7 @@ $(document).on('ready', function(){
                         $('.responses').text('El sitio se ha actualizado correctamente');
                         $('.responses').show();
                     }else if(response.status == 500) {
+                    	alert(response.errors);
                         $('.responses').text(response.errors);
                         $('.responses').show();
                     }
@@ -590,6 +593,7 @@ $(document).on('ready', function(){
 	                    location.reload();
 	                }});
                 }else{
+                	alert(response.errors);
                 	$('.responses').text(response.errors);
                     $('.responses').show();
                 }
@@ -709,6 +713,7 @@ $(document).on('ready', function(){
                         location.reload();
                     }});
                 }else if(response.status == 500) {
+                	alert(response.errors);
                     $('.responses').text(response.errors);
                     $('.responses').show();
                 }
@@ -725,6 +730,7 @@ $(document).on('ready', function(){
                   $('.responses').show();
                   location.reload();
                 }else if(response.status == 500) {
+                	alert(response.errors);
                   $('.responses').text(response.errors);
                   $('.responses').show();
               }

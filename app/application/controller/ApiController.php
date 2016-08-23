@@ -41,7 +41,7 @@ class ApiController extends Controller{
         $user = User::getInstance()->getDataByEmail($user_email);
         $site = Site::getInstance()->save($user->id, -1, NULL, $user_company, '', '', '', '', '', '', '', array(), array(), array(), 1);
         $mail_obj = new Mail();
-        $mail_obj->sendMailWithPHPMailer($user_email, 'socialmedia@socasesores.com', 'SOC Asesores', 'Nuevo Micrositio', 'Felicidades, te hemos creado un nuevo micrositio para ' . $user_company . '. Para comenzar a utilizarlo puedes entrar a socasesores.com con las siguientes credenciales: \r\nEmail: ' . $user_email . '\r\nPassword: ' . $user_password_new);
+        $mail_obj->sendMailWithPHPMailer($user_email, 'socialmedia@socasesores.com', 'SOC Asesores', 'Nuevo Micrositio', "Felicidades, te hemos creado un nuevo micrositio para " . $user_company . ". Para comenzar a utilizarlo puedes entrar a socasesores.com con las siguientes credenciales: \r\nEmail: " . $user_email . "\r\nPassword: " . $user_password_new);
         $mail_obj->sendMailWithPHPMailer('socialmedia@socasesores.com', 'socialmedia@socasesores.com', 'Micrositio :: ' . $user_email, 'Nuevo Micrositio', 'Se ha creado el micrositio matriz ' . $user_email . '.');
         $this->View->renderJSON($this->success_code($registration_successful));
       }else{
@@ -160,7 +160,7 @@ class ApiController extends Controller{
         $registration_successful = Site::save($user_id, $state_id, $site_id, $title, $content, $city, $settlement, $address, $latlon, $phones, $emails, $slider, $support_quotes, $support_images, 2);
         if($registration_successful){
             $mail_obj = new Mail();
-            $mail_obj->sendMailWithPHPMailer($user_email, 'socialmedia@socasesores.com', 'SOC Asesores', 'Nuevo Micrositio', 'Felicidades, te hemos creado un nuevo micrositio para ' . $title . '. Para comenzar a utilizarlo puedes entrar a socasesores.com con las siguientes credenciales: \r\nEmail: ' . $user_email . '\r\nPassword: ' . $user_password);
+            $mail_obj->sendMailWithPHPMailer($user_email, 'socialmedia@socasesores.com', 'SOC Asesores', 'Nuevo Micrositio', "Felicidades, te hemos creado un nuevo micrositio para " . $title . ". Para comenzar a utilizarlo puedes entrar a socasesores.com con las siguientes credenciales: \r\nEmail: " . $user_email . "\r\nPassword: " . $user_password);
             $mail_obj->sendMailWithPHPMailer('socialmedia@socasesores.com', 'socialmedia@socasesores.com', 'Micrositio :: ' . $title, 'Nueva Sucursal', 'Se ha creado la nueva sucursal ' . $title . '.');
             $this->View->renderJSON($this->success_code($registration_successful));
         }else{
