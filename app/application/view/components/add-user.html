@@ -1,6 +1,9 @@
 <div class="agregarUsuario">
 	<form class="datosUsuario microsite" id="newSiteForm">
 		<a href=""><img src="{{ base_path }}img/body/close.png" class="close"></a>
+		{% if !is_admin %}
+		<input type="hidden" name="origin" value="user">
+		{% endif %}
 		<!--input id="userID" name="user_id" type="hidden" value="{{ user.id }}" /-->
 		<input type="hidden" name="site_id" value="{{ site.id }}">
 		<label>Nombre del admin</label>
