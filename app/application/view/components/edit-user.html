@@ -1,0 +1,57 @@
+<div class="editarUsuario">
+	<form class="datosUsuario microsite update-site" id="newSiteForm">
+		<a href=""><img src="{{ base_path }}img/body/close.png" class="close"></a>
+		<input id="e_siteID" name="id" type="hidden" />
+		<!--label>Nombre del sitio</label>
+		<input id="e_siteName" name="title" type="text" placeholder="Nombre del sitio" class="edit_input">
+		<label>URL para el sitio</label>
+		<input id="e_siteUrl" name="url" type="text" placeholder="Nombre del sitio" class="edit_input"-->
+		<label>Descripción</label>
+		<textarea id="e_siteContent" name="content" placeholder="Descripción" class=""></textarea>
+		<!--label>Imagenes del slider</label>
+	    <br /><img class="preview1" width="400" src=""><br />
+	    <div class="dragdrop slider1"></div>
+	    <br /><img class="preview2" width="400" src=""><br />
+	    <div class="dragdrop slider2"></div>
+	    <br /><img class="preview3" width="400" src=""><br />
+	    <div class="dragdrop slider3"></div-->
+	    <label>Bullets</label>
+	    <div class="container">
+	    	<div class="col-4">
+	    		<img class="preview" src="">
+	    		<div class="dragdrop"></div>
+	    		<textarea name="support_quote[0]"></textarea>
+	    	</div>
+	    	<div class="col-4">
+	    		<img class="preview" src="">
+	    		<div class="dragdrop"></div>
+	    		<textarea name="support_quote[1]"></textarea>
+	    	</div>
+	    	<div class="col-4">
+	    		<img class="preview" src="">
+	    		<div class="dragdrop"></div>
+	    		<textarea name="support_quote[2]"></textarea>
+	    	</div>
+	    </div>
+		<label>Estado</label>
+		<select id="e_siteState" name="state_id" placeholder="Selecciona un Estado" class="edit_input">ç
+			<option value="-1">Selecciona un estado</option>
+		{% for key,value in states %}
+       		<option value="{{ value.id }}">{{ value.name }}</option>
+   		{% endfor %}
+		</select>
+		<label>Ciudad</label>
+		<input id="e_siteCity" name="city" type="text" placeholder="Ciudad" class="edit_input">
+		<label>Colonia</label>
+		<input id="e_siteSettlement" name="settlement" type="text" placeholder="Colonia" class="edit_input">
+		<label>Dirección</label>
+		<input id="e_siteAddress" name="address" type="text" placeholder="Dirección" class="edit_input">
+		<label>Coordenadas</label>
+		<input id="e_siteLatlon" name="latlon" type="text" placeholder="Locación" class="edit_input">
+		<label>Teléfonos (Separados por una coma)</label>
+		<input id="e_siteTelephone" name="phones" type="tel" placeholder="Teléfono" class="edit_input">
+		<label>Emails (Separados por una coma)</label>
+		<input id="e_siteMails" name="emails" type="text" placeholder="Correos Electrónicos" class="edit_input">
+		<div class="user updateSite">Actualizar Información</div>
+	</form>
+</div>

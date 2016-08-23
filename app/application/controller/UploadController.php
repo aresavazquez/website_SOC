@@ -10,7 +10,7 @@ class UploadController extends Controller
     }
 
     public function upload(){
-    	if($_FILES['file']['error']) $this->View->renderJSON($this->error_code($_FILES['file']['error'], null));
+        if($_FILES['file']['error']) $this->View->renderJSON($this->error_code($_FILES['file']['error'], null));
     	
     	$file = $_FILES['file']['tmp_name'];
     	$new_file_name = uniqid() . '_' . strtolower($_FILES['file']['name']);

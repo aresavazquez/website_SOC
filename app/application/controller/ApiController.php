@@ -179,6 +179,8 @@ class ApiController extends Controller{
         if(Request::put('latlon')) $data['latlon'] = utf8_decode(Request::put('latlon'));
         if(Request::put('phones')) $data['phones'] = utf8_decode(Request::put('phones'));
         if(Request::put('emails')) $data['emails'] = utf8_decode(Request::put('emails'));
+        if(Request::put('support_quote')) $data['support_quotes'] = implode('|', Request::put('support_quote'));
+        if(Request::put('support_image')) $data['support_images'] = implode('|', Request::put('support_image'));
         if(Request::put('origin') == "user"){
             $mail_obj = new Mail();
             $mail_obj->sendMailWithPHPMailer('socialmedia@socasesores.com', 'socialmedia@socasesores.com', 'Micrositio :: ' . $data['title'], 'Cambio en el micrositio', 'Se ha reportado un cambio en el micrositio ' . $data['title'] . '.');
