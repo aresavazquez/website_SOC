@@ -3097,7 +3097,7 @@ select option {
 
 /* Uploader */
 div.dragdrop{
-    width: 80%;
+    width: 300px;
     max-width: 600px;
     border: dashed 3px #4FA755;
     margin: 15px auto;
