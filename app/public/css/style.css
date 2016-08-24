@@ -39,7 +39,7 @@ a,a:visited{
 #contenidoMircoUser{
     margin: auto;
     width: 100%;
-    padding: 0px 100px;
+    padding: 100px 100px;
 }
 .datos.clienteMicro{
     background: url(../img/head/back3.jpg)no-repeat center fixed;
@@ -624,7 +624,7 @@ a,a:visited{
 }
 .comments .contenido-comments .content .comentarios{
     width: 500px;
-    margin: auto;
+    margin: 140px auto;
     display: block;
     color: #fff;
     font-size: 20px;
@@ -647,13 +647,21 @@ a,a:visited{
     width: 800px;
     margin: auto;
     padding-bottom: 40px;
+    position: relative;
 }
 .comments .contenido-comments .content ul li{
     padding: 15px;
     list-style: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
 }
 .comments .contenido-comments .content ul li img{
-    -webkit-filter: grayscale(1);
+    display: none;
+    opacity: 0;
+    margin: auto;
 }
 .comments .contenido-comments .content ul li .filter-img{
     -webkit-filter: grayscale(0);
@@ -1214,6 +1222,7 @@ button.close{
 .head_micro{
     background: rgba(40, 92, 164, .5);
     background-size: contain;
+    padding-top: 15px;
 }
 center{
     background: url(../img/head/back3.jpg)no-repeat center fixed;
@@ -2705,6 +2714,9 @@ select option {
         width: 100%;
         display: block; 
     }
+    .content-home .container{
+        display: block;
+    }
     .nota {
         width: 100% !important;
     }
@@ -2792,13 +2804,16 @@ select option {
     .carousel{
         height: 100%;
     }
+    .carousel.slide.microUsuario {
+        height: 220px;
+    }
     .carousel .item img{
         left: 0;
         right: 0;
         margin: auto;
-        top: 70px;
+        top: 40px;
         padding: 0;
-        width: 240px;
+        width: 100%
     }
     .carousel .item p{
         font-size: 22px;
@@ -2809,6 +2824,24 @@ select option {
         margin: 0 auto;
         left: 0;
         width: 100%;
+    }
+    .contenido_micrositio .titleMicrositio {
+        width: 100%;
+    }
+    .contenido_micrositio li {
+        padding: 40px 0 0;
+    }
+    .contenido_micrositio p {
+        width: 100%;
+    }
+    #simluadorUser {
+        height: 1100px;
+    }
+    #simluadorUser .box {
+        position: relative;
+    }
+    #contenidoMircoUser {
+        padding: 100px 30px 15px;
     }
     .carousel .item p span {
         font-size: 16px;
@@ -2822,7 +2855,7 @@ select option {
         height: auto;
     }
     .simulador {
-        padding: 15px 0;
+        padding: 68px 15px;
     }
     .simulador .texto {
         font-size: 15px;
@@ -2833,6 +2866,12 @@ select option {
     .simulador .form form {
         text-align: -webkit-auto;
     }
+    .datos form .send{
+        margin: 10px 10px 80px;
+    }
+    .comments{
+        height: 595px;
+    }
     .comments .contenido-comments .content ul {
         width: 98%;
     }
@@ -2841,6 +2880,7 @@ select option {
     }
     .comments .contenido-comments .content .comentarios{
         width: 88%;
+        margin: 70px auto;
     }
     .comments .contenido-comments .content ul li {
         padding: 5px;
