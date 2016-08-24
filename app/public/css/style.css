@@ -18,6 +18,9 @@ a,a:visited{
     opacity: 0;
     display: none;
 }
+.container_tips .video div{
+    margin: 10px;
+}
 /*-------*/
 .nota{
     color: #fff;
@@ -1440,6 +1443,10 @@ center .text_simlador{
     font-size: 19px;
     margin-bottom: 70px;
 }
+.page.p-soc{
+    background: url(../img/head/back3.jpg)no-repeat center fixed;
+    background-size: cover;
+}
 /* soc tips*/
 .tips{
     background: rgba(22, 25, 59, .8);
@@ -1511,7 +1518,7 @@ center .text_simlador{
 }
 /* directores soc */
 .directores{
-    background: url(../img/body/soc_.jpg)no-repeat center;
+    background: rgba(22, 25, 59, .8);
     background-size: cover;
     height: 350px;
     width: 100%;
