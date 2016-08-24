@@ -13,8 +13,16 @@
 		<input id="e_siteUrl" name="url" type="text" placeholder="Nombre del sitio" class="edit_input"-->
 		<label>Descripción</label>
 		<textarea id="e_siteContent" name="content" placeholder="Descripción" class=""></textarea>
-		<!--label>Imagenes del slider</label>
-	    <br /><img class="preview1" width="400" src=""><br />
+		<!--label>Slider</label>
+		<div class="container container-justify__start container-align__baseline">
+			<select>
+				{% for i in 0..5 %}
+				<option>{{ i }}</option>
+				{% endfor %}
+			</select>
+			<p> Slides</p>
+		</div-->
+	    <!--br /><img class="preview1" width="400" src=""><br />
 	    <div class="dragdrop slider1"></div>
 	    <br /><img class="preview2" width="400" src=""><br />
 	    <div class="dragdrop slider2"></div>

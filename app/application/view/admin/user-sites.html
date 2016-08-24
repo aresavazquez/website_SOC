@@ -8,7 +8,11 @@
 	<div class="page user-sites content-usuarioAdmin">
 		<div class="profile">
 			<div>
-				<img src="{{ base_path }}img/body/brokerImg.png">
+				{% if user.profile_image %}
+				<div style="margin-right: 20px; width: 150px; height: 150px; border-radius: 50%; background-size: cover; background-image: url({{ user.profile_image }})"></div>
+				{% else %}
+				<div style="margin-right: 20px; width: 150px; height: 150px; border-radius: 50%; background-size: cover; background-image: url({{ base_path }}img/body/brokerImg.png)"></div>
+				{% endif %}
 			</div>
 			<div>
 				<p>{{ user.name }}</p>
