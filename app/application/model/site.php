@@ -45,6 +45,7 @@ class Site {
     }
 
     public static function setData($id, $data){
+        if($data['title']) $data['url'] = self::sluggify($data['title']);
         $result = self::$PDO->_update($data, "id='$id'");
         return $result;
     }

@@ -40,6 +40,8 @@ class Routes{
         self::$router->map( 'GET|POST', '/admin/blog/post/[i:id_post]', 'AdminController#edit_blog_post', 'admin_edit_blog_post');
         self::$router->map( 'GET|POST', '/admin/blog/post/[i:id_post]/delete', 'AdminController#delete_blog_post', 'admin_delete_blog_post');
         self::$router->map( 'POST', '/upload', 'UploadController#upload');
+        self::$router->map( 'POST', '/upload/profile', 'UploadController#upload_profile_image');
+        self::$router->map( 'POST', '/upload/profile/new', 'UploadController#upload_new_profile_image');
     	self::$router->map( 'GET', '/logout', 'AdminController#logout', 'p_logout');
         self::$router->map( 'GET', '/password_encode/[*:password]', 'PasswordsController#encode');
 

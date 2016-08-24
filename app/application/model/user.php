@@ -25,7 +25,7 @@ class User {
     }
 
     public static function byId($id){
-        $result = self::$PDO->_where("id, name, company, email", "id='$id'");
+        $result = self::$PDO->_where("id, name, company, email, profile_image", "id='$id'");
         return $result->first('name,company');
     }
 

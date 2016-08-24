@@ -35,7 +35,7 @@ class AdminController extends Controller
       if(!Session::userIsLoggedIn()) Redirect::to('admin');
       $user = User::getInstance()->byId($params['id_user']);
       $site = Site::getInstance()->byUser($params['id_user']);
-      $branches = Site::getInstance()->allFrom($site->site_id);
+      $branches = Site::getInstance()->allFrom($site->id);
       $states = State::getInstance()->all();
       $this->View->render('admin/user-sites.html', array('site'=>$site, 'branches'=>$branches, 'states'=>$states, 'user'=>$user, 'is_admin'=>true));
     }
@@ -49,14 +49,16 @@ class AdminController extends Controller
     }
     public function new_blog_post(){
         if(Request::post('save_post')){
-            Post::getInstance()->save(Request::post('title'), Request::post('image'), Request::post('content'));
+            $image = Request::post('image')[0];
+            Post::getInstance()->save(Request::post('title'), $image, Request::post('content'));
             Redirect::to('admin/blog');
         }
         $this->View->render('admin/new-post.html',array('is_admin'=>true)); 
     }
     public function edit_blog_post($params){
         if(Request::post('save_post')){
-            Post::getInstance()->set_data($params['id_post'], Request::post('title'), Request::post('image'), Request::post('content'));
+            $image = Request::post('image')[0];
+            Post::getInstance()->set_data($params['id_post'], Request::post('title'), $image, Request::post('content'));
         }
         $post = Post::getInstance()->byId($params['id_post']);
         $this->View->render('admin/edit-post.html',array('post'=>$post, 'is_admin'=>true)); 

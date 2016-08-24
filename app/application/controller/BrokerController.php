@@ -17,8 +17,8 @@ class BrokerController extends Controller
         $slider = $site->slider != "" ? explode('|', $site->slider) : null;
 
 
-        $support_images = explode('|', $site->support_images);
-        $support_quotes = explode('|', $site->support_quotes);
+        $support_images = $site->support_images != "" ? explode('|', $site->support_images) : null;
+        $support_quotes =  $site->support_quotes != "" ? explode('|', $site->support_quotes) : null;
         $support = array('images'=>$support_images, 'quotes'=>$support_quotes);
 
         $states = State::getInstance()->all();
@@ -26,7 +26,7 @@ class BrokerController extends Controller
         Session::set('feedback_positive', array());
         $feedback = (Session::get('feedback_positive')) ? join(',', Session::get('feedback_positive')) : "";
 
-        $this->View->render('broker/show.html', array('site'=>$site, 'states'=>$states, 'slider'=>$slider, 'support'=>$support, 'lat'=>$lat_lon[0], 'lon'=>$lat_lon[1], 'feedback'=>$feedback));
+        $this->View->render('broker/show.html', array('site'=>$site, 'states'=>$states, 'slider'=>$slider, 'support'=>$support, 'feedback'=>$feedback));
     }
 
     public function edit(){

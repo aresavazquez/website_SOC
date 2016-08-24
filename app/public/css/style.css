@@ -22,7 +22,8 @@ a,a:visited{
 .nota{
     color: #fff;
     text-align: center;
-    width: 900px !important;
+    /*width: 90%;
+    min-width: 900px !important;*/
     margin: auto;
 }
 .searchSend{
@@ -938,7 +939,7 @@ button.close{
     margin: auto;
     display: block;
     width: 600px;
-    height: 433px;
+    height: 650px;
     opacity: 0;
     padding-top: 30px;
     background: #285CA4;
@@ -1131,6 +1132,7 @@ button.close{
 }
 .footer .terminos a{
     color: #fff;
+    cursor: pointer;
 }
 .gradient{
     background: url(../img/footer/content_separator.png)no-repeat;
@@ -1821,7 +1823,7 @@ h2.zero,p.zero {
     margin: auto;
     display: block;
 }
-.nota .contenido-nota p{
+.nota .contenido-nota span{
     color: #fff !important;
     font-size: 16px;
     font-weight: 100;
@@ -3060,9 +3062,38 @@ select option {
     justify-content: center;
     width: 100%;
 }
+.container-justify__start{
+    justify-content: flex-start;
+}
+.container-justify__center{
+    justify-content: center;
+}
+.container-align__baseline{
+    align-items: baseline;
+}
 .col-4{
     flex: 0 33%;
 }
+.col-6{
+    flex: 0 50%;
+}
+.col-flex{
+    display: flex;
+}
+.col-center{
+    justify-content: center;
+}
+.col-middle{
+    align-items: center;
+}
+.profile-image{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-size: cover;
+}
+
+/* Modals */
 .agregarUsuario .datosUsuario.microsite .col-4 img,
 .agregarUsuario .datosUsuario.microsite .col-4 textarea,
 .editarUsuario .datosUsuario.microsite .col-4 img,
@@ -3093,6 +3124,11 @@ select option {
 }
 .editBlog .trumbowyg-box{
     background: white;
+}
+.editBlog .trumbowyg-box .trumbowyg-editor p,
+.editBlog .trumbowyg-box .trumbowyg-editor li,
+.editBlog .trumbowyg-box .trumbowyg-editor a{
+    color: rgb(72, 72, 72);
 }
 
 /* Uploader */
