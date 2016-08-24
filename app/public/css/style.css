@@ -22,8 +22,7 @@ a,a:visited{
 .nota{
     color: #fff;
     text-align: center;
-    /*width: 90%;
-    min-width: 900px !important;*/
+    width: 70%;
     margin: auto;
 }
 .searchSend{

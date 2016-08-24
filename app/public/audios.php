@@ -10,6 +10,46 @@
 		    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="">
             <!-- ///////////////////////////////////////////////////////////////////////-->
             <!-- ///////////////////////////////////////////////////////////////////////-->
+            <!-- ///////////////////////          13            /////////////////////////-->
+            <!-- ///////////////////////////////////////////////////////////////////////-->
+                 <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="heading13">
+                        <h4 class="panel-title">
+                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse13" aria-expanded="false" aria-controls="collapse13">
+                        <span>Créditos Hipotecarios en México</span><br>
+                             ¡Qué tal Fernanda! Imagen 90.5<br>
+                            <span class="fecha">Agosto 17 2016</span>
+                        </a>
+                        </h4>
+                    </div>
+                    <div id="collapse13" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading13">
+                        <div class="panel-body">
+                           <iframe width="80%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/278881752&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+                        </div>
+                    </div>
+                </div>
+            <!-- ///////////////////////////////////////////////////////////////////////-->
+            <!-- ///////////////////////////////////////////////////////////////////////-->
+            <!-- ///////////////////////          12            /////////////////////////-->
+            <!-- ///////////////////////////////////////////////////////////////////////-->
+                 <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="heading12">
+                        <h4 class="panel-title">
+                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse12" aria-expanded="false" aria-controls="collapse12">
+                        <span>Beneficios de acercarte a tu Asesor SOC</span><br>
+                             ¡Qué tal Fernanda! Imagen 90.5<br>
+                            <span class="fecha">Agosto 11 2016</span>
+                        </a>
+                        </h4>
+                    </div>
+                    <div id="collapse12" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading12">
+                        <div class="panel-body">
+                           <iframe width="80%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/278838582&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
+                        </div>
+                    </div>
+                </div>
+            <!-- ///////////////////////////////////////////////////////////////////////-->
+            <!-- ///////////////////////////////////////////////////////////////////////-->
             <!-- ///////////////////////          11            /////////////////////////-->
             <!-- ///////////////////////////////////////////////////////////////////////-->
                  <div class="panel panel-default">
@@ -28,7 +68,6 @@
                         </div>
                     </div>
                 </div>
-
             <!-- ///////////////////////////////////////////////////////////////////////-->
             <!-- ///////////////////////////////////////////////////////////////////////-->
             <!-- ///////////////////////          10            /////////////////////////-->
