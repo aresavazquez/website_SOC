@@ -11,8 +11,9 @@ function showModal(modalName){
     $('#siteModal').modal();
 }
 
-$.fn.uploader = function(uploadUrl, inputName, hideImage) {
+$.fn.uploader = function(uploadUrl, inputName, hideImage, label) {
     return this.each(function(index,item){
+    	var dropLabel = label || 'Arrastra una imagen aquí si deseas cambiar la imagen del artículo';
     	var name = inputName || 'image';
     	name += '[' + index + ']';
         
@@ -22,7 +23,7 @@ $.fn.uploader = function(uploadUrl, inputName, hideImage) {
         var file = null;
 
         dropzone.parent().append(input);
-        dropzone.text('Arrastra una imagen aquí si deseas cambiar la imagen del artículo');
+        dropzone.text(dropLabel);
 
         dropzone.on('dragover', function(e){
             e.stopPropagation();
@@ -364,19 +365,15 @@ $(document).on('ready', function(){
         $('.containerOffices').on('click', '.editInput' ,function (e){
             e.preventDefault ();
             var userID = $(this).data('user');
-            var datauser = ''
-            var settings = {
-                "async": true,
-                "crossDomain": true,
-                "url": host_url + "api/v1/users/"+userID,
-                "method": "GET",
-            }
-            $.ajax(settings).done(function (response) {
+            $.get(host_url + "api/v1/users/"+userID, function (response) {
                 var user = response.data;
+                var profile_img = user.profile_image || host_url + '/img/body/brokerImg.png';
+                $('.editarUsuario .datosUsuario .dragdrop').data('user_id', userID);
                 $('.editarUsuario .datosUsuario #e_user_name').val(user.name);
                 $('.editarUsuario .datosUsuario #e_user_company').val(user.company);
                 $('.editarUsuario .datosUsuario #e_user_email').val(user.email);
                 $('.editarUsuario .datosUsuario #e_user_id').val(user.id);
+                $('.editarUsuario .datosUsuario #e_user_image').css('background-image', 'url('+profile_img+')');
             });
         });
     }
@@ -827,6 +824,14 @@ $(document).on('ready', function(){
             updateUserinfo();
             deleteUserinfo();
             registerUser();
+            $('.agregarUsuario .dragdrop').uploader(host_url+'upload/profile/new','profile_image', true, 'Arrastra una imagen aquí si deseas cambiar la imagen de perfil');
+            $('.agregarUsuario .dragdrop').on('uploaded', function(e, response){
+                $(this).parent().parent().find('.profile-image').css('background-image', 'url('+response.data+')');
+            });
+            $('.editarUsuario .dragdrop').uploader(host_url+'upload/profile','profile_image', true, 'Arrastra una imagen aquí si deseas cambiar la imagen de perfil');
+            $('.editarUsuario .dragdrop').on('uploaded', function(e, response){
+                $(this).parent().parent().find('.profile-image').css('background-image', 'url('+response.data+')');
+            });
         },
         "user-sites": function(){
             //$('#gmaps').locationpicker();

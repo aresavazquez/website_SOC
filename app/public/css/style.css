@@ -939,7 +939,7 @@ button.close{
     margin: auto;
     display: block;
     width: 600px;
-    height: 433px;
+    height: 650px;
     opacity: 0;
     padding-top: 30px;
     background: #285CA4;
@@ -3065,6 +3065,26 @@ select option {
 .col-4{
     flex: 0 33%;
 }
+.col-6{
+    flex: 0 50%;
+}
+.col-flex{
+    display: flex;
+}
+.col-center{
+    justify-content: center;
+}
+.col-middle{
+    align-items: center;
+}
+.profile-image{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-size: cover;
+}
+
+/* Modals */
 .agregarUsuario .datosUsuario.microsite .col-4 img,
 .agregarUsuario .datosUsuario.microsite .col-4 textarea,
 .editarUsuario .datosUsuario.microsite .col-4 img,

@@ -19,7 +19,11 @@
 				<div class="cardOffices">
 					<div class="offices">
 						<div>
-							<img src="../img/body/brokerImg.png">
+							{% if user.profile_image %}
+							<div style="width: 100px; height: 100px; border-radius: 50%; background-size: cover; background-image: url({{ user.profile_image }})"></div>
+							{% else %}
+							<div style="width: 100px; height: 100px; border-radius: 50%; background-size: cover; background-image: url({{ base_path }}img/body/brokerImg.png)"></div>
+							{% endif %}
 						</div>
 						<div class="adminControls">
 							<p>{{ user.name }}</p>
@@ -38,7 +42,15 @@
 	</div>
 	<div class="agregarUsuario">
 		<form class="datosUsuario">
-		<a href=""><img src="{{ base_path }}img/body/close.png" class="close"></a>
+			<a href=""><img src="{{ base_path }}img/body/close.png" class="close"></a>
+			<div class="container">
+				<div class="col-6 col-center col-middle col-flex">
+					<div class="profile-image" id="user_image"></div>
+				</div>
+				<div class="col-6">
+					<div class="dragdrop"></div>
+				</div>
+			</div>
 			<input type="text" placeholder="Nombre" id="user_name" name="user_name">
 			<input type="text" placeholder="Compañia" id="user_company" name="user_company">
 			<input type="text" placeholder="Correo" id="user_email" name="user_email">
@@ -50,6 +62,14 @@
 	<div class="editarUsuario">
 		<form class="datosUsuario">
 			<a href=""><img src="{{ base_path }}img/body/close.png" class="close"></a>
+			<div class="container">
+				<div class="col-6 col-center col-middle col-flex">
+					<div class="profile-image" id="e_user_image"></div>
+				</div>
+				<div class="col-6">
+					<div class="dragdrop"></div>
+				</div>
+			</div>
 			<input type="text" placeholder="Nombre" id="e_user_name" name="name">
 			<input type="text" placeholder="Compañia" id="e_user_company" name="company">
 			<input type="text" placeholder="Correo" id="e_user_email" name="email">

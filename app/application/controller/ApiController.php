@@ -39,6 +39,11 @@ class ApiController extends Controller{
       $registration_successful = Credentials::registerNewUser($user_name, $user_email, $user_company, $user_password_new);
       if($registration_successful){
         $user = User::getInstance()->getDataByEmail($user_email);
+        if(Request::post('profile_image') && Request::post('profile_image')[0]){
+            $data = array();
+            $data['profile_image'] = Request::post('profile_image')[0];
+            User::getInstance()->setData($user->id, $data);
+        }
         $site = Site::getInstance()->save($user->id, -1, NULL, $user_company, '', '', '', '', '', '', '', array(), array(), array(), 1);
         $mail_obj = new Mail();
         $mail_obj->sendMailWithPHPMailer($user_email, 'socialmedia@socasesores.com', 'SOC Asesores', 'Nuevo Micrositio', "Felicidades, te hemos creado un nuevo micrositio para " . $user_company . ". Para comenzar a utilizarlo puedes entrar a socasesores.com con las siguientes credenciales: \r\nEmail: " . $user_email . "\r\nPassword: " . $user_password_new);
@@ -98,13 +103,14 @@ class ApiController extends Controller{
     public function set_user($params){
         $data = array();
 
-        if(Request::put('name')) $data['name'] = Request::put('name');
-        if(Request::put('company')) $data['company'] = Request::put('company');
+        if(Request::put('name')) $data['name'] = utf8_decode(Request::put('name'));
+        if(Request::put('company')) $data['company'] = utf8_decode(Request::put('company'));
         if(Request::put('email')) $data['email'] = Request::put('email');   
         if( Request::put('password') && 
             Request::put('password') != '' 
             && Request::put('password') == Request::put('password_confirm')
         ) $data['password'] = password_hash(Request::put('password'), PASSWORD_DEFAULT);
+        if(Request::put('profile_image') && Request::put('profile_image')[0]) $data['profile_image'] = Request::put('profile_image')[0];
         $id = User::getInstance()->setData($params['id'], $data);
         $this->View->renderJSON($this->success_code($id));
     }
