@@ -1,0 +1,241 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	background: url(../img/1fondo.jpg)no-repeat;
+	background-size: cover;
+	height: 100%;
+	width: 100%;
+	font-family: 'MuseoSans',sans-serif;
+	color: #41546e;
+}
+.container{
+	height: 100%;
+	width: 100%;
+}
+/*caja de texto*/
+.text{
+    padding: 75px;
+    font-size: 26px;
+    width: 1032px;
+    font-weight: 100;
+    line-height: 45px;
+    text-align: center;
+}
+.text p{
+    padding: 0 100px;
+    color: #fff;
+}
+.text.bancos{
+    padding: 35px;
+}
+.text .experiencia{
+    font-size: 19px;
+}
+.container .text p a{
+    color: #41546e;
+}
+.text img{
+	padding: 30px 15px;
+    width: 580px
+}
+/*caja azul*/
+.blueBox{
+    background: rgba(29, 175, 236, 0.6);
+    padding: 35px;
+    color: #fff;
+    font-size: 50px;
+    position: fixed;
+    right: 25px;
+    bottom: 150px;
+}
+.blueBox p{
+    font-size: 20px;
+    font-weight: 100;
+}
+/*footer*/
+.containerFooter{
+    background: rgba(64, 81, 111, .5);
+    color: #41546e;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+.footer{
+    padding: 20px 0;
+    width: 100%;
+    background: url(../img/content_separator.png)no-repeat bottom;
+    background-size: contain;
+    -webkit-display: flex;
+	-moz-display: flex;
+	-ms-display: flex;
+	-o-display: flex;
+    display: flex;
+    justify-content: space-around;
+}
+.footer div ul{
+	display: inline-flex;
+}
+.footer div ul li{
+	list-style: none;
+	padding: 0 10px;
+}
+.footer div .soctel{
+    width: 100px;
+    display: none;
+}
+.credito{
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    font-style: italic;
+}
+.credito span{
+    font-weight: 100;
+}
+.footer div{
+    padding: 0 50px;
+}
+.footer div .web{
+    color: #40516F;
+    text-decoration: none;
+    font-size: 20px;
+    color: #fff;
+    padding-top: 10px;
+}
+@media screen and (max-width: 1500px){
+	body {
+	    background: url(../img/1fondo.jpg)no-repeat right top fixed;
+    	background-size: cover;
+	}
+	iframe{
+	    margin: 70px auto 0;
+	    display: block;
+	}
+	.blueBox {
+	    position: relative;
+	    width: 320px;
+	    margin: 0 auto 100px;
+	    bottom: 0;
+	}
+	.containerFooter {
+	    position: relative;
+	}
+	.text {
+	    margin: auto;
+	}
+}
+@media screen and (max-width: 1400px){
+	body {
+	    background: url(../img/1fondo.jpg)no-repeat right top fixed;
+    	background-size: cover;
+	}
+	iframe{
+	    margin: 70px auto 0;
+	    display: block;
+	}
+	.blueBox {
+	    position: relative;
+	    width: 320px;
+	    margin: 0 auto 100px;
+	    bottom: 0;
+	}
+	.containerFooter {
+	    position: relative;
+	}
+	.text {
+	    margin: auto;
+	}
+}
+@media screen and (max-width: 1024px){
+    .containerFooter {
+    	background: #41546e;
+   	}
+   	.container .text img {
+	    width: 362px;
+	}
+	body{
+		background: url(../img/1fondo.jpg)no-repeat top right;
+	}
+	.text {
+	    width: auto;
+	}
+	.text p {
+	    padding: 65px 50px;
+	}
+	.text.bancos p {
+	    padding: 0px 50px 0;
+	}
+	.blueBox{
+	    left: 0;
+	    right: 0;
+	    margin: 0px auto 30px;
+	    text-align: center;
+	    width: 400px;
+	    bottom: 0px;
+	}
+	.simulador{
+	    min-height: .01%;
+    	overflow-x: auto;
+    	display: flex;
+	}
+}
+@media screen and (max-width: 640px){
+	body {
+	    background: url(../img/1fondo.jpg)no-repeat ;
+    	background-size: cover;
+	}
+	.container .text {
+	    font-size: 16px;
+	    width: 300px;
+	    line-height: 30px;
+	    margin-top: 25px;
+	    padding: 20px 0;
+	}
+	.container div img{
+	    margin: auto;
+	    display: block;
+	    padding: 25px;
+	}
+	.text.bancos p {
+	    padding: 0;
+	}
+	.containerFooter {
+	    position: relative;
+	}
+	.footer{
+		display: block;
+	}
+	.footer div{
+		padding: 20px;
+    	text-align: center;
+	}
+	.blueBox{
+	    position: relative;
+	    width: 200px;
+	    font-size: 30px;
+	    bottom: 10px;
+	    margin-top: 30px;
+	}
+	.text img{
+		display: none;
+	}
+	.simulador{
+	    min-height: .01%;
+    	overflow-x: auto;
+    	display: flex;
+	}
+	.text p {
+	    font-size: 15px;
+	}
+	.text .experiencia {
+	    font-size: 21px;
+	}
+	.blueBox p {
+	    font-size: 15px;
+	}
+	.blueBox .casa {
+	    font-size: 31px !important;
+	}
+}

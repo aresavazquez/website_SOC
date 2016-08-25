@@ -1,0 +1,547 @@
+@media screen and (max-width: 1550px){
+	.nav img {
+		width: 135px;
+	}
+}
+@media screen and (max-width: 1550px){
+	.evaluacion-asesor {
+		margin-top: 170px;
+	}
+}
+@media screen and (max-width: 1550px){
+	.evaluacion-asesor .requisitos {
+		padding-top: 40px;
+	}
+}
+@media screen and (max-width: 1550px){
+	.content-table {
+		margin-top: 100px;
+	}
+}
+@media screen and (max-width: 1550px){
+	.content-table p {
+		top: 700px;
+	}
+}
+@media screen and (max-width: 1440px){
+	.content-table p {
+		top: 850px;
+	}
+}	
+@media screen and (max-width: 1550px){
+	.oficina-req {
+		margin-top: 0px;
+	}
+}
+@media screen and (max-width: 1550px){
+	.final {
+		height: 100%;	}
+}
+@media screen and (max-width: 1550px){
+	.formulario-asesor form {
+		height: 78%;
+	}
+}
+@media screen and (max-width: 1550px){
+	.formulario-asesor img {
+		width: 55px;
+    	right: 20px;
+    	top: 80px;
+	}
+}
+@media screen and (max-width: 1550px){
+	.formulario-oficinas form {
+		height: 70%;
+	}
+}
+@media screen and (max-width: 1440px){
+	.formulario-oficinas form {
+		height: 75%;
+	}
+}
+@media screen and (max-width: 1550px){
+	.feedback-input {
+		font-size: 15px;
+		padding: 10px
+	}
+}
+@media screen and (max-width: 1550px){
+	[type="submit"] {
+		font-size: 15px;
+	}
+}
+@media screen and (max-width: 1550px){
+	.formulario-oficinas img {
+		width: 55px;
+    	right: 20px;
+    	top: 80px;
+	}
+}
+@media screen and (max-width: 1550px){
+	.medallas {
+    	top: 100px;
+	}
+}
+@media screen and (max-width: 1444px){
+	.description {
+    	height: 90%;
+	}
+}
+@media screen and (max-width: 1444px){
+	.description div {
+    	height: 100%;
+    	padding-top: 100px;
+	}
+}
+@media screen and (max-width: 1444px){
+	.formulario-oficinas img  {
+    	top: 110px;
+	}
+}
+@media screen and (max-width: 1444px){
+	.oficina-info {
+    	/*height: 85%;*/
+	}
+}
+@media screen and (max-width: 1444px){
+	.oficina-datos {
+    	top: 60px;
+	}
+}
+@media screen and (max-width: 1356px){
+	.content-table p {
+    	top: 880px;
+	}
+}
+@media screen and (max-width: 1280px){
+	.content-table p {
+    	top: 800px;
+	}
+}
+/*------------- Ipad -----------------*/
+/*------------- Ipad -----------------*/
+/*------------- Ipad -----------------*/
+
+@media screen and (max-width: 1024px){
+	.nav img {
+		width: 150px;
+	}
+}
+@media screen and (max-width: 1540px){
+	.cont-title {
+		width: 80%;
+	}
+}
+
+@media screen and (max-width: 1024px){
+	.cont-title {
+		width: 95%;
+    	height: 50%;
+    	top: 0;
+	}
+}
+@media screen and (max-width: 1024px){
+	.content-table {
+		margin-top: 100px;
+	}
+}
+@media screen and (max-width: 1024px){
+	.content-table {
+		margin-top: 100px;
+	}
+}
+@media screen and (max-width: 1024px){
+	.content-table p {
+		top: 780px;
+	}
+}
+@media screen and (max-width: 1024px){
+	.title-certif {
+		width: 95%;
+	}
+}
+
+@media screen and (max-width: 1024px){
+	.title-certif h1 {
+		font-size: 80px;
+	}
+}
+@media screen and (max-width: 1024px){
+	.evaluacion-asesor {
+		margin-top: 0;
+	}
+}
+@media screen and (max-width: 1024px){
+	.evaluacion-asesor .requisitos {
+		padding-top: 40px;
+	}
+}
+@media screen and (max-width: 1024px){
+	.oficina-datos div {
+		top: 0;
+	}
+}
+@media screen and (max-width: 1024px){
+	.final {
+		height: 85%;
+	}
+}
+@media screen and (max-width: 1024px){
+	.formulario-asesor form {
+	    width: 70%;
+    	height: 60%;
+
+    }
+}
+@media screen and (max-width: 1024px){
+	.formulario-asesor img{
+	    width: 50px;
+    	right: 20px;
+    	top: 85px;
+	}
+}
+@media screen and (max-width: 1024px){
+	.formulario-oficinas form {
+	    width: 70%;
+    	height: 70%;
+    	top: 0;
+    }
+}
+@media screen and (max-width: 1024px){
+	.formulario-oficinas img{
+	    width: 50px;
+    	right: 20px;
+    	top: 85px;
+    }
+}
+@media screen and (max-width: 768px){
+	.nav {
+	   	position: absolute;
+	    height: 8%;
+    }
+}
+@media screen and (max-width: 768px){
+	.home {
+	    height: 100%;
+    }
+}
+@media screen and (max-width: 768px){
+	.cont-title {
+	    height: 30%;
+    }
+}
+@media screen and (max-width: 768px){
+	.cont-title h1 {
+	    font-size: 75px;
+    }
+}
+
+@media screen and (max-width: 768px){
+	.oficina-info {
+	    /*height: 80%;*/
+    }
+}
+@media screen and (max-width: 768px){
+	.content-table {
+	   margin-top: 0;
+    }
+}
+@media screen and (max-width: 768px){
+	.content-table p {
+	   top: 960px;
+    }
+}
+/*------------- CELULAR -----------------*/
+/*------------- CELULAR -----------------*/
+/*------------- CELULAR -----------------*/
+
+@media screen and (max-width: 414px) {
+	body {
+		font-size: 14px;
+	}
+}
+@media screen and (max-width: 414px) {
+	body p span {
+		font-size: 20px;
+	}
+}
+@media screen and (max-width: 414px) {
+	.nav {
+		height: 65px;
+		position: absolute;
+	}
+}
+@media screen and (max-width:  414px) {
+	.nav img {
+		width: 120px;
+		left: 10px;
+	}
+}
+@media screen and (max-width:  414px) {
+	.home{
+		height: 100%;
+	}
+}
+@media screen and (max-width: 414px) {
+	.asesor-info {
+		/*height: 72%;*/
+    	margin-bottom: 70px;
+	}
+}
+@media screen and (max-width:  414px) {
+	.cont-title {
+		width: 90%;
+	}
+}
+@media screen and (max-width:  414px) {
+	.cont-title h1{
+		font-size: 40px;
+	}
+}
+@media screen and (max-width:  414px) {
+	.cont-title h1 span {
+		font-weight: 500;
+	}
+}
+@media screen and (max-width:  414px) {
+	.description  {
+		height: 100%;
+	}
+}
+@media screen and (max-width:  414px) {
+	.description div {
+		width: 85%;
+		padding-top: 16%;
+	}
+}
+@media screen and (max-width: 414px){
+	.title-certif {
+		width: 90%;
+    	height: 60%;
+	}
+}
+@media screen and (max-width: 414px){
+	.title-certif h1 {
+		font-size: 40px;
+	}
+}
+@media screen and (max-width: 414px){
+	.evaluacion-asesor {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+}
+@media screen and (max-width: 414px){
+	.evaluacion-asesor .requisitos {
+		padding-top: 0;
+		padding-bottom: 30px;
+	}
+}
+@media screen and (max-width: 414px){
+	.evaluacion-asesor .requisitos ol {
+	    font-size: 16px;
+    	font-weight: 100;
+    	padding-left: 20px;
+    	line-height: 1.6;
+    	list-style: none
+	}
+}
+@media screen and (max-width: 414px) {
+	.evaluacion-asesor .requisitos p {
+	    text-align: left;
+    	font-size: 15px;
+    	line-height: 1.5;
+	}
+}
+@media screen and (max-width: 414px) {
+	.oficina-info  {
+	    /*height: 95%;*/
+	    padding-bottom: 80px;
+	}
+}
+@media screen and (max-width: 414px) {
+	.oficina-info div {
+	    padding-top: 70px;
+	}
+}
+@media screen and (max-width: 414px) {
+	.medallas .flex-container {
+	    width: 90%;
+		left: 0;
+    	right: 0;
+    	margin: auto;
+    	margin-top: 0px;
+	}
+}
+@media screen and (max-width: 320px) {
+	.medallas .flex-container {
+    	margin-top: 0px;
+	}
+}
+@media screen and (max-width: 400px) {
+	.medallas .flex-container .flex-item {
+	   margin-top: 130px;
+	}
+}
+@media screen and (max-width: 414px) {
+	.oficina-datos div {
+	    height: 95%;
+    	top: 60px;
+	}
+}
+@media screen and (max-width: 414px) {
+	.oficina-datos div p {
+		font-size: 15px;
+	}
+}
+@media screen and (max-width: 414px) {
+	.content-table {
+		margin-top: 70px;
+	}	
+}
+@media screen and (max-width: 414px) {
+	.content-table table {
+		width: 90%;
+		font-size: 12px;
+		margin-top: 10%;
+	}
+}
+@media screen and (max-width: 414px) {
+	.content-table table td span {
+		font-size: 12px;
+    	font-weight: 100;
+	}
+}
+@media screen and (max-width: 414px) {
+	.content-table p {
+		top: 730px;
+		font-weight: 300;
+	}
+}
+@media screen and (max-width: 400px) {
+	.oficina-req  {
+		margin-top: 130px;
+	}
+}
+@media screen and (max-width: 414px) {
+	.oficina-req .requisitos {
+		margin-top: 40px;
+		padding-bottom: 70px;
+	}
+}
+@media screen and (max-width: 400px) {
+	.oficina-req .requisitos h1 {
+		padding-top: 0px;
+	}
+}
+
+@media screen and (max-width: 414px) {
+	.final {
+    	bottom: 90px;
+	}
+}
+@media screen and (max-width: 414px) {
+	.final div {
+		width: 270px;
+    	height: 180px;
+    	top: 120px;
+	}
+}
+@media screen and (max-width: 414px) {
+	.final div p {
+		font-size: 15px;
+	}
+}
+@media screen and (max-width: 414px) {
+	.formulario-asesor form {
+		width: 80%;
+    	height: 83%;
+    	overflow-y: scroll; 	
+   	}
+}
+@media screen and (max-width: 414px) {
+	.formulario-asesor img {
+		width: 30px;
+    	right: 5px;
+    	top: 10px;
+	}
+}
+@media screen and (max-width: 414px) {
+	.feedback-input {
+		padding: 8px;
+		font-size: 13px;
+	}
+}
+@media screen and (max-width: 414px) {
+	[type="submit"] {
+	   margin-top: 0px;
+	    font-size: 13px;
+	}
+}
+@media screen and (max-width: 414px) {
+	.formulario-oficinas form {
+		width: 80%;
+    	height: 83%;
+   	}
+}
+@media screen and (max-width: 414px) {
+	.formulario-oficinas img {
+		width: 30px;
+    	right: 10px;
+    	top: 10px;
+	}
+}
+@media screen and (max-width: 414px) {
+	.cont-boton {
+		margin-top:	0px; 
+	}
+}
+@media screen and (max-width: 414px) {
+	.asesor-info div {
+		padding-top: 30px;
+	}
+}
+@media screen and (max-width: 475px) {
+	.asesor-info {
+		padding-bottom: 190px;
+	}
+}
+@media screen and (max-width: 340px) {
+	.asesor-info {
+		padding-bottom: 230px;
+	}
+}
+@media screen and (max-width: 320px) {
+	.oficina-info {
+		height: 130%;	
+	}
+}
+
+/*------------- Respuesta Form -----------------*/
+/*------------- Respuesta Form -----------------*/
+/*------------- Respuesta Form -----------------*/
+
+@media screen and (max-width: 414px) {
+	.res-form div p {
+		font-size: 25px;
+		font-weight: 100;
+	}
+}
+@media screen and (max-width: 414px) {
+	.res-form img {
+		width: 40px;
+    	right: 15px;
+    	top: 15px;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+

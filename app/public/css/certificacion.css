@@ -1,0 +1,643 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+html {
+	width: 100%;
+	height: 100%;
+}
+body{
+	width: 100%;
+	height: 100%;
+	font-family: 'MuseoSans',sans-serif;
+	font-weight: 100;
+	color: #41546e;
+	font-size: 19px;
+	line-height: 1.3;
+}
+body p span {
+	font-size: 25px;
+	color: #2eade3;
+	font-weight: 500;
+}
+body li span {
+	font-size: 20px;
+	color: #2eade3;
+	font-weight: 500;
+}
+.nav {
+	position: fixed;
+	width: 100%;
+	height: 10%;
+	background-color: rgba(255, 255, 255, 0.3);
+	z-index: 3;
+}
+.nav img {
+	display: block;
+    width: 190px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    left: 20px;
+}
+.home {
+	width: 100%;
+	height: 125%;
+	background: url("../img/im-universidad/fondohome.jpg") no-repeat center;
+	background-size: cover;
+	position: relative;
+}
+.cont-title {
+	width: 60%;
+	height: 50%;
+	position: absolute;
+	left: 0;
+	top: 100px;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+}
+.cont-title h1 {
+	font-size: 100px;
+	text-align:  center;
+	color: #fff;
+	font-weight: 100;
+	border: solid 8px #1dafec;
+	padding: 10px;
+}
+.cont-title h1 span {
+	font-weight: 700;
+}
+.cont-title h1 span span {
+	color: #2eade3;
+}
+.title-certif {
+	width: 70%;
+	height: 50%;
+	position: absolute;
+	left: 0;
+	top: 250px;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+}
+.title-certif h1 {
+	font-size: 100px;
+	text-align:  center;
+	color: #fff;
+	font-weight: 100;
+	border: solid 8px #1dafec;
+	padding: 10px;
+}
+.title-certif h1 span {
+	font-weight: 500;
+}
+.description {
+	position: relative;
+    width: 100%;
+    height: 100%;
+}
+.description div {
+	text-align: center;
+	width: 70%;
+	height: auto;
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: auto;
+	padding-top: 240px;
+}
+.home-asesores {
+	width: 100%;
+	height: 125%;
+	position: relative;
+	background: url(../img/im-universidad/fondo-asesores.png)no-repeat center;
+	background-size: cover;
+}
+.asesor-info {
+	position: relative;
+	width: 100%;
+	height: 60%;
+}
+.asesor-info div {
+	width: 70%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	text-align: center;
+	padding-top: 170px;
+}
+.asesor-info div li {
+	list-style: none;
+}
+.evaluacion-asesor {
+	width: 90%;
+    position: relative;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    justify-content: space-around;
+    margin-top: 120px;
+    margin-bottom: 170px;
+}
+.evaluacion-asesor .requisitos {
+	width: 800px;
+	height: auto;
+	padding-top: 100px;
+	line-height: 1.5;
+}
+.evaluacion-asesor .requisitos ol {
+	font-size: 19px;
+	font-weight: 100;
+	padding-left: 80px;
+	line-height: 2;
+	list-style: none;
+}
+.evaluacion-asesor .requisitos ol .circle {
+	list-style: circle;
+}
+.evaluacion-asesor .requisitos p{
+	text-align: left;
+	font-size: 19px;
+	line-height: 1.5;
+}
+.cont-boton {
+	width: 100%;
+	height: 100px;
+	position: relative;
+	margin-top: 80px;
+}
+.cont-boton .boton{
+	width: 230px;
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: auto;
+	background-color: #0098C3;
+	-ms-border-radius:8px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	-webkit-box-shadow: 0 8px 0 #41546e, 0 10px 20px rgba(0, 0, 0, .4);
+	-moz-box-shadow: 0 8px 0  #41546e, 0 10px 20px rgba(0, 0, 0, .4);
+	box-shadow: 0 8px 0  #41546e, 0 10px 20px rgba(0, 0, 0, .4);
+	color: #fff;
+	display: inline-block;
+	font-size: 23px;
+	line-height: 1;
+	padding: 15px 25px;
+	text-decoration: none;
+	text-align: center;
+	text-shadow: 0 -1px 1px rgba(25, 123, 29, .7);
+}
+.home-oficinas {
+	width: 100%;
+	height: 130%;
+	background: url("../img/im-universidad/oficina-fondo.png") no-repeat center;
+	background-size: cover;
+	position: relative;
+}
+.oficina-info {
+	width: 100%;
+	height: 80%;
+	position: relative;
+}
+.oficina-info div {
+	width: 70%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	text-align: center;
+	padding-top: 100px;
+}
+.oficina-info div li {
+	list-style: none;
+}
+.medallas {
+	width: 100%;
+	position: relative;
+	text-align: center;
+}
+.flex-container {
+  width: 100%;
+  height: auto;
+  list-style: none;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;  
+  -webkit-flex-flow: row wrap;
+  justify-content: space-around;
+  padding-bottom: 80px;
+}
+.flex-container .flex-item {
+  width: 400px;
+  height: auto;
+  border: solid 2px #1dafec;
+  margin-top: 25px;
+  text-align: center;
+  padding-bottom: 30px;
+  list-style: none;
+}
+.flex-item img {
+	display: block;
+	position: relative;
+	left: 0;
+	right: 0;
+	margin: auto;
+	padding-top: 40px;
+	width: 140px;
+	padding-bottom: 30px;
+}
+.oficina-datos {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background: url(../img/im-universidad/oficina2.png) no-repeat center;
+	background-size: cover;
+}
+.oficina-datos div {
+	width: 70%;
+	height: 50%;
+	position: absolute;
+	left: 0;
+	top: 120px;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+}
+.oficina-datos div p {
+	font-size: 23px;
+	color: #fff;
+	text-align: center;
+	line-height: 1.5;
+	font-weight: 100;
+}
+.content-table {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+.content-table table {
+	width: 70%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	font-size: 18px;
+	text-align: center;
+	border-collapse: collapse;
+    border-spacing: 0;
+}
+.content-table table td span {
+	font-size: 25px;
+	font-weight: 500;
+	color: #2a71b7;
+}
+.content-table table .table-title {
+	color: #2a71b7;
+	font-weight: 300;
+}
+
+.content-table table td,th {
+    width: 200px;
+    border: 1.8px solid #1dafec;
+    padding: 10px 3px;
+}
+.content-table p {
+	position: absolute;
+    top: 920px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    font-weight: 500;
+    text-align: center;
+}
+.oficina-req {
+	width: 100%;
+	height: auto;
+	position: relative;
+	display: -webkit-box;
+  	display: -moz-box;
+  	display: -ms-flexbox;
+  	display: -webkit-flex;
+  	display: flex;
+  	-webkit-flex-flow: row wrap;
+  	justify-content: space-around;
+  	margin-bottom: 30px;
+}
+.oficina-req .requisitos {
+	width: 800px;
+	height: 100%;
+	padding-top: 35px;
+	padding-bottom: 40px;
+	line-height: 1.5;
+	padding: 30px;
+}
+.oficina-req .requisitos h1 {
+	font-size: 25px;
+	font-weight: 500;
+	text-align: center;
+	padding-top: 60px;
+	color: #1dafec;
+}
+.oficina-req .requisitos span {
+	font-size: 20px;
+	font-weight: 300;
+	text-align: center;
+	color: #1dafec;
+}
+/*------------------------------------------*/
+/*------------------------------------------*/
+/*----- Formulario ASESORES-------------*/
+/*----- Formulario ASESORES-------------*/
+
+.formulario-asesor {
+	position: fixed;
+	z-index: 2;
+	width: 100%;
+	height: 100%;
+	background: url("../img/im-universidad/cont-asesor.jpg") no-repeat center;
+	background-size: cover;
+	display: none;///////////////
+	opacity: 0;
+	top: -100px;
+	overflow-y: scroll; 
+}
+.formulario-asesor img {
+	position: absolute; 
+    display: block;
+    width: 70px;
+    right: 30px;
+    top: 110px;
+}
+.formulario-asesor p {
+	position: relative;
+    top: 180px;
+    text-align: center;
+    font-size: 30px;
+    color: #fff;
+    font-weight: 100;
+}
+.formulario-asesor form {
+	width: 40%;
+	height: 50%;
+	position: absolute;
+	left: 0;
+	top: 10px;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+}
+.feedback-input {
+  color: white;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: 100;
+  font-size: 18px;
+  border-radius: 5px;
+  line-height: 22px;
+  background-color: transparent;
+  border: 3px solid #1dafec;
+  transition: all 0.1s;
+  padding: 13px;
+  margin-bottom: 15px;
+  width:100%;
+  box-sizing: border-box;
+  outline:0;
+}
+
+.feedback-input:focus { border: 4px solid #fff; }
+
+::-webkit-input-placeholder {
+    color: rgba(255, 255, 255, .5);
+
+}
+
+.select {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 15px;
+  width: 100%;
+}
+.select select {
+  	display: inline-block;
+    width: 100%;
+    cursor: pointer;
+    padding: 10px 10px;
+    outline: 0;
+    background-color: transparent;
+    border: 3px solid #1dafec;
+    color: #fff;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 100;
+    font-family: 'MuseoSans',sans-serif;
+
+}
+.select select::-ms-expand {
+  display: none;
+}
+.select select:hover,
+.select select:focus {
+  color: #fff;
+}
+.select select:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+.select__arrow {
+  position: absolute;
+  top: 16px;
+  right: 15px;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  border-style: solid;
+  border-width: 8px 5px 0 5px;
+  border-color: #FFF transparent transparent transparent;
+}
+.select select:hover ~ .select__arrow,
+.select select:focus ~ .select__arrow {
+  border-top-color: #fff;
+}
+.select select:disabled ~ .select__arrow {
+  border-top-color: #ccc;
+}
+
+
+[type="submit"] {
+  width: 40%;
+  font-family: 'MuseoSans',sans-serif;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius:5px;
+  border:0;
+  cursor:pointer;
+  color: #fff;
+  font-size:24px;
+  padding-top:10px;
+  padding-bottom:10px;
+  transition: all 0.3s;
+  margin-top: 10px;
+  font-weight:100;
+}
+[type="submit"]:hover { 
+	background:#fff; 
+	color: #41546e;
+	font-weight:500;
+}
+/*------------------------------------------*/
+/*------------------------------------------*/
+/*----- Formulario OFICINAS-------------*/
+/*----- Formulario OFICINAS-------------*/
+
+.formulario-oficinas {
+	position: fixed;
+	z-index: 2;
+	width: 100%;
+	height: 100%;
+	background: url("../img/im-universidad/fondo-form-ofi2.png") no-repeat center;
+	background-size: cover;
+	display: none;
+	opacity: 0;
+	top: -100px;
+	overflow-y: scroll; 
+}
+.formulario-oficinas form {
+	width: 40%;
+	height: 50%;
+	position: absolute;
+	left: 0;
+	top: 10px;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+}
+.formulario-oficinas p {
+	position: relative;
+    top: 180px;
+    text-align: center;
+    font-size: 30px;
+    color: #fff;
+    font-weight: 100;
+}
+.formulario-oficinas img {
+	position: absolute; 
+    display: block;
+    width: 55px;
+    right: 30px;
+    top: 110px;
+}
+.final {
+	position: relative;
+	width: 100%;
+	height: 70%;
+	background: url("../img/im-universidad/final.png") no-repeat center;
+	background-size: cover;
+}
+.final div {
+	position: absolute;
+	width: 400px;
+    height: 250px;
+	left: 0;
+	top: 220px;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	border: solid 8px #1dafec;
+}
+.final div p {
+	font-size: 22px;
+	color: #fff;
+	text-align: center;
+	font-weight: 100;
+	padding: 15px;
+	line-height: 1.5;
+}
+.final div p span {
+	font-size: 30px;
+	color: #1dafec;
+	font-weight: 500;
+}
+.contacto-asesor {
+	position: fixed;
+	z-index: 4;
+	width: 100%;
+	height: 100%;
+	background: rgba(78, 100, 127, 0.5);
+}
+
+/*  //////////////// Respuesta Formulario   /////////////////// */
+/*  //////////////// Respuesta Formulario   /////////////////// */
+
+.res-form {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background: url("../img/im-universidad/fondo-resp-form.jpg") no-repeat center;
+	background-size: cover;
+	opacity: 1;
+	display: block;
+	z-index: 2;
+}
+.res-form div {
+	position: absolute;
+	width: 80%;
+	height: 200px;
+	padding: 20px;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+
+}
+.res-form div p {
+	text-align: center;
+	color: #fff;
+	font-size: 40px;
+	line-height: 1.7;
+}
+.res-form img {
+	position: absolute; 
+    display: block;
+    width: 55px;
+    right: 40px;
+    top: 40px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
