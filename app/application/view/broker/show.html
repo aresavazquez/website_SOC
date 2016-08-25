@@ -17,15 +17,9 @@
         <div id="carousel-example-generic" class="carousel slide microUsuario" data-ride="carousel">
           <!-- Indicators -->
           <ol class="carousel-indicators">
-            {% if slider[0] != '' %}
             <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-            {% endif %}
-            {% if slider[1] != '' %}
             <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-            {% endif %}
-            {% if slider[2] != '' %}
             <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-            {% endif %}
             {% if slider[3] != '' %}
             <li data-target="#carousel-example-generic" data-slide-to="3"></li>
             {% endif %}
@@ -36,31 +30,21 @@
 
           <!-- Wrapper for slides -->
           <div class="carousel-inner micro" role="listbox">
-            {% if slider[0] != '' %}
             <div class="item active">
               <img src="{{ slider ? slider[0] : './img/micrositios/asesor.jpg' }}" alt="...">
             </div>
-            {% endif %}
-            {% if slider[1] != '' %}
             <div class="item">
               <img src="{{ slider ? slider[1] : './img/micrositios/mejora.jpg' }}" alt="...">
             </div>
-            {% endif %}
-            {% if slider[2] != '' %}
             <div class="item">
               <img src="{{ slider ? slider[2] : './img/micrositios/premia.jpg' }}" alt="...">
             </div>
-            {% endif %}
-            {% if slider[3] != '' %}
             <div class="item">
-              <img src="{{ slider ? slider[1] : './img/micrositios/quince.jpg' }}" alt="...">
+              <img src="{{ slider ? slider[3] : './img/micrositios/quince.jpg' }}" alt="...">
             </div>
-            {% endif %}
-            {% if slider[4] != '' %}
             <div class="item">
-              <img src="{{ slider ? slider[2] : './img/micrositios/widget.jpg' }}" alt="...">
+              <img src="{{ slider ? slider[4] : './img/micrositios/widget.jpg' }}" alt="...">
             </div>
-            {% endif %}
           </div>
         </div>
       </div>
