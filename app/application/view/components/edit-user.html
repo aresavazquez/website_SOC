@@ -13,15 +13,38 @@
 		<input id="e_siteUrl" name="url" type="text" placeholder="Nombre del sitio" class="edit_input"-->
 		<label>Descripción</label>
 		<textarea id="e_siteContent" name="content" placeholder="Descripción" class=""></textarea>
-		<!--label>Slider</label>
-		<div class="container container-justify__start container-align__baseline">
-			<select>
-				{% for i in 0..5 %}
-				<option>{{ i }}</option>
+		<label>Slider</label>
+		<div class="container container-rows">
+			<div class="container-justify__start container-align__baseline">
+				<select class="slider_num" name="slider_num" data-num="{{ slider.total }}">
+				{% for option in slider.options %}
+					<option value="{{ option[0] }}">{{ option[1] }}</option>
 				{% endfor %}
-			</select>
-			<p> Slides</p>
-		</div-->
+				</select>
+			</div>
+			<div class="slider-container container">
+				<div class="slider-item col-20">
+					<img class="slider-preview" src="{{ slider.items[0] }}">
+					<div class="slider-dragdrop"></div>
+				</div>
+				<div class="slider-item col-20">
+					<img class="slider-preview" src="{{ slider.items[1] }}">
+					<div class="slider-dragdrop"></div>
+				</div>
+				<div class="slider-item col-20">
+					<img class="slider-preview" src="{{ slider.items[2] }}">
+					<div class="slider-dragdrop"></div>
+				</div>
+				<div class="slider-item col-20">
+					<img class="slider-preview" src="{{ slider.items[3] }}">
+					<div class="slider-dragdrop"></div>
+				</div>
+				<div class="slider-item col-20">
+					<img class="slider-preview" src="{{ slider.items[4] }}">
+					<div class="slider-dragdrop"></div>
+				</div>
+			</div>
+		</div>
 	    <!--br /><img class="preview1" width="400" src=""><br />
 	    <div class="dragdrop slider1"></div>
 	    <br /><img class="preview2" width="400" src=""><br />

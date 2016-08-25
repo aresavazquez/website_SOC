@@ -24,15 +24,31 @@
 
           <!-- Wrapper for slides -->
           <div class="carousel-inner micro" role="listbox">
+            {% if slider[0] != '' %}
             <div class="item active">
               <img src="{{ slider ? slider[0] : './img/micrositios/chica.png' }}" alt="...">
             </div>
+            {% endif %}
+            {% if slider[1] != '' %}
             <div class="item">
               <img src="{{ slider ? slider[1] : './img/micrositios/quince.jpg' }}" alt="...">
             </div>
+            {% endif %}
+            {% if slider[2] != '' %}
             <div class="item">
               <img src="{{ slider ? slider[2] : './img/micrositios/widget.jpg' }}" alt="...">
             </div>
+            {% endif %}
+            {% if slider[3] != '' %}
+            <div class="item">
+              <img src="{{ slider ? slider[1] : './img/micrositios/quince.jpg' }}" alt="...">
+            </div>
+            {% endif %}
+            {% if slider[4] != '' %}
+            <div class="item">
+              <img src="{{ slider ? slider[2] : './img/micrositios/widget.jpg' }}" alt="...">
+            </div>
+            {% endif %}
           </div>
         </div>
       </div>
@@ -41,16 +57,16 @@
         <p class="thecontent">{{site.content}}</p>
         <ul>
           <li>
-            <img src="{{ support.images ? support.images[0] : './img/micrositios/img1.jpg' }}">
-            <p>{{ support.quotes ? support.quotes[0] : 'Nos especializamos en ayudarte a encontrar y elegir el mejor crédito hipotecario; para que compres tú casa, un terreno, cambies tu hipoteca' }}</p>
+            <img src="{{ support.images and support.images[0] != '' ? support.images[0] : './img/micrositios/img1.jpg' }}">
+            <p>{{ support.quotes and support.quotes[0] != '' ? support.quotes[0] : 'Nos especializamos en ayudarte a encontrar y elegir el mejor crédito hipotecario; para que compres tú casa, un terreno, cambies tu hipoteca' }}</p>
           </li>
           <li>
-            <img src="{{ support.images ? support.images[1] : './img/micrositios/img2.jpg' }}">
-            <p>{{ support.quotes ? support.quotes[1] : 'Contamos con la red más grande del país. Ellos tienen la capacidad de analizar tu perfil para conocer a fondo tus necesidades y así ofrecer la información necesaria acerca de las instituciones financieras para que tú puedas analizar y seleccionar la opción que más te convenga.' }}</p>
+            <img src="{{ support.images and support.images[1] != '' ? support.images[1] : './img/micrositios/img2.jpg' }}">
+            <p>{{ support.quotes and support.quotes[1] != '' ? support.quotes[1] : 'Contamos con la red más grande del país. Ellos tienen la capacidad de analizar tu perfil para conocer a fondo tus necesidades y así ofrecer la información necesaria acerca de las instituciones financieras para que tú puedas analizar y seleccionar la opción que más te convenga.' }}</p>
           </li>
           <li>
-            <img src="{{ support.images ? support.images[2] : './img/micrositios/img3.jpg' }}">
-            <p>{{ support.quotes ? support.quotes[2] : 'Te recomendamos prestar atención a diversos factores como lo son, los plazos, la tasa de interés –fija o variable-, el enganche, la moneda, los seguros que lo integran, las comisiones, gastos notariales y el número de mensualidades.' }}</p>
+            <img src="{{ support.images and support.images[2] != '' ? support.images[2] : './img/micrositios/img3.jpg' }}">
+            <p>{{ support.quotes and support.quotes[2] != '' ? support.quotes[2] : 'Te recomendamos prestar atención a diversos factores como lo son, los plazos, la tasa de interés –fija o variable-, el enganche, la moneda, los seguros que lo integran, las comisiones, gastos notariales y el número de mensualidades.' }}</p>
           </li>
         </ul>
       </div>

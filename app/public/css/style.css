@@ -3071,6 +3071,12 @@ select option {
 .container-align__baseline{
     align-items: baseline;
 }
+.container-rows{
+    flex-direction: column;
+}
+.col-20{
+    flex: 0 20%;
+}
 .col-4{
     flex: 0 33%;
 }
@@ -3129,6 +3135,27 @@ select option {
 .editBlog .trumbowyg-box .trumbowyg-editor li,
 .editBlog .trumbowyg-box .trumbowyg-editor a{
     color: rgb(72, 72, 72);
+}
+
+/* Slider */
+img.slider-preview{
+    width: 100%;
+}
+div.slider-dragdrop{
+    width: 100%;
+    max-width: 300px;
+    border: dashed 3px #4FA755;
+    margin: 0 auto;
+    padding: 0 9px;
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background: rgba(0,0,0,0.5);
+    font-size: 12px;
+    font-weight: bold;
+    color: #4fa753;
+    text-align: center;
 }
 
 /* Uploader */

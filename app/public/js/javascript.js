@@ -539,11 +539,25 @@ $(document).on('ready', function(){
                 var slider = site.slider ? site.slider.split('|') : [];
                 var supportQuotes = site.support_quotes ? site.support_quotes.split('|') : ['','',''];
                 var supportImages = site.support_images ? site.support_images.split('|') : ['','',''];
+                var slider = site.slider ? site.slider.split('|') : ['','','','',''];
+                var slider_num = 0;
 
                 $('#e_siteID').val(site.id);
                 $('#e_siteName').val(site.title);
                 $('#e_siteUrl').val(site.url);
                 $('#e_siteContent').val(site.content);
+                if(slider[0] != "") slider_num = 1;
+                if(slider[1] != "") slider_num = 2;
+                if(slider[2] != "") slider_num = 3;
+                if(slider[3] != "") slider_num = 4;
+                if(slider[4] != "") slider_num = 5;
+                $('.editarUsuario .slider_num').val(slider_num);
+                $('.editarUsuario .slider_num').trigger('change');
+                $('.editarUsuario .slider-preview').eq(0).attr('src', slider[0]);
+                $('.editarUsuario .slider-preview').eq(1).attr('src', slider[1]);
+                $('.editarUsuario .slider-preview').eq(2).attr('src', slider[2]);
+                $('.editarUsuario .slider-preview').eq(3).attr('src', slider[3]);
+                $('.editarUsuario .slider-preview').eq(4).attr('src', slider[4]);
                 $('.editarUsuario .preview').eq(0).attr('src', supportImages[0]);
                 $('.editarUsuario .preview').eq(1).attr('src', supportImages[1]);
                 $('.editarUsuario .preview').eq(2).attr('src', supportImages[2]);
@@ -767,7 +781,7 @@ $(document).on('ready', function(){
                     brokerDiv.append($('<p>', {text: value.settlement}));
 
                     for (var i = value.phones.length - 1; i >= 0; i--) {
-                        brokerDiv.append($('<a>', {text: phones[i], href: 'tel:'+phones[i]}));
+            			brokerDiv.append($('<a>', {text: phones[i], href: 'tel:'+phones[i]}));
                     }
 
                     for (var i = value.emails.length - 1; i >= 0; i--) {
@@ -790,6 +804,31 @@ $(document).on('ready', function(){
             e.preventDefault();
             print();
         });
+    }
+    var setSlider = function(){
+    	$('.slider-dragdrop').uploader(host_url+'upload','slide_image', true, 'Arrastra una imagen aquí si deseas cambiar el slide');
+    	$('.slider-dragdrop').on('uploaded', function(e, response){
+        	$(this).parent().find('.slider-preview').attr('src', response.data);
+        });
+    	showSlides($('.slider_num').data('num'));
+    	$('.slider_num').on('change', function(e){
+    		e.preventDefault();
+    		showSlides($(this).val());
+    	});
+    }
+    var showSlides = function(num){
+    	var items = $('.slider-item');
+    	
+    	for(var i = 0; i < 5; i++){
+    		if(i < num){
+    			items.eq(i).show();
+    		}else{
+    			items.eq(i).hide();
+    			items.eq(i).find('.slider-preview').attr('src', '');
+    			items.eq(i).find('input').val('');
+    		}
+    		
+    	}
     }
     var site = {
         "p-home": function(){
@@ -840,6 +879,7 @@ $(document).on('ready', function(){
             updateSiteinfo();
             deleteSiteinfo();
             registerSite();
+            setSlider();
             $('.agregarUsuario .dragdrop').uploader(host_url+'upload','support_image', true);
             $('.agregarUsuario .dragdrop').on('uploaded', function(e, response){
                 $(this).parent().find('.preview').attr('src', response.data);

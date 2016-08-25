@@ -182,8 +182,11 @@ class ApiController extends Controller{
     public function set_site($params){
         $data = array();
         $site = Site::getInstance()->byId($params['id']);
-        $prev_support_quotes = explode('|', $site->support_quotes);
-        $prev_support_images = explode('|', $site->support_images);
+        
+        $prev_support_quotes = $site->support_quotes != "" ? explode('|', $site->support_quotes) : array('','','');
+        $prev_support_images = $site->support_images != "" ? explode('|', $site->support_images) : array('','','');
+        $prev_slide_images = $site->slider != "" ? explode('|', $site->slider) : array('','','','','');
+
         if(Request::put('title')) $data['title'] = utf8_decode(Request::put('title'));
         if(Request::put('content')) $data['content'] = utf8_decode(Request::put('content'));
         if(Request::put('address')) $data['address'] = utf8_decode(Request::put('address'));
@@ -196,17 +199,27 @@ class ApiController extends Controller{
         if(Request::put('emails')) $data['emails'] = utf8_decode(Request::put('emails'));
         if(Request::put('support_quote')){
             $support_quotes = Request::put('support_quote');
-            $support_quotes[0] = $support_quotes[0] != null ? $support_quotes[0] : $prev_support_quotes[0];
-            $support_quotes[1] = $support_quotes[1] != null ? $support_quotes[1] : $prev_support_quotes[1];
-            $support_quotes[2] = $support_quotes[2] != null ? $support_quotes[2] : $prev_support_quotes[2];
+            $support_quotes[0] = $support_quotes[0] != "" ? $support_quotes[0] : $prev_support_quotes[0];
+            $support_quotes[1] = $support_quotes[1] != "" ? $support_quotes[1] : $prev_support_quotes[1];
+            $support_quotes[2] = $support_quotes[2] != "" ? $support_quotes[2] : $prev_support_quotes[2];
             $data['support_quotes'] = implode('|', $support_quotes);
         }
         if(Request::put('support_image')) {
             $support_images = Request::put('support_image');
-            $support_images[0] = $support_images[0] != null ? $support_images[0] : $prev_support_images[0];
-            $support_images[1] = $support_images[1] != null ? $support_images[1] : $prev_support_images[1];
-            $support_images[2] = $support_images[2] != null ? $support_images[2] : $prev_support_images[2];
+            $support_images[0] = $support_images[0] != "" ? $support_images[0] : $prev_support_images[0];
+            $support_images[1] = $support_images[1] != "" ? $support_images[1] : $prev_support_images[1];
+            $support_images[2] = $support_images[2] != "" ? $support_images[2] : $prev_support_images[2];
             $data['support_images'] = implode('|', $support_images);
+        }
+        if(Request::put('slide_image')) {
+            $slide_images = Request::put('slide_image');
+            $slide_num = Request::put('slider_num');
+            $slide_images[0] = $slide_images[0] != "" && 0 < $slide_num ? $slide_images[0] : $prev_slide_images[0];
+            $slide_images[1] = $slide_images[1] != "" && 1 < $slide_num ? $slide_images[1] : $prev_slide_images[1];
+            $slide_images[2] = $slide_images[2] != "" && 2 < $slide_num ? $slide_images[2] : $prev_slide_images[2];
+            $slide_images[3] = $slide_images[3] != "" && 3 < $slide_num ? $slide_images[3] : $prev_slide_images[3];
+            $slide_images[4] = $slide_images[4] != "" && 4 < $slide_num ? $slide_images[4] : $prev_slide_images[4];
+            $data['slider'] = implode('|', $slide_images);
         }
         if(Request::put('origin') == "user"){
             $mail_obj = new Mail();
