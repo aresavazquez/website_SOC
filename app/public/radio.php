@@ -46,7 +46,7 @@
         </div>
         <a class="boton-radio" href="audios.php">Ver anteriores</a>
     </div>
-        <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenMax.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenMax.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script type="text/javascript" src="./js/radio.js"></script>
         <script>
