@@ -1,0 +1,84 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+html, body{
+	background: #000 url(../img/vegas/back2.gif)no-repeat fixed;
+	background-size: cover;
+	height: 100%;
+	width: 100%;
+	font-family: 'MuseoSans',sans-serif;
+}
+.container {
+	width: 637px;
+	height: auto;
+	/*background-color: rgba(0, 0, 0, 0.8);*/
+	margin: 0 auto;
+}
+.backGradient{
+    background-color: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+}
+.container .vegas{
+    width: 637px;
+    padding-bottom: 60px;
+}
+.container .vegas img{
+	margin: auto;
+    display: block;
+}
+.container .vegas .logo{
+	width: 200px;
+	opacity: 0;
+	margin: 150px auto 300px;
+}
+.container .vegas .tips{
+	opacity: 0;
+}
+.container .vegas div{
+	position: relative;
+	height: 950px;
+    background: -webkit-linear-gradient(black, transparent);
+    background: -o-linear-gradient(black, transparent);
+    background: -moz-linear-gradient(black, transparent);
+    background: linear-gradient(black, transparent);
+}
+.container .vegas div .gif{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    opacity: 0;
+}
+.container .vegas a{
+    background: #1dafec;
+    color: #fff;
+    padding: 15px;
+    margin: 50px auto;
+    display: block;
+    text-align: center;
+    width: 200px;
+    font-weight: 100;
+    text-decoration: none;
+    border-radius: 25px;
+}
+.container .vegas .drop{
+    background: #1dafec;
+    color: #fff;
+    padding: 15px;
+    margin: 50px auto;
+    display: block;
+    text-align: center;
+    width: 200px;
+    font-weight: 100;
+    text-decoration: none;
+    border-radius: 25px;
+}
+
+
+
+
+

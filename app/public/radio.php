@@ -26,8 +26,8 @@
                     Emisión de Imagen Informativa, El encuentro con la verdad, con Pascal Beltrán del Río.
                 </p>
                 <ul class="horario">
-                  <li class="mes"></li>
-                  <!--li><a href="http://www.imagen.com.mx/transmision-en-vivo"  target="_blank">Agosto 3 - Mejora de Hipoteca</a></li-->
+                  <li class="mes">Agosto</li>
+                  <li><a href="http://www.imagen.com.mx/transmision-en-vivo"  target="_blank">Agosto 25 14 hrs.- Sustitución de Hipoteca</a></li>
                 </ul>
             </div>
             <div class="programa">
@@ -40,7 +40,7 @@
                 </p>
                 <ul class="horario">
                     <li class="mes">Agosto - 11:45 hrs.</li>
-                    <li><a href="http://www.imagen.com.mx/transmision-en-vivo"  target="_blank">Agosto 11 - Tu Crédito Hipotecario con un Asesor SOC</a></li>
+                    <li><a href="http://www.imagen.com.mx/transmision-en-vivo"  target="_blank"></a></li>
                 </ul>
             </div>
         </div>

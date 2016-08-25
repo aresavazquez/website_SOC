@@ -239,14 +239,22 @@ $(document).on('ready', function(){
     var tx = new TimelineLite({onComplete: function(){
         this.restart();
     }});
+    tx.to('.imgav1', .5, {opacity: 1, display: "block", ease: Power2.easeOut, x: 5});
     tx.to('.avuno', .5, {opacity: 1, display: "block"});
     tx.to('.avuno', .5, {opacity: 0, display: "none", delay: 4.5});
+    tx.to('.imgav1', .5, {opacity: 0, display: "none", ease: Power2.easeOut, x: 0});
 
+    tx.to('.imgav2', .5, {opacity: 1, display: "block", ease: Power2.easeOut, x: 5});
     tx.to('.avdos', 1, {opacity: 1, display: "block"});
     tx.to('.avdos', .5, {opacity: 0, display: "none", delay: 4.5});
+    tx.to('.imgav2', .5, {opacity: 0, display: "none", ease: Power2.easeOut, x: 0});
 
+    tx.to('.imgav3', .5, {opacity: 1, display: "block", ease: Power2.easeOut, x: 5});
     tx.to('.avtres', 1, {opacity: 1, display: "block"});
     tx.to('.avtres', .5, {opacity: 0, display: "none", delay: 4.5});
+    tx.to('.imgav3', .5, {opacity: 0, display: "none", ease: Power2.easeOut, x: 0});
+
+
     $('.simular').on('click', function(e){
         e.preventDefault ();
         var top = $('.simulador').offset().top;

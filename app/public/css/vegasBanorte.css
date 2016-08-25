@@ -1,0 +1,120 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+html, body{
+	background: #000 url(../img/banorte/back2.jpg)no-repeat fixed;
+	background-size: cover;
+	height: 100%;
+	width: 100%;
+	font-family: 'MuseoSans',sans-serif;
+}
+.container {
+	width: 637px;
+	height: auto;
+	background-color: rgba(0, 0, 0, 0.8);
+	margin: 0 auto;
+}
+.backGradient{
+    background-color: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+}
+.container .vegas{
+    width: 637px;
+    padding-bottom: 60px;
+    color: #fff;
+}
+.container .vegas .fecha{
+    font-weight: 100;
+    width: 350px;
+    text-align: center;
+    margin: auto;
+    padding: 0 40px 40px;
+}
+.container .vegas .texto{
+    font-size: 22px;
+    font-weight: 100;
+    text-align: center;
+    color: #1dafec;
+    font-style: normal !important;
+}
+.container .vegas ul{
+    margin: auto;
+    width: 370px;
+    font-weight: 100;
+    padding: 30px;
+    font-size: 18px;
+}
+.container .vegas .borde{
+    background: #1dafec;
+    height: 2px;
+    width: 100px;
+    margin: 30px auto;
+}
+.container .vegas ul li{
+    padding: 15px 0;
+}
+.container .vegas .posiciones li{
+    list-style: none;
+    font-size: 16px;
+}
+.container .vegas .posiciones li span{ 
+    color: #1dafec;
+    padding-right: 20px;
+}
+.container .vegas img{
+	margin: auto;
+    display: block;
+}
+.container .vegas .te_lleva{
+    width: 450px;
+}
+.container .vegas .logo{
+	width: 250px;
+	opacity: 0;
+    padding: 0 0 35px;
+}
+.container .vegas .tips{
+	opacity: 0;
+}
+.container .vegas div{
+	position: relative;
+	height: 950px;
+    background: -webkit-linear-gradient(black, transparent);
+    background: -o-linear-gradient(black, transparent);
+    background: -moz-linear-gradient(black, transparent);
+    background: linear-gradient(black, transparent);
+}
+.container .vegas div .gif{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    opacity: 0;
+}
+.container .vegas a{
+    background: #1dafec;
+    color: #fff;
+    padding: 15px;
+    margin: auto;
+    display: block;
+    text-align: center;
+    width: 230px;
+    font-weight: 100;
+    text-decoration: none;
+    border-radius: 25px;
+}
+.black .container .vegas p{
+    text-align: center;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: 100;
+    font-style: italic;
+}
+
+
+
+
