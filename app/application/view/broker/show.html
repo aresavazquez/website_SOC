@@ -17,9 +17,21 @@
         <div id="carousel-example-generic" class="carousel slide microUsuario" data-ride="carousel">
           <!-- Indicators -->
           <ol class="carousel-indicators">
+            {% if slider[0] != '' %}
             <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            {% endif %}
+            {% if slider[1] != '' %}
             <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            {% endif %}
+            {% if slider[2] != '' %}
             <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            {% endif %}
+            {% if slider[3] != '' %}
+            <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+            {% endif %}
+            {% if slider[4] != '' %}
+            <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+            {% endif %}
           </ol>
 
           <!-- Wrapper for slides -->
