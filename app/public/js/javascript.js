@@ -572,10 +572,12 @@ $(document).on('ready', function(){
                 $('.editarUsuario textarea').eq(1).text(supportQuotes[0]);
                 $('.editarUsuario textarea').eq(2).text(supportQuotes[1]);
                 $('.editarUsuario textarea').eq(3).text(supportQuotes[2]);
+                $('#e_siteZipcode').val(site.zipcode);
                 $('#e_siteState').val(site.state_id);
                 $('#e_siteCity').val(site.city);
                 $('#e_siteSettlement').val(site.settlement);
                 $('#e_siteAddress').val(site.address);
+                $('#e_siteInt').val(site.interior);
                 $('#e_siteLatlon').val(site.latlon);
                 $('#e_siteMails').val(site.emails);
                 $('#e_siteTelephone').val(site.phones);

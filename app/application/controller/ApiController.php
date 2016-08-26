@@ -193,10 +193,26 @@ class ApiController extends Controller{
         if(Request::put('state_id')) $data['state_id'] = utf8_decode(Request::put('state_id'));
         if(Request::put('city')) $data['city'] = utf8_decode(Request::put('city'));
         if(Request::put('settlement')) $data['settlement'] = utf8_decode(Request::put('settlement'));
+        if(Request::put('zipcode')) $data['zipcode'] = utf8_encode(Request::put('zipcode'));
         if(Request::put('address')) $data['address'] = utf8_decode(Request::put('address'));
-        if(Request::put('latlon')) $data['latlon'] = utf8_decode(Request::put('latlon'));
+        if(Request::put('interior')) $data['interior'] = utf8_encode(Request::put('interior'));
+        //if(Request::put('latlon')) $data['latlon'] = utf8_decode(Request::put('latlon'));
         if(Request::put('phones')) $data['phones'] = utf8_decode(Request::put('phones'));
         if(Request::put('emails')) $data['emails'] = utf8_decode(Request::put('emails'));
+
+
+        $address = utf8_encode($data['address'] . ',' . $data['settlement'] . ',' . $data['city']);
+        $curl = curl_init();
+        curl_setopt($curl, CURLOPT_URL, 'https://maps.googleapis.com/maps/api/geocode/json?address=' . rawurlencode($address));
+        curl_setopt ($curl, CURLOPT_RETURNTRANSFER, 1);
+        $json = curl_exec($curl);
+        curl_close ($curl);
+
+        if(json_decode($json)->results[0]){
+            $location = json_decode($json)->results[0]->geometry->location;
+            $data['latlon'] = $location->lat . ',' . $location->lng;
+        }
+
         if(Request::put('support_quote')){
             $support_quotes = Request::put('support_quote');
             $support_quotes[0] = $support_quotes[0] != "" ? $support_quotes[0] : $prev_support_quotes[0];
