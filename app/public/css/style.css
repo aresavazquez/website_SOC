@@ -25,7 +25,13 @@ a,a:visited{
 .nota{
     color: #fff;
     text-align: center;
+    width: 100%;
+    margin: auto;
+}
+.notaMicro{
+    color: #fff;
     width: 70%;
+    text-align: center;
     margin: auto;
 }
 .searchSend{
@@ -1824,7 +1830,7 @@ h2.zero,p.zero {
     padding: 0 0 30px;
 }
 .nota .contenido-nota{
-    padding: 30px 100px 50px;
+    padding: 120px 100px 50px;
     height: 100%;
     margin: auto;
     background: rgba(0, 0, 0, .4);
@@ -1870,7 +1876,7 @@ h2.zero,p.zero {
     background: #fff;
 }
 .notas-recientes div{
-    padding: 30px 15px 15px;
+    padding: 120px 15px 15px;
 
 }
 .notas-recientes div form input{
@@ -2710,11 +2716,43 @@ select option {
         position: relative;
     }
 }
+@media screen and (max-width: 1040px){
+    .nota .contenido-nota {
+        padding: 120px 0px 50px;
+    }
+    .sub-menu a p {
+        width: 160px;
+    }
+    .sub-menu a .soc-premia {
+        width: 155px;
+    }
+    .sub-menu a .prensaM {
+        width: 166px;
+    }
+    .sub-menu a .franquicia-icon {
+        width: 160px;
+    }
+    .sub-menu a .propiedades {
+        width: 160px;
+    }
+    .sub-menu a .inmobiliarias {
+        width: 161px;
+    }
+    .sub-menu a .asesor {
+        width: 162px;
+    }
+}
 @media screen and (max-width: 768px){
     .sub-menu{
         justify-content: space-between;
         align-items: center;
         overflow-x: scroll;
+    }
+    .container-inmobiliaria h4{
+        width: 245px;
+    }
+    .container_tips {
+        padding: 50px 0;
     }
     .nota .nota-general {
         width: 100%;
@@ -2731,7 +2769,7 @@ select option {
         padding: 0;
     }
     .nota .contenido-nota {
-        padding: 30px 35px 50px;
+        padding: 110px 35px 50px;
     }
     .nota .contenido-nota .redes {
         width: 100%;
@@ -2750,6 +2788,7 @@ select option {
     }
     .carousel .item .sliderImg{
         width: 445px;
+        margin: 0;
     }
     .carousel .item .mejora{
         width: 832px;
