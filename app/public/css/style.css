@@ -52,6 +52,7 @@ a,a:visited{
 .datos.clienteMicro{
     background: url(../img/head/back3.jpg)no-repeat center fixed;
     background-size: cover;
+    padding-bottom: 0;
 }
 #simluadorUser {
     background: #3a5e94;
@@ -1358,7 +1359,15 @@ center .text_simlador{
     color: #4fa753;
 }
 .footer.micro{
-    padding: 40px 0 0;
+    padding: 30px 0 55px;
+    background: none;
+}
+.footer.micro p{
+    font-size: 17px;
+}
+.footer.micro p a{
+    color: #fff;
+    font-style: italic;
 }
 /*contacto*/
 .head_contacto{
