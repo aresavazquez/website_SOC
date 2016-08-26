@@ -123,7 +123,7 @@
             <input type="submit" class="send">
             <div class="footer micro">
               <p class="tel">Tel: <a href="tel:{{ site.phones }}">{{ site.phones }}</a></p>
-              <p class="direccion">{{ site.address }}, {{ site.settlement }}. {{ site.city }}.</p>
+              <p class="direccion">{{ site.address }}, {{ site.settlement }}. {{ site.city }}, {{ state }}.</p>
           </div>
         </form>
         <iframe src="https://maps.google.com/maps?q={{site.latlon}}&output=embed" width="800" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>

@@ -13,20 +13,18 @@ class BrokerController extends Controller
         $site = Site::getInstance()->byUrl($params['url']);
         if(!$site) Redirect::to('404');
 
-        $lat_lon = explode(',', $site->latlon);
         $slider = $site->slider != "" ? explode('|', $site->slider) : null;
-
 
         $support_images = $site->support_images != "" ? explode('|', $site->support_images) : null;
         $support_quotes =  $site->support_quotes != "" ? explode('|', $site->support_quotes) : null;
         $support = array('images'=>$support_images, 'quotes'=>$support_quotes);
 
-        $states = State::getInstance()->all();
-
+       $states = State::getInstance()->all();
+       $state = State::byId($site->state_id)->name;
         Session::set('feedback_positive', array());
         $feedback = (Session::get('feedback_positive')) ? join(',', Session::get('feedback_positive')) : "";
 
-        $this->View->render('broker/show.html', array('site'=>$site, 'states'=>$states, 'slider'=>$slider, 'support'=>$support, 'feedback'=>$feedback));
+        $this->View->render('broker/show.html', array('site'=>$site, 'states'=>$states, 'slider'=>$slider, 'support'=>$support, 'state'=>$state, 'feedback'=>$feedback));
     }
 
     public function edit(){
