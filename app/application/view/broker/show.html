@@ -31,20 +31,24 @@
           <!-- Wrapper for slides -->
           <div class="carousel-inner micro" role="listbox">
             <div class="item active">
-              <img src="{{ slider ? slider[0] : './img/micrositios/asesor.jpg' }}" alt="...">
+              <img src="{{ slider and slider[0] != '' ? slider[0] : './img/micrositios/asesor.jpg' }}" alt="...">
             </div>
             <div class="item">
-              <img src="{{ slider ? slider[1] : './img/micrositios/mejora.jpg' }}" alt="...">
+              <img src="{{ slider and slider[1] != '' ? slider[1] : './img/micrositios/mejora.jpg' }}" alt="...">
             </div>
             <div class="item">
-              <img src="{{ slider ? slider[2] : './img/micrositios/premia.jpg' }}" alt="...">
+              <img src="{{ slider and slider[2] != '' ? slider[2] : './img/micrositios/premia.jpg' }}" alt="...">
             </div>
+            {% if slider[3] != '' %}
             <div class="item">
-              <img src="{{ slider ? slider[3] : './img/micrositios/quince.jpg' }}" alt="...">
+              <img src="{{ slider[3] }}" alt="...">
             </div>
+            {% endif %}
+            {% if slider[4] != '' %}
             <div class="item">
-              <img src="{{ slider ? slider[4] : './img/micrositios/widget.jpg' }}" alt="...">
+              <img src="{{ slider[4] }}" alt="...">
             </div>
+            {% endif %}
           </div>
         </div>
       </div>
@@ -120,5 +124,9 @@
         </form>
         <iframe src="https://maps.google.com/maps?q={{site.latlon}}&output=embed" width="800" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
     </div>
+    <div class="footer micro">
+      <p class="tel"><a href="tel:{{ site.phones }}">{{ site.phones }}</a></p>
+      <p class="direccion">{{ site.address }}, {{ site.settlement }}. {{ site.city }}.</p>
+      <img src="./img/micrositios/logo.png" class="condu">
   </div>
 {% endblock %}

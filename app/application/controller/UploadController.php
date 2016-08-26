@@ -14,6 +14,7 @@ class UploadController extends Controller
     	
     	$file = $_FILES['file']['tmp_name'];
     	$new_file_name = uniqid() . '_' . strtolower($_FILES['file']['name']);
+        $new_file_name = $this->sluggify($new_file_name);
     	$is_valid = null;
     	$result_array = getimagesize($file); 
 
@@ -44,6 +45,7 @@ class UploadController extends Controller
         $file = $_FILES['file']['tmp_name'];
         $userID = $_POST['user_id'];
         $new_file_name = 'profile/' . $userID . '_' . strtolower($_FILES['file']['name']);
+        $new_file_name = $this->sluggify($new_file_name);
         $is_valid = null;
         $result_array = getimagesize($file); 
 
@@ -74,6 +76,7 @@ class UploadController extends Controller
         
         $file = $_FILES['file']['tmp_name'];
         $new_file_name = 'profile/' . strtolower($_FILES['file']['name']);
+        $new_file_name = $this->sluggify($new_file_name);
         $is_valid = null;
         $result_array = getimagesize($file); 
 
@@ -96,6 +99,26 @@ class UploadController extends Controller
             $path = Config::get('URL') . 'img/uploads/' . $new_file_name;
             $this->View->renderJSON($this->success_code($path));
         }
+    }
+
+    private function sluggify($url){
+        # Prep string with some basic normalization
+        $url = strtolower($url);
+        $url = strip_tags($url);
+        $url = stripslashes($url);
+        $url = html_entity_decode($url);
+
+        # Remove quotes (can't, etc.)
+        $url = str_replace('\'', '', $url);
+
+        # Replace non-alpha numeric with hyphens
+        $match = '/[^a-z0-9]+/';
+        $replace = '-';
+        $url = preg_replace($match, $replace, $url);
+
+        $url = trim($url, '-');
+
+        return $url;
     }
 
     private function success_code($data){

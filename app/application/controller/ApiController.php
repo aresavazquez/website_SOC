@@ -202,7 +202,7 @@ class ApiController extends Controller{
             $support_quotes[0] = $support_quotes[0] != "" ? $support_quotes[0] : $prev_support_quotes[0];
             $support_quotes[1] = $support_quotes[1] != "" ? $support_quotes[1] : $prev_support_quotes[1];
             $support_quotes[2] = $support_quotes[2] != "" ? $support_quotes[2] : $prev_support_quotes[2];
-            $data['support_quotes'] = implode('|', $support_quotes);
+            $data['support_quotes'] = utf8_decode(implode('|', $support_quotes));
         }
         if(Request::put('support_image')) {
             $support_images = Request::put('support_image');
@@ -214,11 +214,11 @@ class ApiController extends Controller{
         if(Request::put('slide_image')) {
             $slide_images = Request::put('slide_image');
             $slide_num = Request::put('slider_num');
-            $slide_images[0] = $slide_images[0] != "" && 0 < $slide_num ? $slide_images[0] : $prev_slide_images[0];
-            $slide_images[1] = $slide_images[1] != "" && 1 < $slide_num ? $slide_images[1] : $prev_slide_images[1];
-            $slide_images[2] = $slide_images[2] != "" && 2 < $slide_num ? $slide_images[2] : $prev_slide_images[2];
-            $slide_images[3] = $slide_images[3] != "" && 3 < $slide_num ? $slide_images[3] : $prev_slide_images[3];
-            $slide_images[4] = $slide_images[4] != "" && 4 < $slide_num ? $slide_images[4] : $prev_slide_images[4];
+            if(0 < $slide_num) $slide_images[0] = $slide_images[0] != "" ? $slide_images[0] : $prev_slide_images[0];
+            if(1 < $slide_num) $slide_images[1] = $slide_images[1] != "" ? $slide_images[1] : $prev_slide_images[1];
+            if(2 < $slide_num) $slide_images[2] = $slide_images[2] != "" ? $slide_images[2] : $prev_slide_images[2];
+            if(3 < $slide_num) $slide_images[3] = $slide_images[3] != "" ? $slide_images[3] : $prev_slide_images[3];
+            if(4 < $slide_num) $slide_images[4] = $slide_images[4] != "" ? $slide_images[4] : $prev_slide_images[4];
             $data['slider'] = implode('|', $slide_images);
         }
         if(Request::put('origin') == "user"){
