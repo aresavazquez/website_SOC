@@ -767,6 +767,7 @@ $(document).on('ready', function(){
             });
         });
     }
+    var brokers = null;
     var findBroker = function(){
         $('#ddlEstados').on('change', function(){
             var state_id = $(this).val();
@@ -778,29 +779,33 @@ $(document).on('ready', function(){
                     TweenLite.to('.responses', 0.3, {opacity: 1});
                     return;
                 }
-                var brokers = response.data;
+                brokers = response.data;
                 $('.contenido').empty();
                 $.each(brokers, function(index, value){
-                    var phones = value.phones.split(',');
-                    var emails = value.emails.split(',');
+                    var phones = value.phones != "" ? value.phones.split(',') : "";
+                    var emails = value.emails != "" ? value.emails.split(',') : "";
+                    var map_src = 'https://maps.google.com/maps?q='+value.latlon+'&output=embed';
+                    
                     var brokerDiv = $('<div>', {class: 'broker'});
 
                     brokerDiv.append($('<h1>', {text: value.title}));
-                    brokerDiv.append($('<a>', {text: 'Micrositio', href: host_url + value.url}));
+                    brokerDiv.append($('<a>', {text: 'Micrositio', href: host_url + value.url, target: '_blank'}));
                     brokerDiv.append($('<p>', {text: value.city}));
                     brokerDiv.append($('<p>', {text: value.settlement}));
 
-                    for (var i = value.phones.length - 1; i >= 0; i--) {
+                    for (var i = phones.length - 1; i >= 0; i--) {
             			brokerDiv.append($('<a>', {text: phones[i], href: 'tel:'+phones[i]}));
                     }
 
-                    for (var i = value.emails.length - 1; i >= 0; i--) {
+                    for (var i = emails.length - 1; i >= 0; i--) {
                         brokerDiv.append($('<a>', {text: emails[i], href: 'mailto:'+emails[i]}));
                     }
 
                     brokerDiv.append($('<address>', {text: value.address}));
-                    brokerDiv.append($('<a>', {text: 'Ver mapa', href: value.coordinates}));
-
+                    brokerDiv.append($('<a>', {text: 'Ver mapa', href: map_src, class: 'map'}));
+                    if(value.subsidiaries.total > 0){
+                    	brokerDiv.append($('<a>', {text: 'Ver sucursales', class: 'subsidiaries', href: index}));
+                    }
                     brokerDiv.appendTo('.contenido');
                 });
                 TweenLite.set('.contenido', {display: 'flex'});
@@ -840,6 +845,62 @@ $(document).on('ready', function(){
     		
     	}
     }
+    var mapListeners = function(){
+    	$('.contenido').on('click', '.broker .map', function(e){
+    		e.preventDefault();
+    		$('.modal-map iframe').attr('src', $(this).attr('href'));
+    		TweenLite.set('.modal-map', {display: 'flex', scale: 0.5});
+    		TweenLite.to('.modal-map', 0.5, {opacity:1, scale:1, delay: 0.3});
+    	});
+    	$('.subsidiaries-contenido').on('click', '.broker .map', function(e){
+    		e.preventDefault();
+    		$('.modal-map iframe').attr('src', $(this).attr('href'));
+    		TweenLite.set('.modal-map', {display: 'flex', scale: 0.5});
+    		TweenLite.to('.modal-map', 0.5, {opacity:1, scale:1, delay: 0.3});
+    	});
+    	$('.modal-map .map-close').on('click', function(e){
+    		e.preventDefault();
+    		TweenLite.to('.modal-map', 0.3, {opacity:0, scale:.8, onComplete: function(){
+    			TweenLite.set('.modal-map', {display: 'none'});
+    		}});
+    	});
+    }
+    var subsidiaryListeners = function(){
+    	$('.contenido').on('click', '.broker .subsidiaries', function(e){
+    		e.preventDefault();
+    		var broker = brokers[$(this).attr('href')];
+    		$('.subsidiaries-contenido').empty();
+            $.each(broker.subsidiaries.items, function(j, sub){
+            	var sphones = sub.phones && sub.phones != "" ? sub.phones.split(',') : "";
+            	var semails = sub.emails && sub.emails != "" ? sub.emails.split(',') : "";
+            	var sub_src = 'https://maps.google.com/maps?q='+sub.latlon+'&output=embed';
+
+            	var subsidiaryDiv = $('<div>', {class: 'broker'});
+
+            	subsidiaryDiv.append($('<h1>', {text: sub.title}));
+            	subsidiaryDiv.append($('<a>', {text: 'Micrositio', href: host_url + sub.url, target: '_blank'}));
+            	subsidiaryDiv.append($('<p>', {text: sub.city}));
+            	subsidiaryDiv.append($('<p>', {text: sub.settlement}));
+            	for (var i = sphones.length - 1; i >= 0; i--) {
+            		subsidiaryDiv.append($('<a>', {text: sphones[i], href: 'tel:'+sphones[i]}));
+            	}
+            	for (var i = semails.length - 1; i >= 0; i--) {
+            		subsidiaryDiv.append($('<a>', {text: semails[i], href: 'mailto:'+semails[i]}));
+            	}
+            	subsidiaryDiv.append($('<address>', {text: sub.address}));
+            	subsidiaryDiv.append($('<a>', {text: 'Ver mapa', href: sub_src, class: 'map'}));
+            	subsidiaryDiv.appendTo('.subsidiaries-contenido');
+            });
+            TweenLite.set('.modal-subsidiaries', {display: 'flex', scale: 0.5});
+            TweenLite.to('.modal-subsidiaries', 0.5, {opacity:1, scale:1, delay: 0.3});
+    	});
+    	$('.modal-subsidiaries .subsidiaries-close').on('click', function(e){
+    		e.preventDefault();
+    		TweenLite.to('.modal-subsidiaries', 0.3, {opacity:0, scale:.8, onComplete: function(){
+    			TweenLite.set('.modal-subsidiaries', {display: 'none'});
+    		}});
+    	});
+    }
     var site = {
         "p-home": function(){
             animateHomeIntro();
@@ -856,6 +917,8 @@ $(document).on('ready', function(){
         },
         "p-offices": function(){
             findBroker();
+            mapListeners();
+            subsidiaryListeners();
         },
         "asesores": function(){
             loginForm();

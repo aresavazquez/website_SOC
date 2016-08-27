@@ -25,7 +25,7 @@ class Site {
     }
 
     public static function byState($id){
-        $result = self::$PDO->_where("*", "state_id=$id");
+        $result = self::$PDO->_where("*", "state_id=$id AND site_type=1");
         return $result->get('title,content,address,settlement,city,support_quotes,support_images');
     }
 

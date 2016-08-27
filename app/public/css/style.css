@@ -2195,8 +2195,6 @@ h2.zero,p.zero {
 /*------------------ directorio estado*/
 .directorio-estado .contenido{
     display: none;
-    width: 100%;
-    justify-content: center;
     flex-wrap: wrap;
     background: #fff;
     color: #41546e;
@@ -2205,6 +2203,8 @@ h2.zero,p.zero {
 }
 .directorio-estado .contenido div{
     width: 400px;
+    margin: 0 10px;
+    padding: 10px 15px;
     border-bottom: 1px solid #4fa753;
 }
 .directorio-estado .contenido div h1{
@@ -3270,4 +3270,69 @@ div.dragdrop{
     font-weight: bold;
     color: #4fa753;
     text-align: center;
+}
+
+/* Modal Map */
+div.modal-map{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(22,25,59,0.5);
+    z-index: 100;
+    justify-content: center;
+    align-items: center;
+}
+div.modal-map .map-container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+/* Modal Subsidiaries */
+div.modal-subsidiaries{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(22,25,59,0.5);
+    z-index: 98;
+    justify-content: center;
+    align-items: center;
+}
+div.modal-subsidiaries .subsidiaries-container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+div.modal-subsidiaries .subsidiaries-contenido{
+    display: flex;
+    flex-wrap: wrap;
+    background: #fff;
+    color: #41546e;
+    border-radius: 10px;
+    padding: 30px;
+}
+div.modal-subsidiaries .subsidiaries-contenido div{
+    width: 400px;
+    margin: 0 10px;
+    padding: 10px 15px;
+    border-bottom: 1px solid #4fa753;
+}
+div.modal-subsidiaries .subsidiaries-contenido div h1{
+    font-size: 21px;
+}
+div.modal-subsidiaries .subsidiaries-contenido a{
+    color: #428bca;
+    display: block;
+}
+div.modal-subsidiaries .subsidiaries-contenido .broker{
+    width: 400px;
+    margin: 0 10px;
+    padding: 10px 15px;
+    border-bottom: 1px solid #4fa753;
 }

@@ -70,10 +70,8 @@ class ApiController extends Controller{
          Session::set('feedback_negative', array());
          $brokers = (array) Site::getInstance()->byState(Request::post('state'));
          if(count($brokers) > 0){
-            foreach ($brokers as $key => $broker) {
-                $broker->title = utf8_encode($broker->title);
-                $broker->content = utf8_encode($broker->content);
-                $broker->address = utf8_encode($broker->address);
+            foreach ($brokers as $broker) {
+                $broker->subsidiaries = Site::getInstance()->allFrom($broker->id);
             }
             $this->View->renderJSON($this->success_code($brokers));
         }else{
