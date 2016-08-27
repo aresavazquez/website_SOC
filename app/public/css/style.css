@@ -2652,6 +2652,9 @@ select option {
     margin: 5px;
     height: 165px;
 }
+.containerOffices .cardOffices.subsidiary{
+    border-left: 5px solid #4fa753;
+}
 .containerOffices .cardOffices .offices{
     display: flex;
 }

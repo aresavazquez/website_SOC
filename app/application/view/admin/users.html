@@ -16,7 +16,7 @@
 			<a href="" class="plusUser"><span></span>+ Agregar usuario</a>
 			<div class="containerOffices">
 				{% for user in users %}
-				<div class="cardOffices">
+				<div class="cardOffices {{ user.id_role == 3 ? 'subsidiary':'' }}">
 					<div class="offices">
 						<div>
 							{% if user.profile_image %}
