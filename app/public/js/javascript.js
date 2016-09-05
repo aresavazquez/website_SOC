@@ -771,6 +771,9 @@ $(document).on('ready', function(){
     var findBroker = function(){
         $('#ddlEstados').on('change', function(){
             var state_id = $(this).val();
+            $('.responses').text('Buscando oficinas en este estado...');
+            TweenLite.set('.responses', {display: 'block', opacity: 0});
+            TweenLite.to('.responses', 0.3, {opacity: 1});
             $.post(host_url + "api/v1/brokers", {state: state_id}, function(response){
                 if(response.status == 500){
                     $('.responses').text(response.errors[0]);
@@ -811,6 +814,11 @@ $(document).on('ready', function(){
                 TweenLite.set('.contenido', {display: 'flex'});
                 TweenLite.set('.responses', {display: 'none'});
                 TweenMax.staggerFrom('.broker', 0.3, {alpha: 0, y: -10, delay: .1}, .2);
+            })
+            .fail(function(){
+            	$('.responses').text('Hubo un error en la búsqueda, inténtalo nuevamente');
+            	TweenLite.set('.responses', {display: 'block', opacity: 0});
+            	TweenLite.to('.responses', 0.3, {opacity: 1});
             });
         });
     }
