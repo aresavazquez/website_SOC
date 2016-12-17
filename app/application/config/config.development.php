@@ -25,10 +25,14 @@ return array(
 	 * DB_CHARSET The charset, necessary for security reasons. Check Database.php class for more info.
 	 */
 	'DB_TYPE' => 'mysql',
-	'DB_HOST' => 'digitaldealers.mx',
+	//'DB_HOST' => 'localhost',
+	//'DB_NAME' => 'soc_site',
+	//'DB_USER' => 'root',
+	//'DB_PASS' => '5Um4tr4,',
+	'DB_HOST' => '192.168.99.100',
 	'DB_NAME' => 'soc_site',
-	'DB_USER' => '3SCQ2sJzq5Tv',
-	'DB_PASS' => 'S7vbaMmj5dWNxtje',
+	'DB_USER' => 'digital',
+	'DB_PASS' => '12345',
 	'DB_PORT' => '3306',
 	'DB_CHARSET' => 'utf8',
 	/**
@@ -57,12 +61,12 @@ return array(
      * COOKIE_HTTP: If set to true, Cookies that can't be accessed by JS - Highly recommended!
      * SESSION_RUNTIME: How long should a session cookie be valid by seconds, 604800 = 1 week.
 	 */
-	'COOKIE_RUNTIME' => 1209600,
+	'COOKIE_RUNTIME' => 1,//1209600,
 	'COOKIE_PATH' => '/',
     'COOKIE_DOMAIN' => "",
     'COOKIE_SECURE' => false,
     'COOKIE_HTTP' => true,
-    'SESSION_RUNTIME' => 604800,
+    'SESSION_RUNTIME' => 1,//604800,
 	/**
      * Configuration for: Encryption Keys
      * ENCRYPTION_KEY, HMAC_SALT: Currently used to encrypt and decrypt publicly visible values, like the user id in
@@ -84,10 +88,10 @@ return array(
 	 */
 	'EMAIL_USED_MAILER' => 'phpmailer',
 	'EMAIL_USE_SMTP' => true,
-	'EMAIL_SMTP_HOST' => 'smtp.gmail.com',
+	'EMAIL_SMTP_HOST' => 'mail.socasesores.com',
 	'EMAIL_SMTP_AUTH' => true,
-	'EMAIL_SMTP_USERNAME' => 'webSOCasesores@gmail.com',
-	'EMAIL_SMTP_PASSWORD' => 'asesoressoc',
+	'EMAIL_SMTP_USERNAME' => 'contacto@socasesores.com',
+	'EMAIL_SMTP_PASSWORD' => 'KKlOhZ',
 	'EMAIL_SMTP_PORT' => 465,
 	'EMAIL_SMTP_ENCRYPTION' => 'ssl',
 	/**

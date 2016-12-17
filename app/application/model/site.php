@@ -21,28 +21,27 @@ class Site {
 
     public static function allFrom($id){
         $result = self::$PDO->_where("*", "site_id=$id");
-        $items = $result->get('title,content,address,settlement,city,support_quotes,support_images');
-        return array('items'=>$items, 'total'=>$result->count());
+        return array('items'=>$result->get('title,content,settlement,city,support_quotes,support_images'), 'total'=>$result->count());
     }
 
     public static function byState($id){
         $result = self::$PDO->_where("*", "state_id=$id AND site_type=1");
-        return $result->get('title,content,address,settlement,city,support_quotes,support_images');
+        return $result->get('title,content,phones,address,settlement,city,support_quotes,support_images');
     }
 
     public static function byUser($id){
         $result = self::$PDO->_where("*", "user_id=$id");
-        return $result->first('title,content,address,settlement,city,support_quotes,support_images');
+        return $result->first('title,content,phones,address,settlement,city,support_quotes,support_images');
     }
 
     public static function byUrl($url) {
         $result = self::$PDO->_where("*", "url='$url'");
-        return $result->first('title,content,address,settlement,city,support_quotes,support_images');
+        return $result->first('title,content,phones,address,settlement,city,support_quotes,support_images');
     }
 
     public static function byId($id) {
         $result = self::$PDO->_where("*", "id='$id'");
-        return $result->first('title,content,address,settlement,city,support_quotes,support_images');
+        return $result->first('title,content,phones,address,settlement,city,support_quotes,support_images');
     }
 
     public static function setData($id, $data){

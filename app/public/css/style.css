@@ -81,7 +81,7 @@ a,a:visited{
     right: 0;
 }
 .frase h1{
-    font-size: 16px;
+    font-size: 18px;
     color: #fff;
     text-align: center;
     font-style: italic;
@@ -764,6 +764,7 @@ a,a:visited{
 .asesores{
     width: 100%;
     background: url(../img/head/back3.jpg)no-repeat center fixed;
+    background-size: cover;
     height: 100%;
 }
 .asesores .form{
@@ -1257,7 +1258,7 @@ center .text_simlador{
     font-weight: 100;
     margin-top: 25px;
     font-size: 20px;
-    text-transform: uppercase;
+    text-transform: capitalize;
 }
 .head_micrositio .response{
     margin: 20px auto;
@@ -1688,7 +1689,6 @@ h2.zero,p.zero {
     border-radius: 10px;
     margin: 5px;
     width: 300px;
-    height: 480px;
     text-overflow: ellipsis;
     overflow: hidden;
 }
@@ -2164,7 +2164,7 @@ h2.zero,p.zero {
     display: flex;
     flex-wrap: wrap;
     color: #fff;
-    padding: 50px;
+    padding: 72px 50px 130px;
 }
 .content-form h3 {
     color: #4fa753;
@@ -2223,6 +2223,7 @@ h2.zero,p.zero {
     color: #fff;
     position: relative;
     box-shadow: -7px -1px 21px #000;
+    z-index: 1;
 }
 .inmobiliaria div{
     position: absolute;
@@ -2260,7 +2261,6 @@ h2.zero,p.zero {
     display: flex;
     flex-wrap: wrap;
     color: #fff;
-    padding: 50px 50px 0;
 }
 .container-inmobiliaria h4 {
     font-size: 30px;
@@ -2274,57 +2274,79 @@ h2.zero,p.zero {
 .content-home .container p {
     font-size: 1.2em;
 }
-.container-inmobiliaria .col-md-6 p{
-    font-size: 18px;
+.contentInmobiliaria{
+    display: flex;
+    width: 100%;
+    text-align: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.contentInmobiliaria div{
+    width: 400px;
+    font-size: 16px;
+    padding: 50px 0;
+}
+.contentInmobiliaria div hr{
+    width: 130px;
+    margin: 30px auto;
+    border-top: 1px solid #7B7B7F;
+}
+.contentInmobiliaria div h4{
+    color: #4fa753;
+    font-size: 30px;
+}
+.contentInmobiliaria div p{
+    text-align: justify;
+    font-weight: 100;
 }
 .container.container-inmobiliaria{
     margin-bottom: 75px;
 }
-.page.inmobiliaria .magazine{
-    font-size: 18px;
-    font-style: italic;
-    width: 315px;
-    background: #4fa753;
-    padding: 15px;
-    border-radius: 5px;
-    color: #fff;
+.container_inmobiliaria .magazine{
+    background-size: cover;
+    width: 100%;
+    height: 237px;
+    position: relative;
+}
+.container_inmobiliaria .magazine div{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 52px;
     margin: auto;
+    width: 740px;
+}
+.container_inmobiliaria .magazine div p{
+    color: #000;
     text-align: center;
-    display: block;
+    padding-top: 30px;
+    font-size: 16px;
 }
 /*---------------franuicias*/
 
 .franquicia{
     background: url(../img/body/franquicias.jpg)no-repeat center;
     background-size: cover;
-    height: 350px;
+    height: 315px;
     width: 100%;
     color: #fff;
     position: relative;
-    box-shadow: -7px -1px 21px #000;
 }
-.franquicia div{
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    display: block;
-    width: 700px;
-    height: 80px;
-}
+
 .franquicia div .title_section{
     text-align: center;
     font-weight: 600;
     font-size: 50px;
-    padding: 0;
+    padding: 115px 0 0;
 }
 .franquicia div div{
     width: 25px;
     height: 5px;
     background: #4fa753;
     position: relative;
+    margin: auto;
 }
 .franquicia div p{
     font-size: 18px;
@@ -2338,36 +2360,53 @@ h2.zero,p.zero {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    color: #fff;
-    padding: 50px;
+    color: #F7F7FF;
+    padding: 70px 0 0;
 }
 .container_franquicia h2 {
     font-weight: 500;
-    margin: 30px auto;
     text-align: center;
     color: #1dafec;
+    font-size: 20px;
+    padding-bottom: 25px;
 }
 .container_franquicia .row .col-md-6 p {
     font-weight: 100;
     font-size: 16px;
     text-align: justify;
 }
-.container_franquicia .row .col-md-6 .titleFranquicia {
-    font-weight: bold;
-    font-size: 28px;
-    text-align: center;
-    color: #1dafec;
+.container_franquicia .content-franquicia{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-around;
+    margin-top: 70px;
+    background: #fff;
+    padding: 80px;
 }
-.container_franquicia .row .col-md-6 ul li {
-    text-align: left;
+.container_franquicia .content-franquicia div{
+    width: 370px;
+    text-align: justify;
+    border-radius: 10px;
+    color: #2a6496;
+    margin: 20px;
+    padding: 20px 0;
     font-size: 16px;
 }
-.container_franquicia .row .col-md-6 .space {
-    padding: 0px 100px;
+.container_franquicia .space{
+    width: 800px;
+    margin: 80px auto;
+    display: block;
+    text-align: center;
 }
- .container_franquicia .row .col-md-6 .bold {
-    font-size: 20px;
+.container_franquicia .content-franquicia div img{
+    margin: auto;
+    display: block;
 }
+.container_franquicia .content-franquicia hr {
+    border-top: 1px solid #4fa753;
+}
+
 /*---------------prensa*/
 
 .prensa{
@@ -2680,6 +2719,126 @@ select option {
 .containerOffices .cardOffices img{
     width: 100px;
 }
+
+/************franquicias*************/
+
+.container_franquicia .row .col-md-6 .franquiciaForm{
+    text-align: center;
+}
+
+.container_franquicia .row .col-md-6 .franquiciaForm input{
+    background: none;
+    border: none;
+    width: 300px;
+    padding: 10px;
+    color: #fff;
+    font-weight: normal;
+    margin: 10px;
+    border-bottom: 1px solid #4fa753;
+    font-size: 17px;
+}
+
+.container_franquicia .row .col-md-6 .franquiciaForm select{
+    background: none;
+    border: none;
+    width: 300px;
+    padding: 10px;
+    color: #fff;
+    font-weight: normal;
+    border-bottom: 1px solid #4fa753;
+    font-size: 17px;
+    height: 45px;
+    display: block;
+    margin: 10px auto;
+}
+
+.container_franquicia .row .col-md-6{
+    padding: 22px 50px;
+}
+
+.container_franquicia .row .col-md-6 .franquiciaForm label{
+    font-size: 17px;
+    font-weight: 100;
+    text-align: center;
+    width: 100%;
+}
+
+.container_franquicia .row .col-md-6 .franquiciaForm .send{
+    background: #4fa753;
+    border: none;
+    width: 300px;
+    padding: 10px;
+    color: #fff;
+    font-weight: 100;
+    margin: 10px 10px 30px;
+    border-bottom: 1px solid #4fa753;
+    font-size: 17px;
+    margin: auto;
+}
+
+.container_franquicia .row .col-md-6 .franquiciaForm .containerSelect{
+    display: flex;
+    justify-content: space-around;
+    width: 86%;
+    padding: 0 30px;
+    margin: auto;
+    flex-wrap: wrap;
+}
+
+.container_franquicia .row .col-md-6 .franquiciaForm p{
+    font-size: 22px;
+    font-style: italic;
+    text-align: center;
+}
+
+.fran_resultado{
+    background: url(../img/head/back3.jpg)no-repeat center fixed;
+    background-size: cover;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    color: #fff;
+    height: 100%;
+}
+
+
+.respuesta{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 470px;
+    height: 275px;
+    margin: auto;
+    text-align: center;
+}
+
+.name_registro span{
+    text-transform: capitalize;
+}
+
+.backFranquicia{
+    background: #4fa753;
+    padding: 10px 60px;
+    color: #fff;
+    margin: 10px;
+    font-size: 17px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.name_registro{
+    font-size: 21px;
+    font-weight: 100;
+    padding-bottom: 15px;
+}
+
+.capitalize{
+    text-transform: capitalize;
+}
+
+
 @media screen and (max-width: 1370px){
     .carousel .item p {
         top: 0px;
@@ -2759,6 +2918,33 @@ select option {
         justify-content: space-between;
         align-items: center;
         overflow-x: scroll;
+    }
+    .respuesta {
+        width: 100%;
+    }
+    .container_franquicia{
+        padding: 50px 20px;
+    }
+    .container_franquicia .row .col-md-6 {
+        padding: 0px;
+        width: 90%;
+        margin: auto;
+    }
+    .container_franquicia .row .col-md-6 .franquiciaForm p{
+        font-size: 16px;
+    }
+    .container_franquicia .row .col-md-6 .franquiciaForm input{
+        width: 100%;
+    }
+    .container_franquicia .row{
+        width: 100%;
+        margin: auto;
+    }
+    .container_franquicia h2{
+        font-size: 20px;
+    }
+    .container_franquicia .row .col-md-6 .titleFranquicia{
+        font-size: 20px;
     }
     .container-inmobiliaria h4{
         width: 245px;
@@ -2853,10 +3039,19 @@ select option {
     .container_blog .itemBlog {
         width: 100%;
     }
+    .container_inmobiliaria .magazine{
+        display: none;
+    }
+    .container_franquicia .content-franquicia{
+        padding: 0;
+    }
 }
 @media screen and (max-width: 420px){
     .simular{
         display: none;
+    }
+    .head_micrositio h1{
+        font-size: 16px;
     }
     .carousel{
         height: 100%;
@@ -2872,6 +3067,9 @@ select option {
         padding: 0;
         width: 100%
     }
+    .container_franquicia .row .col-md-6 video{
+        display: none;
+    }
     .carousel .item p{
         font-size: 22px;
         text-align: center;
@@ -2884,6 +3082,7 @@ select option {
     }
     .contenido_micrositio .titleMicrositio {
         width: 100%;
+        font-size: 25px;
     }
     .contenido_micrositio li {
         padding: 40px 0 0;
@@ -2898,7 +3097,7 @@ select option {
         position: relative;
     }
     #contenidoMircoUser {
-        padding: 100px 30px 15px;
+        padding: 35px 30px 15px;
     }
     .carousel .item p span {
         font-size: 16px;
@@ -3089,7 +3288,7 @@ select option {
         width: 100%;
     }
     .container_inmobiliaria {
-        padding: 50px 0px;
+        padding: 50px 40px;
     }
     .directores div{
         width: 100%;

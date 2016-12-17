@@ -35,7 +35,7 @@ class User {
     }
 
 	public static function getDataByEmail($user_email){
-        $result = self::$PDO->_where("id, name, email, company, password, user_active, user_deleted, user_suspension_timestamp, user_last_failed_login, id_role", "email='$user_email'");
+        $result = self::$PDO->_where("id, name, email, password, company, user_active, user_deleted, user_suspension_timestamp, user_last_failed_login, id_role", "email='$user_email'");
         return $result->first('name,company');
     }
 

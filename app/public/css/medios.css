@@ -94,8 +94,8 @@ body {
     bottom: 0;
     margin: auto;
 }
-/*.pop-radio div img {
-    width: 80%;
+.pop-radio div img {
+    width: 60%;
     position: absolute;
     left: 0;
     top: 0;
@@ -103,7 +103,7 @@ body {
     bottom: 0;
     margin: auto;
     display: block;
-}*/
+}
 /* /////////////// MENU ///////////////// */
 .logo {
     width: 20%;

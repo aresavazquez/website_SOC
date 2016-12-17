@@ -22,32 +22,32 @@ class SimulatorController extends Controller
         $afirme =   $this->fixed15($amount, 0.6999, 10.53, 0.098, 0.106, 0.8, 0.06931, 0.98, 98, 199, 70.17, 2.5, true, 0.003596, 0.01, 0.06, $hitch);
         $banamex =  $this->fixed15($amount, 0.6, 9.85, 0.085, 0.11, 0.5, 0.24, 0, 0, 0, 0, 2.5, false, 'banamex', 0.01, 0.06, $hitch);
         $banorte = $this->fixed15($amount, 0.7, 9.9, 0.0874, 0.116, 0.52, 0.31931, 0, 0, 499, 0, 2, false, 0.00348, 0.01, 0.06, $hitch);
-        $hsbc = $this->fixed15($amount, 0.75, 9.818, 0.101, 0.117, 0.255, 0.228, 0, 0, 0, 0, 2, true, 'hsbc', 0, 0.06, $hitch);
-        $santander = $this->fixed15($amount, 0.9, 10.5, 0.096, 0.118, 31.54, 0.3376, 0, 0, 406, 0, 2.5, true, 0.00275, 0.01, 0.06, $hitch, 0, true);
-        $scotiabank = $this->fixed15($amount, 0.65, 9.75, 0.082, 0.116, 0.5, 0.3016, 0, 0, 0, 0, 2.6, false, 'scotiabank', 0, 0.06, $hitch);
+        $hsbc = $this->fixed15($amount, 0.75, 9.45, 0.1005, 0.117, 0.255, 0.228, 0, 0, 348, 0, 2, true, 'hsbc', 0, 0.06, $hitch);
+        $santander = $this->fixed15($amount, 0.9, 11.028, 0.0991, 0.118, 31.54, 0.3376, 0, 0, 406, 0, 2.5, true, 0.00275, 0.01, 0.06, $hitch, 0, true);
+        $scotiabank = $this->fixed15($amount, 0.9, 11.15, 0.1, 0.116, 0.5, 0.3016, 0, 0, 0, 0, 2.6, false, 'scotiabank', 0, 0.06, $hitch);
       }else{
         $afirme =   $this->fixed20($amount, 0.8, 9.9858, 0.1055, 0.1225, 0.8, 0.06931, 0.98, 98, 199, 70.62, 2.5, true, 0.0035728, 0.0116, 0.06, $hitch);
         $banamex =  $this->fixed20($amount, 0.6, 8.68, 0.085, 0.145, 0.5, 0.24, 0, 0, 0, 0, 2.61, false, 'banamex', 0.01, 0.06, $hitch, 0);
         $banorte = $this->fixed20($amount, 0.7, 8.73722, 0.0848, 0.129, 0.52, 0.31931, 0, 0, 499, 0, 2, false, 0.00116, 0.01, 0.06, $hitch, 0);
-        $hsbc = $this->fixed20($amount, 0.75, 8.647, 0.0845, 0.097, 0.255, 0.228, 0, 0, 0, 0, 2.5, false, 'hsbc', 0, 0.06, $hitch, 0);
-        $santander = $this->fixed20($amount, 0.9, 9.39, 0.096, 0.117, 31.54, 0.3376, 0, 0, 406, 0, 2.5, true, 0.00319, 0.01, 0.06, $hitch, 0, true);
-        $scotiabank = $this->fixed20($amount, 0.65, 8.64, 0.1, 0.116, 0.5, 0.3016, 0, 0, 0, 0, 2.5703573901, false, 'scotiabank', 0, 0.06, $hitch, 0);
+        $hsbc = $this->fixed20($amount, 0.75, 9.45, 0.1005, 0.097, 0.255, 0.228, 0, 0, 348, 0, 2.5, false, 'hsbc', 0, 0.06, $hitch, 0);
+        $santander = $this->fixed20($amount, 0.9, 10.330, 0.1026, 0.117, 31.54, 0.3376, 0, 0, 406, 0, 2.5, true, 0.00319, 0.01, 0.06, $hitch, 0, true);
+        $scotiabank = $this->fixed20($amount, 0.9, 10.10, 0.10, 0.116, 0.5, 0.3016, 0, 0, 0, 0, 2.5703573901, false, 'scotiabank', 0, 0.06, $hitch, 0);
       }
     }else{
       if(Request::get('paytime') == 15){
         $afirme = $this->grow15($amount, 0.6999, 8.72199, 0.098, 0.1044, 0.8, 0.06931, 0.98, 98, 199, 68.18, 2.5, true, 0.0035728, 0.01, 0.06, $hitch, 0);
         $banamex = $this->grow15(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
         $banorte = $this->grow15($amount, 0.9, 8.9, 0.0899, 0.121, 0.52, 0.41054, 0, 0, 0, 0, 2, false, 0.00116, 0.01, 0.06, $hitch);
-        $hsbc = $this->grow15($amount, 0.75, 8.82, 0.101, 0.098, 0.255, 0.228, 0, 0, 0, 0, 3.03, false, 'hsbc', 0, 0.06, $hitch);
-        $santander = $this->grow15($amount, 0.9, 9, 0.096, 0.118, 31.54, 0.3376, 0, 0, 0, 0, 2.2941305511, false, 2.75, 0.01, 0.06, $hitch, 0, true);
-        $scotiabank = $this->grow15($amount, 0.95, 9.06, 0.0875, 0.107, 0.5, 0.3016, 0, 0, 0, 0, 2.6, false, 'scotiabank', 0.0125, 0.06, $hitch);
+        $hsbc = $this->grow15($amount, 0.75, 9.61, 0.0975, 0.098, 0.255, 0.228, 0, 348, 0, 0, 3.03, false, 'hsbc', 0, 0.06, $hitch);
+        $santander = $this->grow15($amount, 0.9, 9.6552, 0.091, 0.118, 31.54, 0.3376, 0, 0, 0, 0, 2.2941305511, false, 2.75, 0.01, 0.06, $hitch, 0, true);
+        $scotiabank = $this->grow15($amount, 0.9, 9.06, 0.0875, 0.107, 0.5, 0.3016, 0, 0, 0, 0, 2.6, false, 'scotiabank', 0.0125, 0.06, $hitch);
       }else{
         $afirme = $this->grow20($amount, 0.8, 9.095, 0.1055, 0.1218, 0.8, 0.06931, 0.98, 98, 199, 69.51, 2.5, true, 0.003596, 0.01, 0.06, $hitch);
         $banamex = $this->grow20(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
         $banorte = $this->grow20($amount, 0.9, 7.6, 0.0899, 0.118, 0.52, 0.41054, 0, 0, 299, 0, 2, false, 0.00116, 0.01, 0.06, $hitch);
-        $hsbc = $this->grow20($amount, 0.75, 7.55, 0.0845, 0.098, 0.255, 0.228, 0, 0, 0, 0, 3.0304, false, 'hsbc', 0, 0.06, $hitch);
-        $santander = $this->grow20($amount, 0.9, 8.2, 0.096, 0.117, 31.54, 0.3376, 0, 0, 0, 0, 2.5, true, 0.00275, 0.01, 0.06, $hitch, 0, true);
-        $scotiabank = $this->grow20($amount, 0.95, 7.92, 0.0875, 0.107, 0.5, 0.3016, 0, 0, 0, 0, 2.7075492331, false, 'scotiabank', 0.0125, 0.06, $hitch);
+        $hsbc = $this->grow20($amount, 0.75, 8.40, 0.0975, 0.098, 0.255, 0.228, 0, 0, 348, 0, 3.0304, false, 'hsbc', 0, 0.06, $hitch);
+        $santander = $this->grow20($amount, 0.9, 9.51, 0.1026, 0.117, 31.54, 0.3376, 0, 0, 0, 0, 2.5, true, 0.00275, 0.01, 0.06, $hitch, 0, true);
+        $scotiabank = $this->grow20($amount, 0.90, 7.92, 0.0875, 0.107, 0.5, 0.3016, 0, 0, 0, 0, 2.7075492331, false, 'scotiabank', 0.0125, 0.06, $hitch);
       }
     }
 

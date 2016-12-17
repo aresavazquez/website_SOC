@@ -30,7 +30,7 @@ class Post{
 
     public static function byPage($page){
         $index = ($page - 1) * 10;
-        $result = self::$PDO->_where("*","post_id LIMIT $index,10");
+        $result = self::$PDO->_where("*","post_id ORDER BY created_at DESC LIMIT $index,10");
         return $result->get('post_title,post_content');
     }
 

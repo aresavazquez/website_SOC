@@ -7,54 +7,101 @@
 {% block content %}
 {% include 'components/menu-header.html' %}
 <div class="franquicia">
-	<div>
-		<p class="title_section">Franquicias</p>
-		<div></div>
-		<p>Únete a la red de Brokers Hipotecarios más grande de México</p>
-	</div>
+    <div>
+        <p class="title_section">Franquicias</p>
+        <div></div>
+        <p>Únete a la red de Brokers Hipotecarios más grande de México</p>
+    </div>
 </div>
 <div class="container_franquicia">
-    <h2>Somos el primer Bróker Hipotecario en México ¡Garantizado!.</h2>
     <div class="row">
         <div class="col-md-6">
+            <video src="./img/franquicia/franquicias_web.mp4" muted="muted" loop autoplay style="width: 100%"></video>
+        </div>
+        <div class="col-md-6">
+            <form method="post" action="contactoFranquicia.php" class="franquiciaForm">
+                <p class="label">Solicita información de la franquicia</p>
+                <br>
+                <br>
+                <input type="text" placeholder="* Nombre" name="nombre" required class="capitalize">
+                <input type="text" placeholder="* Apellido" name="apellido" required class="capitalize">
+                <input type="text" placeholder="* Correo" name="correo" required>
+                <input type="text" placeholder="* Ciudad" name="ciudad" required class="capitalize">
+                <input type="text" placeholder="Estado" name="estado" class="capitalize">
+                <input type="number" placeholder="Código Postal" name="codigoPostal">
+                <input type="number" placeholder="* Teléfono con lada" name="telefono">
+                <input type="number" placeholder="Celular" name="celular">
+                <div class="containerSelect">
+                    <div>
+                        <label>Capital disponible</label>
+                        <select name="capital">
+                            <option>_</option>
+                            <option value="$25,000.00 a $50,000.00 MXN">De $25,000.00 a  $50,000.00 MXN</option>
+                            <option value="$50,000.00 a $100,000.00 MXN">De 50,000.00 a $100,000.00 MXN</option>
+                            <option value="$100,000.00 a $200,000.00 MXN"> De $100,000.00 a $200,000.00 MXN</option>
+                            <option value="$250,000.00 MXN en adelante">De $250,000.00 MXN en adelante</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label>Tiempo estimado de apertura </label>
+                        <select name="tiempoApertura">
+                            <option>_</option>
+                            <option value="0 a 3 meses"> De 0 a 3 meses</option>
+                            <option value="3 a 6 meses">De 3 a 6 meses</option>
+                            <option value="mas de 6 meses">Más de 6 meses</option>
+                        </select>
+                    </div>
+                </div>
+                <br>
+                <input type="submit" class="send">
+            </form>
+        </div>
+    </div>
+    <div class="content-franquicia">
+        <div>
+            <img src="./img/franquicia/broker.png">
+            <h2>1er Broker Hipotecario en México.</h2>
+            <hr>
             <p><strong>SOC</strong>, es una compañía mexicana dedicada a analizar las diferentes alternativas hipotecarias que ofrecen las instituciones financieras, contamos con un modelo de negocio especializado en consultoría y gestión de productos de crédito.
-            El objetivo principal es ofrecer un servicio de la más alta calidad asesorando a cada cliente según sus necesidades en uno de los momentos más importantes de su vida ¡Comprar una casa!
+            El objetivo principal es ofrecer un servicio de la más alta calidad asesorando a cada cliente según sus necesidades en uno de los momentos más importantes de su vida ¡Comprar una casa! 
             Con este modelo lograrás desarrollar un negocio sólido con altos ingresos y amplia capacidad de crecimiento.</p>
-            <p></p>
-            <br>
-            <p class="titleFranquicia">Beneficios</p>
+        </div>
+        <div>
+            <img src="./img/franquicia/beneficio.png">
+            <h2>Beneficios</h2>
+            <hr>
             <ul>
                 <li>Asesoría por especialistas que resolverán todas tus dudas en: </li>
             </ul>
-            <p class="textoBeneficio">- <strong>Tecnología y sistemas.</strong> Soporte personalizado.</p>
-            <p class="textoBeneficio">- <strong>Universidad SOC.</strong> Capacitación continua impartida a través de plataformas tecnológicas: webinars, e-learning y biblioteca virtual. </p>
-            <p class="textoBeneficio">- <strong>Mercadotecnia y eventos:</strong> Desarrollo de estrategias de lealtad para atracción de clientes, diseño de herramientas de ventas, alianzas estratégicas con marcas líderes del segmento, ferias a nivel nacional, workshops y convenciones.</p>
+            <p class="textoBeneficio"><strong>Tecnología y sistemas.</strong> Soporte personalizado.</p>
+            <p class="textoBeneficio"><strong>Universidad SOC.</strong> Capacitación continua impartida a través de plataformas tecnológicas: webinars, e-learning y biblioteca virtual. </p>
+            <p class="textoBeneficio"><strong>Mercadotecnia y eventos:</strong> Desarrollo de estrategias de lealtad para atracción de clientes, diseño de herramientas de ventas, alianzas estratégicas con marcas líderes del segmento, ferias a nivel nacional, workshops y convenciones.</p>
             <br>
             <ul>
                 <li>Alianzas con los Bancos más importantes, garantizando un tiempo de respuesta de 24 horas:</li>
             </ul>
-            <br>
         </div>
-        <div class="col-md-6">
-            <div class="space">
-                <p class="bold"><strong>Inversión Total:</strong> <br>
-                $250,000.00*</p>
-
-                <p class="bold"><strong>Desembolso Inicial:</strong> <br>
-                        $150,000.00</p>
-
-                <p class="bold"><strong>Plan de Financiamiento hasta 12 Meses sin intereses</strong></p>
-
-                <p class="bold"><strong>Recuperación de inversión:</strong> <br>
-                        A partir del mes 18 aproximadamente</p>
-
-                <p class="bold"><strong><small> Pregunta por el descuento si tu intención es adquirirla al contado</small></strong></p>
-            </div>
+        <div>
+            <img src="./img/franquicia/plaza.png">
+            <h2>Plazas</h2>
+            <hr>
+            <p>Contamos con la mayor red de franquicias en toda la República Mexicana, tenemos plazas disponibles y con muchas oportunidades de crecimiento. La oportunidad de una franquicia en el sector hipotecario es inmejorable en el entorno económico del país. </p> 
+        </div>
+        <div>
+            <img src="./img/franquicia/inversion.png">
+            <h2>Inversión</h2>
+            <hr>
+            <p class="bold"><strong>Inversión Total:</strong> <br>
+            $250,000.00*</p>
             <br>
-            <div class="space">
-                <p class="titleFranquicia">Plazas</p>
-                <p>Contamos con la mayor red de franquicias en toda la República Mexicana, tenemos plazas disponibles y con muchas oportunidades de crecimiento. La oportunidad de una franquicia en el sector hipotecario es inmejorable en el entorno económico del país. </p>
-            </div>
+            <p class="bold"><strong>Desembolso Inicial:</strong> <br>$150,000.00</p>
+            <br>
+            <p class="bold"><strong>Plan de Financiamiento hasta 12 Meses sin intereses</strong></p>
+            <br>
+            <p class="bold"><strong>Recuperación de inversión:</strong> <br>
+                    A partir del mes 18 aproximadamente</p>
+            <br>
+            <p class="bold"><strong><small> Pregunta por el descuento si tu intención es adquirirla al contado</small></strong></p>
         </div>
     </div>
 </div>

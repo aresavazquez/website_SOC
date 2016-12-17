@@ -67,9 +67,9 @@ class ApiController extends Controller{
     }
 
     public function brokers(){
-         Session::set('feedback_negative', array());
-         $brokers = (array) Site::getInstance()->byState(Request::post('state'));
-         if(count($brokers) > 0){
+        Session::set('feedback_negative', array());
+        $brokers = (array) Site::getInstance()->byState(Request::post('state'));
+        if(count($brokers) > 0){
             foreach ($brokers as $broker) {
                 $broker->subsidiaries = Site::getInstance()->allFrom($broker->id);
             }

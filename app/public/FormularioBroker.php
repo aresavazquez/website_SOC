@@ -1,4 +1,3 @@
-
 <?php 
 $message = '';
 
@@ -6,16 +5,16 @@ $message = '';
 * lo que viene en la variable certification 
 * y un espacio para que no salga todo encimado
 */
-$message .= $_POST['certification'] . ' '; 
-$message .= $_POST['name'] . ' '; 
-$message .= $_POST['years'] . ' '; 
-$message .= $_POST['tipo_evaluation'] . ' '; 
-$message .= $_POST['signature'] . ' '; 
-$message .= $_POST['office'] . ' '; 
-$message .= $_POST['titular'] . ' '; 
-$message .= $_POST['city'] . ' ';
-$message .= $_POST['mail'] . ' '; 
-$message .= $_POST['fon'] . ' '; 
+$message .="Certificacion:" . $_POST['certification'] . ' ';
+$message .="Nombre:" .  $_POST['name'] . ' '; 
+$message .="Antiguedad: " .  $_POST['years'] . ' '; 
+$message .="Tipo de Evaluacion: " .  $_POST['tipo_evaluation'] . ' '; 
+$message .="Firmas: " .  $_POST['signature'] . ' '; 
+$message .="Oficina: " .  $_POST['office'] . ' '; 
+$message .="Titular de la Oficina: " .  $_POST['titular'] . ' '; 
+$message .="Ciudad: " .  $_POST['city'] . ' ';
+$message .="Mail: " .  $_POST['mail'] . ' '; 
+$message .="Telefono: " .  $_POST['fon'] . ' '; 
 
 /*
 Así con todas las variables
@@ -47,7 +46,7 @@ mail("certificacionsoc@gmail.com", 'Datos Certificación Broker', $message);
 				En breve nos pondremos en contacto contigo.</p>
 			</div>	
 		</div>
-		<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenMax.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenMax.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     	<script type="text/javascript" src="./js/certificacion.js"></script>
  	</body>

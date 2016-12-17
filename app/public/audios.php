@@ -10,6 +10,126 @@
 		    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="">
             <!-- ///////////////////////////////////////////////////////////////////////-->
             <!-- ///////////////////////////////////////////////////////////////////////-->
+            <!-- ///////////////////////          19            /////////////////////////-->
+            <!-- ///////////////////////////////////////////////////////////////////////-->
+                 <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="heading19">
+                        <h4 class="panel-title">
+                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse19" aria-expanded="false" aria-controls="collapse19">
+                        <span>Haz fácil la obtención de tu Crédito Hipotecario</span><br>
+                             ¡Qué tal Fernanda! Imagen 90.5<br>
+                            <span class="fecha">Noviembre 3 2016</span>
+                        </a>
+                        </h4>
+                    </div>
+                    <div id="collapse19" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading19">
+                        <div class="panel-body">
+                             <iframe width="80%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/292411157&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
+                        </div>
+                    </div>
+                </div>
+            <!-- ///////////////////////////////////////////////////////////////////////-->
+            <!-- ///////////////////////////////////////////////////////////////////////-->
+            <!-- ///////////////////////          18            /////////////////////////-->
+            <!-- ///////////////////////////////////////////////////////////////////////-->
+                 <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="heading17">
+                        <h4 class="panel-title">
+                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse18" aria-expanded="false" aria-controls="collapse18">
+                        <span>Convención SOC 2016</span><br>
+                             ¡Qué tal Fernanda! Imagen 90.5<br>
+                            <span>Octubre 20 2016</span>
+                        </a>
+                        </h4>
+                    </div>
+                    <div id="collapse18" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading18">
+                        <div class="panel-body">
+                             <iframe width="80%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/290306247&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
+                        </div>
+                    </div>
+                </div>
+            <!-- ///////////////////////////////////////////////////////////////////////-->
+            <!-- ///////////////////////////////////////////////////////////////////////-->
+            <!-- ///////////////////////          17            /////////////////////////-->
+            <!-- ///////////////////////////////////////////////////////////////////////-->
+                 <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="heading17">
+                        <h4 class="panel-title">
+                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse17" aria-expanded="false" aria-controls="collapse17">
+                        <span>El A B C de tu Crédito Hipotecario</span><br>
+                             ¡Imagen Informativa Segunda Emisión<br>
+                            <span>Octubre 10 2016</span>
+                        </a>
+                        </h4>
+                    </div>
+                    <div id="collapse17" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading17">
+                        <div class="panel-body">
+                            <iframe width="80%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/290303454&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
+                        </div>
+                    </div>
+                </div>
+            <!-- ///////////////////////////////////////////////////////////////////////-->
+            <!-- ///////////////////////////////////////////////////////////////////////-->
+            <!-- ///////////////////////          16            /////////////////////////-->
+            <!-- ///////////////////////////////////////////////////////////////////////-->
+                 <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="heading16">
+                        <h4 class="panel-title">
+                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse16" aria-expanded="false" aria-controls="collapse16">
+                        <span>Sustituye tu hipoteca</span><br>
+                             ¡Imagen Informativa Segunda Emisión<br>
+                            <span>Septiembre 21 2016</span>
+                        </a>
+                        </h4>
+                    </div>
+                    <div id="collapse16" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading16">
+                        <div class="panel-body">
+                            <iframe width="80%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/285117455&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
+                        </div>
+                    </div>
+                </div>
+            <!-- ///////////////////////////////////////////////////////////////////////-->
+            <!-- ///////////////////////////////////////////////////////////////////////-->
+            <!-- ///////////////////////          15            /////////////////////////-->
+            <!-- ///////////////////////////////////////////////////////////////////////-->
+                 <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="heading15">
+                        <h4 class="panel-title">
+                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse15" aria-expanded="false" aria-controls="collapse15">
+                        <span>Créditos Hipotecarios en México</span><br>
+                             ¡Qué tal Fernanda! Imagen 90.5<br>
+                            <span>Septiembre 2 2016</span>
+                        </a>
+                        </h4>
+                    </div>
+                    <div id="collapse15" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading15">
+                        <div class="panel-body">
+                            <iframe width="80%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/280442071&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
+                        </div>
+                    </div>
+                </div>
+            <!-- ///////////////////////////////////////////////////////////////////////-->
+            <!-- ///////////////////////////////////////////////////////////////////////-->
+            <!-- ///////////////////////          14           /////////////////////////-->
+            <!-- ///////////////////////////////////////////////////////////////////////-->
+                 <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="heading14">
+                        <h4 class="panel-title">
+                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse14" aria-expanded="false" aria-controls="collapse14">
+                        <span>Sustitución de Crédito INFONAVIT</span><br>
+                             ¡Qué tal Fernanda! Imagen 90.5<br>
+                            <span>Agosto 24 2016</span>
+                        </a>
+                        </h4>
+                    </div>
+                    <div id="collapse14" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading14">
+                        <div class="panel-body">
+                           <iframe width="80%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/280442071&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
+                        </div>
+                    </div>
+                </div>
+            <!-- ///////////////////////////////////////////////////////////////////////-->
+            <!-- ///////////////////////////////////////////////////////////////////////-->
             <!-- ///////////////////////          13            /////////////////////////-->
             <!-- ///////////////////////////////////////////////////////////////////////-->
                  <div class="panel panel-default">
@@ -18,7 +138,7 @@
                         <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse13" aria-expanded="false" aria-controls="collapse13">
                         <span>Créditos Hipotecarios en México</span><br>
                              ¡Qué tal Fernanda! Imagen 90.5<br>
-                            <span class="fecha">Agosto 17 2016</span>
+                            <span>Agosto 17 2016</span>
                         </a>
                         </h4>
                     </div>
@@ -38,7 +158,7 @@
                         <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse12" aria-expanded="false" aria-controls="collapse12">
                         <span>Beneficios de acercarte a tu Asesor SOC</span><br>
                              ¡Qué tal Fernanda! Imagen 90.5<br>
-                            <span class="fecha">Agosto 11 2016</span>
+                            <span>Agosto 11 2016</span>
                         </a>
                         </h4>
                     </div>
@@ -58,7 +178,7 @@
                         <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse11" aria-expanded="false" aria-controls="collapse11">
                         <span>Sustitución de Hipoteca Infonavit</span><br>
                             ¡Imagen Informativa Segunda Emisión<br>
-                            <span class="fecha">Agosto 3 2016</span>
+                            <span>Agosto 3 2016</span>
                         </a>
                         </h4>
                     </div>
