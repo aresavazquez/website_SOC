@@ -238,7 +238,8 @@ class ApiController extends Controller{
         }
         if(Request::put('origin') == "user"){
             $mail_obj = new Mail();
-            $mail_obj->sendMailWithPHPMailer('socialmedia@socasesores.com', 'socialmedia@socasesores.com', 'Micrositio :: ' . $data['title'], 'Cambio en el micrositio', 'Se ha reportado un cambio en el micrositio ' . $data['title'] . '.');
+            $site = Site::getInstance()->byId($params['id']);
+            $mail_obj->sendMailWithPHPMailer('socialmedia@socasesores.com', 'socialmedia@socasesores.com', 'Micrositio :: ' . $data['title'], 'Cambio en el micrositio', 'Se ha reportado un cambio en el micrositio <a href="' . Config::get('URL') . $site->url . '">' . $data['title'] . '</a>' . '.');
         }
         $id = Site::getInstance()->setData($params['id'], $data);
         $this->View->renderJSON($this->success_code($id));
