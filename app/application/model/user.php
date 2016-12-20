@@ -20,7 +20,7 @@ class User {
     }
 
     public static function search($keyword){
-        $result = self::$PDO->_where("id, name, company, email", "name LIKE '%$keyword%'");
+        $result = self::$PDO->_where("id, name, company, email", "name LIKE '%$keyword%' OR company LIKE '%$keyword%'");
         return $result->get('name,company');
     }
 
